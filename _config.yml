@@ -1,0 +1,55 @@
+#######################################################################################
+# Book settings
+title: Calculo en una variable
+author: I. Arregui, J.J. Cendán, J.A. García, M. González, L. Hervella, J.G. López, M. Pájaro, A. Prieto and H. Varela  
+email: ''
+logo                        : "udc_logo.png"  # A path to the book logo
+exclude_patterns            : ["README.md"]  # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
+
+#######################################################################################
+# Execution settings
+execute:
+  execute_notebooks         : 'off'  # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
+  timeout                   : 600    # The maximum time (in seconds) each notebook cell is allowed to run.
+
+#######################################################################################
+# Extensiones tomadas del JB "Computational Mechanics"
+parse:
+  myst_enable_extensions: #true
+    - amsmath
+    - colon_fence
+    - dollarmath
+    - html_admonition
+    - html_image
+    - linkify
+    - replacements
+    - smartquotes
+    - substitution
+    - tasklist
+  myst_dmath_double_inline: true
+
+#######################################################################################
+# HTML-specific settings
+html:
+  udc_logo                  : "udc_logo.png"  # A path to a favicon image
+  navbar_number_sections    : True  # Add a number to each section in your left navbar
+  google_analytics_id       : "UA-148221575-1"  # A GA id that can be used to track book views.
+  home_page_in_navbar       : false  # Whether to include your home page in the left Navigation Bar
+  # baseurl                   : "https://inferentialthinking.org"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
+  # use_repository_button     : true
+  # use_edit_page_button      : false
+  # use_issues_button         : false
+
+#######################################################################################
+# Launch button settings
+# launch_buttons:
+#   jupyterhub_url            : https://datahub.berkeley.edu
+#   binderhub_url             : https://mybinder.org  # The URL of the BinderHub (e.g., https://mybinder.org)
+
+# repository:
+#   url                       : https://github.com/data-8/textbook  # The URL to your book's repository
+#   branch                    : main  # Which branch of the repository should be used when creating links
+
+# sphinx:
+#   config:
+#     html_extra_path: ['assets']
