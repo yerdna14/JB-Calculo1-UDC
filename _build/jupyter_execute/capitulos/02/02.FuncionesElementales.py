@@ -106,16 +106,20 @@ p.show()
 # 
 # 1. $x-2\geq 0$ (es decir, $x\geq 2$) y $5x+1\geq 0$ (es decir, $x\geq-\frac{1}{5}$).
 #     Uniendo las dos expresiones este caso se reduce a $x\geq 2$. La igualdad planteada resulta
+#     
 #     $$
 #     |x-2|=|5x+1|\Longleftrightarrow x-2=5x+1\Longleftrightarrow x=-\frac{3}{4}\not\geq 2.
 #     $$
+#     
 #     Por lo tanto, la igualdad en este caso es imposible.
 # 
 # 2. $x-2<0$ (es decir, $x<2$) y $5x+1\geq 0$ (es decir, $x\geq-\frac{1}{5}$). 
 #     Uniendo las dos expresiones este caso se reduce a $x\in[-\frac{1}{5},2)$. La igualdad planteada resulta
+#     
 #     $$
 #     |x-2|=|5x+1|\Longleftrightarrow 2-x=5x+1\Longleftrightarrow x=\frac{1}{6}.
 #     $$
+#     
 #     Como $\frac{1}{6}\in[-\frac{1}{5},2)$, ya tenemos una solución para nuestra igualdad.
 # 
 # 3. $x-2\geq 0$ (es decir, $x\geq 2$) y $5x+1<0$ (es decir, $x<-\frac{1}{5}$). 
@@ -123,9 +127,11 @@ p.show()
 # 
 # 4. $x-2<0$ (es decir, $x<2$) y $5x+1< 0$ (es decir, $x<-\frac{1}{5}$). 
 #     Uniendo las dos expresiones este caso se reduce a $x<-\frac{1}{5}$. La igualdad planteada resulta
+#     
 #     $$
 #     |x-2|=|5x+1|\Longleftrightarrow 2-x=-5x-1\Longleftrightarrow x=-\frac{3}{4}.
 #     $$
+#     
 #     Como $-\frac{3}{4}<-\frac{1}{5}$, ya hemos encontrado la  segunda (y última) solución
 #     para nuestra igualdad.
 

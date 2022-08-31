@@ -27,7 +27,7 @@ chapters:
    - file: capitulos/02/06.Lagrange
      title: Polinomio de interpolación de Lagrange
 - file: capitulos/05/README
-  title: Python para Cálculo de una Variable
+  title: Python para cálculo de una Variable
   sections:
     - file: capitulos/05/01.IntroduccionSympy
       title: Introducción a SymPy

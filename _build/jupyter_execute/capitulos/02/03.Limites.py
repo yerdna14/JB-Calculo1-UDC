@@ -87,6 +87,10 @@
 # 
 # <img src="../../images/cap3_definicion_limite_3.png" width="300"/>
 # 
+# **Nota:** Si buscas más información sobre la definición de límite puedes consultar
+# * en la wikipedia: https://es.wikipedia.org/wiki/L%C3%ADmite_de_una_funci%C3%B3n,
+# * en este link de la Universidad Tecnológica Nacional, de Argentina: http://www.edutecne.utn.edu.ar/guias_de_estudio/limites.pdf.
+# 
 # Hay una propiedad interesante, consecuencia directa de la definición de límite:
 # 
 # **Propiedad:**
@@ -102,7 +106,7 @@
 # 
 # Seguimos con algunas otras propiedades importantes de los límites.
 # 
-# **Propiedad:****
+# **Propiedad:**
 # Sean $f,g:A\subset\mathbb{R}\rightarrow\mathbb{R}$, $x_0\in A$. Supongamos que $f$ está acotada cerca de
 # $x_0$ y que $\displaystyle\lim_{x\to x_0}g(x)=0$. 
 # 
@@ -118,7 +122,7 @@
 # Sean $f,g:A\subset\mathbb{R}\rightarrow\mathbb{R}$, $x_0\in A$. Supongamos que ambas funciones tienen límite
 # finito en $x_0$. Entonces
 # 
-# 1. $\displaystyle\lim_{x\to x_0}\left(\lambda f\right)(x)=\lambda\lim_{x\to x_0} f(x)\qquad\forall\lambda\in\mathbb{R}$,
+# 1. $\displaystyle\lim_{x\to x_0}\left(\lambda f\right)(x)=\lambda\lim_{x\to x_0} f(x),\qquad\forall\lambda\in\mathbb{R}$,
 # 2. $\displaystyle\lim_{x\to x_0}\left(f\pm g\right)(x)=\left(\lim_{x\to x_0} f(x)\right)\pm\left(\lim_{x\to x_0} g(x)\right)$,
 # 3. $\displaystyle \lim_{x\to x_0}\left(fg\right)(x)=\left(\lim_{x\to x_0} f(x)\right)\left(\lim_{x\to x_0} g(x)\right)$,
 # 4. $\displaystyle \lim_{x\to x_0}\left(\frac{f}{g}\right)(x)=\frac{\displaystyle\lim_{x\to x_0} f(x)}{\displaystyle\lim_{x\to x_0} g(x)}$ si $\displaystyle\lim_{x\to x_0} g(x)\not=0$.
@@ -227,3 +231,5 @@
 # A modo de ejemplo gráfico, en la siguiente figura la función representada tiene una asíntota horizontal en $-\infty$, vertical en $x_{0}$ y oblicua en $+\infty$. 
 # 
 # <img src="../../images/cap3_asintotas.png" width="500"/>
+# 
+# **Nota:** Si quieres saber algo más sobre las asíntotas, échale un vistazo a la siguiente entrada del magnífico blog de matemáticas *gaussianos*: https://www.gaussianos.com/calcular-las-asintotas-de-una-funcion/

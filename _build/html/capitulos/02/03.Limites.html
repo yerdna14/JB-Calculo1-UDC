@@ -184,7 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05/README.html">
-   3. Python para Cálculo de una Variable
+   3. Python para cálculo de una Variable
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -511,6 +511,11 @@ lo que ésta será más general y vale para puntos que pueden no estar en el dom
 <p>Una interpretación gráfica muy frecuente es la que mostramos en la siguiente figura.
 Las imágenes de los puntos en el intervalo azul caen dentro del sector verde.</p>
 <a class="reference internal image-reference" href="../../_images/cap3_definicion_limite_3.png"><img alt="../../_images/cap3_definicion_limite_3.png" src="../../_images/cap3_definicion_limite_3.png" style="width: 300px;" /></a>
+<p><strong>Nota:</strong> Si buscas más información sobre la definición de límite puedes consultar</p>
+<ul class="simple">
+<li><p>en la wikipedia: <a class="reference external" href="https://es.wikipedia.org/wiki/L%C3%ADmite_de_una_funci%C3%B3n">https://es.wikipedia.org/wiki/Límite_de_una_función</a>,</p></li>
+<li><p>en este link de la Universidad Tecnológica Nacional, de Argentina: <a class="reference external" href="http://www.edutecne.utn.edu.ar/guias_de_estudio/limites.pdf">http://www.edutecne.utn.edu.ar/guias_de_estudio/limites.pdf</a>.</p></li>
+</ul>
 <p>Hay una propiedad interesante, consecuencia directa de la definición de límite:</p>
 <p><strong>Propiedad:</strong>
 Si existe <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to x_0}f(x)\)</span>, es único.</p>
@@ -521,7 +526,7 @@ x_0}f(x)=l_1\)</span> y al mismo tiempo <span class="math notranslate nohighligh
 Eligiendo <span class="math notranslate nohighlight">\(\epsilon=\frac{\left|l_1-l_2\right|}{3}\)</span> llegamos a una contradicción (¿por qué?).</p>
 <p><span class="math notranslate nohighlight">\(\Box\)</span></p>
 <p>Seguimos con algunas otras propiedades importantes de los límites.</p>
-<p><strong>Propiedad:</strong>**
+<p><strong>Propiedad:</strong>
 Sean <span class="math notranslate nohighlight">\(f,g:A\subset\mathbb{R}\rightarrow\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(x_0\in A\)</span>. Supongamos que <span class="math notranslate nohighlight">\(f\)</span> está acotada cerca de
 <span class="math notranslate nohighlight">\(x_0\)</span> y que <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to x_0}g(x)=0\)</span>.</p>
 <p>Entonces  <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to x_0}(fg)(x)=0\)</span>.</p>
@@ -533,7 +538,7 @@ composición se denota como <span class="math notranslate nohighlight">\(f\circ 
 <p>Sean <span class="math notranslate nohighlight">\(f,g:A\subset\mathbb{R}\rightarrow\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(x_0\in A\)</span>. Supongamos que ambas funciones tienen límite
 finito en <span class="math notranslate nohighlight">\(x_0\)</span>. Entonces</p>
 <ol class="simple">
-<li><p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to x_0}\left(\lambda f\right)(x)=\lambda\lim_{x\to x_0} f(x)\qquad\forall\lambda\in\mathbb{R}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to x_0}\left(\lambda f\right)(x)=\lambda\lim_{x\to x_0} f(x),\qquad\forall\lambda\in\mathbb{R}\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to x_0}\left(f\pm g\right)(x)=\left(\lim_{x\to x_0} f(x)\right)\pm\left(\lim_{x\to x_0} g(x)\right)\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to x_0}\left(fg\right)(x)=\left(\lim_{x\to x_0} f(x)\right)\left(\lim_{x\to x_0} g(x)\right)\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to x_0}\left(\frac{f}{g}\right)(x)=\frac{\displaystyle\lim_{x\to x_0} f(x)}{\displaystyle\lim_{x\to x_0} g(x)}\)</span> si <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to x_0} g(x)\not=0\)</span>.</p></li>
@@ -635,6 +640,7 @@ función no tiene asíntotas oblicuas.</p>
 </ul>
 <p>A modo de ejemplo gráfico, en la siguiente figura la función representada tiene una asíntota horizontal en <span class="math notranslate nohighlight">\(-\infty\)</span>, vertical en <span class="math notranslate nohighlight">\(x_{0}\)</span> y oblicua en <span class="math notranslate nohighlight">\(+\infty\)</span>.</p>
 <a class="reference internal image-reference" href="../../_images/cap3_asintotas.png"><img alt="../../_images/cap3_asintotas.png" src="../../_images/cap3_asintotas.png" style="width: 500px;" /></a>
+<p><strong>Nota:</strong> Si quieres saber algo más sobre las asíntotas, échale un vistazo a la siguiente entrada del magnífico blog de matemáticas <em>gaussianos</em>: <a class="reference external" href="https://www.gaussianos.com/calcular-las-asintotas-de-una-funcion/">https://www.gaussianos.com/calcular-las-asintotas-de-una-funcion/</a></p>
 </section>
 </section>
 

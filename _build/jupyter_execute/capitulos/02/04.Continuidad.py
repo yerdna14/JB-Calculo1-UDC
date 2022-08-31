@@ -79,6 +79,8 @@
 # $$
 # ya que la función ``seno'' es continua.
 # 
+# **Nota:** Si sientes curiosidad, anímate y mira el artículo de Luisa Cuadrado y Rafael Crespo, para la Real Sociedad de Matemáticas Española, titulado *Sin levantar el lápiz del papel* sobre el concepto de continuidad. ¡Muy divertidas las ilustraciones con las tuberías de Mario! https://drive.google.com/file/d/1YaWLuzdmRXvRRGpG8GmUffZqKZrnbt6s/view.
+# 
 # ## Continuidad en intervalos
 # 
 # Ahora que ya tenemos bien definida la continuidad puntual, vamos a definir la

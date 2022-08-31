@@ -184,7 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05/README.html">
-   3. Python para Cálculo de una Variable
+   3. Python para cálculo de una Variable
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -574,28 +574,34 @@ los distintos casos que se producen según el signo (positivo o negativo) del in
 <p><strong>Segundo ejercicio:</strong></p>
 <p>Encontrar los puntos <span class="math notranslate nohighlight">\(x\in\mathbb{R}\)</span> tales que <span class="math notranslate nohighlight">\(|x-2|=|5x+1|\)</span>.</p>
 <p>Separamos 4 casos.</p>
-<ol class="simple">
+<ol>
 <li><p><span class="math notranslate nohighlight">\(x-2\geq 0\)</span> (es decir, <span class="math notranslate nohighlight">\(x\geq 2\)</span>) y <span class="math notranslate nohighlight">\(5x+1\geq 0\)</span> (es decir, <span class="math notranslate nohighlight">\(x\geq-\frac{1}{5}\)</span>).
-Uniendo las dos expresiones este caso se reduce a <span class="math notranslate nohighlight">\(x\geq 2\)</span>. La igualdad planteada resulta
-$<span class="math notranslate nohighlight">\(
- |x-2|=|5x+1|\Longleftrightarrow x-2=5x+1\Longleftrightarrow x=-\frac{3}{4}\not\geq 2.
- \)</span>$
-Por lo tanto, la igualdad en este caso es imposible.</p></li>
+Uniendo las dos expresiones este caso se reduce a <span class="math notranslate nohighlight">\(x\geq 2\)</span>. La igualdad planteada resulta</p>
+<div class="math notranslate nohighlight">
+\[
+    |x-2|=|5x+1|\Longleftrightarrow x-2=5x+1\Longleftrightarrow x=-\frac{3}{4}\not\geq 2.
+    \]</div>
+<p>Por lo tanto, la igualdad en este caso es imposible.</p>
+</li>
 <li><p><span class="math notranslate nohighlight">\(x-2&lt;0\)</span> (es decir, <span class="math notranslate nohighlight">\(x&lt;2\)</span>) y <span class="math notranslate nohighlight">\(5x+1\geq 0\)</span> (es decir, <span class="math notranslate nohighlight">\(x\geq-\frac{1}{5}\)</span>).
-Uniendo las dos expresiones este caso se reduce a <span class="math notranslate nohighlight">\(x\in[-\frac{1}{5},2)\)</span>. La igualdad planteada resulta
-$<span class="math notranslate nohighlight">\(
- |x-2|=|5x+1|\Longleftrightarrow 2-x=5x+1\Longleftrightarrow x=\frac{1}{6}.
- \)</span><span class="math notranslate nohighlight">\(
- Como \)</span>\frac{1}{6}\in[-\frac{1}{5},2)$, ya tenemos una solución para nuestra igualdad.</p></li>
+Uniendo las dos expresiones este caso se reduce a <span class="math notranslate nohighlight">\(x\in[-\frac{1}{5},2)\)</span>. La igualdad planteada resulta</p>
+<div class="math notranslate nohighlight">
+\[
+    |x-2|=|5x+1|\Longleftrightarrow 2-x=5x+1\Longleftrightarrow x=\frac{1}{6}.
+    \]</div>
+<p>Como <span class="math notranslate nohighlight">\(\frac{1}{6}\in[-\frac{1}{5},2)\)</span>, ya tenemos una solución para nuestra igualdad.</p>
+</li>
 <li><p><span class="math notranslate nohighlight">\(x-2\geq 0\)</span> (es decir, <span class="math notranslate nohighlight">\(x\geq 2\)</span>) y <span class="math notranslate nohighlight">\(5x+1&lt;0\)</span> (es decir, <span class="math notranslate nohighlight">\(x&lt;-\frac{1}{5}\)</span>).
 Uniendo las dos expresiones observamos que son incompatibles.</p></li>
 <li><p><span class="math notranslate nohighlight">\(x-2&lt;0\)</span> (es decir, <span class="math notranslate nohighlight">\(x&lt;2\)</span>) y <span class="math notranslate nohighlight">\(5x+1&lt; 0\)</span> (es decir, <span class="math notranslate nohighlight">\(x&lt;-\frac{1}{5}\)</span>).
-Uniendo las dos expresiones este caso se reduce a <span class="math notranslate nohighlight">\(x&lt;-\frac{1}{5}\)</span>. La igualdad planteada resulta
-$<span class="math notranslate nohighlight">\(
- |x-2|=|5x+1|\Longleftrightarrow 2-x=-5x-1\Longleftrightarrow x=-\frac{3}{4}.
- \)</span><span class="math notranslate nohighlight">\(
- Como \)</span>-\frac{3}{4}&lt;-\frac{1}{5}$, ya hemos encontrado la  segunda (y última) solución
-para nuestra igualdad.</p></li>
+Uniendo las dos expresiones este caso se reduce a <span class="math notranslate nohighlight">\(x&lt;-\frac{1}{5}\)</span>. La igualdad planteada resulta</p>
+<div class="math notranslate nohighlight">
+\[
+    |x-2|=|5x+1|\Longleftrightarrow 2-x=-5x-1\Longleftrightarrow x=-\frac{3}{4}.
+    \]</div>
+<p>Como <span class="math notranslate nohighlight">\(-\frac{3}{4}&lt;-\frac{1}{5}\)</span>, ya hemos encontrado la  segunda (y última) solución
+para nuestra igualdad.</p>
+</li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
