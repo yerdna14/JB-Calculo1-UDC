@@ -26,6 +26,7 @@ parse:
     - smartquotes
     - substitution
     - tasklist
+    # - fancy_lists
   myst_dmath_double_inline: true
 
 #######################################################################################

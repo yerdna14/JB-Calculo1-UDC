@@ -16,7 +16,7 @@
 
 # Recordemos que lo primero que debemos hacer es importar el módulo **Sympy** para el resto de la práctica:
 
-# In[3]:
+# In[1]:
 
 
 import sympy as sp
@@ -25,13 +25,19 @@ import sympy as sp
 # ## Expresiones y funciones en **Sympy**
 # Hasta ahora hemos usado expresiones matemáticas que se guardaban en objetos del módulo **Sympy**. Sin embargo, todavía no hemos utilizado funcones. Para ver las diferencias entre una expresión y su función asociada vamos a mostrar como evaluar funciones y expresiones en **Sympy** sobre un ejemplo sencillo: la función $f(x) \to x\cos(4x)$:
 
-# In[8]:
+# In[10]:
 
 
 x = sp.symbols('x', real=True) # define la variable simbólica x
 f_expr = x*sp.cos(4*x) # Esto es una expresión
 display(f_expr)
 print('Valor de f_expr(2)=',f_expr.subs({x:2})) # Evaluamos la expresión f con "subs"
+
+y = sp.symbols('y', real=True)
+f2_expr=sp.exp(x**3+1)
+sp.solve(f2_expr-y,x)
+
+sp.solve(sp.Abs(2*x-4)-sp.Abs(x-3))
 
 
 # En el caso de las funciones, la evauación es mucho más sencilla: se hace como en cualquier otra función pre-definida (seno, coseno, exponencial, *etc.*).
@@ -50,6 +56,7 @@ print(f(x)==f_expr)
 # ## Funciones definidas a trozos
 # 
 # Las funciones también pueden definirse a partir de expresiones **a trozos**, teniendo en cuenta distintas expresiones que serán evluadas si se cumplen ciertas condiciones. El módulo **Sympy** irá evaluando cada una de las tuplas que aparecen como argumentos (de izquierda a derecha) hasta encontrar una en la que la condición sea cierta. Por ejemplo: 
+# 
 # $$
 # g\_expr(x,y)=
 # \begin{cases}
@@ -67,6 +74,7 @@ display(g(x,y))
 
 
 # La forma de escritura anterior, pese a ser muy cómoda, tiene muchas limitaciones (por ejemplo, para el cálculo de límites laterales, que veremos un poco más abajo). En general, es más útil definir las funciones a trozos apoyándonos en la función **escalón**, matemáticamente conocida como función de **Heaviside**, $\theta$, que viene dada por
+# 
 # $$
 # \theta(x)=
 # \begin{cases}
@@ -74,7 +82,9 @@ display(g(x,y))
 # 1 & \text{si } t \gt 0.\\
 # \end{cases}
 # $$
+# 
 # Entonces, una función definida por
+# 
 # $$
 # f(x)=
 # \begin{cases}
@@ -82,7 +92,9 @@ display(g(x,y))
 # f_{2}(x) & \text{si } x < 0,
 # \end{cases}
 # $$
+# 
 # se escribiría como
+# 
 # $$
 # f(x) = f_2(x)+(f_1(x)-f_2(x))\theta(x).
 # $$
@@ -192,6 +204,7 @@ sp.limit(F(r*sp.cos(theta), r*sp.sin(theta)),r,0)
 # **Ejercicio 5.2** 
 # 
 # Representa gráficamente la siguiente función y calcula los límites que se indican: 
+# 
 # $$
 # f(x)=
 # \begin{cases}
@@ -199,6 +212,7 @@ sp.limit(F(r*sp.cos(theta), r*sp.sin(theta)),r,0)
 # \frac{x^2}{x+1} & \text{si } x \geq 0,
 # \end{cases}
 # $$
+# 
 # - $\lim_{x\to -1} f(x)$,
 # - $\lim_{x\to 1} f(x)$,
 # - $\lim_{x\to 0^{-}} f(x)$,

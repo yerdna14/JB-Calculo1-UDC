@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.4. Continuidad &#8212; Calculo en una variable</title>
+    <title>2.5. Continuidad &#8212; Calculo en una variable</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.5. Método de dicotomía" href="05.Dicotomia.html" />
-    <link rel="prev" title="2.3. Límites" href="03.Limites.html" />
+    <link rel="next" title="2.6. Método de dicotomía" href="05.Dicotomia.html" />
+    <link rel="prev" title="2.4. Límites" href="03.Limites.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -151,40 +151,45 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
+    <a class="reference internal" href="07.Boletin0.html">
+     2.1. Boletín 0
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="01.IntroduccionFuncionReal.html">
-     2.1. Definiciones básicas
+     2.2. Definiciones básicas
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.FuncionesElementales.html">
-     2.2. Funciones elementales
+     2.3. Funciones elementales
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03.Limites.html">
-     2.3. Límites
+     2.4. Límites
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.4. Continuidad
+     2.5. Continuidad
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.Dicotomia.html">
-     2.5. Método de dicotomía
+     2.6. Método de dicotomía
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06.Lagrange.html">
-     2.6. Polinomio de interpolación de Lagrange
+     2.7. Polinomio de interpolación de Lagrange
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05/README.html">
-   3. Python para cálculo de una Variable
+   3. Python para cálculo de una variable
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -377,17 +382,17 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#continuidad-en-un-punto">
-   2.4.1. Continuidad en un punto
+   2.5.1. Continuidad en un punto
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#continuidad-en-intervalos">
-   2.4.2. Continuidad en intervalos
+   2.5.2. Continuidad en intervalos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#teoremas-de-bolzano-y-weierstrass">
-   2.4.3. Teoremas de Bolzano y Weierstrass
+   2.5.3. Teoremas de Bolzano y Weierstrass
   </a>
  </li>
 </ul>
@@ -411,17 +416,17 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#continuidad-en-un-punto">
-   2.4.1. Continuidad en un punto
+   2.5.1. Continuidad en un punto
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#continuidad-en-intervalos">
-   2.4.2. Continuidad en intervalos
+   2.5.2. Continuidad en intervalos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#teoremas-de-bolzano-y-weierstrass">
-   2.4.3. Teoremas de Bolzano y Weierstrass
+   2.5.3. Teoremas de Bolzano y Weierstrass
   </a>
  </li>
 </ul>
@@ -435,9 +440,9 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="continuidad">
-<h1><span class="section-number">2.4. </span>Continuidad<a class="headerlink" href="#continuidad" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.5. </span>Continuidad<a class="headerlink" href="#continuidad" title="Permalink to this headline">#</a></h1>
 <section id="continuidad-en-un-punto">
-<h2><span class="section-number">2.4.1. </span>Continuidad en un punto<a class="headerlink" href="#continuidad-en-un-punto" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.5.1. </span>Continuidad en un punto<a class="headerlink" href="#continuidad-en-un-punto" title="Permalink to this headline">#</a></h2>
 <p><strong>Definición:</strong>
 Sea <span class="math notranslate nohighlight">\(f:A\subset\mathbb{R}\rightarrow\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(x_0\in A\)</span>. Diremos que <strong><span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\(x_0\)</span></strong>
 si y sólo si existe <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to x_0} f(x)\)</span> y ese límite es <span class="math notranslate nohighlight">\(f(x_0)\)</span>.</p>
@@ -504,7 +509,7 @@ x+\cos^2 x}{e^x+2x}\right),
 <p><strong>Nota:</strong> Si sientes curiosidad, anímate y mira el artículo de Luisa Cuadrado y Rafael Crespo, para la Real Sociedad de Matemáticas Española, titulado <em>Sin levantar el lápiz del papel</em> sobre el concepto de continuidad. ¡Muy divertidas las ilustraciones con las tuberías de Mario! <a class="reference external" href="https://drive.google.com/file/d/1YaWLuzdmRXvRRGpG8GmUffZqKZrnbt6s/view">https://drive.google.com/file/d/1YaWLuzdmRXvRRGpG8GmUffZqKZrnbt6s/view</a>.</p>
 </section>
 <section id="continuidad-en-intervalos">
-<h2><span class="section-number">2.4.2. </span>Continuidad en intervalos<a class="headerlink" href="#continuidad-en-intervalos" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.5.2. </span>Continuidad en intervalos<a class="headerlink" href="#continuidad-en-intervalos" title="Permalink to this headline">#</a></h2>
 <p>Ahora que ya tenemos bien definida la continuidad puntual, vamos a definir la
 <strong>continuidad en intervalos</strong>, tanto abiertos como cerrados.</p>
 <p><strong>Definición:</strong>
@@ -522,7 +527,7 @@ Sea <span class="math notranslate nohighlight">\(f:A\subset\mathbb{R}\rightarrow
 <span class="math notranslate nohighlight">\(f(x_0)=0\)</span>.</p>
 </section>
 <section id="teoremas-de-bolzano-y-weierstrass">
-<h2><span class="section-number">2.4.3. </span>Teoremas de Bolzano y Weierstrass<a class="headerlink" href="#teoremas-de-bolzano-y-weierstrass" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.5.3. </span>Teoremas de Bolzano y Weierstrass<a class="headerlink" href="#teoremas-de-bolzano-y-weierstrass" title="Permalink to this headline">#</a></h2>
 <p><strong>Teorema de Bolzano:</strong>
 Sea <span class="math notranslate nohighlight">\(f:[a,b]\rightarrow\mathbb{R}\)</span> una función continua en <span class="math notranslate nohighlight">\([a,b]\)</span> tal que <span class="math notranslate nohighlight">\(f(a)f(b)&lt;0\)</span>.
 Entonces existe <span class="math notranslate nohighlight">\(x_0\in(a,b)\)</span> tal que <span class="math notranslate nohighlight">\(f(x_0)=0\)</span>.</p>
@@ -575,13 +580,13 @@ Sea <span class="math notranslate nohighlight">\(f:[a,b]\rightarrow\mathbb{R}\)<
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.3. </span>Límites</p>
+            <p class="prev-next-title"><span class="section-number">2.4. </span>Límites</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="05.Dicotomia.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.5. </span>Método de dicotomía</p>
+        <p class="prev-next-title"><span class="section-number">2.6. </span>Método de dicotomía</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

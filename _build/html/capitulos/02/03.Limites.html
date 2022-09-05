@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.3. Límites &#8212; Calculo en una variable</title>
+    <title>2.4. Límites &#8212; Calculo en una variable</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.4. Continuidad" href="04.Continuidad.html" />
-    <link rel="prev" title="2.2. Funciones elementales" href="02.FuncionesElementales.html" />
+    <link rel="next" title="2.5. Continuidad" href="04.Continuidad.html" />
+    <link rel="prev" title="2.3. Funciones elementales" href="02.FuncionesElementales.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -151,40 +151,45 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
+    <a class="reference internal" href="07.Boletin0.html">
+     2.1. Boletín 0
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="01.IntroduccionFuncionReal.html">
-     2.1. Definiciones básicas
+     2.2. Definiciones básicas
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.FuncionesElementales.html">
-     2.2. Funciones elementales
+     2.3. Funciones elementales
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.3. Límites
+     2.4. Límites
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.Continuidad.html">
-     2.4. Continuidad
+     2.5. Continuidad
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.Dicotomia.html">
-     2.5. Método de dicotomía
+     2.6. Método de dicotomía
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06.Lagrange.html">
-     2.6. Polinomio de interpolación de Lagrange
+     2.7. Polinomio de interpolación de Lagrange
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05/README.html">
-   3. Python para cálculo de una Variable
+   3. Python para cálculo de una variable
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -377,22 +382,22 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definicion-de-limite">
-   2.3.1. Definición de límite
+   2.4.1. Definición de límite
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#limites-laterales">
-   2.3.2. Límites laterales
+   2.4.2. Límites laterales
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#limites-infinitos-y-en-el-infinito">
-   2.3.3. Límites infinitos y en el infinito
+   2.4.3. Límites infinitos y en el infinito
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#asintotas">
-   2.3.4. Asíntotas
+   2.4.4. Asíntotas
   </a>
  </li>
 </ul>
@@ -416,22 +421,22 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definicion-de-limite">
-   2.3.1. Definición de límite
+   2.4.1. Definición de límite
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#limites-laterales">
-   2.3.2. Límites laterales
+   2.4.2. Límites laterales
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#limites-infinitos-y-en-el-infinito">
-   2.3.3. Límites infinitos y en el infinito
+   2.4.3. Límites infinitos y en el infinito
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#asintotas">
-   2.3.4. Asíntotas
+   2.4.4. Asíntotas
   </a>
  </li>
 </ul>
@@ -445,9 +450,9 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="limites">
-<h1><span class="section-number">2.3. </span>Límites<a class="headerlink" href="#limites" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.4. </span>Límites<a class="headerlink" href="#limites" title="Permalink to this headline">#</a></h1>
 <section id="definicion-de-limite">
-<h2><span class="section-number">2.3.1. </span>Definición de límite<a class="headerlink" href="#definicion-de-limite" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.4.1. </span>Definición de límite<a class="headerlink" href="#definicion-de-limite" title="Permalink to this headline">#</a></h2>
 <p>La definición formal de límite fue un paso adelante gigantesco en la matemática finalizado en el siglo XIX. Es el concepto más importante en el cálculo, ya que prácticamente en todas las demás definiciones (continuidad, derivadas, integral de Riemann, series, etc.) aparece algún límite.</p>
 <p>El concepto de límite expresa la tendencia de una función cuando su variable se
 aproxima a un cierto valor. Newton ya lo formulaba en 1666 diciendo que la idea
@@ -545,7 +550,7 @@ finito en <span class="math notranslate nohighlight">\(x_0\)</span>. Entonces</p
 </ol>
 </section>
 <section id="limites-laterales">
-<h2><span class="section-number">2.3.2. </span>Límites laterales<a class="headerlink" href="#limites-laterales" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.4.2. </span>Límites laterales<a class="headerlink" href="#limites-laterales" title="Permalink to this headline">#</a></h2>
 <p>Ahora ya podemos definir los límites laterales. La idea es la misma que acabamos de
 mostrar, pero ahora elegimos <span class="math notranslate nohighlight">\(x\)</span> que estén o bien a la derecha de <span class="math notranslate nohighlight">\(x_0\)</span> o bien a su
 izquierda. Entonces el valor absoluto de <span class="math notranslate nohighlight">\(|x-x_0|\)</span> desaparece. El que no puede desaparecer
@@ -581,7 +586,7 @@ uno de ellos o existen los dos pero no coinciden, la función no tiene límite e
 punto.</p>
 </section>
 <section id="limites-infinitos-y-en-el-infinito">
-<h2><span class="section-number">2.3.3. </span>Límites infinitos y en el infinito<a class="headerlink" href="#limites-infinitos-y-en-el-infinito" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.4.3. </span>Límites infinitos y en el infinito<a class="headerlink" href="#limites-infinitos-y-en-el-infinito" title="Permalink to this headline">#</a></h2>
 <p>Vamos ahora a ver algunas definiciones de límites, cuando alguno de los parámetros es
 <span class="math notranslate nohighlight">\(\infty\)</span>.</p>
 <p><strong>Definición (Límites infinitos)</strong></p>
@@ -598,7 +603,7 @@ punto.</p>
 <a class="reference internal image-reference" href="../../_images/cap3_definicion_limite_en_infinito.png"><img alt="../../_images/cap3_definicion_limite_en_infinito.png" src="../../_images/cap3_definicion_limite_en_infinito.png" style="width: 300px;" /></a>
 </section>
 <section id="asintotas">
-<h2><span class="section-number">2.3.4. </span>Asíntotas<a class="headerlink" href="#asintotas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.4.4. </span>Asíntotas<a class="headerlink" href="#asintotas" title="Permalink to this headline">#</a></h2>
 <p>Vamos a recordar ahora el cálculo de asíntotas para una función.</p>
 <p><strong>Definición:</strong> Sea <span class="math notranslate nohighlight">\(f:\mathbb{R}\rightarrow\mathbb{R}\)</span>.</p>
 <ul>
@@ -675,13 +680,13 @@ función no tiene asíntotas oblicuas.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.2. </span>Funciones elementales</p>
+            <p class="prev-next-title"><span class="section-number">2.3. </span>Funciones elementales</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="04.Continuidad.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>Continuidad</p>
+        <p class="prev-next-title"><span class="section-number">2.5. </span>Continuidad</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

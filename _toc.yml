@@ -14,20 +14,23 @@ chapters:
 - file: capitulos/02/README
   title: Funciones reales de variable real
   sections: 
-   - file: capitulos/02/01.IntroduccionFuncionReal
+   - file: capitulos/02/01.Boletin0
+     title: Boletín 0 
+   - file: capitulos/02/02.IntroduccionFuncionReal
      title: Definiciones básicas 
-   - file: capitulos/02/02.FuncionesElementales
+   - file: capitulos/02/03.FuncionesElementales
      title: Funciones elementales 
-   - file: capitulos/02/03.Limites
+   - file: capitulos/02/04.Limites
      title: Límites
-   - file: capitulos/02/04.Continuidad
+   - file: capitulos/02/05.Continuidad
      title: Continuidad
-   - file: capitulos/02/05.Dicotomia
+   - file: capitulos/02/06.Dicotomia
      title: Método de dicotomía
-   - file: capitulos/02/06.Lagrange
+   - file: capitulos/02/07.Lagrange
      title: Polinomio de interpolación de Lagrange
+   
 - file: capitulos/05/README
-  title: Python para cálculo de una Variable
+  title: Python para cálculo de una variable
   sections:
     - file: capitulos/05/01.IntroduccionSympy
       title: Introducción a SymPy

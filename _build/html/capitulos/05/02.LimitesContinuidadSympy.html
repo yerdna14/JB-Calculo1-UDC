@@ -151,40 +151,45 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02/01.IntroduccionFuncionReal.html">
-     2.1. Definiciones básicas
+    <a class="reference internal" href="../02/01.Boletin0.html">
+     2.1. Boletín 0
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02/02.FuncionesElementales.html">
-     2.2. Funciones elementales
+    <a class="reference internal" href="../02/02.IntroduccionFuncionReal.html">
+     2.2. Definiciones básicas
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02/03.Limites.html">
-     2.3. Límites
+    <a class="reference internal" href="../02/03.FuncionesElementales.html">
+     2.3. Funciones elementales
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02/04.Continuidad.html">
-     2.4. Continuidad
+    <a class="reference internal" href="../02/04.Limites.html">
+     2.4. Límites
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02/05.Dicotomia.html">
-     2.5. Método de dicotomía
+    <a class="reference internal" href="../02/05.Continuidad.html">
+     2.5. Continuidad
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02/06.Lagrange.html">
-     2.6. Polinomio de interpolación de Lagrange
+    <a class="reference internal" href="../02/06.Dicotomia.html">
+     2.6. Método de dicotomía
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/07.Lagrange.html">
+     2.7. Polinomio de interpolación de Lagrange
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="README.html">
-   3. Python para cálculo de una Variable
+   3. Python para cálculo de una variable
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -489,13 +494,22 @@ Como veremos en esta práctica, también podremos calcular límites en una varia
 <span class="n">f_expr</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Esto es una expresión</span>
 <span class="n">display</span><span class="p">(</span><span class="n">f_expr</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Valor de f_expr(2)=&#39;</span><span class="p">,</span><span class="n">f_expr</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">x</span><span class="p">:</span><span class="mi">2</span><span class="p">}))</span> <span class="c1"># Evaluamos la expresión f con &quot;subs&quot;</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">f2_expr</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f2_expr</span><span class="o">-</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle x \cos{\left(4 x \right)}\]</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valor de f(2)= 2*cos(8)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valor de f_expr(2)= 2*cos(8)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 7/3]
 </pre></div>
 </div>
 </div>
@@ -523,14 +537,15 @@ True
 </section>
 <section id="funciones-definidas-a-trozos">
 <h2><span class="section-number">3.2.2. </span>Funciones definidas a trozos<a class="headerlink" href="#funciones-definidas-a-trozos" title="Permalink to this headline">#</a></h2>
-<p>Las funciones también pueden definirse a partir de expresiones <strong>a trozos</strong>, teniendo en cuenta distintas expresiones que serán evluadas si se cumplen ciertas condiciones. El módulo <strong>Sympy</strong> irá evaluando cada una de las tuplas que aparecen como argumentos (de izquierda a derecha) hasta encontrar una en la que la condición sea cierta. Por ejemplo:
-$<span class="math notranslate nohighlight">\(
+<p>Las funciones también pueden definirse a partir de expresiones <strong>a trozos</strong>, teniendo en cuenta distintas expresiones que serán evluadas si se cumplen ciertas condiciones. El módulo <strong>Sympy</strong> irá evaluando cada una de las tuplas que aparecen como argumentos (de izquierda a derecha) hasta encontrar una en la que la condición sea cierta. Por ejemplo:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 g\_expr(x,y)=
 \begin{cases}
 \dfrac{1}{x} &amp; \text{si } x&gt;0,\\
 1 &amp; \text{si } x \le 0.
 \end{cases}
-\)</span>$</p>
+\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_expr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">((</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
@@ -544,26 +559,29 @@ g\_expr(x,y)=
 \[\begin{split}\displaystyle \begin{cases} \frac{1}{x} &amp; \text{for}\: x &gt; 0 \\1 &amp; \text{otherwise} \end{cases}\end{split}\]</div>
 </div>
 </div>
-<p>La forma de escritura anterior, pese a ser muy cómoda, tiene muchas limitaciones (por ejemplo, para el cálculo de límites laterales, que veremos un poco más abajo). En general, es más útil definir las funciones a trozos apoyándonos en la función <strong>escalón</strong>, matemáticamente conocida como función de <strong>Heaviside</strong>, <span class="math notranslate nohighlight">\(\theta\)</span>, que viene dada por
-$<span class="math notranslate nohighlight">\(
+<p>La forma de escritura anterior, pese a ser muy cómoda, tiene muchas limitaciones (por ejemplo, para el cálculo de límites laterales, que veremos un poco más abajo). En general, es más útil definir las funciones a trozos apoyándonos en la función <strong>escalón</strong>, matemáticamente conocida como función de <strong>Heaviside</strong>, <span class="math notranslate nohighlight">\(\theta\)</span>, que viene dada por</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \theta(x)=
 \begin{cases}
 0 &amp; \text{si } t \le 0,\\
 1 &amp; \text{si } t \gt 0.\\
 \end{cases}
-\)</span><span class="math notranslate nohighlight">\(
-Entonces, una función definida por
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Entonces, una función definida por</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 f(x)=
 \begin{cases}
 f_1(x) &amp; \text{si } x&gt;0,\\
 f_{2}(x) &amp; \text{si } x &lt; 0,
 \end{cases}
-\)</span><span class="math notranslate nohighlight">\(
-se escribiría como
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>se escribiría como</p>
+<div class="math notranslate nohighlight">
+\[
 f(x) = f_2(x)+(f_1(x)-f_2(x))\theta(x).
-\)</span>$</p>
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definición de la función</span>
@@ -718,14 +736,15 @@ En este caso, la definición mediante <code class="docutils literal notranslate"
 </div>
 </div>
 <p><strong>Ejercicio 5.2</strong></p>
-<p>Representa gráficamente la siguiente función y calcula los límites que se indican:
-$<span class="math notranslate nohighlight">\(
+<p>Representa gráficamente la siguiente función y calcula los límites que se indican:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 f(x)=
 \begin{cases}
 \cos(x) &amp; \text{si } x&lt;0,\\
 \frac{x^2}{x+1} &amp; \text{si } x \geq 0,
 \end{cases}
-\)</span>$</p>
+\end{split}\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\lim_{x\to -1} f(x)\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\lim_{x\to 1} f(x)\)</span>,</p></li>

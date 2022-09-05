@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.5. Método de dicotomía &#8212; Calculo en una variable</title>
+    <title>2.6. Método de dicotomía &#8212; Calculo en una variable</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.6. Polinomio de interpolación de Lagrange" href="06.Lagrange.html" />
-    <link rel="prev" title="2.4. Continuidad" href="04.Continuidad.html" />
+    <link rel="next" title="2.7. Polinomio de interpolación de Lagrange" href="06.Lagrange.html" />
+    <link rel="prev" title="2.5. Continuidad" href="04.Continuidad.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -151,40 +151,45 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
+    <a class="reference internal" href="07.Boletin0.html">
+     2.1. Boletín 0
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="01.IntroduccionFuncionReal.html">
-     2.1. Definiciones básicas
+     2.2. Definiciones básicas
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.FuncionesElementales.html">
-     2.2. Funciones elementales
+     2.3. Funciones elementales
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03.Limites.html">
-     2.3. Límites
+     2.4. Límites
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.Continuidad.html">
-     2.4. Continuidad
+     2.5. Continuidad
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.5. Método de dicotomía
+     2.6. Método de dicotomía
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06.Lagrange.html">
-     2.6. Polinomio de interpolación de Lagrange
+     2.7. Polinomio de interpolación de Lagrange
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05/README.html">
-   3. Python para cálculo de una Variable
+   3. Python para cálculo de una variable
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -377,22 +382,22 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#algoritmo">
-   2.5.1. Algoritmo
+   2.6.1. Algoritmo
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#links-para-ampliar">
-   2.5.2. Links para ampliar
+   2.6.2. Links para ampliar
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicio-para-que-hagais">
-   2.5.3. Ejercicio para que hagáis
+   2.6.3. Ejercicio para que hagáis
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios-para-practicar-un-poco-mas">
-   2.5.4. Ejercicios para practicar un poco más
+   2.6.4. Ejercicios para practicar un poco más
   </a>
  </li>
 </ul>
@@ -416,22 +421,22 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#algoritmo">
-   2.5.1. Algoritmo
+   2.6.1. Algoritmo
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#links-para-ampliar">
-   2.5.2. Links para ampliar
+   2.6.2. Links para ampliar
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicio-para-que-hagais">
-   2.5.3. Ejercicio para que hagáis
+   2.6.3. Ejercicio para que hagáis
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios-para-practicar-un-poco-mas">
-   2.5.4. Ejercicios para practicar un poco más
+   2.6.4. Ejercicios para practicar un poco más
   </a>
  </li>
 </ul>
@@ -445,9 +450,9 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="metodo-de-dicotomia">
-<h1><span class="section-number">2.5. </span>Método de dicotomía<a class="headerlink" href="#metodo-de-dicotomia" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.6. </span>Método de dicotomía<a class="headerlink" href="#metodo-de-dicotomia" title="Permalink to this headline">#</a></h1>
 <section id="algoritmo">
-<h2><span class="section-number">2.5.1. </span>Algoritmo<a class="headerlink" href="#algoritmo" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.6.1. </span>Algoritmo<a class="headerlink" href="#algoritmo" title="Permalink to this headline">#</a></h2>
 <p>Consideramos una función <span class="math notranslate nohighlight">\(f:[a,b]\rightarrow\mathbb{R}\)</span>, continua en <span class="math notranslate nohighlight">\([a,b]\)</span>, con <span class="math notranslate nohighlight">\(f(a)\,f(b)&lt;0\)</span>.</p>
 <p>Es decir, estamos considerando una funicón que cumple las hipótesis del Teorema de Bolzano, por lo que ya sabemos que existe una raíz para <span class="math notranslate nohighlight">\(f\)</span> en el intervalo <span class="math notranslate nohighlight">\([a,b]\)</span>.
 Una vez que sabemos que existe raíz el siguiente paso sería calcularla. Esto no siempre es sencillo (casi nunca, de hecho), y en algunos casos es directamente imposible.
@@ -609,7 +614,7 @@ Aproximación de la raíz:  1.5707855224609375
 </div>
 </section>
 <section id="links-para-ampliar">
-<h2><span class="section-number">2.5.2. </span>Links para ampliar<a class="headerlink" href="#links-para-ampliar" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.6.2. </span>Links para ampliar<a class="headerlink" href="#links-para-ampliar" title="Permalink to this headline">#</a></h2>
 <p>En el caso de que no nos hayáis entendido, o queráis ampliar vuestro conocimiento consultando, por ejemplo, la demostración de este último teorema, podéis mirar los siguientes links (la versión española de la Wikipedia, en este caso, está bastante bien, pero creemos que el algoritmo está mejor escrito en la versión inglesa, por eso incluimos ambas):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pythonnumericalmethods.berkeley.edu/notebooks/chapter19.03-Bisection-Method.html">https://pythonnumericalmethods.berkeley.edu/notebooks/chapter19.03-Bisection-Method.html</a></p></li>
@@ -618,7 +623,7 @@ Aproximación de la raíz:  1.5707855224609375
 </ul>
 </section>
 <section id="ejercicio-para-que-hagais">
-<h2><span class="section-number">2.5.3. </span>Ejercicio para que hagáis<a class="headerlink" href="#ejercicio-para-que-hagais" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.6.3. </span>Ejercicio para que hagáis<a class="headerlink" href="#ejercicio-para-que-hagais" title="Permalink to this headline">#</a></h2>
 <p>Utiliza el método de dicotomía para aproximar la raíz de la función <span class="math notranslate nohighlight">\(f(x) = \ln\left(\tan(x)\right)\)</span> en el intervalo <span class="math notranslate nohighlight">\([0.1,1]\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -629,7 +634,7 @@ Aproximación de la raíz:  1.5707855224609375
 </div>
 </section>
 <section id="ejercicios-para-practicar-un-poco-mas">
-<h2><span class="section-number">2.5.4. </span>Ejercicios para practicar un poco más<a class="headerlink" href="#ejercicios-para-practicar-un-poco-mas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.6.4. </span>Ejercicios para practicar un poco más<a class="headerlink" href="#ejercicios-para-practicar-un-poco-mas" title="Permalink to this headline">#</a></h2>
 <p>Para practicar un poco sobre lo que se explica en este tema os recomendamos los siguientes ejercicios del
 maravilloso blog <a class="reference external" href="https://existelimite.blogspot.com/">https://existelimite.blogspot.com/</a>, aunque es posible que en ellos encuentres algunas cosas (sobre la unicidad de raíces con el Teorema de Rolle, sobre todo), que aún no os hayamos contado:</p>
 <ul class="simple">
@@ -671,13 +676,13 @@ maravilloso blog <a class="reference external" href="https://existelimite.blogsp
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.4. </span>Continuidad</p>
+            <p class="prev-next-title"><span class="section-number">2.5. </span>Continuidad</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="06.Lagrange.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.6. </span>Polinomio de interpolación de Lagrange</p>
+        <p class="prev-next-title"><span class="section-number">2.7. </span>Polinomio de interpolación de Lagrange</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

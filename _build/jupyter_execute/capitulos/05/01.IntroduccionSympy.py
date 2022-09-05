@@ -29,7 +29,7 @@
 # 
 # Para hacer que esté disponible el módulo **SymPy**, hay que instalarlo usando la herramienta `pip` (o `conda`, si trabajáis en entornos de trabajo diferenciados). Para el uso de *Microsoft Azute Notebooks* (https://notebooks.azure.com/), se utiliza la siguiente instalación:
 
-# In[2]:
+# In[1]:
 
 
 get_ipython().system('pip -q install sympy')
@@ -37,7 +37,7 @@ get_ipython().system('pip -q install sympy')
 
 # Para disponer del módulo **SymPy** e importarlo para el resto del guión de prácticas, usaremos:
 
-# In[2]:
+# In[1]:
 
 
 import sympy as sp
@@ -195,7 +195,23 @@ sp.pprint(expr)
 print(expr_simple)
 
 
-# Dada una expresión en **SymPy**, también se pode manipularla, sustituyendo unas variables simbólicas por otras o, incluso, reemplazando las variables simbólicas por constantes. Para hacer este tipo de sustituciones se utiliza la función `subs` y los valores a utilizar en la sustitución vienen definidos por un diccionario de Python:
+# Dada una expresión en **Sympy**, podemos plantear y resolver una ecuación con la misma utilizando la función `solve`, que entiende que la expresión se iguala a 0 (es decir, debemos pasar todo al primer miembro). Por ejemplo, si queremos resolver $e^{x+1}=5$ debemos pensar en $e^{x+1}-5=0$ y, entonces,
+
+# In[16]:
+
+
+x = sp.Symbol('x', real = True)
+expr = sp.exp(x+1)-5
+solucion = sp.solve(expr,x)
+print("Queremos resolver la ecuación exp(x+1)=5")
+print("Solución: ", solucion)
+# Nota: en casos sencillos, como este, podríamos escribir directamente
+# solucion = sp.solve(sp.exp(x+1)-5,x)
+
+
+# 
+
+# Dada una expresión en **SymPy**, también se puede manipularla, sustituyendo unas variables simbólicas por otras o, incluso, reemplazando las variables simbólicas por constantes. Para hacer este tipo de sustituciones se utiliza la función `subs` y los valores a utilizar en la sustitución vienen definidos por un diccionario de Python:
 
 # In[12]:
 
