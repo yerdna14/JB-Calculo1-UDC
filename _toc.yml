@@ -28,6 +28,8 @@ chapters:
      title: Método de dicotomía
    - file: capitulos/02/07.Lagrange
      title: Polinomio de interpolación de Lagrange
+   - file: capitulos/02/08.Boletin1
+     title: Boletín 1
    
 - file: capitulos/05/README
   title: Python para cálculo de una variable
