@@ -17,7 +17,7 @@
 # \end{array}\right.
 # $$
 
-# In[41]:
+# In[6]:
 
 
 import sympy as sp
@@ -33,7 +33,11 @@ p.show()
 
 # Veamos las principales propiedades de esta función:
 # 
-# **Propiedad:** Sean $x,y\in\mathbb{R}$. Se verifica
+# ````{prf:property} 
+# :label: prop_valor_abs
+# :nonumber: 
+# 
+# Sean $x,y\in\mathbb{R}$. Se verifica
 # 
 # 1. $|x|\geq 0$, $\forall x\in\mathbb{R}$.
 #     Además, $|x|=0\Longleftrightarrow x=0$,
@@ -43,14 +47,21 @@ p.show()
 # 5. $|x-y|\geq \left| |x|-|y|\right|$,
 # 6. $|xy|=|x||y|,\quad$ $\displaystyle\left|\frac{x}{y}\right|=\frac{|x|}{|y|}$.
 # 
+# ````
+# 
 # Destaquemos que el valor absoluto mide la distancia entre dos puntos de la recta real.
 # Basta hacer el valor absoluto de su resta. Lo incluimos como una definición.
 # 
-# **Definición:** Sean $x$, $y\in\mathbb{R}$. Definimos la **distancia** entre estos dos puntos como 
+# ````{prf:definition} Distancia entre dos puntos
+# :label: def_distancia
+# :nonumber: 
+# 
+# Sean $x$, $y\in\mathbb{R}$. Definimos la **distancia** entre estos dos puntos como 
 # 
 # $$
 # d(x,y):=|x-y|.
 # $$
+# ````
 # 
 # Veamos algún ejercicio donde intervenga el valor absoluto. Antes de comenzarlos conviene
 # recordar siempre que cuando nos enfrentemos a un valor absoluto debemos separar
@@ -84,9 +95,8 @@ p.show()
 # 
 # Uniendo los dos casos obtenemos que $|x-2|<1\Longleftrightarrow x\in(1,3)$, como podemos representar gráficamente:
 # 
-# 
 
-# In[42]:
+# In[7]:
 
 
 p = sp.plot(sp.Abs(x-2), 1, (x, -1, 4), show=False)
@@ -135,7 +145,7 @@ p.show()
 #     Como $-\frac{3}{4}<-\frac{1}{5}$, ya hemos encontrado la  segunda (y última) solución
 #     para nuestra igualdad.
 
-# In[43]:
+# In[8]:
 
 
 p = sp.plot(sp.Abs(x-2), sp.Abs(5*x+1), (x, -1, 3), show=False)
@@ -188,11 +198,16 @@ p.show()
 # 
 # ## Función exponencial
 # 
+# ````{prf:definition} Función exponencial
+# :label: def_exp
+# :nonumber: 
+# 
 # Sea $a>0$. Definimos la **función exponencial de base $a$** como 
 # 
 # $$
 # f(x)=a^x.
 # $$
+# ````
 # 
 # Un caso especial (y poco interesante) es cuando $a=1$. En este caso $f(x)=1^x$ es la función constantemente igual a $1$. 
 # 
@@ -227,13 +242,16 @@ p.show()
 # Algunas propiedades generales para la función exponencial y que es fundamental recordar
 # y saber aplicar bien son
 # 
-# **Propiedad:**
+# ````{prf:property} Propiedades aritméticas de la exponencial
+# :label: prop_alg_exp
+# :nonumber: 
 # 
 # 1. $a^{x+y}=a^x a^y,\qquad\forall x,y\in\mathbb{R}$,
 # 2. $\left(a^x\right)^y=a^{xy},\qquad\forall x,y\in\mathbb{R}$,
 # 3. $\displaystyle a^{-x}=\frac{1}{a^x}\qquad\forall x\in\mathbb{R}$ (consecuencia de la anterior propiedad).
+# ````
 
-# In[44]:
+# In[24]:
 
 
 p = sp.plot(sp.exp(x), 2**x, 0.5**x, (x, -3, 3), show=False)
@@ -246,27 +264,103 @@ p.legend=True
 p.show()
 
 
+# ## Función logarítmica
+# 
+# 
+# ````{prf:definition} Función logarítmica
+# :label: def_log
+# :nonumber: 
+# 
+# Dado $a>0$, $a\not=1$, se dice que $y$ es el **logaritmo en base $a$** de $x$ si $a^y=x$,
+# 
+# $$
+# y=\log_a(x) :\Leftrightarrow a^y=x.
+# $$
+# 
+# La función $\log_a$ es la función inversa de la exponencial de base $a$.
+# ````
+# 
+# Precisamente, por haber definido el logaritmo como la función inversa de la exponencial, podemos comprobar inmediatamente que, 
+# para cualquier valor de $a>0$, $a\not=1$,
+# 
+# * $\mathrm{Dom}(\log_a) \, =\, (0,+\infty)$,
+# * $\mathrm{Im}(\log_a) \, = \, \mathbb{R}$,
+# * $\log_a(1)=0$. 
+# 
+# 
+# ````{prf:property} Propiedades aritméticas de los logaritmos
+# :label: prop_alg_log
+# :nonumber: 
+# 
+# 1. $\log_{a}(xy)=\log_{a}(x)+\log_{a}(y),\qquad\forall x,y>0$,
+# 2. $\log_{a}\left(x^y\right)=y\log_{a}(x),\qquad\forall x>0,\quad\forall y\in\mathbb{R}$,
+# 3. $\log_{a}\left(\frac{x}{y}\right)=\log_{a}(x)-\log_{a}(y) \qquad\forall x,y>0$.
+# ````
+# 
+# Para la función logaritmo, al igual que en la exponencial, hay que diferenciar dos casos, según la base, $a$, sea menor o mayor que $1$:
+# 
+# 1. $a\in(0,1)$. En este caso la función logaritmo es estrictamente decereciente. Además,
+#    
+#    a. $\displaystyle\lim_{x\to 0^{+}}\log_a(x)=+\infty$,
+# 
+#    b. $\displaystyle\lim_{x\to+\infty}\log_a(x)=-\infty$.
+# 
+# 2. $a > 1$. En este caso la función logaritmo es estrictamente creciente. Se cumple que
+#   
+#    a. $\displaystyle\lim_{x\to 0^{+}}\log_a(x)=-\infty$,
+# 
+#    b. $\displaystyle\lim_{x\to+\infty}\log_a(x)=+\infty$.
+# 
+# Debemos destacar que este segundo caso es, con mucho, el más importante en la práctica, porque incluye la función logarítmica más importante: el **logaritmo neperiano**,
+# también llamado *logaritmo natural*, que es el que tiene por base el número $e$ (el número de Néper o Napier, si tienes curiosidad, aquí puedes saber algo más de este matemático: https://es.wikipedia.org/wiki/John_Napier). 
+# 
+# Por convenio (casi) universal (y olvidando lo que os hayan contado en Bachillerato), **siempre consideraremos que $\log$ hace referencia al logaritmo neperiano**, 
+# es decir: $\log(x)=\ln(x)=\log_{e}(x)$.  Si queremos escribir un logaritmo con una base distinta (incluida la base 10) lo escribiremos explicitamente. 
+# 
+# Fijaos, por ejemplo, en la sintaxis en **SymPy**: `sp.log(x)` es el logaritmo neperiano. Si queremos el logaritmo en otra base, debemos especificarla a continuación: `sp.log(x,10)`, por ejemplo.
+# 
+
+# In[22]:
+
+
+p = sp.plot(sp.log(x), sp.log(x,10), sp.log(x,sp.S(1)/sp.S(2)), (x, 0.001, 3), show=False)
+p[0].line_color='r'
+p[1].line_color='b'
+p[2].line_color='g'
+p.xlabel='x'
+p.ylabel='y'
+p.legend=True
+p.show()
+
+
 # ## Funciones trigonométricas
 # 
-# **Función seno**
-# 
-# Tanto esta función como su *hermana*, la función coseno, son ampliamente utilizadas para representar movimientos oscilatorios, ondas, intensidades de corriente alternas, etc.
+# ````{prf:definition} Función seno
+# :label: def_seno
+# :nonumber: 
 # 
 # La función $f(x)=\sin(x)$, verifica
 # * su dominio es todo $\mathbb{R}$,
 # * su imagen es $[-1,1]$,
 # * es una función impar,
 # * es una función periódica con período $2\pi$.
+# ````
 # 
-# **Función coseno**
+# ````{prf:definition} Función coseno
+# :label: def_coseno
+# :nonumber: 
 # 
 # La función $f(x)=\cos(x)$, verifica
 # * su dominio es todo $\mathbb{R}$,
 # * su imagen es $[-1,1]$,
 # *  es una función par,
 # * es una función periódica con período $2\pi$.
+# ````
+# 
+# Tanto esta función como su *hermana*, la función coseno, son ampliamente utilizadas para representar movimientos oscilatorios, ondas, intensidades de corriente alternas, etc.
+# 
 
-# In[49]:
+# In[11]:
 
 
 A = 2*sp.pi
@@ -290,14 +384,20 @@ p.show()
 # 
 # De éstas, vamos a destacar tres:
 # 
-# **Propiedad:**
+# ````{prf:property}
+# :label: prop_seno_cos
+# :nonumber: 
 # 1. $\displaystyle \sin^2(x) + \cos^2(x) = 1$, $\forall x\in\mathbb{R}$,
 # 2. $\displaystyle \sin(x+y)=\sin(x)\cos(y)+\cos(x)\sin(y)$, $\forall x,y\in\mathbb{R}$,
 # 3. $\displaystyle \cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y)$, $\forall x,y\in\mathbb{R}$.
+# ````
 # 
-# **Función tangente**
+# ````{prf:definition} Función tangente
+# :label: def_tangente
+# :nonumber: 
 # 
 # Definimos la función tangente como $\displaystyle \tan(x):=\frac{\sin(x)}{\cos(x)}$.
+# ````
 # 
 # El dominio de esta función lo forman todos los puntos de $\mathbb{R}$ en los que el coseno no se anule, es decir,
 # 
@@ -308,7 +408,7 @@ p.show()
 # mientras que su imagen es todo $\mathbb{R}$. Además, es una función impar y periódica, con
 # período $\pi$.
 
-# In[64]:
+# In[12]:
 
 
 p = sp.plot(sp.tan(x), (x, -1.50, 1.50), show=False)
@@ -328,7 +428,9 @@ p.show()
 
 # ## Funciones trigonométricas inversas
 # 
-# **Función arco-seno**
+# ````{prf:definition} Función arco-seno
+# :label: def_acos
+# :nonumber: 
 # 
 # Es la inversa de la función seno. Como ésta no es una función inyectiva,
 # restringimos su dominio, quedándonos con el seno definido sólo en el intervalo
@@ -339,11 +441,12 @@ p.show()
 # $x=\sin(y)$, como se muestra en la siguiente figura:
 # 
 # <img src="../../images/cap3_funcion_asin.png" width="300"/>
+# ````
 # 
 # Por tanto la función $\text{arcsin}(x)$ tiene como dominio el intervalo $[-1,1]$ y como imagen
 # el $[-\frac{\pi}{2},\frac{\pi}{2}]$. Es una función impar. 
 
-# In[66]:
+# In[13]:
 
 
 p = sp.plot(sp.asin(x), (x, -1.0, 1.0), show=False)
@@ -354,17 +457,22 @@ p.legend=True
 p.show()
 
 
-# **Función arco-coseno**
+# ````{prf:definition} Función arco-coseno
+# :label: def_acos
+# :nonumber: 
 # 
 # Es la inversa de la función coseno. En este caso, restringimos el dominio para quedarnos
 # con el coseno definido en el intervalo $[0,\pi]$.
 # 
 # Definimos entonces la función arco-coseno, $\text{arccos}(x)$, como la función que, dado un
 # $x\in[-1,1]$, le asocia el único $y$ en $[0,\pi]$ tal que $x=\cos(y)$. 
+# ````
 # 
 # <img src="../../images/cap3_funcion_acos.png" width="300"/>
 # 
-# **Función arco-tangente**
+# ````{prf:definition} Función arco-tangente
+# :label: def_atan
+# :nonumber: 
 # 
 # Es la inversa de la función tangente. Restringimos su dominio al intervalo 
 # $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$. 
@@ -374,11 +482,12 @@ p.show()
 # $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$ tal que $x=\tan(y)$.
 # 
 # <img src="../../images/cap3_funcion_atan.png" width="300"/>
+# ````
 # 
 # Por tanto la función $\text{arctan}(x)$ tiene como dominio todo $\mathbb{R}$ y como imagen el
 # intervalo $[-\frac{\pi}{2},\frac{\pi}{2}]$. Es una función impar.
 
-# In[70]:
+# In[14]:
 
 
 p = sp.plot(sp.atan(x), (x, -10.0, 10.0), show=False)

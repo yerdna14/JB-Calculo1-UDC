@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -634,7 +635,7 @@ f(x) = f_2(x)+(f_1(x)-f_2(x))\theta(x).
 </div>
 </div>
 <p><strong>Ejercicio 5.1</strong>
-Calcula las singularidades y la imagen de la función <span class="math notranslate nohighlight">\(f(x,y)=\displaystyle\frac{x+5}{x^3-2}+\frac{x^2}{x-2}\)</span>.
+Calcula las singularidades y la imagen de la función <span class="math notranslate nohighlight">\(f(x)=\displaystyle\frac{x+5}{x^3-2}+\frac{x^2}{x-2}\)</span>.
 Para ello, debes definir en primer lugar la expresión asociada y, a continuación, la función <code class="docutils literal notranslate"><span class="pre">Lambda</span></code> correspondiente. Después, debes calcular su dominio y su imagen. Por último, dibuja la función <span class="math notranslate nohighlight">\(f\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -717,27 +718,6 @@ En este caso, la definición mediante <code class="docutils literal notranslate"
 \[\displaystyle 0\]</div>
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle \infty\]</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">nonnegative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">theta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;theta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">F</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Lambda</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span> <span class="n">f</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">r</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)))</span>
-<span class="n">sp</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">r</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)),</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \left( \left( x, \  y\right) \mapsto \frac{x^{3} + 2 x y^{2}}{x^{2} + y^{2}} \right)\]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{2 r^{3} \sin^{2}{\left(\theta \right)} \cos{\left(\theta \right)} + r^{3} \cos^{3}{\left(\theta \right)}}{r^{2} \sin^{2}{\left(\theta \right)} + r^{2} \cos^{2}{\left(\theta \right)}}\]</div>
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 0\]</div>
 </div>
 </div>
 <p><strong>Ejercicio 5.2</strong></p>

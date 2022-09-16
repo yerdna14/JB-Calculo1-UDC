@@ -63,13 +63,15 @@
 # mucho menos espacio, lo que reduce el tamaño de un libro de matemáticas 
 # a magnitudes razonables. 
 # 
-# **Definición final:** 
+# ````{prf:definition} Definición final
+# :label: def_acos
+# :nonumber: 
 # 
 # $$
 # \lim_{x\to x_{0}}f(x) = l :\Longleftrightarrow \Big[  \forall\epsilon>0, \exists\delta>0 \Big/
 # 0<\left|x-x_0\right|<\delta\Longrightarrow\left|f(x)-l\right|<\epsilon \Big].
 # $$
-# 
+# ````
 # 
 # Esta definición merece un par de comentarios: 
 # 

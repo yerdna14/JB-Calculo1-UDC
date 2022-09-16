@@ -132,7 +132,7 @@ display(R)
 
 
 # **Ejercicio 5.1** 
-# Calcula las singularidades y la imagen de la función $f(x,y)=\displaystyle\frac{x+5}{x^3-2}+\frac{x^2}{x-2}$.
+# Calcula las singularidades y la imagen de la función $f(x)=\displaystyle\frac{x+5}{x^3-2}+\frac{x^2}{x-2}$.
 # Para ello, debes definir en primer lugar la expresión asociada y, a continuación, la función `Lambda` correspondiente. Después, debes calcular su dominio y su imagen. Por último, dibuja la función $f$.
 
 # In[58]:
@@ -187,18 +187,6 @@ display(sp.limit(f(x),x,0,dir='+')) # límite por la derecha
 
 display(sp.limit(sp.exp(x),x,-sp.oo))
 display(sp.limit(sp.exp(x),x,sp.oo))
-
-
-# In[71]:
-
-
-r = sp.Symbol('r', nonnegative=True)
-theta = sp.Symbol('theta', real=True)
-f = (x**3+2*x*y**2)/(x**2+y**2)
-F = sp.Lambda((x,y), f)
-display(F)
-display(F(r*sp.cos(theta), r*sp.sin(theta)))
-sp.limit(F(r*sp.cos(theta), r*sp.sin(theta)),r,0)
 
 
 # **Ejercicio 5.2** 

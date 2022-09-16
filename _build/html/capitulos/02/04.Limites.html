@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -501,13 +502,16 @@ escritura matemática es universal, puede ser entendida por personas de
 todo el mundo. La segunda es que así conseguimos escribir lo mismo en
 mucho menos espacio, lo que reduce el tamaño de un libro de matemáticas
 a magnitudes razonables.</p>
-<p><strong>Definición final:</strong></p>
+<div class="proof definition admonition" id="def_acos">
+<p class="admonition-title"><span>Definition </span> (Definición final)</p>
+<section class="definition-content" id="proof-content">
 <div class="math notranslate nohighlight">
 \[
 \lim_{x\to x_{0}}f(x) = l :\Longleftrightarrow \Big[  \forall\epsilon&gt;0, \exists\delta&gt;0 \Big/
 0&lt;\left|x-x_0\right|&lt;\delta\Longrightarrow\left|f(x)-l\right|&lt;\epsilon \Big].
 \]</div>
-<p>Esta definición merece un par de comentarios:</p>
+</section>
+</div><p>Esta definición merece un par de comentarios:</p>
 <ul class="simple">
 <li><p>La distancia <span class="math notranslate nohighlight">\(\delta\)</span> depende de <span class="math notranslate nohighlight">\(\epsilon\)</span>. Si elegimos una distancia <span class="math notranslate nohighlight">\(\epsilon\)</span>
 muy pequeña alrededor de <span class="math notranslate nohighlight">\(l\)</span> es evidente que <span class="math notranslate nohighlight">\(\delta\)</span> tendrá que ser muy pequeño

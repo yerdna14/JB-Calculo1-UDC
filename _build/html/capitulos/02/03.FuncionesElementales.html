@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -413,13 +414,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funcion-logaritmica">
+   2.3.5. Función logarítmica
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funciones-trigonometricas">
-   2.3.5. Funciones trigonométricas
+   2.3.6. Funciones trigonométricas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funciones-trigonometricas-inversas">
-   2.3.6. Funciones trigonométricas inversas
+   2.3.7. Funciones trigonométricas inversas
   </a>
  </li>
 </ul>
@@ -469,13 +475,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funcion-logaritmica">
+   2.3.5. Función logarítmica
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funciones-trigonometricas">
-   2.3.5. Funciones trigonométricas
+   2.3.6. Funciones trigonométricas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funciones-trigonometricas-inversas">
-   2.3.6. Funciones trigonométricas inversas
+   2.3.7. Funciones trigonométricas inversas
   </a>
  </li>
 </ul>
@@ -521,7 +532,10 @@ x&amp;\text{ si }x\geq 0.
 </div>
 </div>
 <p>Veamos las principales propiedades de esta función:</p>
-<p><strong>Propiedad:</strong> Sean <span class="math notranslate nohighlight">\(x,y\in\mathbb{R}\)</span>. Se verifica</p>
+<div class="proof property admonition" id="prop_valor_abs">
+<p class="admonition-title"><span>Property </span></p>
+<section class="property-content" id="proof-content">
+<p>Sean <span class="math notranslate nohighlight">\(x,y\in\mathbb{R}\)</span>. Se verifica</p>
 <ol class="simple">
 <li><p><span class="math notranslate nohighlight">\(|x|\geq 0\)</span>, <span class="math notranslate nohighlight">\(\forall x\in\mathbb{R}\)</span>.
 Además, <span class="math notranslate nohighlight">\(|x|=0\Longleftrightarrow x=0\)</span>,</p></li>
@@ -531,14 +545,19 @@ Además, <span class="math notranslate nohighlight">\(|x|=0\Longleftrightarrow x
 <li><p><span class="math notranslate nohighlight">\(|x-y|\geq \left| |x|-|y|\right|\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(|xy|=|x||y|,\quad\)</span> <span class="math notranslate nohighlight">\(\displaystyle\left|\frac{x}{y}\right|=\frac{|x|}{|y|}\)</span>.</p></li>
 </ol>
-<p>Destaquemos que el valor absoluto mide la distancia entre dos puntos de la recta real.
+</section>
+</div><p>Destaquemos que el valor absoluto mide la distancia entre dos puntos de la recta real.
 Basta hacer el valor absoluto de su resta. Lo incluimos como una definición.</p>
-<p><strong>Definición:</strong> Sean <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\in\mathbb{R}\)</span>. Definimos la <strong>distancia</strong> entre estos dos puntos como</p>
+<div class="proof definition admonition" id="def_distancia">
+<p class="admonition-title"><span>Definition </span> (Distancia entre dos puntos)</p>
+<section class="definition-content" id="proof-content">
+<p>Sean <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\in\mathbb{R}\)</span>. Definimos la <strong>distancia</strong> entre estos dos puntos como</p>
 <div class="math notranslate nohighlight">
 \[
 d(x,y):=|x-y|.
 \]</div>
-<p>Veamos algún ejercicio donde intervenga el valor absoluto. Antes de comenzarlos conviene
+</section>
+</div><p>Veamos algún ejercicio donde intervenga el valor absoluto. Antes de comenzarlos conviene
 recordar siempre que cuando nos enfrentemos a un valor absoluto debemos separar
 los distintos casos que se producen según el signo (positivo o negativo) del interior del valor absoluto.</p>
 <section id="ejercicios">
@@ -669,12 +688,16 @@ denominador,</p>
 </section>
 <section id="funcion-exponencial">
 <h2><span class="section-number">2.3.4. </span>Función exponencial<a class="headerlink" href="#funcion-exponencial" title="Permalink to this headline">#</a></h2>
+<div class="proof definition admonition" id="def_exp">
+<p class="admonition-title"><span>Definition </span> (Función exponencial)</p>
+<section class="definition-content" id="proof-content">
 <p>Sea <span class="math notranslate nohighlight">\(a&gt;0\)</span>. Definimos la <strong>función exponencial de base <span class="math notranslate nohighlight">\(a\)</span></strong> como</p>
 <div class="math notranslate nohighlight">
 \[
 f(x)=a^x.
 \]</div>
-<p>Un caso especial (y poco interesante) es cuando <span class="math notranslate nohighlight">\(a=1\)</span>. En este caso <span class="math notranslate nohighlight">\(f(x)=1^x\)</span> es la función constantemente igual a <span class="math notranslate nohighlight">\(1\)</span>.</p>
+</section>
+</div><p>Un caso especial (y poco interesante) es cuando <span class="math notranslate nohighlight">\(a=1\)</span>. En este caso <span class="math notranslate nohighlight">\(f(x)=1^x\)</span> es la función constantemente igual a <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <p>Cuando <span class="math notranslate nohighlight">\(a\not=1\)</span>, el comportamiento varía dependiendo de si <span class="math notranslate nohighlight">\(a\)</span> es mayor o menor que <span class="math notranslate nohighlight">\(1\)</span>.
 En los dos casos se verifica que <span class="math notranslate nohighlight">\(\mathrm{Dom}\, f=\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Im}\, f=(0,+\infty)\)</span> y que <span class="math notranslate nohighlight">\(f(0)=a^0=1\)</span>. Lo que cambia es</p>
 <ol class="simple">
@@ -704,13 +727,16 @@ la derivada de <span class="math notranslate nohighlight">\(3^{x}\)</span> en el
 <em>exponencial</em> empieza por <span class="math notranslate nohighlight">\(e\)</span>… cualidad que también cumple su apellido.</p>
 <p>Algunas propiedades generales para la función exponencial y que es fundamental recordar
 y saber aplicar bien son</p>
-<p><strong>Propiedad:</strong></p>
+<div class="proof property admonition" id="prop_alg_exp">
+<p class="admonition-title"><span>Property </span> (Propiedades aritméticas de la exponencial)</p>
+<section class="property-content" id="proof-content">
 <ol class="simple">
 <li><p><span class="math notranslate nohighlight">\(a^{x+y}=a^x a^y,\qquad\forall x,y\in\mathbb{R}\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\left(a^x\right)^y=a^{xy},\qquad\forall x,y\in\mathbb{R}\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle a^{-x}=\frac{1}{a^x}\qquad\forall x\in\mathbb{R}\)</span> (consecuencia de la anterior propiedad).</p></li>
 </ol>
-<div class="cell docutils container">
+</section>
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">2</span><span class="o">**</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">**</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span>
@@ -728,10 +754,73 @@ y saber aplicar bien son</p>
 </div>
 </div>
 </section>
+<section id="funcion-logaritmica">
+<h2><span class="section-number">2.3.5. </span>Función logarítmica<a class="headerlink" href="#funcion-logaritmica" title="Permalink to this headline">#</a></h2>
+<div class="proof definition admonition" id="def_log">
+<p class="admonition-title"><span>Definition </span> (Función logarítmica)</p>
+<section class="definition-content" id="proof-content">
+<p>Dado <span class="math notranslate nohighlight">\(a&gt;0\)</span>, <span class="math notranslate nohighlight">\(a\not=1\)</span>, se dice que <span class="math notranslate nohighlight">\(y\)</span> es el <strong>logaritmo en base <span class="math notranslate nohighlight">\(a\)</span></strong> de <span class="math notranslate nohighlight">\(x\)</span> si <span class="math notranslate nohighlight">\(a^y=x\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+y=\log_a(x) :\Leftrightarrow a^y=x.
+\]</div>
+<p>La función <span class="math notranslate nohighlight">\(\log_a\)</span> es la función inversa de la exponencial de base <span class="math notranslate nohighlight">\(a\)</span>.</p>
+</section>
+</div><p>Precisamente, por haber definido el logaritmo como la función inversa de la exponencial, podemos comprobar inmediatamente que,
+para cualquier valor de <span class="math notranslate nohighlight">\(a&gt;0\)</span>, <span class="math notranslate nohighlight">\(a\not=1\)</span>,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathrm{Dom}(\log_a) \, =\, (0,+\infty)\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathrm{Im}(\log_a) \, = \, \mathbb{R}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\log_a(1)=0\)</span>.</p></li>
+</ul>
+<div class="proof property admonition" id="prop_alg_log">
+<p class="admonition-title"><span>Property </span> (Propiedades aritméticas de los logaritmos)</p>
+<section class="property-content" id="proof-content">
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\log_{a}(xy)=\log_{a}(x)+\log_{a}(y),\qquad\forall x,y&gt;0\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\log_{a}\left(x^y\right)=y\log_{a}(x),\qquad\forall x&gt;0,\quad\forall y\in\mathbb{R}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\log_{a}\left(\frac{x}{y}\right)=\log_{a}(x)-\log_{a}(y) \qquad\forall x,y&gt;0\)</span>.</p></li>
+</ol>
+</section>
+</div><p>Para la función logaritmo, al igual que en la exponencial, hay que diferenciar dos casos, según la base, <span class="math notranslate nohighlight">\(a\)</span>, sea menor o mayor que <span class="math notranslate nohighlight">\(1\)</span>:</p>
+<ol>
+<li><p><span class="math notranslate nohighlight">\(a\in(0,1)\)</span>. En este caso la función logaritmo es estrictamente decereciente. Además,</p>
+<p>a. <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 0^{+}}\log_a(x)=+\infty\)</span>,</p>
+<p>b. <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to+\infty}\log_a(x)=-\infty\)</span>.</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(a &gt; 1\)</span>. En este caso la función logaritmo es estrictamente creciente. Se cumple que</p>
+<p>a. <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 0^{+}}\log_a(x)=-\infty\)</span>,</p>
+<p>b. <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to+\infty}\log_a(x)=+\infty\)</span>.</p>
+</li>
+</ol>
+<p>Debemos destacar que este segundo caso es, con mucho, el más importante en la práctica, porque incluye la función logarítmica más importante: el <strong>logaritmo neperiano</strong>,
+también llamado <em>logaritmo natural</em>, que es el que tiene por base el número <span class="math notranslate nohighlight">\(e\)</span> (el número de Néper o Napier, si tienes curiosidad, aquí puedes saber algo más de este matemático: <a class="reference external" href="https://es.wikipedia.org/wiki/John_Napier">https://es.wikipedia.org/wiki/John_Napier</a>).</p>
+<p>Por convenio (casi) universal (y olvidando lo que os hayan contado en Bachillerato), <strong>siempre consideraremos que <span class="math notranslate nohighlight">\(\log\)</span> hace referencia al logaritmo neperiano</strong>,
+es decir: <span class="math notranslate nohighlight">\(\log(x)=\ln(x)=\log_{e}(x)\)</span>.  Si queremos escribir un logaritmo con una base distinta (incluida la base 10) lo escribiremos explicitamente.</p>
+<p>Fijaos, por ejemplo, en la sintaxis en <strong>SymPy</strong>: <code class="docutils literal notranslate"><span class="pre">sp.log(x)</span></code> es el logaritmo neperiano. Si queremos el logaritmo en otra base, debemos especificarla a continuación: <code class="docutils literal notranslate"><span class="pre">sp.log(x,10)</span></code>, por ejemplo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">S</span><span class="p">(</span><span class="mi">2</span><span class="p">)),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span>
+<span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span>
+<span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span>
+<span class="n">p</span><span class="o">.</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span>
+<span class="n">p</span><span class="o">.</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;y&#39;</span>
+<span class="n">p</span><span class="o">.</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03.FuncionesElementales_10_0.png" src="../../_images/03.FuncionesElementales_10_0.png" />
+</div>
+</div>
+</section>
 <section id="funciones-trigonometricas">
-<h2><span class="section-number">2.3.5. </span>Funciones trigonométricas<a class="headerlink" href="#funciones-trigonometricas" title="Permalink to this headline">#</a></h2>
-<p><strong>Función seno</strong></p>
-<p>Tanto esta función como su <em>hermana</em>, la función coseno, son ampliamente utilizadas para representar movimientos oscilatorios, ondas, intensidades de corriente alternas, etc.</p>
+<h2><span class="section-number">2.3.6. </span>Funciones trigonométricas<a class="headerlink" href="#funciones-trigonometricas" title="Permalink to this headline">#</a></h2>
+<div class="proof definition admonition" id="def_seno">
+<p class="admonition-title"><span>Definition </span> (Función seno)</p>
+<section class="definition-content" id="proof-content">
 <p>La función <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span>, verifica</p>
 <ul class="simple">
 <li><p>su dominio es todo <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>,</p></li>
@@ -739,7 +828,10 @@ y saber aplicar bien son</p>
 <li><p>es una función impar,</p></li>
 <li><p>es una función periódica con período <span class="math notranslate nohighlight">\(2\pi\)</span>.</p></li>
 </ul>
-<p><strong>Función coseno</strong></p>
+</section>
+</div><div class="proof definition admonition" id="def_coseno">
+<p class="admonition-title"><span>Definition </span> (Función coseno)</p>
+<section class="definition-content" id="proof-content">
 <p>La función <span class="math notranslate nohighlight">\(f(x)=\cos(x)\)</span>, verifica</p>
 <ul class="simple">
 <li><p>su dominio es todo <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>,</p></li>
@@ -747,6 +839,8 @@ y saber aplicar bien son</p>
 <li><p>es una función par,</p></li>
 <li><p>es una función periódica con período <span class="math notranslate nohighlight">\(2\pi\)</span>.</p></li>
 </ul>
+</section>
+</div><p>Tanto esta función como su <em>hermana</em>, la función coseno, son ampliamente utilizadas para representar movimientos oscilatorios, ondas, intensidades de corriente alternas, etc.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span>
@@ -761,7 +855,7 @@ y saber aplicar bien son</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03.FuncionesElementales_10_0.png" src="../../_images/03.FuncionesElementales_10_0.png" />
+<img alt="../../_images/03.FuncionesElementales_12_0.png" src="../../_images/03.FuncionesElementales_12_0.png" />
 </div>
 </div>
 <p>Si consideramos la circunferencia de radio <span class="math notranslate nohighlight">\(1\)</span>, y pensamos en el ángulo (en radianes, por supuesto) que forma un radio con el eje <span class="math notranslate nohighlight">\(OX\)</span>, el coseno es, gráficamente, la longitud de su proyección con este eje, mientras que el seno es la longitud de la proyección con el eje <span class="math notranslate nohighlight">\(OY\)</span>. Como mostramos en la siguiente figura:</p>
@@ -773,15 +867,21 @@ y saber aplicar bien son</p>
 <li><p><span class="math notranslate nohighlight">\(\sin\left(x+\frac{\pi}{2}\right) = \cos(x)\)</span>,…</p></li>
 </ul>
 <p>De éstas, vamos a destacar tres:</p>
-<p><strong>Propiedad:</strong></p>
+<div class="proof property admonition" id="prop_seno_cos">
+<p class="admonition-title"><span>Property </span></p>
+<section class="property-content" id="proof-content">
 <ol class="simple">
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sin^2(x) + \cos^2(x) = 1\)</span>, <span class="math notranslate nohighlight">\(\forall x\in\mathbb{R}\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \sin(x+y)=\sin(x)\cos(y)+\cos(x)\sin(y)\)</span>, <span class="math notranslate nohighlight">\(\forall x,y\in\mathbb{R}\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y)\)</span>, <span class="math notranslate nohighlight">\(\forall x,y\in\mathbb{R}\)</span>.</p></li>
 </ol>
-<p><strong>Función tangente</strong></p>
+</section>
+</div><div class="proof definition admonition" id="def_tangente">
+<p class="admonition-title"><span>Definition </span> (Función tangente)</p>
+<section class="definition-content" id="proof-content">
 <p>Definimos la función tangente como <span class="math notranslate nohighlight">\(\displaystyle \tan(x):=\frac{\sin(x)}{\cos(x)}\)</span>.</p>
-<p>El dominio de esta función lo forman todos los puntos de <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> en los que el coseno no se anule, es decir,</p>
+</section>
+</div><p>El dominio de esta función lo forman todos los puntos de <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> en los que el coseno no se anule, es decir,</p>
 <div class="math notranslate nohighlight">
 \[
 \textrm{Dom}\left(\tan\right)=\mathbb{R}-\left\{\frac{\pi}{2}+k\pi:k\in\Z\right\},
@@ -800,7 +900,7 @@ período <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03.FuncionesElementales_13_0.png" src="../../_images/03.FuncionesElementales_13_0.png" />
+<img alt="../../_images/03.FuncionesElementales_15_0.png" src="../../_images/03.FuncionesElementales_15_0.png" />
 </div>
 </div>
 <p><strong>Otras funciones trigonométricas</strong></p>
@@ -812,8 +912,10 @@ período <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 </ul>
 </section>
 <section id="funciones-trigonometricas-inversas">
-<h2><span class="section-number">2.3.6. </span>Funciones trigonométricas inversas<a class="headerlink" href="#funciones-trigonometricas-inversas" title="Permalink to this headline">#</a></h2>
-<p><strong>Función arco-seno</strong></p>
+<h2><span class="section-number">2.3.7. </span>Funciones trigonométricas inversas<a class="headerlink" href="#funciones-trigonometricas-inversas" title="Permalink to this headline">#</a></h2>
+<div class="proof definition admonition" id="def_acos">
+<p class="admonition-title"><span>Definition </span> (Función arco-seno)</p>
+<section class="definition-content" id="proof-content">
 <p>Es la inversa de la función seno. Como ésta no es una función inyectiva,
 restringimos su dominio, quedándonos con el seno definido sólo en el intervalo
 <span class="math notranslate nohighlight">\([-\frac{\pi}{2},\frac{\pi}{2}]\)</span>.</p>
@@ -821,7 +923,8 @@ restringimos su dominio, quedándonos con el seno definido sólo en el intervalo
 <span class="math notranslate nohighlight">\(x\in[-1,1]\)</span>, le asocia el único <span class="math notranslate nohighlight">\(y\)</span> en <span class="math notranslate nohighlight">\([-\frac{\pi}{2},\frac{\pi}{2}]\)</span> tal que
 <span class="math notranslate nohighlight">\(x=\sin(y)\)</span>, como se muestra en la siguiente figura:</p>
 <a class="reference internal image-reference" href="../../_images/cap3_funcion_asin.png"><img alt="../../_images/cap3_funcion_asin.png" src="../../_images/cap3_funcion_asin.png" style="width: 300px;" /></a>
-<p>Por tanto la función <span class="math notranslate nohighlight">\(\text{arcsin}(x)\)</span> tiene como dominio el intervalo <span class="math notranslate nohighlight">\([-1,1]\)</span> y como imagen
+</section>
+</div><p>Por tanto la función <span class="math notranslate nohighlight">\(\text{arcsin}(x)\)</span> tiene como dominio el intervalo <span class="math notranslate nohighlight">\([-1,1]\)</span> y como imagen
 el <span class="math notranslate nohighlight">\([-\frac{\pi}{2},\frac{\pi}{2}]\)</span>. Es una función impar.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -835,23 +938,29 @@ el <span class="math notranslate nohighlight">\([-\frac{\pi}{2},\frac{\pi}{2}]\)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03.FuncionesElementales_16_0.png" src="../../_images/03.FuncionesElementales_16_0.png" />
+<img alt="../../_images/03.FuncionesElementales_18_0.png" src="../../_images/03.FuncionesElementales_18_0.png" />
 </div>
 </div>
-<p><strong>Función arco-coseno</strong></p>
+<div class="proof definition admonition" id="def_acos">
+<p class="admonition-title"><span>Definition </span> (Función arco-coseno)</p>
+<section class="definition-content" id="proof-content">
 <p>Es la inversa de la función coseno. En este caso, restringimos el dominio para quedarnos
 con el coseno definido en el intervalo <span class="math notranslate nohighlight">\([0,\pi]\)</span>.</p>
 <p>Definimos entonces la función arco-coseno, <span class="math notranslate nohighlight">\(\text{arccos}(x)\)</span>, como la función que, dado un
 <span class="math notranslate nohighlight">\(x\in[-1,1]\)</span>, le asocia el único <span class="math notranslate nohighlight">\(y\)</span> en <span class="math notranslate nohighlight">\([0,\pi]\)</span> tal que <span class="math notranslate nohighlight">\(x=\cos(y)\)</span>.</p>
-<a class="reference internal image-reference" href="../../_images/cap3_funcion_acos.png"><img alt="../../_images/cap3_funcion_acos.png" src="../../_images/cap3_funcion_acos.png" style="width: 300px;" /></a>
-<p><strong>Función arco-tangente</strong></p>
+</section>
+</div><a class="reference internal image-reference" href="../../_images/cap3_funcion_acos.png"><img alt="../../_images/cap3_funcion_acos.png" src="../../_images/cap3_funcion_acos.png" style="width: 300px;" /></a>
+<div class="proof definition admonition" id="def_atan">
+<p class="admonition-title"><span>Definition </span> (Función arco-tangente)</p>
+<section class="definition-content" id="proof-content">
 <p>Es la inversa de la función tangente. Restringimos su dominio al intervalo
 <span class="math notranslate nohighlight">\(\left(-\frac{\pi}{2},\frac{\pi}{2}\right)\)</span>.</p>
 <p>Definimos entonces la función arco-tangente, <span class="math notranslate nohighlight">\(\text{arctan}(x)\)</span>, como la función
 que, dado un <span class="math notranslate nohighlight">\(x\in\mathbb{R}\)</span>, le asocia el único <span class="math notranslate nohighlight">\(y\)</span> en
 <span class="math notranslate nohighlight">\(\left(-\frac{\pi}{2},\frac{\pi}{2}\right)\)</span> tal que <span class="math notranslate nohighlight">\(x=\tan(y)\)</span>.</p>
 <a class="reference internal image-reference" href="../../_images/cap3_funcion_atan.png"><img alt="../../_images/cap3_funcion_atan.png" src="../../_images/cap3_funcion_atan.png" style="width: 300px;" /></a>
-<p>Por tanto la función <span class="math notranslate nohighlight">\(\text{arctan}(x)\)</span> tiene como dominio todo <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> y como imagen el
+</section>
+</div><p>Por tanto la función <span class="math notranslate nohighlight">\(\text{arctan}(x)\)</span> tiene como dominio todo <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> y como imagen el
 intervalo <span class="math notranslate nohighlight">\([-\frac{\pi}{2},\frac{\pi}{2}]\)</span>. Es una función impar.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -865,7 +974,7 @@ intervalo <span class="math notranslate nohighlight">\([-\frac{\pi}{2},\frac{\pi
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03.FuncionesElementales_18_0.png" src="../../_images/03.FuncionesElementales_18_0.png" />
+<img alt="../../_images/03.FuncionesElementales_20_0.png" src="../../_images/03.FuncionesElementales_20_0.png" />
 </div>
 </div>
 </section>
