@@ -1,7 +1,5 @@
-# Funciones reales de una variable real #
+# Integración de una función de variable real #
 
-En este capítulo introduciremos las primeras definiciones sobre funciones reales de variable real. 
+En este capítulo introduciremos la integración para funciones reales de una variable real y estudiaremos sus propiedades y algunas aplicaciones. 
 
-Lo dividimos en 2 secciones:
-1. Definiciones básicas.
-2. Funciones elementales.
+Lo dividimos en n secciones:

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.4. Gráficas con Matplotlib &#8212; Calculo en una variable</title>
+    <title>5.4. Gráficas con Matplotlib &#8212; Calculo en una variable</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="3.3. Introducción a NumPy" href="03.IntroduccionNumpy.html" />
+    <link rel="prev" title="5.3. Introducción a NumPy" href="03.IntroduccionNumpy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -190,36 +190,73 @@ const thebe_selector_output = ".output, .cell_output"
      2.8. Boletín 1
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/09.Boletin2.html">
+     2.9. Boletín 2
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03/README.html">
+   3. Derivación
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
+     3.1. Definición de derivada y propiedades básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/02.NewtonRaphson.html">
+     3.2. Método numérico de Newton-Raphson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
+     3.3. Derivadas sucesivas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/README.html">
+   4. Integración
+  </a>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="README.html">
-   3. Python para cálculo de una variable
+   5. Python para cálculo de una variable
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="01.IntroduccionSympy.html">
-     3.1. Introducción a SymPy
+     5.1. Introducción a SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.LimitesContinuidadSympy.html">
-     3.2. Límites y continuidad en SymPy
+     5.2. Límites y continuidad en SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03.IntroduccionNumpy.html">
-     3.3. Introducción a NumPy
+     5.3. Introducción a NumPy
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.4. Gráficas con Matplotlib
+     5.4. Gráficas con Matplotlib
     </a>
    </li>
   </ul>
@@ -387,12 +424,12 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#uso-de-matplotlib">
-   3.4.1. Uso de Matplotlib
+   5.4.1. Uso de Matplotlib
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#graficas-de-funcions-de-una-variable">
-   3.4.2. Gráficas de funcións de una variable
+   5.4.2. Gráficas de funcións de una variable
   </a>
  </li>
 </ul>
@@ -416,12 +453,12 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#uso-de-matplotlib">
-   3.4.1. Uso de Matplotlib
+   5.4.1. Uso de Matplotlib
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#graficas-de-funcions-de-una-variable">
-   3.4.2. Gráficas de funcións de una variable
+   5.4.2. Gráficas de funcións de una variable
   </a>
  </li>
 </ul>
@@ -435,11 +472,11 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="graficas-con-matplotlib">
-<h1><span class="section-number">3.4. </span>Gráficas con Matplotlib<a class="headerlink" href="#graficas-con-matplotlib" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">5.4. </span>Gráficas con Matplotlib<a class="headerlink" href="#graficas-con-matplotlib" title="Permalink to this headline">#</a></h1>
 <p>La representación gráfica es una de las herramientas más potentes para explorar y visualizar funciones y datos, y, hoy en día, una de las tareas más importantes tanto para ingenieros como para científicos. De hecho, los gráficos se usan tanto para exponer como para entender datos y para comprobar visualmente resultados calculados.</p>
 <p>El módulo de Python de mayor uso para la representación gráfica es <strong>Matplotlib</strong> (<a class="reference external" href="http://matplotlib.org/">http://matplotlib.org/</a>), que será, fundamentalmente, el que usaremos en este curso. Este módulo es muy potente y posee muchísimas funcionalidades. En esta sección nos limitaremos a su utilización para la representación de funciones de una variable. Para tener una idea de todas las posibilidades que ofrece este módulo podéis visitar la <em>Matplotlib Gallery</em> (<a class="reference external" href="https://matplotlib.org/stable/gallery/index.html">https://matplotlib.org/stable/gallery/index.html</a>).</p>
 <section id="uso-de-matplotlib">
-<h2><span class="section-number">3.4.1. </span>Uso de Matplotlib<a class="headerlink" href="#uso-de-matplotlib" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.4.1. </span>Uso de Matplotlib<a class="headerlink" href="#uso-de-matplotlib" title="Permalink to this headline">#</a></h2>
 <p>Para usar <strong>Matplotlib</strong>, necesitamos importar su módulo. Puesto que lo usaremos a partir de la interfaz <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>, también será necesario importar ésta:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -450,7 +487,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.5.1&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.3.2&#39;
 </pre></div>
 </div>
 </div>
@@ -464,7 +501,7 @@ title="Print to PDF"
 </div>
 </div>
 <p><strong>Matplotlib</strong> es una librería de Python que puede utilizarse fuera de los <em>Notebooks</em> Jupyter para representar gráficamente tanto funciones como entidades geométricas (ya sea por pantalla o para guardarlas en un fichero). Para que las representaciones gráficas aparezcan incrustadas en este documento usaremos el comando <em>mágico</em> <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code>.
-Por rl contrario, si es necesario interactuar con las gráficas, deberíamos usar la opción <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">notebook</span></code></p>
+Por el contrario, si es necesario interactuar con las gráficas, deberíamos usar la opción <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">notebook</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -474,7 +511,7 @@ Por rl contrario, si es necesario interactuar con las gráficas, deberíamos usa
 </div>
 </section>
 <section id="graficas-de-funcions-de-una-variable">
-<h2><span class="section-number">3.4.2. </span>Gráficas de funcións de una variable<a class="headerlink" href="#graficas-de-funcions-de-una-variable" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.4.2. </span>Gráficas de funcións de una variable<a class="headerlink" href="#graficas-de-funcions-de-una-variable" title="Permalink to this headline">#</a></h2>
 <p>Las gráficas de funciones de una variable se crean a partir de la evaluación del valor de la función en un gran número de puntos almacenados en un vector <strong>Numpy</strong>. Al usar un número de puntos suficiente, se crea un efecto cinematográfico, y la gráfica de la función parecerá suave. Sin embargo, hay que entender que lo que se está representando gráficamente es una concatenación de segmentos rectos que unen los puntos evaluados. Por ejemplo, para representar las funciones</p>
 <div class="math notranslate nohighlight">
 \[
@@ -625,7 +662,7 @@ f(x) = \sin(x),\qquad g(x)=\cos(x),\qquad x\in[0,4\pi].
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3.3. </span>Introducción a <strong>NumPy</strong></p>
+            <p class="prev-next-title"><span class="section-number">5.3. </span>Introducción a <strong>NumPy</strong></p>
         </div>
     </a>
 </div>

@@ -7,7 +7,7 @@
 # 
 # Sin embargo, las posibilidades de Python para el cálculo matemático no acaban, ni mucho menos, aquí. Ahora giraremos nuestra cabeza para buscar una herramienta que convierta a Python en una especie de super-calculadora, con enormes posibilidades a la hora de realizar grandes operaciones repetitivas con números, vectores o matrices. Nosotros le sacaremos el máximo jugo en la programación de los métodos numéricos que estudiaremos en esta materia pero, por supuesto, sus posibilidades son mucho mayores. 
 # 
-# Yendo al grano, os vamos a presentar la librería **NumPy** (http://www.numpy.org/) que es la más utilizada para cálculos numéricos. Esta librería permite utilizar un enorme abanico de estructuras de datos y funciones para para los cálculos numéricos. En esta sección os mostraremos algunas de estas funcionalidades. 
+# Yendo al grano, os vamos a presentar la librería **NumPy** (http://www.numpy.org/) que es la más utilizada para cálculos numéricos. Esta librería permite utilizar un enorme abanico de estructuras de datos y funciones para los cálculos numéricos. En esta sección os mostraremos algunas de estas funcionalidades. 
 # 
 # **NumPy** es una librería enorme y tiene posibilidades muy extensas, por lo que sólo pretendemos realizar una introducción muy breve. Para descubrir nuevas funcionalidades y como utilizarla con muchos otros propósitos, la mejor fuente de información en línea son los buscadores, y, en particular, la comunidad http://stackoverflow.com/.
 # 
@@ -23,7 +23,7 @@
 # 
 # Antes de nada, para tener disponible **NumPy** en el código, debemos primero importarlo. Para hacer esto, es habitual importar **NumPy** utilizando el alias `np`: 
 
-# In[2]:
+# In[1]:
 
 
 import numpy as np
@@ -33,7 +33,7 @@ import numpy as np
 # 
 # Como todos los módulos de Python, la librería **NumPy** está implementada siguiendo una estrategia de programación orientada a objetos. Por lo tanto, cualquier estructura de datos en Python, incluso la más simple, se debe entender como un objeto que pertenece a una clase, y sobre ella podemos realizar todas las operaciones implementadas sobre esta clase de objetos. Incluso un número es un objeto de una clase: 
 
-# In[3]:
+# In[2]:
 
 
 a = 3.3
@@ -81,9 +81,9 @@ print(np.int(a))
 # 
 # **Vectores unidimensionales**: Un vector unidimensional es una colección ordenada de números a los que se puede acceder mediante un índice (con lo que se preserva el orden). Por defecto, los vectores en **NumPy** son vectores fila.
 # 
-# **Creación de vectores e indexado**: Para crear un vector **Numpy** de lonxitude 10 e inicializado con ceros, empregaríase a función `np.zeros()`:
+# **Creación de vectores e indexado**: Para crear un vector **Numpy** de longitud 10 e inicializado con ceros, se utilizaría la función `np.zeros()`:
 
-# In[6]:
+# In[3]:
 
 
 u = np.zeros(10)
@@ -93,7 +93,7 @@ print(type(u))
 
 # El tipo por defecto de los números que contienen los vectores en **NumPy** es `float64` (que es el tipo guardado en `np.float`). Si queremos usar otros tipos, tendríamos que utilizar el argumento opcional `dtype`. El tipo de los números que contiene un vector puede comprobarse accediendo al atributo `dtype` de los vectores **NumPy**:
 
-# In[7]:
+# In[4]:
 
 
 print(u.dtype)
@@ -103,7 +103,7 @@ print(type(w))
 print(w.dtype)
 
 
-# Lo que non es posible, por ejemplo, es añadir un valor del tipo cadena de texto (es decir, de tipo `string`) a un objeto `numpy.ndarray`, ya que todos los elementos del vector deben ser del mismo tipo (o, al menos, de un tipo que admita una conversión) y deben tener también el mismo tamaño. Para comprobar el tamaño de un vector, se puede usar la función `len`:
+# Lo que no es posible, por ejemplo, es añadir un valor del tipo cadena de texto (es decir, de tipo `string`) a un objeto `numpy.ndarray`, ya que todos los elementos del vector deben ser del mismo tipo (o, al menos, de un tipo que admita una conversión) y deben tener también el mismo tamaño. Para comprobar el tamaño de un vector, se puede usar la función `len`:
 
 # In[5]:
 
@@ -199,7 +199,7 @@ u = np.arange(2, 6)
 print(u)
 
 
-# La función `linspace` crea un vector de números equiespaciados con un valor inicial y final (ambos incluidos) e con un tamaño determinado:
+# La función `linspace` crea un vector de números equiespaciados con un valor inicial y final (ambos incluidos) y con un tamaño determinado:
 
 # In[17]:
 
@@ -282,25 +282,25 @@ print(b)
 # 
 # Vamos a explorar esto mediante varios ejemplos, trabajando con un vector de valores aleatorios:
 
-# In[7]:
+# In[6]:
 
 
 a = np.random.rand(5)
 print(a)
 
-# Usar ':' implica o conxunto enterio no rango dos índices, é dicir, dende 0 ata (lonxitude-1)
+# Usar ':' implica el conjunto entero en el rango de los índices, es decir, desde 0 hasta (longitud-1)
 b = a[:]
 print("Troceado usando '[:]' {}".format(b))
 
-# Usar '1:3' implica os índices 1 -> 3 (sen incluir a 3)
+# Usar '1:3' implica los índices 1 -> 3 (sin incluir a 3)
 b = a[1:3]
 print("Troceado usando '[1:3]': {}".format(b))
 
-# Usar '2:-1' implica os índices 2 -> o segundo dende o final (sen incluílo)
+# Usar '2:-1' implica los índices 2 -> el segundo desde el final (sin incluirlo)
 b = a[2:-1]
 print("Troceado usando '[2:-1]': {}".format(b))
 
-# Usar '2:-2' implica os índices 2 -> o terceiro dende o final (sen incluílo)
+# Usar '2:-2' implica los índices 2 -> el tercero desde el final (sin incluirlo)
 b = a[2:-2]
 print("Troceado usando '[2:-2]': {}".format(b))
 
@@ -352,11 +352,11 @@ print(col)
 # \| x \| = \sqrt{\sum_{i=0}^{n-1} x_{i} x_{i}},
 # $$
 # 
-# donde $x_{i}$ es el $i$-ésimo coeficiente de $\vec{x}$. En resumen, su norma non es más que el cálculo del producto interior del vector por sí mismo, seguido por el cálculo de una raíz cuadrada. Para calcular el valor de la norma se pueden seguir diferentes estrategias: la primera de ellas puede ser usar un bucle para recorrer todos los coeficientes del vector y sumar el cuadrado de cada coeficiente, luego tomar la suma de todas estas cantidades y calcular su raíz cadrada.
+# donde $x_{i}$ es el $i$-ésimo coeficiente de $\vec{x}$. En resumen, su norma no es más que el cálculo del producto interior del vector por sí mismo, seguido por el cálculo de una raíz cuadrada. Para calcular el valor de la norma se pueden seguir diferentes estrategias: la primera de ellas puede ser usar un bucle para recorrer todos los coeficientes del vector y sumar el cuadrado de cada coeficiente, luego tomar la suma de todas estas cantidades y calcular su raíz cadrada.
 # 
-# Para evaluar el rendimiento computacional de esta implementación, vamos a coger un vector moderadamente grande (10 millóns) y vamos a calcular el tiempo de cáculo:
+# Para evaluar el rendimiento computacional de esta implementación, vamos a coger un vector moderadamente grande (10 millones) y vamos a calcular el tiempo de cáculo:
 
-# In[10]:
+# In[8]:
 
 
 # Crear un vector NumPy con 10 millones de valores aleatorios
@@ -364,7 +364,7 @@ x = np.random.rand(10000000)
 print(type(x))
 
 
-# In[7]:
+# In[9]:
 
 
 def compute_norm(x):
@@ -400,7 +400,7 @@ print(norm)
 
 
 # **Ejercicio 3:** 
-# Compara los tiempos de cálculo de las cuatro implementaciones para diferentes dimensiones del vector $\vec{x}$, de tamaños $10$, $10^3$, $10^5$, $10^7$. A partir de estos tiempos de cálculo: ¿que se puede deducir como conclusión?
+# Compara los tiempos de cálculo de las cuatro implementaciones para diferentes dimensiones del vector $\vec{x}$, de tamaños $10$, $10^3$, $10^5$, $10^7$. A partir de estos tiempos de cálculo: ¿qué se puede deducir como conclusión?
 
 # In[33]:
 

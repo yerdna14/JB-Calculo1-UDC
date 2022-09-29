@@ -25,7 +25,7 @@
 # En Python, además de las variables numéricas, que veremos con mayor profundidad un poco más adelante, existen las variables simbólicas, que permiten calcular límites, derivadas, integrales, etc., como hacemos habitualmente en las clases de matemáticas.
 # Para poder hacer estas operaciones, habituales y necesarias en un curso de Cálculo, necesitamos tener instaladas la librería **SymPy**.
 # 
-# Este módulo no trabaja co nuna estructura de datos basada en números sino con objetos que poseen atributos y métodos que intentan reproducir el comportamiento matemático de variables, funciones, regiones, ecuaciones, etc., con las que se trabaja habitualmente en las disciplinas de álgebra y cálculo diferencial e integral. 
+# Este módulo no trabaja con una estructura de datos basada en números sino con objetos que poseen atributos y métodos que intentan reproducir el comportamiento matemático de variables, funciones, regiones, ecuaciones, etc., con las que se trabaja habitualmente en las disciplinas de álgebra y cálculo diferencial e integral. 
 # 
 # Para hacer que esté disponible el módulo **SymPy**, hay que instalarlo usando la herramienta `pip` (o `conda`, si trabajáis en entornos de trabajo diferenciados). Para el uso de *Microsoft Azute Notebooks* (https://notebooks.azure.com/), se utiliza la siguiente instalación:
 
@@ -208,8 +208,6 @@ print("Solución: ", solucion)
 # Nota: en casos sencillos, como este, podríamos escribir directamente
 # solucion = sp.solve(sp.exp(x+1)-5,x)
 
-
-# 
 
 # Dada una expresión en **SymPy**, también se puede manipularla, sustituyendo unas variables simbólicas por otras o, incluso, reemplazando las variables simbólicas por constantes. Para hacer este tipo de sustituciones se utiliza la función `subs` y los valores a utilizar en la sustitución vienen definidos por un diccionario de Python:
 

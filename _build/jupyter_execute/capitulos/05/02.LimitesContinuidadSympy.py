@@ -16,16 +16,16 @@
 
 # Recordemos que lo primero que debemos hacer es importar el módulo **Sympy** para el resto de la práctica:
 
-# In[1]:
+# In[2]:
 
 
 import sympy as sp
 
 
 # ## Expresiones y funciones en **Sympy**
-# Hasta ahora hemos usado expresiones matemáticas que se guardaban en objetos del módulo **Sympy**. Sin embargo, todavía no hemos utilizado funcones. Para ver las diferencias entre una expresión y su función asociada vamos a mostrar como evaluar funciones y expresiones en **Sympy** sobre un ejemplo sencillo: la función $f(x) \to x\cos(4x)$:
+# Hasta ahora hemos usado expresiones matemáticas que se guardaban en objetos del módulo **Sympy**. Sin embargo, todavía no hemos utilizado funciones. Para ver las diferencias entre una expresión y su función asociada vamos a mostrar como evaluar funciones y expresiones en **Sympy** sobre un ejemplo sencillo: la función $f(x) \to x\cos(4x)$:
 
-# In[10]:
+# In[3]:
 
 
 x = sp.symbols('x', real=True) # define la variable simbólica x
@@ -44,7 +44,7 @@ sp.solve(sp.Abs(2*x-4)-sp.Abs(x-3))
 # 
 # Para definir funciones en **Sympy** tenemos que utilizar la función `sp.Lambda`:
 
-# In[14]:
+# In[4]:
 
 
 f = sp.Lambda((x),f_expr) # Creamos la función "f" a partir de la expresión "f_expr"
@@ -58,19 +58,19 @@ print(f(x)==f_expr)
 # Las funciones también pueden definirse a partir de expresiones **a trozos**, teniendo en cuenta distintas expresiones que serán evluadas si se cumplen ciertas condiciones. El módulo **Sympy** irá evaluando cada una de las tuplas que aparecen como argumentos (de izquierda a derecha) hasta encontrar una en la que la condición sea cierta. Por ejemplo: 
 # 
 # $$
-# g\_expr(x,y)=
+# g\_expr(x)=
 # \begin{cases}
 # \dfrac{1}{x} & \text{si } x>0,\\
 # 1 & \text{si } x \le 0.
 # \end{cases}
 # $$
 
-# In[20]:
+# In[5]:
 
 
 g_expr = sp.Piecewise((1/(x), x>0), (1, True))
-g = sp.Lambda((x,y), g_expr)
-display(g(x,y))
+g = sp.Lambda((x), g_expr)
+display(g(x))
 
 
 # La forma de escritura anterior, pese a ser muy cómoda, tiene muchas limitaciones (por ejemplo, para el cálculo de límites laterales, que veremos un poco más abajo). En general, es más útil definir las funciones a trozos apoyándonos en la función **escalón**, matemáticamente conocida como función de **Heaviside**, $\theta$, que viene dada por
@@ -78,8 +78,8 @@ display(g(x,y))
 # $$
 # \theta(x)=
 # \begin{cases}
-# 0 & \text{si } t \le 0,\\
-# 1 & \text{si } t \gt 0.\\
+# 0 & \text{si } x \le 0,\\
+# 1 & \text{si } x \gt 0.\\
 # \end{cases}
 # $$
 # 
@@ -156,7 +156,7 @@ display(sp.limit(g(x),x,-1,dir='-')) # límite por la izquierda
 display(sp.limit(g(x),x,-1,dir='+')) # límite por la derecha
 
 
-# En este caso, el límite $\displaystyle\lim_{x\to -1}g(x)$ no existe ya que, como acabamos de ver, los límite laterais no coinciden. Pero una incorrecta utilización del paquete informática nos podría llevar a una conclusión errónea:
+# En este caso, el límite $\displaystyle\lim_{x\to -1}g(x)$ no existe ya que, como acabamos de ver, los límite laterales no coinciden. Pero una incorrecta utilización del paquete informático nos podría llevar a una conclusión errónea:
 
 # In[63]:
 
@@ -224,7 +224,7 @@ I = sp.calculus.util.continuous_domain(f, x, sp.Reals)
 display(I)
 
 
-# Ademáis, para analizar la continuidad de $f$ en un punto $a$, basta con comprobar que
+# Además, para analizar la continuidad de $f$ en un punto $a$, basta con comprobar que
 # $$
 # f(a)=\lim_{x\to a}f(x).
 # $$

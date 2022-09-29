@@ -191,11 +191,16 @@ const thebe_selector_output = ".output, .cell_output"
      2.8. Boletín 1
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/09.Boletin2.html">
+     2.9. Boletín 2
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../05/README.html">
-   3. Python para cálculo de una variable
+  <a class="reference internal" href="../03/README.html">
+   3. Derivación
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -204,23 +209,55 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
+     3.1. Definición de derivada y propiedades básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/02.NewtonRaphson.html">
+     3.2. Método numérico de Newton-Raphson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
+     3.3. Derivadas sucesivas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/README.html">
+   4. Integración
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/README.html">
+   5. Python para cálculo de una variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../05/01.IntroduccionSympy.html">
-     3.1. Introducción a SymPy
+     5.1. Introducción a SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">
-     3.2. Límites y continuidad en SymPy
+     5.2. Límites y continuidad en SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05/03.IntroduccionNumpy.html">
-     3.3. Introducción a NumPy
+     5.3. Introducción a NumPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">
-     3.4. Gráficas con Matplotlib
+     5.4. Gráficas con Matplotlib
     </a>
    </li>
   </ul>
@@ -466,7 +503,7 @@ conoce como <strong>plano complejo</strong>:</p>
 Entonces el número real <span class="math notranslate nohighlight">\(a\)</span> corresponde al complejo <span class="math notranslate nohighlight">\((a,0)\)</span>.</p>
 <section id="representacion-cartesiana">
 <h2><span class="section-number">1.2.1. </span>Representación cartesiana<a class="headerlink" href="#representacion-cartesiana" title="Permalink to this headline">#</a></h2>
-<p>Estamos escribiendo los números complejos como pares de números reales. ésta es la
+<p>Estamos escribiendo los números complejos como pares de números reales. Ésta es la
 representación cartesiana.</p>
 <p>Por supuesto, no basta con tener un conjunto de números. Es necesario saber operar con
 ellos. Introducimos dos operaciones, la suma y la multiplicación, como sigue:</p>
@@ -506,7 +543,7 @@ entre <span class="math notranslate nohighlight">\(4\)</span> y el resto nos dar
 </ul>
 <div class="math notranslate nohighlight">
 \[
-i^{325}=i^{4*81+1}=\left(i^{4}\right)^{81}i^1=1*i=i.
+i^{325}=i^{4\cdot81+1}=\left(i^{4}\right)^{81}i^1=1\cdot i=i.
 \]</div>
 </section>
 <section id="forma-binomica">
@@ -520,7 +557,7 @@ números complejos, que es conocida como forma binómica:</p>
 \]</div>
 <p>Un número complejo, <span class="math notranslate nohighlight">\(z\)</span>, puede escribirse entonces como <span class="math notranslate nohighlight">\(z=a+ib\)</span>, siendo <span class="math notranslate nohighlight">\(a\)</span> su parte
 real y <span class="math notranslate nohighlight">\(b\)</span> su parte imaginaria.</p>
-<a class="reference internal image-reference" href="../../_images/cap2_plano_complejo.png"><img alt="../../_images/cap2_plano_complejo.png" src="../../_images/cap2_plano_complejo.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../../_images/cap1_plano_complejo.png"><img alt="../../_images/cap1_plano_complejo.png" src="../../_images/cap1_plano_complejo.png" style="width: 200px;" /></a>
 <p>Utilizando la multiplicación usual para los binomios podemos entender mejor la
 extraña definición de la multiplicación en <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -564,38 +601,38 @@ neutro:</p>
   \left(\frac{c}{c^2+d^2}-i\frac{d}{c^2+d^2}\right).
   \]</div>
 <p>Veremos dentro de un momento una forma más natural de definir la división en <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>.
-Antes de ello introducimos una noción que tiene especial interés</p>
+Antes de ello introducimos una noción que tiene especial interés.</p>
 <p><strong>Definición:</strong> Dado <span class="math notranslate nohighlight">\(z=a+ib\in\mathbb{C}\)</span> definimos su <strong>conjugado</strong>, <span class="math notranslate nohighlight">\(\bar{z}\)</span>, como</p>
 <div class="math notranslate nohighlight">
 \[
 \bar{z}=a-ib.
 \]</div>
-<a class="reference internal image-reference" href="../../_images/cap2_complejo_conjugado.png"><img alt="../../_images/cap2_complejo_conjugado.png" src="../../_images/cap2_complejo_conjugado.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../../_images/cap1_complejo_conjugado.png"><img alt="../../_images/cap1_complejo_conjugado.png" src="../../_images/cap1_complejo_conjugado.png" style="width: 200px;" /></a>
 <p>La principal ventaja de introducir el conjugado de un complejo es que al multiplicar un
 número por su conjugado el resultado es un número real,</p>
 <div class="math notranslate nohighlight">
 \[
-\left(a+bi\right)*\left(a-bi\right)=a^2+b^2,
+\left(a+bi\right)\cdot\left(a-bi\right)=a^2+b^2,
 \]</div>
 <p>lo que nos permite simplificar algunas operaciones, como la división:</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{5-2i}{7+3i}=\frac{\left(5-2i\right)\left(7-3i\right)}{\left(7+3i\right)\left(7-3i\right)}
-=\frac{18+i}{7^2+3^2}=\frac{18}{58}+\frac{1}{58}i.
+=\frac{29-29i}{7^2+3^2}=\frac{29}{58}\left(1-i\right).
 \]</div>
 </section>
 <section id="forma-polar-o-formula-modulo-argumento">
 <h2><span class="section-number">1.2.4. </span>Forma polar (o fórmula módulo/argumento)<a class="headerlink" href="#forma-polar-o-formula-modulo-argumento" title="Permalink to this headline">#</a></h2>
-<p>Pero, al mismo tiempo, el producto de un complejo por su conjugado también sirve para
+<p>Al mismo tiempo, el producto de un complejo por su conjugado también sirve para
 introducir una forma importante de representar los números complejos, la forma
 polar o forma módulo/argumento.</p>
-<a class="reference internal image-reference" href="../../_images/cap2_polares.png"><img alt="../../_images/cap2_polares.png" src="../../_images/cap2_polares.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../../_images/cap1_polares.png"><img alt="../../_images/cap1_polares.png" src="../../_images/cap1_polares.png" style="width: 200px;" /></a>
 <p>Esta forma de representar un número complejo se basa en el hecho de que un punto del
 plano queda perfectamente definido si conocemos sus componentes sobre los ejes <span class="math notranslate nohighlight">\(OX\)</span> y <span class="math notranslate nohighlight">\(OY\)</span>
 (representación cartesiana, <span class="math notranslate nohighlight">\(z=(a,b)\)</span>), pero también si conocemos la longitud del
 vector que une ese punto con el origen de coordenadas (módulo, <span class="math notranslate nohighlight">\(M\)</span>) y el ángulo que
 forma ese vector con el eje <span class="math notranslate nohighlight">\(OX\)</span> (argumento, <span class="math notranslate nohighlight">\(\theta\)</span>), como se muestra en la figura
-anterior. ésta es la representación polar y suele escribirse <span class="math notranslate nohighlight">\(z=M_{\theta}\)</span>.
+anterior. Ésta es la representación polar y suele escribirse <span class="math notranslate nohighlight">\(z=M_{\theta}\)</span>.
 La manera de pasar de la representación cartesiana a la polar, y viceversa, se muestra
 en la siguiente tabla:</p>
 <table class="colwidths-auto table">
@@ -655,7 +692,7 @@ Resulta de relacionar las potencias enteras con la representación trigonométri
 complejos, ya que, por un lado,</p>
 <div class="math notranslate nohighlight">
 \[
-  \left(M_{\theta}\right)^n = M^n\left(\cos(n\theta)+i\sin(n\theta)\right),
+  \left(M_{\theta}\right)^n = \left(M^n\right)_{n\theta} = M^n\left(\cos(n\theta)+i\sin(n\theta)\right),
   \]</div>
 <p>y, por otro,</p>
 <div class="math notranslate nohighlight">
@@ -728,7 +765,7 @@ complejo, se puede escribir <span class="math notranslate nohighlight">\(8_{\pi}
 \end{array}\right.
 \end{split}\]</div>
 <p>A continuación mostramos la representación gráfica de estas raíces cúbicas:</p>
-<a class="reference internal image-reference" href="../../_images/cap2_raices_cubicas.png"><img alt="../../_images/cap2_raices_cubicas.png" src="../../_images/cap2_raices_cubicas.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../../_images/cap1_raices_cubicas.png"><img alt="../../_images/cap1_raices_cubicas.png" src="../../_images/cap1_raices_cubicas.png" style="width: 200px;" /></a>
 <p><strong>Ejercicios:</strong></p>
 <ol class="simple">
 <li><p>Calcula: <span class="math notranslate nohighlight">\(\displaystyle\frac{(3-2i)(2+3i)}{3-4i}\)</span>, <span class="math notranslate nohighlight">\(\displaystyle\frac{(1-i)(2+i)}{5+3i}\)</span>, <span class="math notranslate nohighlight">\(\displaystyle i^{5787}\)</span>.</p></li>

@@ -191,11 +191,16 @@ const thebe_selector_output = ".output, .cell_output"
      2.8. Boletín 1
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.Boletin2.html">
+     2.9. Boletín 2
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../05/README.html">
-   3. Python para cálculo de una variable
+  <a class="reference internal" href="../03/README.html">
+   3. Derivación
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -204,23 +209,55 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
+     3.1. Definición de derivada y propiedades básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/02.NewtonRaphson.html">
+     3.2. Método numérico de Newton-Raphson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
+     3.3. Derivadas sucesivas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/README.html">
+   4. Integración
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/README.html">
+   5. Python para cálculo de una variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../05/01.IntroduccionSympy.html">
-     3.1. Introducción a SymPy
+     5.1. Introducción a SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">
-     3.2. Límites y continuidad en SymPy
+     5.2. Límites y continuidad en SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05/03.IntroduccionNumpy.html">
-     3.3. Introducción a NumPy
+     5.3. Introducción a NumPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">
-     3.4. Gráficas con Matplotlib
+     5.4. Gráficas con Matplotlib
     </a>
    </li>
   </ul>
@@ -449,8 +486,10 @@ title="Print to PDF"
 <h1><span class="section-number">2.5. </span>Continuidad<a class="headerlink" href="#continuidad" title="Permalink to this headline">#</a></h1>
 <section id="continuidad-en-un-punto">
 <h2><span class="section-number">2.5.1. </span>Continuidad en un punto<a class="headerlink" href="#continuidad-en-un-punto" title="Permalink to this headline">#</a></h2>
-<p><strong>Definición:</strong>
-Sea <span class="math notranslate nohighlight">\(f:A\subset\mathbb{R}\rightarrow\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(x_0\in A\)</span>. Diremos que <strong><span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\(x_0\)</span></strong>
+<div class="proof definition admonition" id="def_continuidad">
+<p class="admonition-title"><span>Definition </span></p>
+<section class="definition-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(f:A\subset\mathbb{R}\rightarrow\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(x_0\in A\)</span>. Diremos que <strong><span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\(x_0\)</span></strong>
 si y sólo si existe <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to x_0} f(x)\)</span> y ese límite es <span class="math notranslate nohighlight">\(f(x_0)\)</span>.</p>
 <p>Es decir, <span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\(x_0\)</span> si y sólo si</p>
 <div class="math notranslate nohighlight">
@@ -458,7 +497,8 @@ si y sólo si existe <span class="math notranslate nohighlight">\(\displaystyle\
 \forall\epsilon&gt;0, \exists\delta&gt;0 \Big/
 \left|x-x_0\right|&lt;\delta\Rightarrow\left|f(x)-f(x_0)\right|&lt;\epsilon.
 \]</div>
-<p>Observemos que, respecto a la definición de límite hay una pequeña diferencia. Antes escribíamos</p>
+</section>
+</div><p>Observemos que, respecto a la definición de límite hay una pequeña diferencia. Antes escribíamos</p>
 <div class="math notranslate nohighlight">
 \[
 0&lt; \left|x-x_0\right|&lt;\delta,
@@ -479,16 +519,21 @@ A los dos primeros (<span class="math notranslate nohighlight">\(\not\exists f(x
 (<span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to x_0}f(x)\not=f(x_0)\)</span>) es una <strong>discontinuidad evitable</strong>.</p>
 <a class="reference internal image-reference" href="../../_images/cap3_discontinuidades.png"><img alt="../../_images/cap3_discontinuidades.png" src="../../_images/cap3_discontinuidades.png" style="width: 500px;" /></a>
 <p>Algunas propiedades importantes de la continuidad son las siguientes.</p>
-<p><strong>Propiedad (Álgebra de las funciones continuas):</strong>
-Sean <span class="math notranslate nohighlight">\(f,g:A\subset\mathbb{R}\rightarrow\mathbb{R}\)</span> funciones continuas en un punto <span class="math notranslate nohighlight">\(x_0\in A\)</span>. Entonces</p>
+<div class="proof property admonition" id="prop_aritmetica_cont">
+<p class="admonition-title"><span>Property </span> (Álgebra de las funciones continuas)</p>
+<section class="property-content" id="proof-content">
+<p>Sean <span class="math notranslate nohighlight">\(f,g:A\subset\mathbb{R}\rightarrow\mathbb{R}\)</span> funciones continuas en un punto <span class="math notranslate nohighlight">\(x_0\in A\)</span>. Entonces</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\lambda f\)</span> es continua en <span class="math notranslate nohighlight">\(x_0\)</span>, <span class="math notranslate nohighlight">\(\forall\lambda\in\mathbb{R}\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(f\pm g\)</span> es continua en <span class="math notranslate nohighlight">\(x_0\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(fg\)</span> es continua en <span class="math notranslate nohighlight">\(x_0\)</span>,</p></li>
 <li><p>si <span class="math notranslate nohighlight">\(g(x_0)\not=0\)</span>, <span class="math notranslate nohighlight">\(\frac{f}{g}\)</span> es continua en <span class="math notranslate nohighlight">\(x_0\)</span>.</p></li>
 </ul>
-<p><strong>Propiedad:</strong>
-La composición de funciones continuas es una función continua. Es decir,</p>
+</section>
+</div><div class="proof property admonition" id="prop_comp_cont">
+<p class="admonition-title"><span>Property </span></p>
+<section class="property-content" id="proof-content">
+<p><strong>La composición de funciones continuas es una función continua</strong>. Es decir,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \left.\begin{array}{l}
@@ -497,62 +542,82 @@ g:f(A)\rightarrow\mathbb{R}\text{ continua en }f(x_0)
 \end{array}\right\}\Longrightarrow
 g\circ f:A\subset\mathbb{R}\rightarrow\mathbb{R} \text{ continua en }x_0\in A.
 \end{split}\]</div>
-<p><strong>Propiedad:</strong>
-El límite conmuta con las funciones continuas. Es decir, sean <span class="math notranslate nohighlight">\(f\)</span> y <span class="math notranslate nohighlight">\(g\)</span> funciones tales
+</section>
+</div><div class="proof property admonition" id="prop_lim_cont">
+<p class="admonition-title"><span>Property </span></p>
+<section class="property-content" id="proof-content">
+<p><strong>El límite conmuta con las funciones continuas</strong>. Es decir, sean <span class="math notranslate nohighlight">\(f\)</span> y <span class="math notranslate nohighlight">\(g\)</span> funciones tales
 que existe <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to x_0}f(x)=l\in\mathbb{R}\)</span> y <span class="math notranslate nohighlight">\(g\)</span> es una función continua en <span class="math notranslate nohighlight">\(l\)</span>.
 Entonces</p>
 <div class="math notranslate nohighlight">
 \[
 \lim_{x\to x_0}g\left(f(x)\right)=g\left(\lim_{x\to x_0}f(x)\right)=g(l).
 \]</div>
-<p>Así, por ejemplo,</p>
+</section>
+</div><p>Así, por ejemplo,</p>
 <div class="math notranslate nohighlight">
 \[
 \lim_{x\to 1}\sin\left(\frac{\ln x+\cos^2 x}{e^x+2x}\right)=\sin\left(\lim_{x\to 1}\frac{\ln
 x+\cos^2 x}{e^x+2x}\right),
 \]</div>
 <p>ya que la función ``seno’’ es continua.</p>
-<p><strong>Nota:</strong> Si sientes curiosidad, anímate y mira el artículo de Luisa Cuadrado y Rafael Crespo, para la Real Sociedad de Matemáticas Española, titulado <em>Sin levantar el lápiz del papel</em> sobre el concepto de continuidad. ¡Muy divertidas las ilustraciones con las tuberías de Mario! <a class="reference external" href="https://drive.google.com/file/d/1YaWLuzdmRXvRRGpG8GmUffZqKZrnbt6s/view">https://drive.google.com/file/d/1YaWLuzdmRXvRRGpG8GmUffZqKZrnbt6s/view</a>.</p>
+<div class="proof remark admonition" id="remark_cont">
+<p class="admonition-title"><span>Remark </span></p>
+<section class="remark-content" id="proof-content">
+<p>Si sientes curiosidad, anímate y mira el artículo de Luisa Cuadrado y Rafael Crespo, para la Real Sociedad de Matemáticas Española, titulado <em>Sin levantar el lápiz del papel</em> sobre el concepto de continuidad. ¡Muy divertidas las ilustraciones con las tuberías de Mario! <a class="reference external" href="https://drive.google.com/file/d/1YaWLuzdmRXvRRGpG8GmUffZqKZrnbt6s/view">https://drive.google.com/file/d/1YaWLuzdmRXvRRGpG8GmUffZqKZrnbt6s/view</a>.</p>
 </section>
+</div></section>
 <section id="continuidad-en-intervalos">
 <h2><span class="section-number">2.5.2. </span>Continuidad en intervalos<a class="headerlink" href="#continuidad-en-intervalos" title="Permalink to this headline">#</a></h2>
 <p>Ahora que ya tenemos bien definida la continuidad puntual, vamos a definir la
 <strong>continuidad en intervalos</strong>, tanto abiertos como cerrados.</p>
-<p><strong>Definición:</strong>
-Sea <span class="math notranslate nohighlight">\(f:(a,b)\subset\mathbb{R}\rightarrow\mathbb{R}\)</span>. Diremos que <strong><span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\((a,b)\)</span></strong> si es
-continua en todos los puntos de <span class="math notranslate nohighlight">\((a,b)\)</span>.</p>
-<p><strong>Definición:</strong>
-Sea <span class="math notranslate nohighlight">\(f:[a,b]\subset\mathbb{R}\rightarrow\mathbb{R}\)</span>. Diremos que <strong><span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\([a,b]\)</span></strong> si</p>
-<ol class="simple">
-<li><p><span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\((a,b)\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\(a\)</span> por la derecha,</p></li>
-<li><p><span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\(b\)</span> por la izquierda.</p></li>
+<div class="proof definition admonition" id="def_cont_intervalos">
+<p class="admonition-title"><span>Definition </span></p>
+<section class="definition-content" id="proof-content">
+<ol>
+<li><p>Sea <span class="math notranslate nohighlight">\(f:(a,b)\subset\mathbb{R}\rightarrow\mathbb{R}\)</span>. Diremos que <strong><span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\((a,b)\)</span></strong> si es
+continua en todos los puntos de <span class="math notranslate nohighlight">\((a,b)\)</span>.</p></li>
+<li><p>Sea <span class="math notranslate nohighlight">\(f:[a,b]\subset\mathbb{R}\rightarrow\mathbb{R}\)</span>. Diremos que <strong><span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\([a,b]\)</span></strong> si</p>
+<p>a. <span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\((a,b)\)</span>,</p>
+<p>b. <span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\(a\)</span> por la derecha,</p>
+<p>c. <span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\(b\)</span> por la izquierda.</p>
+</li>
 </ol>
-<p><strong>Definición:</strong>
-Sea <span class="math notranslate nohighlight">\(f:A\subset\mathbb{R}\rightarrow\mathbb{R}\)</span>. Diremos que <span class="math notranslate nohighlight">\(x_0\in A\)</span> es una <strong>raíz</strong> de <span class="math notranslate nohighlight">\(f\)</span> si
+</section>
+</div><div class="proof definition admonition" id="def_raiz">
+<p class="admonition-title"><span>Definition </span></p>
+<section class="definition-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(f:A\subset\mathbb{R}\rightarrow\mathbb{R}\)</span>. Diremos que <span class="math notranslate nohighlight">\(x_0\in A\)</span> es una <strong>raíz</strong> de <span class="math notranslate nohighlight">\(f\)</span> si
 <span class="math notranslate nohighlight">\(f(x_0)=0\)</span>.</p>
 </section>
+</div></section>
 <section id="teoremas-de-bolzano-y-weierstrass">
 <h2><span class="section-number">2.5.3. </span>Teoremas de Bolzano y Weierstrass<a class="headerlink" href="#teoremas-de-bolzano-y-weierstrass" title="Permalink to this headline">#</a></h2>
-<p><strong>Teorema de Bolzano:</strong>
-Sea <span class="math notranslate nohighlight">\(f:[a,b]\rightarrow\mathbb{R}\)</span> una función continua en <span class="math notranslate nohighlight">\([a,b]\)</span> tal que <span class="math notranslate nohighlight">\(f(a)f(b)&lt;0\)</span>.
+<div class="proof theorem admonition" id="th_Bolzano">
+<p class="admonition-title"><span>Theorem </span> (Teorema de Bolzano)</p>
+<section class="theorem-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(f:[a,b]\rightarrow\mathbb{R}\)</span> una función continua en <span class="math notranslate nohighlight">\([a,b]\)</span> tal que <span class="math notranslate nohighlight">\(f(a)f(b)&lt;0\)</span>.
 Entonces existe <span class="math notranslate nohighlight">\(x_0\in(a,b)\)</span> tal que <span class="math notranslate nohighlight">\(f(x_0)=0\)</span>.</p>
 <a class="reference internal image-reference" href="../../_images/cap3_bolzano_1_2.png"><img alt="../../_images/cap3_bolzano_1_2.png" src="../../_images/cap3_bolzano_1_2.png" style="width: 500px;" /></a>
-<p>El teorema de Bolzano habla de la existencia de raíces para funciones continuas. Debemos
+</section>
+</div><p>El teorema de Bolzano habla de la existencia de raíces para funciones continuas. Debemos
 hacer algún comentario sobre él:</p>
 <ol class="simple">
 <li><p>Pueden existir varias raíces, como se muestra en el gráfico de la derecha en la figura anterior.</p></li>
 <li><p>Si se suprime alguna de las hipótesis, el teorema, en general, no es válido, como se muestra en la siguiente figura.</p></li>
 </ol>
 <a class="reference internal image-reference" href="../../_images/cap3_bolzano_3.png"><img alt="../../_images/cap3_bolzano_3.png" src="../../_images/cap3_bolzano_3.png" style="width: 500px;" /></a>
-<p><strong>Teorema de Weierstrass:</strong>
-Sea <span class="math notranslate nohighlight">\(f:[a,b]\rightarrow\mathbb{R}\)</span> una función continua en <span class="math notranslate nohighlight">\([a,b]\)</span>. Entonces <span class="math notranslate nohighlight">\(f\)</span> alcanza máximo y mínimo absoluto en <span class="math notranslate nohighlight">\([a,b]\)</span>. Es decir,</p>
+<div class="proof theorem admonition" id="th_Weierstrass">
+<p class="admonition-title"><span>Theorem </span> (Teorema de Weierstrass)</p>
+<section class="theorem-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(f:[a,b]\rightarrow\mathbb{R}\)</span> una función continua en <span class="math notranslate nohighlight">\([a,b]\)</span>. Entonces <span class="math notranslate nohighlight">\(f\)</span> alcanza máximo y mínimo absoluto en <span class="math notranslate nohighlight">\([a,b]\)</span>. Es decir,</p>
 <div class="math notranslate nohighlight">
 \[
 \exists x_1, x_2\in[a,b]\Big/  f(x_1)\leq f(x)\leq f(x_2)\qquad\forall x\in[a,b].
 \]</div>
 <a class="reference internal image-reference" href="../../_images/cap3_Weierstrass.png"><img alt="../../_images/cap3_Weierstrass.png" src="../../_images/cap3_Weierstrass.png" style="width: 250px;" /></a>
 </section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">

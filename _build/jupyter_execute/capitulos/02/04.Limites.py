@@ -9,8 +9,8 @@
 # 
 # El concepto de límite expresa la tendencia de una función cuando su variable se
 # aproxima a un cierto valor. Newton ya lo formulaba en 1666 diciendo que la idea 
-# principal de límite es que las cantidades \textit{se acerquen más que cualquier 
-# cantidad dada}. Partiendo de la idea de Newton, vamos a recorrer en unas líneas 
+# principal de límite es que las cantidades *se acerquen más que cualquier 
+# cantidad dada*. Partiendo de la idea de Newton, vamos a recorrer en unas líneas 
 # un camino de más de 200 años.
 # 
 # Para comenzar, introduciremos la definición en el caso más sencillo, que es el 
@@ -235,3 +235,9 @@
 # <img src="../../images/cap3_asintotas.png" width="500"/>
 # 
 # **Nota:** Si quieres saber algo más sobre las asíntotas, échale un vistazo a la siguiente entrada del magnífico blog de matemáticas *gaussianos*: https://www.gaussianos.com/calcular-las-asintotas-de-una-funcion/
+
+# In[ ]:
+
+
+
+

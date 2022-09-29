@@ -1,12 +1,11 @@
-# Funciones reales de una variable real #
+# Derivación de una función de variable real #
 
-En este capítulo introduciremos las primeras definiciones sobre funciones reales de variable real. 
+En este capítulo introduciremos la derivación para funciones reales de una variable real y estudiaremos sus propiedades y algunas aplicaciones. 
 
-Lo dividimos en 6 secciones:
+Lo dividimos en 4 secciones:
 
-1. Definiciones básicas.
-2. Funciones elementales.
-3. Límites.
-4. Continuidad.
-5. Método de dicotomía.
-6. Polinomio de interpolación de Lagrange.
+1. Definición de derivada y propiedades básicas.
+2. Método numérico de Newton-Raphson.
+3. Derivadas sucesivas.
+4. Aplicaciones de la derivación.
+   

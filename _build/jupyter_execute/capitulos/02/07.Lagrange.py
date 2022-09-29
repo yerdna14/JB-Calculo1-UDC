@@ -72,7 +72,7 @@ ax2.legend(fontsize=20, loc='upper right')
 # 
 # **Definición:**
 # Para cada $i=0,1,\ldots,n\,$,
-# existe un \'unico polinomio $l_i$ de grado $\leq n$ tal que 
+# existe un único polinomio $l_i$ de grado $\leq n$ tal que 
 # * $l_i(x_i)= 1$, y 
 # * $l_i(x_j)=0$, $\forall j\neq i$. 
 # 

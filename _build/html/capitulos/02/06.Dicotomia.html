@@ -191,11 +191,16 @@ const thebe_selector_output = ".output, .cell_output"
      2.8. Boletín 1
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.Boletin2.html">
+     2.9. Boletín 2
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../05/README.html">
-   3. Python para cálculo de una variable
+  <a class="reference internal" href="../03/README.html">
+   3. Derivación
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -204,23 +209,55 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
+     3.1. Definición de derivada y propiedades básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/02.NewtonRaphson.html">
+     3.2. Método numérico de Newton-Raphson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
+     3.3. Derivadas sucesivas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/README.html">
+   4. Integración
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/README.html">
+   5. Python para cálculo de una variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../05/01.IntroduccionSympy.html">
-     3.1. Introducción a SymPy
+     5.1. Introducción a SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">
-     3.2. Límites y continuidad en SymPy
+     5.2. Límites y continuidad en SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05/03.IntroduccionNumpy.html">
-     3.3. Introducción a NumPy
+     5.3. Introducción a NumPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">
-     3.4. Gráficas con Matplotlib
+     5.4. Gráficas con Matplotlib
     </a>
    </li>
   </ul>
@@ -456,11 +493,11 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="metodo-de-dicotomia">
-<h1><span class="section-number">2.6. </span>Método de dicotomía<a class="headerlink" href="#metodo-de-dicotomia" title="Permalink to this headline">#</a></h1>
+<span id="sec-dicotomia"></span><h1><span class="section-number">2.6. </span>Método de dicotomía<a class="headerlink" href="#metodo-de-dicotomia" title="Permalink to this headline">#</a></h1>
 <section id="algoritmo">
 <h2><span class="section-number">2.6.1. </span>Algoritmo<a class="headerlink" href="#algoritmo" title="Permalink to this headline">#</a></h2>
 <p>Consideramos una función <span class="math notranslate nohighlight">\(f:[a,b]\rightarrow\mathbb{R}\)</span>, continua en <span class="math notranslate nohighlight">\([a,b]\)</span>, con <span class="math notranslate nohighlight">\(f(a)\,f(b)&lt;0\)</span>.</p>
-<p>Es decir, estamos considerando una funicón que cumple las hipótesis del Teorema de Bolzano, por lo que ya sabemos que existe una raíz para <span class="math notranslate nohighlight">\(f\)</span> en el intervalo <span class="math notranslate nohighlight">\([a,b]\)</span>.
+<p>Es decir, estamos considerando una función que cumple las hipótesis del Teorema de Bolzano, por lo que ya sabemos que existe una raíz para <span class="math notranslate nohighlight">\(f\)</span> en el intervalo <span class="math notranslate nohighlight">\([a,b]\)</span>.
 Una vez que sabemos que existe raíz el siguiente paso sería calcularla. Esto no siempre es sencillo (casi nunca, de hecho), y en algunos casos es directamente imposible.
 Entonces surge una segunda opción: aproximar esa raíz mediante un <strong>método numérico</strong>.</p>
 <p>Llegados a este punto, hay distintos métodos numéricos que nos permiten aproximar la raíz de una función. Vamos a explicar ahora el más sencillo de ellos: el <strong>método de dicotomía</strong>, también conocido como <strong>método de bisección</strong>. En el siguiente capítulo explicaremos el método de Newton-Raphson, más eficiente numéricamente.</p>
@@ -490,11 +527,15 @@ Es decir:</p>
 \[
 \text{Si} \qquad \frac{\left| x_{k}-x_{k-1} \right|}{\left| x_{k} \right|} &lt; tol \quad \Longrightarrow \quad \text{STOP}.
 \]</div>
-<p><strong>Teorema (estimación del error):</strong> Sea <span class="math notranslate nohighlight">\(f:[a,b]\rightarrow\mathbb{R}\)</span> una función continua en <span class="math notranslate nohighlight">\([a,b]\)</span> tal que <span class="math notranslate nohighlight">\(f(a)\,f(b)&lt;0\)</span>. Sea <span class="math notranslate nohighlight">\(\alpha\in(a,b)\)</span> tal que <span class="math notranslate nohighlight">\(f(\alpha)=0\)</span>.
+<div class="proof theorem admonition" id="th_dicotomia_estimacion">
+<p class="admonition-title"><span>Theorem </span> (Estimación del error )</p>
+<section class="theorem-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(f:[a,b]\rightarrow\mathbb{R}\)</span> una función continua en <span class="math notranslate nohighlight">\([a,b]\)</span> tal que <span class="math notranslate nohighlight">\(f(a)\,f(b)&lt;0\)</span>. Sea <span class="math notranslate nohighlight">\(\alpha\in(a,b)\)</span> tal que <span class="math notranslate nohighlight">\(f(\alpha)=0\)</span>.
 Entonces, al aplicar el método de dicotomía en el intervalo <span class="math notranslate nohighlight">\([a,b]\)</span>, el error máximo cometido en el paso <span class="math notranslate nohighlight">\(k\)</span> está acotado mediante la siguiente fórmula:</p>
 <div class="math notranslate nohighlight">
 \[ |x_k - \alpha | \leq \frac{b-a}{2^k}.  \]</div>
-<p>Nosotros seguimos, mostrándoos cómo programar este algoritmo en <strong>Numpy</strong>.</p>
+</section>
+</div><p>Nosotros seguimos, mostrándoos cómo programar este algoritmo en <strong>Numpy</strong>.</p>
 <p>De momento, lo escribiremos de forma directa, tal como lo hemos hecho en el algoritmo. Más adelante veremos cómo aislar parte o todo el algoritmo en una <code class="docutils literal notranslate"><span class="pre">function</span></code>, lo que nos permitirá realizar una programación estructurada.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

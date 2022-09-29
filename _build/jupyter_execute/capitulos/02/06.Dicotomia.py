@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# (sec_dicotomia)=
 # # Método de dicotomía
 # 
 # ## Algoritmo
 # 
 # Consideramos una función $f:[a,b]\rightarrow\mathbb{R}$, continua en $[a,b]$, con $f(a)\,f(b)<0$.
 # 
-# Es decir, estamos considerando una funicón que cumple las hipótesis del Teorema de Bolzano, por lo que ya sabemos que existe una raíz para $f$ en el intervalo $[a,b]$. 
+# Es decir, estamos considerando una función que cumple las hipótesis del Teorema de Bolzano, por lo que ya sabemos que existe una raíz para $f$ en el intervalo $[a,b]$. 
 # Una vez que sabemos que existe raíz el siguiente paso sería calcularla. Esto no siempre es sencillo (casi nunca, de hecho), y en algunos casos es directamente imposible.
 # Entonces surge una segunda opción: aproximar esa raíz mediante un **método numérico**. 
 # 
@@ -37,10 +38,15 @@
 # \text{Si} \qquad \frac{\left| x_{k}-x_{k-1} \right|}{\left| x_{k} \right|} < tol \quad \Longrightarrow \quad \text{STOP}.
 # $$
 # 
-# **Teorema (estimación del error):** Sea $f:[a,b]\rightarrow\mathbb{R}$ una función continua en $[a,b]$ tal que $f(a)\,f(b)<0$. Sea $\alpha\in(a,b)$ tal que $f(\alpha)=0$.
+# ````{prf:theorem} Estimación del error 
+# :label: th_dicotomia_estimacion
+# :nonumber: 
+# 
+# Sea $f:[a,b]\rightarrow\mathbb{R}$ una función continua en $[a,b]$ tal que $f(a)\,f(b)<0$. Sea $\alpha\in(a,b)$ tal que $f(\alpha)=0$.
 # Entonces, al aplicar el método de dicotomía en el intervalo $[a,b]$, el error máximo cometido en el paso $k$ está acotado mediante la siguiente fórmula: 
 # 
 # $$ |x_k - \alpha | \leq \frac{b-a}{2^k}.  $$ 
+# ````
 # 
 # Nosotros seguimos, mostrándoos cómo programar este algoritmo en **Numpy**. 
 # 

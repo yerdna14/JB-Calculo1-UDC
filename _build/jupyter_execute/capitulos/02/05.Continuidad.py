@@ -5,7 +5,10 @@
 # 
 # ## Continuidad en un punto
 # 
-# **Definición:**
+# ````{prf:definition} 
+# :label: def_continuidad
+# :nonumber: 
+# 
 # Sea $f:A\subset\mathbb{R}\rightarrow\mathbb{R}$, $x_0\in A$. Diremos que **$f$ es continua en $x_0$**
 # si y sólo si existe $\displaystyle\lim_{x\to x_0} f(x)$ y ese límite es $f(x_0)$. 
 # 
@@ -15,6 +18,7 @@
 # \forall\epsilon>0, \exists\delta>0 \Big/
 # \left|x-x_0\right|<\delta\Rightarrow\left|f(x)-f(x_0)\right|<\epsilon.
 # $$
+# ````
 # 
 # Observemos que, respecto a la definición de límite hay una pequeña diferencia. Antes escribíamos
 # 
@@ -42,15 +46,22 @@
 # 
 # Algunas propiedades importantes de la continuidad son las siguientes.
 # 
-# **Propiedad (Álgebra de las funciones continuas):** 
+# ````{prf:property} Álgebra de las funciones continuas
+# :label: prop_aritmetica_cont
+# :nonumber: 
+# 
 # Sean $f,g:A\subset\mathbb{R}\rightarrow\mathbb{R}$ funciones continuas en un punto $x_0\in A$. Entonces
 # * $\lambda f$ es continua en $x_0$, $\forall\lambda\in\mathbb{R}$,
 # * $f\pm g$ es continua en $x_0$,
 # * $fg$ es continua en $x_0$,
 # * si $g(x_0)\not=0$, $\frac{f}{g}$ es continua en $x_0$.
+# ````
 # 
-# **Propiedad:**
-# La composición de funciones continuas es una función continua. Es decir,
+# ````{prf:property} 
+# :label: prop_comp_cont
+# :nonumber: 
+# 
+# **La composición de funciones continuas es una función continua**. Es decir,
 # 
 # $$
 # \left.\begin{array}{l}
@@ -59,17 +70,20 @@
 # \end{array}\right\}\Longrightarrow
 # g\circ f:A\subset\mathbb{R}\rightarrow\mathbb{R} \text{ continua en }x_0\in A.
 # $$
+# ````
 # 
+# ````{prf:property} 
+# :label: prop_lim_cont
+# :nonumber: 
 # 
-# **Propiedad:**
-# El límite conmuta con las funciones continuas. Es decir, sean $f$ y $g$ funciones tales
+# **El límite conmuta con las funciones continuas**. Es decir, sean $f$ y $g$ funciones tales
 # que existe $\displaystyle\lim_{x\to x_0}f(x)=l\in\mathbb{R}$ y $g$ es una función continua en $l$.
 # Entonces
 # 
 # $$
 # \lim_{x\to x_0}g\left(f(x)\right)=g\left(\lim_{x\to x_0}f(x)\right)=g(l).
 # $$
-# 
+# ````
 # 
 # Así, por ejemplo,
 # 
@@ -79,35 +93,54 @@
 # $$
 # ya que la función ``seno'' es continua.
 # 
-# **Nota:** Si sientes curiosidad, anímate y mira el artículo de Luisa Cuadrado y Rafael Crespo, para la Real Sociedad de Matemáticas Española, titulado *Sin levantar el lápiz del papel* sobre el concepto de continuidad. ¡Muy divertidas las ilustraciones con las tuberías de Mario! https://drive.google.com/file/d/1YaWLuzdmRXvRRGpG8GmUffZqKZrnbt6s/view.
+# ````{prf:remark} 
+# :label: remark_cont
+# :nonumber: 
+# 
+#  Si sientes curiosidad, anímate y mira el artículo de Luisa Cuadrado y Rafael Crespo, para la Real Sociedad de Matemáticas Española, titulado *Sin levantar el lápiz del papel* sobre el concepto de continuidad. ¡Muy divertidas las ilustraciones con las tuberías de Mario! https://drive.google.com/file/d/1YaWLuzdmRXvRRGpG8GmUffZqKZrnbt6s/view.
+# 
+# ````
 # 
 # ## Continuidad en intervalos
 # 
 # Ahora que ya tenemos bien definida la continuidad puntual, vamos a definir la
 # **continuidad en intervalos**, tanto abiertos como cerrados. 
 # 
-# **Definición:**
-# Sea $f:(a,b)\subset\mathbb{R}\rightarrow\mathbb{R}$. Diremos que **$f$ es continua en $(a,b)$** si es
+# ````{prf:definition} 
+# :label: def_cont_intervalos
+# :nonumber: 
+# 
+# 1. Sea $f:(a,b)\subset\mathbb{R}\rightarrow\mathbb{R}$. Diremos que **$f$ es continua en $(a,b)$** si es
 # continua en todos los puntos de $(a,b)$.
 # 
+# 2. Sea $f:[a,b]\subset\mathbb{R}\rightarrow\mathbb{R}$. Diremos que **$f$ es continua en $[a,b]$** si
+#    
+#    a. $f$ es continua en $(a,b)$,
 # 
-# **Definición:**
-# Sea $f:[a,b]\subset\mathbb{R}\rightarrow\mathbb{R}$. Diremos que **$f$ es continua en $[a,b]$** si
-# 1. $f$ es continua en $(a,b)$,
-# 2. $f$ es continua en $a$ por la derecha,
-# 3. $f$ es continua en $b$ por la izquierda.
+#    b. $f$ es continua en $a$ por la derecha,
 # 
-# **Definición:**
+#    c. $f$ es continua en $b$ por la izquierda.
+# ````
+# 
+# ````{prf:definition} 
+# :label: def_raiz
+# :nonumber: 
+# 
 # Sea $f:A\subset\mathbb{R}\rightarrow\mathbb{R}$. Diremos que $x_0\in A$ es una **raíz** de $f$ si
 # $f(x_0)=0$.
+# ````
 # 
 # ## Teoremas de Bolzano y Weierstrass
 # 
-# **Teorema de Bolzano:**
+# ````{prf:theorem} Teorema de Bolzano
+# :label: th_Bolzano
+# :nonumber: 
+# 
 # Sea $f:[a,b]\rightarrow\mathbb{R}$ una función continua en $[a,b]$ tal que $f(a)f(b)<0$.
 # Entonces existe $x_0\in(a,b)$ tal que $f(x_0)=0$.
 # 
 # <img src="../../images/cap3_bolzano_1_2.png" width="500"/>
+# ````
 # 
 # El teorema de Bolzano habla de la existencia de raíces para funciones continuas. Debemos
 # hacer algún comentario sobre él: 
@@ -117,7 +150,10 @@
 # 
 # <img src="../../images/cap3_bolzano_3.png" width="500"/>
 # 
-# **Teorema de Weierstrass:**
+# ````{prf:theorem} Teorema de Weierstrass
+# :label: th_Weierstrass
+# :nonumber: 
+# 
 # Sea $f:[a,b]\rightarrow\mathbb{R}$ una función continua en $[a,b]$. Entonces $f$ alcanza máximo y mínimo absoluto en $[a,b]$. Es decir,
 # 
 # $$
@@ -125,5 +161,5 @@
 # $$
 # 
 # <img src="../../images/cap3_Weierstrass.png" width="250"/>
-# 
+# ````
 # 

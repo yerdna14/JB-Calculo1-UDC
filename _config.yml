@@ -29,6 +29,13 @@ parse:
     # - fancy_lists
   myst_dmath_double_inline: true
 
+######################################################################
+# Incluyo lo siguiente para los entornos definición, teorema, etc.
+################
+sphinx:
+  extra_extensions:
+    - sphinx_proof
+
 #######################################################################################
 # HTML-specific settings
 html:

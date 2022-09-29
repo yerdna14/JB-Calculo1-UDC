@@ -11,7 +11,7 @@
 # 
 # Para usar **Matplotlib**, necesitamos importar su módulo. Puesto que lo usaremos a partir de la interfaz `pyplot`, también será necesario importar ésta:
 
-# In[2]:
+# In[1]:
 
 
 import matplotlib as mp
@@ -21,14 +21,14 @@ mp.__version__
 
 # Evidetemente, para realizar cálculos numéricos de forma eficiente, también será necesario importar el módulo **Numpy**:
 
-# In[3]:
+# In[2]:
 
 
 import numpy as np
 
 
 # **Matplotlib** es una librería de Python que puede utilizarse fuera de los *Notebooks* Jupyter para representar gráficamente tanto funciones como entidades geométricas (ya sea por pantalla o para guardarlas en un fichero). Para que las representaciones gráficas aparezcan incrustadas en este documento usaremos el comando *mágico* `%matplotlib inline`. 
-# Por rl contrario, si es necesario interactuar con las gráficas, deberíamos usar la opción `%matplotlib notebook`
+# Por el contrario, si es necesario interactuar con las gráficas, deberíamos usar la opción `%matplotlib notebook`
 
 # In[4]:
 

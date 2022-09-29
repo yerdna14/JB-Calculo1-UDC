@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.2. Límites y continuidad con Sympy &#8212; Calculo en una variable</title>
+    <title>5.2. Límites y continuidad con Sympy &#8212; Calculo en una variable</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.3. Introducción a NumPy" href="03.IntroduccionNumpy.html" />
-    <link rel="prev" title="3.1. Introducción a SymPy" href="01.IntroduccionSympy.html" />
+    <link rel="next" title="5.3. Introducción a NumPy" href="03.IntroduccionNumpy.html" />
+    <link rel="prev" title="5.1. Introducción a SymPy" href="01.IntroduccionSympy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -191,36 +191,73 @@ const thebe_selector_output = ".output, .cell_output"
      2.8. Boletín 1
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/09.Boletin2.html">
+     2.9. Boletín 2
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03/README.html">
+   3. Derivación
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
+     3.1. Definición de derivada y propiedades básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/02.NewtonRaphson.html">
+     3.2. Método numérico de Newton-Raphson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
+     3.3. Derivadas sucesivas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/README.html">
+   4. Integración
+  </a>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="README.html">
-   3. Python para cálculo de una variable
+   5. Python para cálculo de una variable
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="01.IntroduccionSympy.html">
-     3.1. Introducción a SymPy
+     5.1. Introducción a SymPy
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.2. Límites y continuidad en SymPy
+     5.2. Límites y continuidad en SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03.IntroduccionNumpy.html">
-     3.3. Introducción a NumPy
+     5.3. Introducción a NumPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.RepresentacionGraficaMatplotlib.html">
-     3.4. Gráficas con Matplotlib
+     5.4. Gráficas con Matplotlib
     </a>
    </li>
   </ul>
@@ -388,7 +425,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#expresiones-y-funciones-en-sympy">
-   3.2.1. Expresiones y funciones en
+   5.2.1. Expresiones y funciones en
    <strong>
     Sympy
    </strong>
@@ -396,22 +433,22 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funciones-definidas-a-trozos">
-   3.2.2. Funciones definidas a trozos
+   5.2.2. Funciones definidas a trozos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dominio-e-imagen-de-una-funcion">
-   3.2.3. Dominio e imagen de una función
+   5.2.3. Dominio e imagen de una función
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#limites">
-   3.2.4. Límites
+   5.2.4. Límites
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#continuidad">
-   3.2.5. Continuidad
+   5.2.5. Continuidad
   </a>
  </li>
 </ul>
@@ -435,7 +472,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#expresiones-y-funciones-en-sympy">
-   3.2.1. Expresiones y funciones en
+   5.2.1. Expresiones y funciones en
    <strong>
     Sympy
    </strong>
@@ -443,22 +480,22 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funciones-definidas-a-trozos">
-   3.2.2. Funciones definidas a trozos
+   5.2.2. Funciones definidas a trozos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dominio-e-imagen-de-una-funcion">
-   3.2.3. Dominio e imagen de una función
+   5.2.3. Dominio e imagen de una función
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#limites">
-   3.2.4. Límites
+   5.2.4. Límites
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#continuidad">
-   3.2.5. Continuidad
+   5.2.5. Continuidad
   </a>
  </li>
 </ul>
@@ -472,7 +509,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="limites-y-continuidad-con-sympy">
-<h1><span class="section-number">3.2. </span>Límites y continuidad con <strong>Sympy</strong><a class="headerlink" href="#limites-y-continuidad-con-sympy" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">5.2. </span>Límites y continuidad con <strong>Sympy</strong><a class="headerlink" href="#limites-y-continuidad-con-sympy" title="Permalink to this headline">#</a></h1>
 <p>El módulo <strong>Sympy</strong> puede utilizarse se para obtener las singularidades de una función, su dominio y su rango, entre otras cosas.
 Como veremos en esta práctica, también podremos calcular límites en una variable y comprobar si una función es continua en un punto dado.</p>
 <p><strong>Objetivos:</strong></p>
@@ -492,8 +529,8 @@ Como veremos en esta práctica, también podremos calcular límites en una varia
 </div>
 </div>
 <section id="expresiones-y-funciones-en-sympy">
-<h2><span class="section-number">3.2.1. </span>Expresiones y funciones en <strong>Sympy</strong><a class="headerlink" href="#expresiones-y-funciones-en-sympy" title="Permalink to this headline">#</a></h2>
-<p>Hasta ahora hemos usado expresiones matemáticas que se guardaban en objetos del módulo <strong>Sympy</strong>. Sin embargo, todavía no hemos utilizado funcones. Para ver las diferencias entre una expresión y su función asociada vamos a mostrar como evaluar funciones y expresiones en <strong>Sympy</strong> sobre un ejemplo sencillo: la función <span class="math notranslate nohighlight">\(f(x) \to x\cos(4x)\)</span>:</p>
+<h2><span class="section-number">5.2.1. </span>Expresiones y funciones en <strong>Sympy</strong><a class="headerlink" href="#expresiones-y-funciones-en-sympy" title="Permalink to this headline">#</a></h2>
+<p>Hasta ahora hemos usado expresiones matemáticas que se guardaban en objetos del módulo <strong>Sympy</strong>. Sin embargo, todavía no hemos utilizado funciones. Para ver las diferencias entre una expresión y su función asociada vamos a mostrar como evaluar funciones y expresiones en <strong>Sympy</strong> sobre un ejemplo sencillo: la función <span class="math notranslate nohighlight">\(f(x) \to x\cos(4x)\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># define la variable simbólica x</span>
@@ -542,11 +579,11 @@ True
 </div>
 </section>
 <section id="funciones-definidas-a-trozos">
-<h2><span class="section-number">3.2.2. </span>Funciones definidas a trozos<a class="headerlink" href="#funciones-definidas-a-trozos" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2.2. </span>Funciones definidas a trozos<a class="headerlink" href="#funciones-definidas-a-trozos" title="Permalink to this headline">#</a></h2>
 <p>Las funciones también pueden definirse a partir de expresiones <strong>a trozos</strong>, teniendo en cuenta distintas expresiones que serán evluadas si se cumplen ciertas condiciones. El módulo <strong>Sympy</strong> irá evaluando cada una de las tuplas que aparecen como argumentos (de izquierda a derecha) hasta encontrar una en la que la condición sea cierta. Por ejemplo:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-g\_expr(x,y)=
+g\_expr(x)=
 \begin{cases}
 \dfrac{1}{x} &amp; \text{si } x&gt;0,\\
 1 &amp; \text{si } x \le 0.
@@ -555,8 +592,8 @@ g\_expr(x,y)=
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_expr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">((</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Lambda</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span> <span class="n">g_expr</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Lambda</span><span class="p">((</span><span class="n">x</span><span class="p">),</span> <span class="n">g_expr</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -570,8 +607,8 @@ g\_expr(x,y)=
 \[\begin{split}
 \theta(x)=
 \begin{cases}
-0 &amp; \text{si } t \le 0,\\
-1 &amp; \text{si } t \gt 0.\\
+0 &amp; \text{si } x \le 0,\\
+1 &amp; \text{si } x \gt 0.\\
 \end{cases}
 \end{split}\]</div>
 <p>Entonces, una función definida por</p>
@@ -606,7 +643,7 @@ f(x) = f_2(x)+(f_1(x)-f_2(x))\theta(x).
 </div>
 </section>
 <section id="dominio-e-imagen-de-una-funcion">
-<h2><span class="section-number">3.2.3. </span>Dominio e imagen de una función<a class="headerlink" href="#dominio-e-imagen-de-una-funcion" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2.3. </span>Dominio e imagen de una función<a class="headerlink" href="#dominio-e-imagen-de-una-funcion" title="Permalink to this headline">#</a></h2>
 <p>Para calcular el <strong>dominio</strong> de una función se puede, en primer lugar, calcular las singularidades de una función dada. Entonces, el dominio máximo de la función será todo <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> menos las singularidades.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -646,7 +683,7 @@ Para ello, debes definir en primer lugar la expresión asociada y, a continuaci�
 </div>
 </section>
 <section id="limites">
-<h2><span class="section-number">3.2.4. </span>Límites<a class="headerlink" href="#limites" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2.4. </span>Límites<a class="headerlink" href="#limites" title="Permalink to this headline">#</a></h2>
 <p>Los límites de expresiones de una variable se pueden calcular con la función <code class="docutils literal notranslate"><span class="pre">sp.limit</span></code>.
 Esta función también permite calcular límites laterales, como se muestra en el siguiente ejemplo:</p>
 <div class="cell docutils container">
@@ -669,7 +706,7 @@ Esta función también permite calcular límites laterales, como se muestra en e
 \[\displaystyle \infty\]</div>
 </div>
 </div>
-<p>En este caso, el límite <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to -1}g(x)\)</span> no existe ya que, como acabamos de ver, los límite laterais no coinciden. Pero una incorrecta utilización del paquete informática nos podría llevar a una conclusión errónea:</p>
+<p>En este caso, el límite <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to -1}g(x)\)</span> no existe ya que, como acabamos de ver, los límite laterales no coinciden. Pero una incorrecta utilización del paquete informático nos podría llevar a una conclusión errónea:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># ¡Da un resultado (incorrecto) ya que, por defecto, utiliza el valor del límite por la derecha!</span>
@@ -745,7 +782,7 @@ f(x)=
 </div>
 </section>
 <section id="continuidad">
-<h2><span class="section-number">3.2.5. </span>Continuidad<a class="headerlink" href="#continuidad" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2.5. </span>Continuidad<a class="headerlink" href="#continuidad" title="Permalink to this headline">#</a></h2>
 <p>En el módulo de <strong>Sympy</strong> existe una función que calcula el dominio de continuidad (es decir, el conjunto de puntos en los que la función es continua): <code class="docutils literal notranslate"><span class="pre">sp.calculus.util.continuous_domain</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -760,7 +797,7 @@ f(x)=
 \[\displaystyle \mathbb{R} \setminus \left(\left\{2 n \pi + \frac{\pi}{2}\; \middle|\; n \in \mathbb{Z}\right\} \cup \left\{2 n \pi + \frac{3 \pi}{2}\; \middle|\; n \in \mathbb{Z}\right\}\right)\]</div>
 </div>
 </div>
-<p>Ademáis, para analizar la continuidad de <span class="math notranslate nohighlight">\(f\)</span> en un punto <span class="math notranslate nohighlight">\(a\)</span>, basta con comprobar que
+<p>Además, para analizar la continuidad de <span class="math notranslate nohighlight">\(f\)</span> en un punto <span class="math notranslate nohighlight">\(a\)</span>, basta con comprobar que
 $<span class="math notranslate nohighlight">\(
 f(a)=\lim_{x\to a}f(x).
 \)</span>$
@@ -840,13 +877,13 @@ Analiza la continuidad de la función del Ejercicio 5.2.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3.1. </span>Introducción a <strong>SymPy</strong></p>
+            <p class="prev-next-title"><span class="section-number">5.1. </span>Introducción a <strong>SymPy</strong></p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="03.IntroduccionNumpy.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.3. </span>Introducción a <strong>NumPy</strong></p>
+        <p class="prev-next-title"><span class="section-number">5.3. </span>Introducción a <strong>NumPy</strong></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

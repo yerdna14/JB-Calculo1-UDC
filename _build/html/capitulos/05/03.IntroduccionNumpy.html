@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.3. Introducción a NumPy &#8212; Calculo en una variable</title>
+    <title>5.3. Introducción a NumPy &#8212; Calculo en una variable</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.4. Gráficas con Matplotlib" href="04.RepresentacionGraficaMatplotlib.html" />
-    <link rel="prev" title="3.2. Límites y continuidad con Sympy" href="02.LimitesContinuidadSympy.html" />
+    <link rel="next" title="5.4. Gráficas con Matplotlib" href="04.RepresentacionGraficaMatplotlib.html" />
+    <link rel="prev" title="5.2. Límites y continuidad con Sympy" href="02.LimitesContinuidadSympy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -191,36 +191,73 @@ const thebe_selector_output = ".output, .cell_output"
      2.8. Boletín 1
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/09.Boletin2.html">
+     2.9. Boletín 2
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03/README.html">
+   3. Derivación
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
+     3.1. Definición de derivada y propiedades básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/02.NewtonRaphson.html">
+     3.2. Método numérico de Newton-Raphson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
+     3.3. Derivadas sucesivas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/README.html">
+   4. Integración
+  </a>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="README.html">
-   3. Python para cálculo de una variable
+   5. Python para cálculo de una variable
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="01.IntroduccionSympy.html">
-     3.1. Introducción a SymPy
+     5.1. Introducción a SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.LimitesContinuidadSympy.html">
-     3.2. Límites y continuidad en SymPy
+     5.2. Límites y continuidad en SymPy
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.3. Introducción a NumPy
+     5.3. Introducción a NumPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.RepresentacionGraficaMatplotlib.html">
-     3.4. Gráficas con Matplotlib
+     5.4. Gráficas con Matplotlib
     </a>
    </li>
   </ul>
@@ -388,32 +425,32 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objetivos">
-   3.3.1. Objetivos
+   5.3.1. Objetivos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#programacion-orientada-a-objetos">
-   3.3.2. Programación orientada a objetos
+   5.3.2. Programación orientada a objetos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vectores-de-numeros">
-   3.3.3. Vectores de números
+   5.3.3. Vectores de números
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funciones-y-aritmetica-sobre-vectores">
-   3.3.4. Funciones y aritmética sobre vectores
+   5.3.4. Funciones y aritmética sobre vectores
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#troceado-de-vectores">
-   3.3.5. Troceado de vectores
+   5.3.5. Troceado de vectores
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicio-aceleracion-con-numpy-en-el-calculo-de-normas-de-vectores">
-   3.3.6. Ejercicio: aceleración con NumPy en el cálculo de normas de vectores
+   5.3.6. Ejercicio: aceleración con NumPy en el cálculo de normas de vectores
   </a>
  </li>
 </ul>
@@ -437,32 +474,32 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objetivos">
-   3.3.1. Objetivos
+   5.3.1. Objetivos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#programacion-orientada-a-objetos">
-   3.3.2. Programación orientada a objetos
+   5.3.2. Programación orientada a objetos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vectores-de-numeros">
-   3.3.3. Vectores de números
+   5.3.3. Vectores de números
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funciones-y-aritmetica-sobre-vectores">
-   3.3.4. Funciones y aritmética sobre vectores
+   5.3.4. Funciones y aritmética sobre vectores
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#troceado-de-vectores">
-   3.3.5. Troceado de vectores
+   5.3.5. Troceado de vectores
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicio-aceleracion-con-numpy-en-el-calculo-de-normas-de-vectores">
-   3.3.6. Ejercicio: aceleración con NumPy en el cálculo de normas de vectores
+   5.3.6. Ejercicio: aceleración con NumPy en el cálculo de normas de vectores
   </a>
  </li>
 </ul>
@@ -476,13 +513,13 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-numpy">
-<h1><span class="section-number">3.3. </span>Introducción a <strong>NumPy</strong><a class="headerlink" href="#introduccion-a-numpy" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">5.3. </span>Introducción a <strong>NumPy</strong><a class="headerlink" href="#introduccion-a-numpy" title="Permalink to this headline">#</a></h1>
 <p>Hasta ahora, dentro de Python, hemos trabajado con el módulo <strong>SymPy</strong>, que nos permite manejar cálculo simbólico, definir nuevas funciones, calcular límites o, como veremos más adelante, derivar e integrar funciones.</p>
 <p>Sin embargo, las posibilidades de Python para el cálculo matemático no acaban, ni mucho menos, aquí. Ahora giraremos nuestra cabeza para buscar una herramienta que convierta a Python en una especie de super-calculadora, con enormes posibilidades a la hora de realizar grandes operaciones repetitivas con números, vectores o matrices. Nosotros le sacaremos el máximo jugo en la programación de los métodos numéricos que estudiaremos en esta materia pero, por supuesto, sus posibilidades son mucho mayores.</p>
-<p>Yendo al grano, os vamos a presentar la librería <strong>NumPy</strong> (<a class="reference external" href="http://www.numpy.org/">http://www.numpy.org/</a>) que es la más utilizada para cálculos numéricos. Esta librería permite utilizar un enorme abanico de estructuras de datos y funciones para para los cálculos numéricos. En esta sección os mostraremos algunas de estas funcionalidades.</p>
+<p>Yendo al grano, os vamos a presentar la librería <strong>NumPy</strong> (<a class="reference external" href="http://www.numpy.org/">http://www.numpy.org/</a>) que es la más utilizada para cálculos numéricos. Esta librería permite utilizar un enorme abanico de estructuras de datos y funciones para los cálculos numéricos. En esta sección os mostraremos algunas de estas funcionalidades.</p>
 <p><strong>NumPy</strong> es una librería enorme y tiene posibilidades muy extensas, por lo que sólo pretendemos realizar una introducción muy breve. Para descubrir nuevas funcionalidades y como utilizarla con muchos otros propósitos, la mejor fuente de información en línea son los buscadores, y, en particular, la comunidad <a class="reference external" href="http://stackoverflow.com/">http://stackoverflow.com/</a>.</p>
 <section id="objetivos">
-<h2><span class="section-number">3.3.1. </span>Objetivos<a class="headerlink" href="#objetivos" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.3.1. </span>Objetivos<a class="headerlink" href="#objetivos" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Trabajar con objetos y métodos.</p></li>
 <li><p>Introducción a los vectores unidimensionales de números (<code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>).</p></li>
@@ -501,7 +538,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="programacion-orientada-a-objetos">
-<h2><span class="section-number">3.3.2. </span>Programación orientada a objetos<a class="headerlink" href="#programacion-orientada-a-objetos" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.3.2. </span>Programación orientada a objetos<a class="headerlink" href="#programacion-orientada-a-objetos" title="Permalink to this headline">#</a></h2>
 <p>Como todos los módulos de Python, la librería <strong>NumPy</strong> está implementada siguiendo una estrategia de programación orientada a objetos. Por lo tanto, cualquier estructura de datos en Python, incluso la más simple, se debe entender como un objeto que pertenece a una clase, y sobre ella podemos realizar todas las operaciones implementadas sobre esta clase de objetos. Incluso un número es un objeto de una clase:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -632,11 +669,11 @@ True
 </div></blockquote>
 </section>
 <section id="vectores-de-numeros">
-<h2><span class="section-number">3.3.3. </span>Vectores de números<a class="headerlink" href="#vectores-de-numeros" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.3.3. </span>Vectores de números<a class="headerlink" href="#vectores-de-numeros" title="Permalink to this headline">#</a></h2>
 <p>En Python existen multitud de formas de guardar datos numéricos (o no) como pueden ser la estrutura lista o tupla. En particular, las listas pueden contener una secuencia finita de números ordenados (y utilizando un índice para acceder a cada uno de los elementos de la lista). Además, son lo suficientemente flexibles como para contener datos de diferente naturaleza (combinación de números enteros, reales, listas de listas, <em>etc.</em>).</p>
 <p>Pero esta flexibilidad de las listas en Python hace que su rendimiento computacional sea muy limitado. En la mayoría de las aplicaciones científicas en matemáticas (con sus aplicaciones a las diferentes partes de la ingeniería informática, inteligencia artificial, ciencia de datos,…), los problemas reales necesitan operaciones sobre enormes conjuntos de datos y, por tanto, la velocidad computacional es muy importante para estos grandes problemas. Para trabajar de forma eficiente con estos problemas, <strong>Numpy</strong> proporciona funciones especializadas y estructuras de datos adecuadas. En particular, para el caso de conjuntos de números de un mismo tipo (perdiendo parte de la flexibilidad de las listas, pero ganando eficacia computacional).</p>
 <p><strong>Vectores unidimensionales</strong>: Un vector unidimensional es una colección ordenada de números a los que se puede acceder mediante un índice (con lo que se preserva el orden). Por defecto, los vectores en <strong>NumPy</strong> son vectores fila.</p>
-<p><strong>Creación de vectores e indexado</strong>: Para crear un vector <strong>Numpy</strong> de lonxitude 10 e inicializado con ceros, empregaríase a función <code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code>:</p>
+<p><strong>Creación de vectores e indexado</strong>: Para crear un vector <strong>Numpy</strong> de longitud 10 e inicializado con ceros, se utilizaría la función <code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -646,8 +683,8 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
-&lt;type &#39;numpy.ndarray&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+&lt;class &#39;numpy.ndarray&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -666,13 +703,13 @@ True
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float64
 [0 0 0 0 0]
-&lt;type &#39;numpy.ndarray&#39;&gt;
-int64
+&lt;class &#39;numpy.ndarray&#39;&gt;
+int32
 </pre></div>
 </div>
 </div>
 </div>
-<p>Lo que non es posible, por ejemplo, es añadir un valor del tipo cadena de texto (es decir, de tipo <code class="docutils literal notranslate"><span class="pre">string</span></code>) a un objeto <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, ya que todos los elementos del vector deben ser del mismo tipo (o, al menos, de un tipo que admita una conversión) y deben tener también el mismo tamaño. Para comprobar el tamaño de un vector, se puede usar la función <code class="docutils literal notranslate"><span class="pre">len</span></code>:</p>
+<p>Lo que no es posible, por ejemplo, es añadir un valor del tipo cadena de texto (es decir, de tipo <code class="docutils literal notranslate"><span class="pre">string</span></code>) a un objeto <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, ya que todos los elementos del vector deben ser del mismo tipo (o, al menos, de un tipo que admita una conversión) y deben tener también el mismo tamaño. Para comprobar el tamaño de un vector, se puede usar la función <code class="docutils literal notranslate"><span class="pre">len</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>
@@ -683,14 +720,18 @@ int64
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+[0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">c:\Users\Luis Hervella\JBs\JBCalculoGEI\capitulos\05\03.IntroduccionNumpy.ipynb Cell 9&#39;</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/Luis%20Hervella/JBs/JBCalculoGEI/capitulos/05/03.IntroduccionNumpy.ipynb#ch0000008?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/Luis%20Hervella/JBs/JBCalculoGEI/capitulos/05/03.IntroduccionNumpy.ipynb#ch0000008?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/Luis%20Hervella/JBs/JBCalculoGEI/capitulos/05/03.IntroduccionNumpy.ipynb#ch0000008?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">u</span> <span class="o">+</span> <span class="n">v</span><span class="p">)</span> <span class="c1"># Implicitamente se hace una conversión de tipo de int64 a float64</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">6</span><span class="n">dfd7306e4fa</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">u</span> <span class="o">+</span> <span class="n">v</span><span class="p">)</span> <span class="c1"># Implicitamente se hace una conversión de tipo de int64 a float64</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">u</span> <span class="o">+</span> <span class="n">w</span><span class="p">)</span> <span class="c1"># ERROR: ¡Los vectores no tienen el mismo tamaño!</span>
 
-<span class="ne">NameError</span>: name &#39;u&#39; is not defined
+<span class="ne">ValueError</span>: operands could not be broadcast together with shapes (10,) (5,) 
 </pre></div>
 </div>
 </div>
@@ -828,7 +869,7 @@ int64
 </div>
 </div>
 </div>
-<p>La función <code class="docutils literal notranslate"><span class="pre">linspace</span></code> crea un vector de números equiespaciados con un valor inicial y final (ambos incluidos) e con un tamaño determinado:</p>
+<p>La función <code class="docutils literal notranslate"><span class="pre">linspace</span></code> crea un vector de números equiespaciados con un valor inicial y final (ambos incluidos) y con un tamaño determinado:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">100.</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
@@ -847,7 +888,7 @@ float64
 <p>Esta función <code class="docutils literal notranslate"><span class="pre">linspace</span></code>, junto con la función <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code>, se usará de forma habitual para pintar funciones con <strong>Matplotlib</strong> a lo largo de este curso.</p>
 </section>
 <section id="funciones-y-aritmetica-sobre-vectores">
-<h2><span class="section-number">3.3.4. </span>Funciones y aritmética sobre vectores<a class="headerlink" href="#funciones-y-aritmetica-sobre-vectores" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.3.4. </span>Funciones y aritmética sobre vectores<a class="headerlink" href="#funciones-y-aritmetica-sobre-vectores" title="Permalink to this headline">#</a></h2>
 <p>Los vectores en <strong>NumPy</strong> soportan las operaciones aritméticas básicas (producto, sumas, restas, <em>etc.</em>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -939,7 +980,7 @@ float64
 <p>En este caso el programa es más largo y difícil de leer. Además, en muchos casos será más lento. La manipulación de vectores y cualquiera de los cálculos realizados entre ellos sin acceder a los índices suelen conocerse como <strong>vectorización</strong>. Cuando sea posible emplearla, la vectorización incrementará el rendimiento y la velocidad de los códigos de cálculo. En el ejercicio final de este guión, se analizará el rendimiento de este tipo de técnicas.</p>
 </section>
 <section id="troceado-de-vectores">
-<h2><span class="section-number">3.3.5. </span>Troceado de vectores<a class="headerlink" href="#troceado-de-vectores" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.3.5. </span>Troceado de vectores<a class="headerlink" href="#troceado-de-vectores" title="Permalink to this headline">#</a></h2>
 <p>Cuando se trabaja con vectores de números, es habitual tener que extraer un subconjunto de estos para crear un nuevo vector. Por ejemplo, obtener los tres primeros coeficientes de un vector o, en el caso de matrices, restringir los cálculos a su segunda columna. Este tipo de operaciones es el que se denomina troceado de vectores (o, en inglés, <em>array slicing</em>).</p>
 <p>Vamos a explorar esto mediante varios ejemplos, trabajando con un vector de valores aleatorios:</p>
 <div class="cell docutils container">
@@ -947,30 +988,30 @@ float64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
-<span class="c1"># Usar &#39;:&#39; implica o conxunto enterio no rango dos índices, é dicir, dende 0 ata (lonxitude-1)</span>
+<span class="c1"># Usar &#39;:&#39; implica el conjunto entero en el rango de los índices, es decir, desde 0 hasta (longitud-1)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Troceado usando &#39;[:]&#39; </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 
-<span class="c1"># Usar &#39;1:3&#39; implica os índices 1 -&gt; 3 (sen incluir a 3)</span>
+<span class="c1"># Usar &#39;1:3&#39; implica los índices 1 -&gt; 3 (sin incluir a 3)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Troceado usando &#39;[1:3]&#39;: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 
-<span class="c1"># Usar &#39;2:-1&#39; implica os índices 2 -&gt; o segundo dende o final (sen incluílo)</span>
+<span class="c1"># Usar &#39;2:-1&#39; implica los índices 2 -&gt; el segundo desde el final (sin incluirlo)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Troceado usando &#39;[2:-1]&#39;: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 
-<span class="c1"># Usar &#39;2:-2&#39; implica os índices 2 -&gt; o terceiro dende o final (sen incluílo)</span>
+<span class="c1"># Usar &#39;2:-2&#39; implica los índices 2 -&gt; el tercero desde el final (sin incluirlo)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Troceado usando &#39;[2:-2]&#39;: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.65319139 0.7371771  0.85358493 0.24875806 0.78166875]
-Troceado usando &#39;[:]&#39; [0.65319139 0.7371771  0.85358493 0.24875806 0.78166875]
-Troceado usando &#39;[1:3]&#39;: [0.7371771  0.85358493]
-Troceado usando &#39;[2:-1]&#39;: [0.85358493 0.24875806]
-Troceado usando &#39;[2:-2]&#39;: [0.85358493]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.63076568 0.47536652 0.04092676 0.277812   0.82745402]
+Troceado usando &#39;[:]&#39; [0.63076568 0.47536652 0.04092676 0.277812   0.82745402]
+Troceado usando &#39;[1:3]&#39;: [0.47536652 0.04092676]
+Troceado usando &#39;[2:-1]&#39;: [0.04092676 0.277812  ]
+Troceado usando &#39;[2:-2]&#39;: [0.04092676]
 </pre></div>
 </div>
 </div>
@@ -1031,14 +1072,14 @@ Troceado usando &#39;[:]&#39;: [0.65319139 0.7371771  0.85358493 0.24875806 0.78
 <p>Existen muchas otras estrategias y sintaxis relacionada con el troceado de vectores, que quedan fuera del alcance de esta introdución breve a <strong>NumPy</strong>. Para una información más detallada, se puede consultar: <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html">https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html</a></p>
 </section>
 <section id="ejercicio-aceleracion-con-numpy-en-el-calculo-de-normas-de-vectores">
-<h2><span class="section-number">3.3.6. </span>Ejercicio: aceleración con NumPy en el cálculo de normas de vectores<a class="headerlink" href="#ejercicio-aceleracion-con-numpy-en-el-calculo-de-normas-de-vectores" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.3.6. </span>Ejercicio: aceleración con NumPy en el cálculo de normas de vectores<a class="headerlink" href="#ejercicio-aceleracion-con-numpy-en-el-calculo-de-normas-de-vectores" title="Permalink to this headline">#</a></h2>
 <p>La norma euclídea (o <em>módulo</em>) de un vector <span class="math notranslate nohighlight">\(\vec{x}=(x_{0},\ldots,x_{n-1})\in\mathbb{R}^{n}\)</span> viene dada por</p>
 <div class="math notranslate nohighlight">
 \[
 \| x \| = \sqrt{\sum_{i=0}^{n-1} x_{i} x_{i}},
 \]</div>
-<p>donde <span class="math notranslate nohighlight">\(x_{i}\)</span> es el <span class="math notranslate nohighlight">\(i\)</span>-ésimo coeficiente de <span class="math notranslate nohighlight">\(\vec{x}\)</span>. En resumen, su norma non es más que el cálculo del producto interior del vector por sí mismo, seguido por el cálculo de una raíz cuadrada. Para calcular el valor de la norma se pueden seguir diferentes estrategias: la primera de ellas puede ser usar un bucle para recorrer todos los coeficientes del vector y sumar el cuadrado de cada coeficiente, luego tomar la suma de todas estas cantidades y calcular su raíz cadrada.</p>
-<p>Para evaluar el rendimiento computacional de esta implementación, vamos a coger un vector moderadamente grande (10 millóns) y vamos a calcular el tiempo de cáculo:</p>
+<p>donde <span class="math notranslate nohighlight">\(x_{i}\)</span> es el <span class="math notranslate nohighlight">\(i\)</span>-ésimo coeficiente de <span class="math notranslate nohighlight">\(\vec{x}\)</span>. En resumen, su norma no es más que el cálculo del producto interior del vector por sí mismo, seguido por el cálculo de una raíz cuadrada. Para calcular el valor de la norma se pueden seguir diferentes estrategias: la primera de ellas puede ser usar un bucle para recorrer todos los coeficientes del vector y sumar el cuadrado de cada coeficiente, luego tomar la suma de todas estas cantidades y calcular su raíz cadrada.</p>
+<p>Para evaluar el rendimiento computacional de esta implementación, vamos a coger un vector moderadamente grande (10 millones) y vamos a calcular el tiempo de cáculo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear un vector NumPy con 10 millones de valores aleatorios</span>
@@ -1067,8 +1108,8 @@ Troceado usando &#39;[:]&#39;: [0.65319139 0.7371771  0.85358493 0.24875806 0.78
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wall time: 1.44 s
-1825.5731850846362
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wall time: 3.84 s
+1825.756466436551
 </pre></div>
 </div>
 </div>
@@ -1096,7 +1137,7 @@ Trata de emplear funciones <strong>NumPy</strong> para definir una función que 
 </div>
 </div>
 <p><strong>Ejercicio 3:</strong>
-Compara los tiempos de cálculo de las cuatro implementaciones para diferentes dimensiones del vector <span class="math notranslate nohighlight">\(\vec{x}\)</span>, de tamaños <span class="math notranslate nohighlight">\(10\)</span>, <span class="math notranslate nohighlight">\(10^3\)</span>, <span class="math notranslate nohighlight">\(10^5\)</span>, <span class="math notranslate nohighlight">\(10^7\)</span>. A partir de estos tiempos de cálculo: ¿que se puede deducir como conclusión?</p>
+Compara los tiempos de cálculo de las cuatro implementaciones para diferentes dimensiones del vector <span class="math notranslate nohighlight">\(\vec{x}\)</span>, de tamaños <span class="math notranslate nohighlight">\(10\)</span>, <span class="math notranslate nohighlight">\(10^3\)</span>, <span class="math notranslate nohighlight">\(10^5\)</span>, <span class="math notranslate nohighlight">\(10^7\)</span>. A partir de estos tiempos de cálculo: ¿qué se puede deducir como conclusión?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ESCRIBE AQUÍ TU CÓDIGO</span>
@@ -1138,13 +1179,13 @@ Compara los tiempos de cálculo de las cuatro implementaciones para diferentes d
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3.2. </span>Límites y continuidad con <strong>Sympy</strong></p>
+            <p class="prev-next-title"><span class="section-number">5.2. </span>Límites y continuidad con <strong>Sympy</strong></p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="04.RepresentacionGraficaMatplotlib.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.4. </span>Gráficas con Matplotlib</p>
+        <p class="prev-next-title"><span class="section-number">5.4. </span>Gráficas con Matplotlib</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

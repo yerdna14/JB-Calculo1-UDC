@@ -193,11 +193,16 @@ const thebe_selector_output = ".output, .cell_output"
      2.8. Boletín 1
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/02/09.Boletin2.html">
+     2.9. Boletín 2
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="capitulos/05/README.html">
-   3. Python para cálculo de una variable
+  <a class="reference internal" href="capitulos/03/README.html">
+   3. Derivación
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -206,23 +211,55 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/03/01.DerivacionDefProp.html">
+     3.1. Definición de derivada y propiedades básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/03/02.NewtonRaphson.html">
+     3.2. Método numérico de Newton-Raphson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/03/03.DerivadasSucesivas.html">
+     3.3. Derivadas sucesivas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="capitulos/04/README.html">
+   4. Integración
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="capitulos/05/README.html">
+   5. Python para cálculo de una variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="capitulos/05/01.IntroduccionSympy.html">
-     3.1. Introducción a SymPy
+     5.1. Introducción a SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="capitulos/05/02.LimitesContinuidadSympy.html">
-     3.2. Límites y continuidad en SymPy
+     5.2. Límites y continuidad en SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="capitulos/05/03.IntroduccionNumpy.html">
-     3.3. Introducción a NumPy
+     5.3. Introducción a NumPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="capitulos/05/04.RepresentacionGraficaMatplotlib.html">
-     3.4. Gráficas con Matplotlib
+     5.4. Gráficas con Matplotlib
     </a>
    </li>
   </ul>
@@ -321,16 +358,42 @@ title="Fullscreen mode"
    <div class="modindex-jumpbox">
    <a href="#cap-def_acos"><strong>def_acos</strong></a> | 
    <a href="#cap-def_atan"><strong>def_atan</strong></a> | 
+   <a href="#cap-def_clase_funcion"><strong>def_clase_funcion</strong></a> | 
+   <a href="#cap-def_cont_intervalos"><strong>def_cont_intervalos</strong></a> | 
+   <a href="#cap-def_continuidad"><strong>def_continuidad</strong></a> | 
    <a href="#cap-def_coseno"><strong>def_coseno</strong></a> | 
+   <a href="#cap-def_derivada"><strong>def_derivada</strong></a> | 
+   <a href="#cap-def_derivada_segunda"><strong>def_derivada_segunda</strong></a> | 
+   <a href="#cap-def_derivadas_laterales"><strong>def_derivadas_laterales</strong></a> | 
+   <a href="#cap-def_derivadas_sucesivas"><strong>def_derivadas_sucesivas</strong></a> | 
    <a href="#cap-def_distancia"><strong>def_distancia</strong></a> | 
    <a href="#cap-def_exp"><strong>def_exp</strong></a> | 
    <a href="#cap-def_log"><strong>def_log</strong></a> | 
+   <a href="#cap-def_raiz"><strong>def_raiz</strong></a> | 
    <a href="#cap-def_seno"><strong>def_seno</strong></a> | 
    <a href="#cap-def_tangente"><strong>def_tangente</strong></a> | 
+   <a href="#cap-ex_clase_funcion"><strong>ex_clase_funcion</strong></a> | 
    <a href="#cap-prop_alg_exp"><strong>prop_alg_exp</strong></a> | 
    <a href="#cap-prop_alg_log"><strong>prop_alg_log</strong></a> | 
+   <a href="#cap-prop_aritmetica_cont"><strong>prop_aritmetica_cont</strong></a> | 
+   <a href="#cap-prop_aritmetica_derivada"><strong>prop_aritmetica_derivada</strong></a> | 
+   <a href="#cap-prop_aritmetica_infinito"><strong>prop_aritmetica_infinito</strong></a> | 
+   <a href="#cap-prop_comp_cont"><strong>prop_comp_cont</strong></a> | 
+   <a href="#cap-prop_derivable_continua"><strong>prop_derivable_continua</strong></a> | 
+   <a href="#cap-prop_derivadas_elementales"><strong>prop_derivadas_elementales</strong></a> | 
+   <a href="#cap-prop_derivadas_laterales"><strong>prop_derivadas_laterales</strong></a> | 
+   <a href="#cap-prop_indeterminaciones"><strong>prop_indeterminaciones</strong></a> | 
+   <a href="#cap-prop_lim_cont"><strong>prop_lim_cont</strong></a> | 
+   <a href="#cap-prop_regla_cadena"><strong>prop_regla_cadena</strong></a> | 
    <a href="#cap-prop_seno_cos"><strong>prop_seno_cos</strong></a> | 
-   <a href="#cap-prop_valor_abs"><strong>prop_valor_abs</strong></a>
+   <a href="#cap-prop_valor_abs"><strong>prop_valor_abs</strong></a> | 
+   <a href="#cap-remark_cont"><strong>remark_cont</strong></a> | 
+   <a href="#cap-remark_derivada"><strong>remark_derivada</strong></a> | 
+   <a href="#cap-rm_lhopital"><strong>rm_lhopital</strong></a> | 
+   <a href="#cap-th_Bolzano"><strong>th_Bolzano</strong></a> | 
+   <a href="#cap-th_Weierstrass"><strong>th_Weierstrass</strong></a> | 
+   <a href="#cap-th_dicotomia_estimacion"><strong>th_dicotomia_estimacion</strong></a> | 
+   <a href="#cap-th_lhopital"><strong>th_lhopital</strong></a>
    </div>
 
    <table class="indextable modindextable">
@@ -340,7 +403,7 @@ title="Fullscreen mode"
      <tr>
        <td></td>
        <td>
-       <a href="capitulos/02/03.FuncionesElementales.html#def_acos"><code class="xref">def_acos</code></a> <em>(capitulos/02/03.FuncionesElementales)</em></td><td>
+       <a href="capitulos/02/04.Limites.html#def_acos"><code class="xref">def_acos</code></a> <em>(capitulos/02/04.Limites)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_atan"><td></td><td>
@@ -351,12 +414,68 @@ title="Fullscreen mode"
        <a href="capitulos/02/03.FuncionesElementales.html#def_atan"><code class="xref">def_atan</code></a> <em>(capitulos/02/03.FuncionesElementales)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_clase_funcion"><td></td><td>
+       <strong>def_clase_funcion</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/03.DerivadasSucesivas.html#def_clase_funcion"><code class="xref">def_clase_funcion</code></a> <em>(capitulos/03/03.DerivadasSucesivas)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_cont_intervalos"><td></td><td>
+       <strong>def_cont_intervalos</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/02/05.Continuidad.html#def_cont_intervalos"><code class="xref">def_cont_intervalos</code></a> <em>(capitulos/02/05.Continuidad)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_continuidad"><td></td><td>
+       <strong>def_continuidad</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/02/05.Continuidad.html#def_continuidad"><code class="xref">def_continuidad</code></a> <em>(capitulos/02/05.Continuidad)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_coseno"><td></td><td>
        <strong>def_coseno</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
        <a href="capitulos/02/03.FuncionesElementales.html#def_coseno"><code class="xref">def_coseno</code></a> <em>(capitulos/02/03.FuncionesElementales)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_derivada"><td></td><td>
+       <strong>def_derivada</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/01.DerivacionDefProp.html#def_derivada"><code class="xref">def_derivada</code></a> <em>(capitulos/03/01.DerivacionDefProp)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_derivada_segunda"><td></td><td>
+       <strong>def_derivada_segunda</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/03.DerivadasSucesivas.html#def_derivada_segunda"><code class="xref">def_derivada_segunda</code></a> <em>(capitulos/03/03.DerivadasSucesivas)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_derivadas_laterales"><td></td><td>
+       <strong>def_derivadas_laterales</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/01.DerivacionDefProp.html#def_derivadas_laterales"><code class="xref">def_derivadas_laterales</code></a> <em>(capitulos/03/01.DerivacionDefProp)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_derivadas_sucesivas"><td></td><td>
+       <strong>def_derivadas_sucesivas</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/03.DerivadasSucesivas.html#def_derivadas_sucesivas"><code class="xref">def_derivadas_sucesivas</code></a> <em>(capitulos/03/03.DerivadasSucesivas)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_distancia"><td></td><td>
@@ -383,6 +502,14 @@ title="Fullscreen mode"
        <a href="capitulos/02/03.FuncionesElementales.html#def_log"><code class="xref">def_log</code></a> <em>(capitulos/02/03.FuncionesElementales)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_raiz"><td></td><td>
+       <strong>def_raiz</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/02/05.Continuidad.html#def_raiz"><code class="xref">def_raiz</code></a> <em>(capitulos/02/05.Continuidad)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_seno"><td></td><td>
        <strong>def_seno</strong></td><td></td></tr>
      <tr>
@@ -398,6 +525,14 @@ title="Fullscreen mode"
        <td>
        <a href="capitulos/02/03.FuncionesElementales.html#def_tangente"><code class="xref">def_tangente</code></a> <em>(capitulos/02/03.FuncionesElementales)</em></td><td>
        <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex_clase_funcion"><td></td><td>
+       <strong>ex_clase_funcion</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/03.DerivadasSucesivas.html#ex_clase_funcion"><code class="xref">ex_clase_funcion</code></a> <em>(capitulos/03/03.DerivadasSucesivas)</em></td><td>
+       <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-prop_alg_exp"><td></td><td>
        <strong>prop_alg_exp</strong></td><td></td></tr>
@@ -415,6 +550,86 @@ title="Fullscreen mode"
        <a href="capitulos/02/03.FuncionesElementales.html#prop_alg_log"><code class="xref">prop_alg_log</code></a> <em>(capitulos/02/03.FuncionesElementales)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_aritmetica_cont"><td></td><td>
+       <strong>prop_aritmetica_cont</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/02/05.Continuidad.html#prop_aritmetica_cont"><code class="xref">prop_aritmetica_cont</code></a> <em>(capitulos/02/05.Continuidad)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_aritmetica_derivada"><td></td><td>
+       <strong>prop_aritmetica_derivada</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/01.DerivacionDefProp.html#prop_aritmetica_derivada"><code class="xref">prop_aritmetica_derivada</code></a> <em>(capitulos/03/01.DerivacionDefProp)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_aritmetica_infinito"><td></td><td>
+       <strong>prop_aritmetica_infinito</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/01.DerivacionDefProp.html#prop_aritmetica_infinito"><code class="xref">prop_aritmetica_infinito</code></a> <em>(capitulos/03/01.DerivacionDefProp)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_comp_cont"><td></td><td>
+       <strong>prop_comp_cont</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/02/05.Continuidad.html#prop_comp_cont"><code class="xref">prop_comp_cont</code></a> <em>(capitulos/02/05.Continuidad)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_derivable_continua"><td></td><td>
+       <strong>prop_derivable_continua</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/01.DerivacionDefProp.html#prop_derivable_continua"><code class="xref">prop_derivable_continua</code></a> <em>(capitulos/03/01.DerivacionDefProp)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_derivadas_elementales"><td></td><td>
+       <strong>prop_derivadas_elementales</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/01.DerivacionDefProp.html#prop_derivadas_elementales"><code class="xref">prop_derivadas_elementales</code></a> <em>(capitulos/03/01.DerivacionDefProp)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_derivadas_laterales"><td></td><td>
+       <strong>prop_derivadas_laterales</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/01.DerivacionDefProp.html#prop_derivadas_laterales"><code class="xref">prop_derivadas_laterales</code></a> <em>(capitulos/03/01.DerivacionDefProp)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_indeterminaciones"><td></td><td>
+       <strong>prop_indeterminaciones</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/01.DerivacionDefProp.html#prop_indeterminaciones"><code class="xref">prop_indeterminaciones</code></a> <em>(capitulos/03/01.DerivacionDefProp)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_lim_cont"><td></td><td>
+       <strong>prop_lim_cont</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/02/05.Continuidad.html#prop_lim_cont"><code class="xref">prop_lim_cont</code></a> <em>(capitulos/02/05.Continuidad)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_regla_cadena"><td></td><td>
+       <strong>prop_regla_cadena</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/01.DerivacionDefProp.html#prop_regla_cadena"><code class="xref">prop_regla_cadena</code></a> <em>(capitulos/03/01.DerivacionDefProp)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-prop_seno_cos"><td></td><td>
        <strong>prop_seno_cos</strong></td><td></td></tr>
      <tr>
@@ -430,6 +645,62 @@ title="Fullscreen mode"
        <td>
        <a href="capitulos/02/03.FuncionesElementales.html#prop_valor_abs"><code class="xref">prop_valor_abs</code></a> <em>(capitulos/02/03.FuncionesElementales)</em></td><td>
        <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark_cont"><td></td><td>
+       <strong>remark_cont</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/02/05.Continuidad.html#remark_cont"><code class="xref">remark_cont</code></a> <em>(capitulos/02/05.Continuidad)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark_derivada"><td></td><td>
+       <strong>remark_derivada</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/01.DerivacionDefProp.html#remark_derivada"><code class="xref">remark_derivada</code></a> <em>(capitulos/03/01.DerivacionDefProp)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-rm_lhopital"><td></td><td>
+       <strong>rm_lhopital</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/01.DerivacionDefProp.html#rm_lhopital"><code class="xref">rm_lhopital</code></a> <em>(capitulos/03/01.DerivacionDefProp)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-th_Bolzano"><td></td><td>
+       <strong>th_Bolzano</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/02/05.Continuidad.html#th_Bolzano"><code class="xref">th_Bolzano</code></a> <em>(capitulos/02/05.Continuidad)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-th_Weierstrass"><td></td><td>
+       <strong>th_Weierstrass</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/02/05.Continuidad.html#th_Weierstrass"><code class="xref">th_Weierstrass</code></a> <em>(capitulos/02/05.Continuidad)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-th_dicotomia_estimacion"><td></td><td>
+       <strong>th_dicotomia_estimacion</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/02/06.Dicotomia.html#th_dicotomia_estimacion"><code class="xref">th_dicotomia_estimacion</code></a> <em>(capitulos/02/06.Dicotomia)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-th_lhopital"><td></td><td>
+       <strong>th_lhopital</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/01.DerivacionDefProp.html#th_lhopital"><code class="xref">th_lhopital</code></a> <em>(capitulos/03/01.DerivacionDefProp)</em></td><td>
+       <em>theorem</em></td></tr>
    </table>
 
 

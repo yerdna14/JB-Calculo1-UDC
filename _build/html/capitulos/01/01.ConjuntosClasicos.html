@@ -191,11 +191,16 @@ const thebe_selector_output = ".output, .cell_output"
      2.8. Boletín 1
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/09.Boletin2.html">
+     2.9. Boletín 2
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../05/README.html">
-   3. Python para cálculo de una variable
+  <a class="reference internal" href="../03/README.html">
+   3. Derivación
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -204,23 +209,55 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
+     3.1. Definición de derivada y propiedades básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/02.NewtonRaphson.html">
+     3.2. Método numérico de Newton-Raphson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
+     3.3. Derivadas sucesivas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/README.html">
+   4. Integración
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/README.html">
+   5. Python para cálculo de una variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../05/01.IntroduccionSympy.html">
-     3.1. Introducción a SymPy
+     5.1. Introducción a SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">
-     3.2. Límites y continuidad en SymPy
+     5.2. Límites y continuidad en SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05/03.IntroduccionNumpy.html">
-     3.3. Introducción a NumPy
+     5.3. Introducción a NumPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">
-     3.4. Gráficas con Matplotlib
+     5.4. Gráficas con Matplotlib
     </a>
    </li>
   </ul>
@@ -495,7 +532,7 @@ como fracción. Es decir, que <span class="math notranslate nohighlight">\(\sqrt
 un ejemplo de <strong>número irracional</strong>, como también lo son <span class="math notranslate nohighlight">\(\pi\)</span>, <span class="math notranslate nohighlight">\(e\)</span>, <span class="math notranslate nohighlight">\(\sqrt{3}\)</span>,
 <em>etc.</em>. Aparecen los <strong>números reales</strong>, <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, que agrupan tanto a los racionales como
 a los irracionales.</p>
-<a class="reference internal image-reference" href="../../_images/cap2_sqrt2_no_racional.png"><img alt="../../_images/cap2_sqrt2_no_racional.png" src="../../_images/cap2_sqrt2_no_racional.png" style="width: 150px;" /></a>
+<a class="reference internal image-reference" href="../../_images/cap1_sqrt2_no_racional.png"><img alt="../../_images/cap1_sqrt2_no_racional.png" src="../../_images/cap1_sqrt2_no_racional.png" style="width: 150px;" /></a>
 <p>Hay dos propiedades muy importantes de los números reales que nos gustaría destacar
 aquí:</p>
 <ul>
@@ -514,7 +551,7 @@ más común de representar los números reales: en una recta infinita. Dado un p
 la recta, <span class="math notranslate nohighlight">\(a\)</span>, que podemos identificar con un número real, a su derecha estarán los
 números reales mayores que <span class="math notranslate nohighlight">\(a\)</span> y a su izquierda los menores. Y la recta no presenta
 agujeros gracias a la propiedad de densidad.</p>
-<a class="reference internal image-reference" href="../../_images/cap2_rectareal.png"><img alt="../../_images/cap2_rectareal.png" src="../../_images/cap2_rectareal.png" style="width: 150px;" /></a>
+<a class="reference internal image-reference" href="../../_images/cap1_recta_real.png"><img alt="../../_images/cap1_recta_real.png" src="../../_images/cap1_recta_real.png" style="width: 300px;" /></a>
 <p>Veamos algunas definiciones importantes que tienen que ver con la acotación de subconjuntos de <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
 <p><strong>Definición:</strong>
 Sea <span class="math notranslate nohighlight">\(\mathrm{A}\)</span> un subconjunto no vacío de <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> (<span class="math notranslate nohighlight">\(\mathrm{A}\subset\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{A}\not=\emptyset\)</span>).</p>

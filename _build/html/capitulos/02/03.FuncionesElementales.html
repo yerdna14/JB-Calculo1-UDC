@@ -191,11 +191,16 @@ const thebe_selector_output = ".output, .cell_output"
      2.8. Boletín 1
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.Boletin2.html">
+     2.9. Boletín 2
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../05/README.html">
-   3. Python para cálculo de una variable
+  <a class="reference internal" href="../03/README.html">
+   3. Derivación
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -204,23 +209,55 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
+     3.1. Definición de derivada y propiedades básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/02.NewtonRaphson.html">
+     3.2. Método numérico de Newton-Raphson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
+     3.3. Derivadas sucesivas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/README.html">
+   4. Integración
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/README.html">
+   5. Python para cálculo de una variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../05/01.IntroduccionSympy.html">
-     3.1. Introducción a SymPy
+     5.1. Introducción a SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">
-     3.2. Límites y continuidad en SymPy
+     5.2. Límites y continuidad en SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05/03.IntroduccionNumpy.html">
-     3.3. Introducción a NumPy
+     5.3. Introducción a NumPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">
-     3.4. Gráficas con Matplotlib
+     5.4. Gráficas con Matplotlib
     </a>
    </li>
   </ul>
@@ -710,7 +747,7 @@ En los dos casos se verifica que <span class="math notranslate nohighlight">\(\m
 </li>
 <li><p><span class="math notranslate nohighlight">\(\boldsymbol{a&gt;1}\)</span>. En este caso,</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(f(x)=a^x\)</span> es una función estrictamente creciente, <span class="math notranslate nohighlight">\(x&lt;y\Rightarrow f(x)&gt;f(y)\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x)=a^x\)</span> es una función estrictamente creciente, <span class="math notranslate nohighlight">\(x&lt;y\Rightarrow f(x)&lt;f(y)\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to-\infty}a^x=0\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to+\infty}a^y=+\infty\)</span>.</p></li>
 </ul>
@@ -884,7 +921,7 @@ es decir: <span class="math notranslate nohighlight">\(\log(x)=\ln(x)=\log_{e}(x
 </div><p>El dominio de esta función lo forman todos los puntos de <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> en los que el coseno no se anule, es decir,</p>
 <div class="math notranslate nohighlight">
 \[
-\textrm{Dom}\left(\tan\right)=\mathbb{R}-\left\{\frac{\pi}{2}+k\pi:k\in\Z\right\},
+\textrm{Dom}\left(\tan\right)=\mathbb{R}-\left\{\frac{\pi}{2}+k\pi:k\in\mathbb{Z}\right\},
 \]</div>
 <p>mientras que su imagen es todo <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. Además, es una función impar y periódica, con
 período <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
@@ -948,8 +985,25 @@ el <span class="math notranslate nohighlight">\([-\frac{\pi}{2},\frac{\pi}{2}]\)
 con el coseno definido en el intervalo <span class="math notranslate nohighlight">\([0,\pi]\)</span>.</p>
 <p>Definimos entonces la función arco-coseno, <span class="math notranslate nohighlight">\(\text{arccos}(x)\)</span>, como la función que, dado un
 <span class="math notranslate nohighlight">\(x\in[-1,1]\)</span>, le asocia el único <span class="math notranslate nohighlight">\(y\)</span> en <span class="math notranslate nohighlight">\([0,\pi]\)</span> tal que <span class="math notranslate nohighlight">\(x=\cos(y)\)</span>.</p>
+<a class="reference internal image-reference" href="../../_images/cap3_funcion_acos.png"><img alt="../../_images/cap3_funcion_acos.png" src="../../_images/cap3_funcion_acos.png" style="width: 300px;" /></a>
 </section>
-</div><a class="reference internal image-reference" href="../../_images/cap3_funcion_acos.png"><img alt="../../_images/cap3_funcion_acos.png" src="../../_images/cap3_funcion_acos.png" style="width: 300px;" /></a>
+</div><p>Por tanto la función <span class="math notranslate nohighlight">\(\text{arccos}(x)\)</span> tiene como dominio el intervalo <span class="math notranslate nohighlight">\([-1,1]\)</span> y como imagen
+el <span class="math notranslate nohighlight">\([0,\pi]\)</span>. No presenta simetrías (ni par ni impar).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span>
+<span class="n">p</span><span class="o">.</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span>
+<span class="n">p</span><span class="o">.</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;y&#39;</span>
+<span class="n">p</span><span class="o">.</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03.FuncionesElementales_20_0.png" src="../../_images/03.FuncionesElementales_20_0.png" />
+</div>
+</div>
 <div class="proof definition admonition" id="def_atan">
 <p class="admonition-title"><span>Definition </span> (Función arco-tangente)</p>
 <section class="definition-content" id="proof-content">
@@ -974,7 +1028,7 @@ intervalo <span class="math notranslate nohighlight">\([-\frac{\pi}{2},\frac{\pi
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03.FuncionesElementales_20_0.png" src="../../_images/03.FuncionesElementales_20_0.png" />
+<img alt="../../_images/03.FuncionesElementales_22_0.png" src="../../_images/03.FuncionesElementales_22_0.png" />
 </div>
 </div>
 </section>

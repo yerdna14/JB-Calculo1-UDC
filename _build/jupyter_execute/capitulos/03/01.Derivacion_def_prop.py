@@ -1,390 +1,428 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Funciones elementales
+# # Definición de derivada y propiedades básicas
 # 
-# Aquí tenéis el link con la documentación oficial de **Sympy** sobre funciones elementales: 
-# https://docs.sympy.org/latest/modules/functions/elementary.html
-
-# ## Función valor absoluto
+# ## Definición de derivada
 # 
-# Esta función se define mediante
+# Vamos a introducir este nuevo concepto mediante un ejemplo. Para ello copiamos 
+# el célebre experimento de Galileo en la torre de Pisa y nos preguntamos:
+# 
+# Supongamos que dejamos caer una pelota desde lo más alto de un edificio de 
+# $300$ m. ¿Cuál será la velocidad de la pelota después de 5 segundos?
+# 
+# Galileo llegó a la conclusión de que el espacio recorrido es directamente proporcional
+# al cuadrado del tiempo transcurrido, según la fórmula
 # 
 # $$
-# |x|:=\left\{\begin{array}{cc}
-# -x&\text{ si }x< 0,\\
-# x&\text{ si }x\geq 0.
+# s(t)=4.9 t^2,
+# $$
+# 
+# fórmula que se acerca mucho a la realidad... siempre que despreciemos el rozamiento
+# ejercido por el aire.
+# 
+# Entonces, ¿cómo hallamos la velocidad en $t=5$ segundos? Podemos hacer una 
+# velocidad promedio:
+# 
+# $$
+# \begin{array}{rcl}
+# \text{Velocidad promedio} &=& \dfrac{\text{distancia recorrida}}
+# {\text{tiempo transcurrido}}, \\
+# && \\
+# v(5)\approx \dfrac{s(5.1)-s(5)}{0.1} &=& \dfrac{4.9(5.1)^2-4.9\, 5^2}{0.1}
+# =49.49\; m/s,
+# \end{array}
+# $$
+# 
+# o, mejor todavía, 
+# 
+# $$
+# v(5)\approx \frac{s(5.01)-s(5)}{0.01}=\frac{4.9(5.01)^2-4.9(5)^2}{0.01}
+# =49.049\; m/s.
+# $$
+# 
+# Realmente, lo que estamos haciendo es aproximar la pendiente de la recta tangente 
+# a la función $s$ en el punto $t=5$.
+# Recordemos, antes de nada, que la **pendiente** de una recta es la tangente del
+# ángulo que forma con el eje $OX$, como se muestra en la siguiente figura:
+# 
+# <img src="../../images/cap_deriv_pendiente_recta.png" width="400"/>
+# 
+# 
+
+# Si ahora queremos calcular la pendiente de la recta tangente a una función $f$ 
+# en un punto $x_0$, lo que haremos será calcular las pendientes de las rectas 
+# secantes a $f$ por dos puntos próximos, $x_0$ y $x$, y hacer que $x$ se 
+# acerque a $x_0$ (es decir, tomar el *límite cuando $x\to x_0$*). La 
+# ilustración gráfica de este proceso se muestra en la siguiente figura 
+# (con la que, por cierto, puedes jugar en el siguiente link: https://www.desmos.com/calculator/piskepauzm): 
+# 
+# <img src="../../images/cap_deriv_definicion_derivada.png" width="400"/>
+# 
+# ````{prf:definition} 
+# :label: def_derivada
+# :nonumber: 
+# 
+# Sea $f:(a,b)\rightarrow\mathbb{R}$, $x_0\in(a,b)$. Definimos la **derivada de $f$ en $x_0$**
+# como el límite, si existe,
+# 
+# $$
+# f'(x_0):=\lim_{x\to x_0}\dfrac{f(x)-f(x_0)}{x-x_0}=\lim_{h\to 0}\dfrac{f(x_0+h)-f(x_0)}{h}.
+# $$
+# 
+# ````
+# ````{prf:remark} 
+# :label: remark_derivada
+# :nonumber: 
+# 
+# 1. Aquí ya vemos la utilidad de no incluir el punto $x_0$ (en este caso, 
+# el punto $h=0$) en la definición de límite. En la expresión 
+# $\displaystyle\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)}{h}$ no podemos hacer nada si 
+# $h=0$, ya que tendríamos una división entre $0$. Pero, afortunadamente, 
+# justo el punto $h=0$ no se incluye en la definición de límite (recordemos eso 
+# de $0<|h-0|<\delta$...).
+# 
+# 2. El cociente $\frac{f(x)-f(x_0)}{x-x_0}$ mide la variación de la función 
+# respecto a la variación de la variable. Por ese motivo a $f'(x_0)$ se le denomina, 
+# en ocasiones, coeficiente de variación de $f$, o razón de cambio de la función 
+# $f$, en el punto $x_0$. 
+# 
+#     Es decir, la derivada de una función en un punto indica la variación instantánea 
+#     de la función en ese punto. Por ejemplo, la aceleración, que es la variación de 
+#     velocidad, se escribe matemáticamente como $\frac{dv}{dx}$, es decir, 
+#     la derivada de la velocidad respecto al tiempo. 
+# 
+#     Que la derivada sea la variación instantánea de una variable dependiente, 
+#     $y$, respecto a otra variable independiente, $x$, será fundamental cuando
+#     veamos los modelos matemáticos en ecuaciones diferenciales.
+# 
+# 3. Ahora ya podemos calcular la ecuación de la recta tangente utilizando la
+# fórmula punto-pendiente,
+# 
+#     $$
+#     y-y_{0}=m\left(x-x_{0}\right) \Longrightarrow y=y_{0}+m\left(x-x_{0}\right).
+#     $$ 
+# 
+#     En este caso, $\left(x_{0},y_{0}\right)=\left(x_{0},f\left(x_{0}\right)\right)$, 
+#     $m=f'\left(x_{0}\right)$. Y la recta tangente,
+# 
+#     $$
+#     y=f\left(x_{0}\right)+f'\left(x_{0}\right)\left(x-x_{0}\right).
+#     $$
+# 
+# ````
+# 
+# 
+
+# ## Derivadas laterales
+# 
+# Ahora, como estamos definiendo la derivada como un límite, podemos hablar de derivada
+# por la izquierda y derivada por la derecha.
+# 
+# ````{prf:definition} Derivadas laterales
+# :label: def_derivadas_laterales
+# :nonumber: 
+# 
+# Sea $f:(a,b)\rightarrow\mathbb{R}$, $x_0\in(a,b)$. Definimos
+# 
+# * **derivada por la izquierda** de $f$ en $x_0$ como
+# 
+#     $$
+#     f'(x_0^{-}):=\lim_{h\to 0^{-}}\frac{f(x_0+h)-f(x_0)}{h},
+#     $$
+# 
+# * **derivada por la derecha** de $f$ en $x_0$ como
+# 
+# $$
+# f'(x_0^{+}):=\lim_{h\to 0^{+}}\frac{f(x_0+h)-f(x_0)}{h}.
+# $$
+# 
+# ````
+# ````{prf:property} 
+# :label: prop_derivadas_laterales
+# :nonumber: 
+# 
+# Sea $f:(a,b)\rightarrow\mathbb{R}$, $x_0\in(a,b)$. $f$ es derivable en $x_0$ si y sólo si es
+# derivable por la izquierda y por la derecha en $x_0$ y ambas derivadas coinciden.
+# ````
+# 
+# El **ejemplo** más típico de función no derivable es la
+# función valor absoluto, que no es derivable en el $0$. Veámoslo, calculando sus
+# derivadas parciales.  Recordemos que
+# 
+# $$
+# |x|=\left\{\begin{array}{ll}
+# -x &\quad \mbox{si }x<0, \\
+# x &\quad\mbox{si }x\geq 0.
 # \end{array}\right.
 # $$
-
-# In[41]:
-
-
-import sympy as sp
-
-x = sp.symbols('x', real=True)
-p = sp.plot(sp.Abs(x), (x, -3, 3), show=False)
-p[0].line_color='r'
-p.xlabel='x'
-p.ylabel='y'
-p.legend=True
-p.show()
-
-
-# Veamos las principales propiedades de esta función:
 # 
-# **Propiedad:** Sean $x,y\in\mathbb{R}$. Se verifica
+# Entonces,
 # 
-# 1. $|x|\geq 0$, $\forall x\in\mathbb{R}$.
-#     Además, $|x|=0\Longleftrightarrow x=0$,
-# 2. $-|x|\leq x\leq |x|$,
-# 3. $|x|\leq y\Longleftrightarrow -y\leq x\leq y$,
-# 4. $|x+y|\leq |x|+|y|$ (desigualdad triangular),
-# 5. $|x-y|\geq \left| |x|-|y|\right|$,
-# 6. $|xy|=|x||y|,\quad$ $\displaystyle\left|\frac{x}{y}\right|=\frac{|x|}{|y|}$.
+# \begin{eqnarray*}
+# &&f'\left(0^{-}\right)=\lim_{h\to 0^{-}}\frac{|h|-|0|}{h}=\lim_{h\to 0^{-}}\frac{-h}{h}=-1, \\
+# &&f'\left(0^{+}\right)=\lim_{h\to 0^{+}}\frac{|h|-|0|}{h}=\lim_{h\to 0^{+}}\frac{h}{h}=1.
+# \end{eqnarray*}
 # 
-# Destaquemos que el valor absoluto mide la distancia entre dos puntos de la recta real.
-# Basta hacer el valor absoluto de su resta. Lo incluimos como una definición.
+# Entonces $f'\left(0^{-}\right)\not=f'\left(0^{+}\right)$, por lo que la función valor absoluto no es
+# derivable en $0$. 
 # 
-# **Definición:** Sean $x$, $y\in\mathbb{R}$. Definimos la **distancia** entre estos dos puntos como 
+# Gráficamente, podemos darnos cuenta de lo que pasa si recordamos la gráfica de la
+# función valor absoluto: 
+# 
+# <img src="../../images/cap_deriv_valor_absoluto.png" width="400"/>
+# 
+# El punto $x=0$ es un punto anguloso para
+# esta curva, es decir, un punto en el que la pendiente de la curva varía bruscamente.
+# Pasa de ser $-1$ a la izquierda de $0$ a ser $1$ a su derecha. Al producirse esta
+# variación brusca la función no puede ser derivable en el $0$.  
+# 
+# 
+
+# ## Propiedades de la derivación
+# 
+# Veamos ahora algunas propiedades importantes de la función derivada.
+# 
+# ````{prf:property}  
+# :label: prop_derivable_continua
+# :nonumber: 
+# 
+# Sea $f(a,b)\rightarrow\mathbb{R}$, $x_0\in\mathbb{R}$. Si $f$ es derivable en $x_0$, entonces $f$ es
+# continua en $x_0$.
+# ````
+# 
+# Esta propiedad se puede resumir en 
 # 
 # $$
-# d(x,y):=|x-y|.
+# \mathrm{derivable}\,\Rightarrow\, \mathrm{continua}.
 # $$
 # 
-# Veamos algún ejercicio donde intervenga el valor absoluto. Antes de comenzarlos conviene
-# recordar siempre que cuando nos enfrentemos a un valor absoluto debemos separar
-# los distintos casos que se producen según el signo (positivo o negativo) del interior del valor absoluto.
+# Conviene saber leerla correctamente. Según la relación lógica
 # 
-# ### Ejercicios:
+# $$
+# \left[\textrm{a}\Rightarrow\textrm{b}\right]\Leftrightarrow\left[\textrm{no b}\Rightarrow\textrm{no a}\right],
+# $$
 # 
-# **Primer ejercicio:** Encontrar los puntos $x\in\mathbb{R}$ tales que $|x-2|<1$.
+# esta propiedad es lo mismo que  
 # 
-# **Respuesta:**
+# $$
+# f  \mbox{ no continua en } x_0\Rightarrow f \mbox{ no derivable en }x_0. 
+# $$
 # 
-# Separamos dos casos
-# * Primer caso: $x-2>0\Longleftrightarrow x>2$.
+# Ésta es la forma más habitual de aplicación. Si nos preguntan si determinada
+# función es derivable en algún punto, lo primero que debemos hacer es comprobar si es
+# continua. Si efectivamente lo es, debemos comprobar si se cumple la definición de
+# derivada, pero si no es continua ya habremos acabado, porque en ese caso no podrá ser
+# derivable.
 # 
-#     En este caso $|x-2|=x-2$. Entonces,
+# ````{prf:property} Propiedades aritméticas de la derivada 
+# :label: prop_aritmetica_derivada
+# :nonumber: 
+# 
+# Sean $f,g:(a,b)\rightarrow\mathbb{R}$, dos funciones derivables en un punto $x_0\in(a,b)$. Entonces
+# 
+# 1. para cualquier $\lambda\in\mathbb{R}$, la función $\lambda f$ es derivable en $x_0$ y 
 # 
 #     $$
-#     |x-2|<1\Longleftrightarrow x-2<1\Longleftrightarrow x<3.
+#     \left(\lambda f\right)'(x_0)=\lambda f'(x_0),
 #     $$
 # 
-#     Uniendo las dos condiciones ($x>2$ y $x<3$) resulta $x\in(2,3)$.
+# 2. $f\pm g$ es derivable en $x_0$ y 
 # 
-# * Segundo caso: $x-2\leq 0\Longleftrightarrow x\leq 2$. 
-#   
-#   En este caso $|x-2|=2-x$ y, entonces,
-#         
 #     $$
-#     |x-2|<1\Longleftrightarrow 2-x<1\Longleftrightarrow x>1.
+#     \left(f\pm g\right)'(x_0)=f'(x_0)\pm g'(x_0),
 #     $$
-#     Es decir, $x\in(1,2]$.
 # 
-# Uniendo los dos casos obtenemos que $|x-2|<1\Longleftrightarrow x\in(1,3)$, como podemos representar gráficamente:
+# 3. $fg$ es derivable en $x_0$ y 
 # 
+#     $$
+#     \left(fg\right)'(x_0)=f'(x_0)g(x_0)+f(x_0)g'(x_0),
+#     $$
 # 
-
-# In[42]:
-
-
-p = sp.plot(sp.Abs(x-2), 1, (x, -1, 4), show=False)
-p[0].line_color='r'
-p[1].line_color='b'
-p.xlabel='x'
-p.ylabel='y'
-p.legend=True
-p.show()
-
-
-# **Segundo ejercicio:**
+# 4. si $g(x_0)\not= 0$, entonces $\dfrac{f}{g}$ es derivable en $x_0$ y 
 # 
-# Encontrar los puntos $x\in\mathbb{R}$ tales que $|x-2|=|5x+1|$.
+#     $$
+#     \left(\frac{f}{g}\right)'(x_0)=\frac{f'(x_0)g(x_0)-f(x_0)g'(x_0)}{g(x_0)^2}.
+#     $$
 # 
-# Separamos 4 casos.
+# ````
 # 
-# 1. $x-2\geq 0$ (es decir, $x\geq 2$) y $5x+1\geq 0$ (es decir, $x\geq-\frac{1}{5}$).
-#     Uniendo las dos expresiones este caso se reduce a $x\geq 2$. La igualdad planteada resulta
+# ````{prf:property} Regla de la cadena 
+# :label: prop_regla_cadena
+# :nonumber: 
+# 
+# Consideramos las funciones $f:(a,b)\rightarrow\mathbb{R}$, derivable en $x_0\in(a,b)$, y
+# $g:f(a,b)\to\mathbb{R}$, derivable en $f(x_0)$. Entonces la función composición $g\circ f$ es
+# derivable en $x_0$ y además
+# 
+# $$
+# \left(g\circ f\right)'(x_0)=g'\left(f(x_0)\right)f'(x_0).
+# $$
+# 
+# ````
+# 
+# Veamos algunos ejemplos de aplicación de estas reglas:
+# 
+# 1. Derivar $\ln\left(\cos x\right)$. 
+# 
+#     El resultado es
+# 
+#     $$
+#     \left(\ln\left(\cos x\right)\right)'=\frac{1}{\cos x}\left(\cos x\right)'=\frac{-\sin x}{\cos x}.
+#     $$
+# 
+#     Pensemos qué es lo que hemos hecho: 
 #     
+#     Estamos componiendo la función $f(x)=\cos x$ con
+#     $g(x)=\ln x$. Esto es sencillo de comprobar, ya que
+# 
 #     $$
-#     |x-2|=|5x+1|\Longleftrightarrow x-2=5x+1\Longleftrightarrow x=-\frac{3}{4}\not\geq 2.
-#     $$
+#     \left(g\circ f\right)(x)=g\left(f(x)\right)=g\left(\cos x\right)=\ln\left(\cos x\right).
+#     $$  
+# 
+#     Entonces, según la regla de la cadena, $\left(g\circ f\right)'(x)=g'\left(f(x)\right)f'(x)$. 
 #     
-#     Por lo tanto, la igualdad en este caso es imposible.
+#     Ahora, $f'(x)=-\sin x$ y $g'(x)=\frac{1}{x}$, por lo que $g'(\cos x)=\frac{1}{\cos x}$, lo que
+#     nos permite obtener el resultado anunciado.
 # 
-# 2. $x-2<0$ (es decir, $x<2$) y $5x+1\geq 0$ (es decir, $x\geq-\frac{1}{5}$). 
-#     Uniendo las dos expresiones este caso se reduce a $x\in[-\frac{1}{5},2)$. La igualdad planteada resulta
-#     
-#     $$
-#     |x-2|=|5x+1|\Longleftrightarrow 2-x=5x+1\Longleftrightarrow x=\frac{1}{6}.
-#     $$
-#     
-#     Como $\frac{1}{6}\in[-\frac{1}{5},2)$, ya tenemos una solución para nuestra igualdad.
+# 2. Veamos un ejemplo de aplicación un poco más complicado. 
 # 
-# 3. $x-2\geq 0$ (es decir, $x\geq 2$) y $5x+1<0$ (es decir, $x<-\frac{1}{5}$). 
-#    Uniendo las dos expresiones observamos que son incompatibles.
+#     \begin{eqnarray*}
+#     \left(\textrm{atan}\left(\frac{\sin x}{1+\cos x}\right)\right)'&=&\frac{1}{1+\frac{\sin^2 x}{\left(1+\cos
+#     x\right)^2}} \frac{\left(\cos x\right)\left(1+\cos x\right)+\sin^2 x}{\left(1+\cos x\right)^2}=\\
+#     &=&\frac{\cos x+\cos^2 x+\sin^2 x}{\left(1+\cos x\right)^2+\sin^2 x} 
+#     =\frac{1+\cos x}{1+\cos^2 x+2\cos x+\sin^2 x}= \\
+#     &=&\frac{1+\cos x}{2+2\cos x}=\frac{1}{2},
+#     \end{eqnarray*}
 # 
-# 4. $x-2<0$ (es decir, $x<2$) y $5x+1< 0$ (es decir, $x<-\frac{1}{5}$). 
-#     Uniendo las dos expresiones este caso se reduce a $x<-\frac{1}{5}$. La igualdad planteada resulta
-#     
-#     $$
-#     |x-2|=|5x+1|\Longleftrightarrow 2-x=-5x-1\Longleftrightarrow x=-\frac{3}{4}.
-#     $$
-#     
-#     Como $-\frac{3}{4}<-\frac{1}{5}$, ya hemos encontrado la  segunda (y última) solución
-#     para nuestra igualdad.
-
-# In[43]:
-
-
-p = sp.plot(sp.Abs(x-2), sp.Abs(5*x+1), (x, -1, 3), show=False)
-p[0].line_color='r'
-p[1].line_color='b'
-p.xlabel='x'
-p.ylabel='y'
-p.legend=True
-p.show()
-
-
-# ## Funciones polinómicas
+#     donde hemos utilizado en dos ocasiones que $\sin^2 x+\cos^2 x=1$.
 # 
-# Son funciones del tipo
+# 
+
+# ## Derivación de algunos casos especiales.
+# 
+# ### Derivación de la función inversa.
+# 
+# Sea $f:(a,b)\to\mathbb{R}$, $x_0\in(a,b)$. Supongamos que $f$ es derivable en $x_0$ y que $f(x_0)\not=0$. 
+# Entonces $f^{-1}$, si existe, es derivable y
 # 
 # $$
-# p(x)=a_n x^n+a_{n-1}x^{n-1}+...+a_1 x+a_0,
+# \left(f^{-1}\right)'\left(f(x_0)\right)=\frac{1}{f'(x_0)},
 # $$
 # 
-# con $a_0$, $a_1$, ..., $a_n\in\mathbb{R}$, y $a_n\not=0$. Diremos que el **grado del polinomio** es $n$ y que su **coeficiente principal** es $a_n$.
-# 
-# Ejemplos de polinomios son
-# 1. $p_1(x)=5x^3-4x+2$,
-# 2. $\displaystyle p_2(x)=8x^3-\sqrt{2}$,
-# 3. $p_3(x)=\pi x^4+2x^3-3x$.
-# 
-# El dominio de una función polinómica es siempre $\mathbb{R}$, mientras que su imagen varía en cada caso.
-# 
-# ## Funciones racionales
-# 
-# Son cocientes de funciones polinómicas, es decir,
+# o, lo que es lo mismo, 
 # 
 # $$
-# f(x)=\frac{p(x)}{q(x)}.
-# $$
+# \left(f^{-1}\right)'\left(y_0\right)=\frac{1}{f'\left(f^{-1}(y_0)\right)}.
+# $$ 
 # 
-# Ejemplos de funciones racionales son
-# 1. $\displaystyle f_1(x)=\frac{5x^3-4x+2}{8x^3-\sqrt{2}}$,
-# 2. $\displaystyle f_2(x)=\frac{1}{x^3+2}$.
+# Destaquemos que estamos relacionando la derivada de la función inversa con $1$ partido
+# por la derivada de la función inversa. Esto es bastante sorprendente, porque a estas
+# alturas ya debemos saber que $f^{-1}\not=\frac{1}{f}$.
 # 
-# 
-# El dominio de estas funciones son todos los números reales, excepto aquéllos que anulen el
-# denominador,
-# 
-# $$
-# \mathrm{Dom}\, f=\mathbb{R}-\left\{x\in\mathbb{R}:q(x)=0\right\},
-# $$
-# 
-# mientras que su imagen varía en cada caso.
-# 
-# ## Función exponencial
-# 
-# Sea $a>0$. Definimos la **función exponencial de base $a$** como 
+# Veamos un **ejemplo**. Si consideramos la función $y=f(x)=\cos x$, la función
+# inversa es el arco-coseno, $f^{-1}(y)=\arccos y$. Derivando directamente,
 # 
 # $$
-# f(x)=a^x.
+# \left(f^{-1}\right)'(y)=\left(\arccos\, y\right)'=-\frac{1}{\sqrt{1-y^2}}.
 # $$
 # 
-# Un caso especial (y poco interesante) es cuando $a=1$. En este caso $f(x)=1^x$ es la función constantemente igual a $1$. 
-# 
-# Cuando $a\not=1$, el comportamiento varía dependiendo de si $a$ es mayor o menor que $1$. 
-# En los dos casos se verifica que $\mathrm{Dom}\, f=\mathbb{R}$, $\mathrm{Im}\, f=(0,+\infty)$ y que $f(0)=a^0=1$. Lo que cambia es
-# 
-# 1. $\boldsymbol{a<1}$. En este caso,
-# 
-#    * $f(x)=a^x$ es una función estrictamente decreciente, $ x<y\Rightarrow a^x>a^y$,
-#    * $\displaystyle\lim_{x\to-\infty}a^x=+\infty$,
-#    * $\displaystyle\lim_{x\to+\infty}a^x=0$.
-# 
-# 2. $\boldsymbol{a>1}$. En este caso,
-# 
-#     * $f(x)=a^x$ es una función estrictamente creciente, $x<y\Rightarrow f(x)>f(y)$,
-#     * $\displaystyle\lim_{x\to-\infty}a^x=0$,
-#     * $\displaystyle\lim_{x\to+\infty}a^y=+\infty$.
-# 
-# Estas funciones son útiles, entre otras muchas cosas, para medir el crecimiento de una población o la  desintegración de un compuesto radiactivo.
-# 
-# El caso más importante es la función $f(x)=e^x$ (recordemos que $e=2.7182818...$). A esta función es a la que se suele conocer, por defecto, como **función exponencial**.
-# De hecho, en **Sympy**, `sp.exp` se refiere a la función exponencial con base $e$. Si queremos tratar otra función de esta familia deberemos escribir `a**x`.
-# 
-# La propiedad que hace tan interesante la función $f(x)=e^x$ es que su derivada en el origen vale exactamente $1$,
-# lo que simplifica muchos cálculos (por ejemplo, como veremos más adelante, los desarrollos de Taylor).
-# Observemos que la derivada de $2^{x}$ en el $0$ vale, aproximadamente, $0.7$, mientras que 
-# la derivada de $3^{x}$ en el $0$ vale, aproximadamente, $1.1$, por lo que $e$ debe estar entre  $2$ y $3$.
-# 
-# Como curiosidad, el nombre de $e$ se lo puso Euler. Él decía que venía de que la palabra 
-# *exponencial* empieza por $e$... cualidad que también cumple su apellido.
-# 
-# Algunas propiedades generales para la función exponencial y que es fundamental recordar
-# y saber aplicar bien son
-# 
-# **Propiedad:**
-# 
-# 1. $a^{x+y}=a^x a^y,\qquad\forall x,y\in\mathbb{R}$,
-# 2. $\left(a^x\right)^y=a^{xy},\qquad\forall x,y\in\mathbb{R}$,
-# 3. $\displaystyle a^{-x}=\frac{1}{a^x}\qquad\forall x\in\mathbb{R}$ (consecuencia de la anterior propiedad).
-
-# In[44]:
-
-
-p = sp.plot(sp.exp(x), 2**x, 0.5**x, (x, -3, 3), show=False)
-p[0].line_color='r'
-p[1].line_color='b'
-p[2].line_color='g'
-p.xlabel='x'
-p.ylabel='y'
-p.legend=True
-p.show()
-
-
-# ## Funciones trigonométricas
-# 
-# **Función seno**
-# 
-# Tanto esta función como su *hermana*, la función coseno, son ampliamente utilizadas para representar movimientos oscilatorios, ondas, intensidades de corriente alternas, etc.
-# 
-# La función $f(x)=\sin(x)$, verifica
-# * su dominio es todo $\mathbb{R}$,
-# * su imagen es $[-1,1]$,
-# * es una función impar,
-# * es una función periódica con período $2\pi$.
-# 
-# **Función coseno**
-# 
-# La función $f(x)=\cos(x)$, verifica
-# * su dominio es todo $\mathbb{R}$,
-# * su imagen es $[-1,1]$,
-# *  es una función par,
-# * es una función periódica con período $2\pi$.
-
-# In[49]:
-
-
-A = 2*sp.pi
-p = sp.plot(sp.sin(x), sp.cos(x), (x, -A, A), show=False)
-p[0].line_color='r'
-p[1].line_color='b'
-p.xlabel='x'
-p.ylabel='y'
-p.legend=True
-p.show()
-
-
-# Si consideramos la circunferencia de radio $1$, y pensamos en el ángulo (en radianes, por supuesto) que forma un radio con el eje $OX$, el coseno es, gráficamente, la longitud de su proyección con este eje, mientras que el seno es la longitud de la proyección con el eje $OY$. Como mostramos en la siguiente figura:
-# 
-# <img src="../../images/cap3_trigonometria_circunferencia.png" width="300"/>
-
-# De esta imagen se puede sacar mucha información sobre el seno y el coseno, por ejemplo: 
-# * $\sin(-x) = -\sin(x)$,
-# * $\cos(-x) = \cos(x)$,
-# * $\sin\left(x+\frac{\pi}{2}\right) = \cos(x)$,...
-# 
-# De éstas, vamos a destacar tres:
-# 
-# **Propiedad:**
-# 1. $\displaystyle \sin^2(x) + \cos^2(x) = 1$, $\forall x\in\mathbb{R}$,
-# 2. $\displaystyle \sin(x+y)=\sin(x)\cos(y)+\cos(x)\sin(y)$, $\forall x,y\in\mathbb{R}$,
-# 3. $\displaystyle \cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y)$, $\forall x,y\in\mathbb{R}$.
-# 
-# **Función tangente**
-# 
-# Definimos la función tangente como $\displaystyle \tan(x):=\frac{\sin(x)}{\cos(x)}$.
-# 
-# El dominio de esta función lo forman todos los puntos de $\mathbb{R}$ en los que el coseno no se anule, es decir,
+# Vamos a ver si esta expresión coincide con la que obtenemos aplicando la fórmula
+# que expusimos al pincipio. En este caso
 # 
 # $$
-# \textrm{Dom}\left(\tan\right)=\mathbb{R}-\left\{\frac{\pi}{2}+k\pi:k\in\Z\right\},
+# \left(f^{-1}\right)'\left(f(x)\right)=\frac{1}{f'(x)}=-\frac{1}{\sin x}=-\frac{1}{\sqrt{1-\cos^2
+# x}}=-\frac{1}{\sqrt{1-y^2}},
 # $$
 # 
-# mientras que su imagen es todo $\mathbb{R}$. Además, es una función impar y periódica, con
-# período $\pi$.
-
-# In[64]:
-
-
-p = sp.plot(sp.tan(x), (x, -1.50, 1.50), show=False)
-p[0].line_color='r'
-p.xlabel='x'
-p.ylabel='y'
-p.legend=True
-p.show()
-
-
-# **Otras funciones trigonométricas**
+# donde, en la última igualdad, hemos utilizado la definición inicial de la función: $y= f(x)=\cos x$.
 # 
-# Incluimos aquí las funciones
-# * Cosecante, $\displaystyle\text{csc}(x):=\frac{1}{\sin(x)}$,
-# * Secante, $\displaystyle\sec(x):=\frac{1}{\cos(x)}$,
-# * Cotangente, $\displaystyle\textrm{cot}(x):=\frac{1}{\tan(x)}$.
-
-# ## Funciones trigonométricas inversas
+# ### Derivación implícita
 # 
-# **Función arco-seno**
+# Una ecuación implícita es una ecuación de la forma
 # 
-# Es la inversa de la función seno. Como ésta no es una función inyectiva,
-# restringimos su dominio, quedándonos con el seno definido sólo en el intervalo
-# $[-\frac{\pi}{2},\frac{\pi}{2}]$. 
+# $$
+# F(x,y)=0,
+# $$ 
 # 
-# Definimos entonces la función arco-seno, $\text{arcsin}(x)$, como la función que, dado un
-# $x\in[-1,1]$, le asocia el único $y$ en $[-\frac{\pi}{2},\frac{\pi}{2}]$ tal que
-# $x=\sin(y)$, como se muestra en la siguiente figura:
+# es decir, una ecuación donde $x$ e $y$ aparecen mezclados y donde no es posible
+# (generalmente) separar la $y$ para llegar a una ecuación explícita,
 # 
-# <img src="../../images/cap3_funcion_asin.png" width="300"/>
+# $$
+# y=f(x). 
+# $$
 # 
-# Por tanto la función $\text{arcsin}(x)$ tiene como dominio el intervalo $[-1,1]$ y como imagen
-# el $[-\frac{\pi}{2},\frac{\pi}{2}]$. Es una función impar. 
-
-# In[66]:
-
-
-p = sp.plot(sp.asin(x), (x, -1.0, 1.0), show=False)
-p[0].line_color='r'
-p.xlabel='x'
-p.ylabel='y'
-p.legend=True
-p.show()
-
-
-# **Función arco-coseno**
+# Un ejemplo de ecuación implícita sería
 # 
-# Es la inversa de la función coseno. En este caso, restringimos el dominio para quedarnos
-# con el coseno definido en el intervalo $[0,\pi]$.
+# $$
+# \cos(xy)+xy^2=0.
+# $$ 
 # 
-# Definimos entonces la función arco-coseno, $\text{arccos}(x)$, como la función que, dado un
-# $x\in[-1,1]$, le asocia el único $y$ en $[0,\pi]$ tal que $x=\cos(y)$. 
+# Si a partir de una ecuación implícita queremos conocer el valor de la derivada de $y$
+# respecto a $x$, $y'=\frac{dy}{dx},$ derivaremos término a término, utilizando las
+# reglas habituales de derivación, pero teniendo en cuenta que en los términos donde
+# aparezca $y$, o algo que dependa de $y$, al derivar aplicando la regla de la cadena
+# obtendremos la correspondiente expresión multiplicada por $y'$. Esto no sucede si el
+# término depende de $x$, ya que cuando derivamos respecto a $x$ aparecería la derivada
+# de $x$ respecto a la misma $x$, $\frac{dx}{dx}$, que es $1$. Veamos algún ejemplo
+# sencillo:
 # 
-# <img src="../../images/cap3_funcion_acos.png" width="300"/>
+# * $\displaystyle \left(x^3\right)'=3x^2\frac{dx}{dx}=3x^2$,
+# * $\displaystyle \left(y^3\right)'=3y^2\frac{dy}{dx}=3y^2y'$,
+# * $\displaystyle \left(cos(2y)\right)=-\sin(2y)2\frac{dy}{dx}=-2\sin(2y)y'$.
 # 
-# **Función arco-tangente**
+# Entonces, en una derivada más complicada (utilizando la regla de derivación del
+# producto),
 # 
-# Es la inversa de la función tangente. Restringimos su dominio al intervalo 
-# $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$. 
+# \begin{eqnarray*}
+# \cos(xy)+xy^2=0&\stackrel{\mathrm{derivando}}{\Rightarrow}
+# &-\sin(xy)\left(y+xy'\right)+y^2+2xyy'=0 \\
+# &\Rightarrow& y'\Big(2xy-x\sin(xy)\Big)=y\sin(xy)\Rightarrow
+# y'=\frac{y\sin(xy)}{2xy-x\sin(xy)}.
+# \end{eqnarray*}
 # 
-# Definimos entonces la función arco-tangente, $\text{arctan}(x)$, como la función 
-# que, dado un $x\in\mathbb{R}$, le asocia el único $y$ en 
-# $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$ tal que $x=\tan(y)$.
+# Como podemos ver, el resultado final es el valor de $y'$ en función de $x$ y de $y$.
+# Generalmente no es posible obtener el valor de $y'$ solamente en función de $x$.
 # 
-# <img src="../../images/cap3_funcion_atan.png" width="300"/>
+# Puedes mirar en los siguientes links, si quieres entender esto mejor:
+# * https://es.wikipedia.org/wiki/Funci%C3%B3n_impl%C3%ADcita
+# * https://www.fisicalab.com/apartado/derivacion-implicita
+# * https://es.snapxam.com/calculators/calculadora-derivacion-implicita (¡Calculadora para derivar funciones implícitas! Si es que hay de todo en internet...)
+# * https://es.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-2/a/implicit-differentiation-review
 # 
-# Por tanto la función $\text{arctan}(x)$ tiene como dominio todo $\mathbb{R}$ y como imagen el
-# intervalo $[-\frac{\pi}{2},\frac{\pi}{2}]$. Es una función impar.
-
-# In[70]:
-
-
-p = sp.plot(sp.atan(x), (x, -10.0, 10.0), show=False)
-p[0].line_color='r'
-p.xlabel='x'
-p.ylabel='y'
-p.legend=True
-p.show()
-
+# ### Derivación logarítmica
+# 
+# Supongamos que tenemos una expresión del tipo
+# 
+# $$
+# y=f(x)^{g(x)}
+# $$
+# y queremos derivarla. Como tenemos una función que depende de $x$ tanto en la base como
+# en el exponente no lo podemos hacer directamente. Entonces aplicamos logaritmos y de la
+# expresión anterior resulta
+# 
+# $$
+# \ln y=\ln\left(f(x)^{g(x)}\right)\Rightarrow\ln y=g(x)\ln\left(f(x)\right),
+# $$
+# y ahora hacemos una derivación implícita para obtener
+# 
+# \begin{eqnarray*}
+# &&\frac{1}{y}y'=g'(x)\ln\left(f(x)\right)+g(x)\frac{1}{f(x)}f'(x)\Rightarrow
+# y'=y\left(g'(x)\ln\left(f(x)\right)+\frac{g(x)f'(x)}{f(x)}\right) \\
+# &&\Rightarrow y'=f(x)^{g(x)}\left(g'(x)\ln\left(f(x)\right)+\frac{g(x)f'(x)}{f(x)}\right).
+# \end{eqnarray*} 
+# 
+# Veámoslo sobre un **ejemplo**:
+# 
+# \begin{eqnarray*}
+# y=\left(x^3-5\right)^{\sin x}&\stackrel{\mathrm{(logaritmos)}}{\Rightarrow}&\ln
+# y=\sin(x)\ln\left(x^3-5\right) \\
+# &\stackrel{\mathrm{(derivamos)}}{\Rightarrow}&\frac{1}{y}y'=\cos(x)\ln\left(x^3-5\right)+\frac{
+# \sin(x)3x^2}{x^3-5} \\
+# &\Rightarrow& y'=y\left(\cos(x)\ln\left(x^3-5\right)+\frac{\sin(x)3x^2}{x^3-5}\right) \\
+# &\Rightarrow& y'=\left(x^3-5\right)^{\sin(x)}\left(\cos(x)\ln\left(x^3-5\right)+\frac{\sin(x)3x^2}{x^3-5}\right).
+# \end{eqnarray*}
+# 
+# Aquí tienes más información y otros ejemplos:
+#  * https://lasmatematicas.eu/derivacion-logaritmica/
+#  * https://es.snapxam.com/calculators/calculadora-diferenciacion-logaritmica

@@ -17,7 +17,7 @@
 # \end{array}\right.
 # $$
 
-# In[6]:
+# In[2]:
 
 
 import sympy as sp
@@ -222,7 +222,7 @@ p.show()
 # 
 # 2. $\boldsymbol{a>1}$. En este caso,
 # 
-#     * $f(x)=a^x$ es una función estrictamente creciente, $x<y\Rightarrow f(x)>f(y)$,
+#     * $f(x)=a^x$ es una función estrictamente creciente, $x<y\Rightarrow f(x)<f(y)$,
 #     * $\displaystyle\lim_{x\to-\infty}a^x=0$,
 #     * $\displaystyle\lim_{x\to+\infty}a^y=+\infty$.
 # 
@@ -402,7 +402,7 @@ p.show()
 # El dominio de esta función lo forman todos los puntos de $\mathbb{R}$ en los que el coseno no se anule, es decir,
 # 
 # $$
-# \textrm{Dom}\left(\tan\right)=\mathbb{R}-\left\{\frac{\pi}{2}+k\pi:k\in\Z\right\},
+# \textrm{Dom}\left(\tan\right)=\mathbb{R}-\left\{\frac{\pi}{2}+k\pi:k\in\mathbb{Z}\right\},
 # $$
 # 
 # mientras que su imagen es todo $\mathbb{R}$. Además, es una función impar y periódica, con
@@ -466,10 +466,25 @@ p.show()
 # 
 # Definimos entonces la función arco-coseno, $\text{arccos}(x)$, como la función que, dado un
 # $x\in[-1,1]$, le asocia el único $y$ en $[0,\pi]$ tal que $x=\cos(y)$. 
-# ````
 # 
 # <img src="../../images/cap3_funcion_acos.png" width="300"/>
+# ````
+# Por tanto la función $\text{arccos}(x)$ tiene como dominio el intervalo $[-1,1]$ y como imagen
+# el $[0,\pi]$. No presenta simetrías (ni par ni impar). 
 # 
+# 
+
+# In[4]:
+
+
+p = sp.plot(sp.acos(x), (x, -1.0, 1.0), show=False)
+p[0].line_color='r'
+p.xlabel='x'
+p.ylabel='y'
+p.legend=True
+p.show()
+
+
 # ````{prf:definition} Función arco-tangente
 # :label: def_atan
 # :nonumber: 

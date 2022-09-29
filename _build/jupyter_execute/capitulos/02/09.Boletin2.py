@@ -1,273 +1,232 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Boletín 1: Funciones reales de una variable real
-# 
-# Te dejamos aquí algunos ejercicios para que practiques lo que has dibido aprender en este capítulo. ¡Ánimo!
-# 
+# # Boletín 2: Límites, continuidad, Lagrange y dicotomía
 
-# 1. Ordena los números siguientes de menor a mayor. Indica a cuál de los conjuntos siguientes: naturales, enteros, racionales o irracionales, pertenecen dichos números.
-# **Nota**: Indica sólo el conjunto *más pequeño* al que pertenece cada número; por ejemplo $2\in \mathbb{N}$  y $0.5\in \mathbb{Q}$.
-# 
-#       | **Número** | $0.25$ | $\sqrt{2}$ | $\dfrac{15}2$ | $0.102024$ | $-\sqrt{4}$ | $\dfrac{12}4$ | $2.333\dots$ |  $3$ |  
-#       | :----: |  :----: |  :----: |  :----: |  :----: |  :----: |  :----: |  :----: |  :----: | 
-#       | **Conjunto** | | $\vphantom{\dfrac{2}{3}}$ | | | | | | |
-# 
-# 2. Calcula o simplifica cuando sea posible:
-# 
-#       $$
-#       \begin{array}{llll}
-#       \text{(a)} \ln (\mathbf{e}) & \text{(b)} \ln (\mathbf{e}^2) & \text{(c)} \ln (0) & \text{(d)} \ln (-1) \\
-#       \text{(e)} \ln(2) & \text{(f)} \mathbf{e}^0 & \text{(g)} \mathbf{e}^{-1} & \text{(h)} \mathbf{e}^{\ln (1)} \\
-#       \text{(i)} \mathbf{e}^{\ln (\mathbf{e})} & \text{(j)} \mathbf{e}^{\ln(\mathbf{e}^3)} & \text{(k)} \ln \sqrt{2^3} &
-#       \text{(l)} \dfrac{\ln (5x)}{\ln \left( \frac{5}{x} \right)} \\
-#       \text{(m)} \dfrac{\ln (5+x)}{\ln (5-x)} \qquad & \text{(n)} \ln (\mathbf{e}^2) \mathbf{e}^{\ln (5+x) - \ln (5x)} \qquad &
-#       \text{(ñ)} \ln \left( \dfrac{x^2-1}{x^3} \right)^3 \qquad &
-#       \end{array}
-#       $$
-# 
-# 3. Resuelve las ecuaciones siguientes:
-# 
-#       $$
-#       \begin{array}{ll}
-#       \text{(a)} \sqrt{x-3}+5=x & \text{(b)} \mathbf{e}^{x-3}=30 \\
-#       \text{(c)} 9^{2x+1}=27 &    \text{(d)} 10^{5x}=1000 \\
-#       \text{(e)} \mathbf{e}^{x^2-1}=9 &  \text{(f)} \ln(x-3)=5 \\
-#       \text{(g)} \ln(x+2)+\ln(x-2)=1 \qquad & \text{(h)} \log_3(x^2)-\log_3(2x)=2
-#       \end{array}
-#       $$
-# 
-# 
-# 4. ¿Dónde está el error en el razonamiento siguiente?
-# 
-#       $\sqrt{25}=\sqrt{5^2}=5\quad$ implica que $\quad\sqrt{25}=\sqrt{(-5)^2}=-5.\quad$  Entonces: $\quad 5 = -5$
-# 
-# 5. Si $a>0$ entonces:   
-#     * $|x| = a$ significa que $ x=\dots $ o bien $x = \dots $
-#     * $|x| < a$ significa que $\dots$
-#     * $|x| \geq  a$ significa que $\dots$
-# 
-# 6. Resuelve las ecuaciones siguientes:
-#  
-#     a. $|2x-4|=6$
-# 
-#     b. $|7x-3|=-2$
-# 
-#     c. $|2x+4|=|5x-2|$
-#   
-# 7. Resuelve las inecuaciones siguientes:
+# 1. Calcula, si es posible,
 #    
-#     a. $|3x-2|\le10$
+#     a. $\displaystyle{\lim_{x\rightarrow 0}{\frac{|2x-1|-|2x+1|}{x}}}$,
 # 
-#     b. $|6x+1|<2$
-# 
-#     c. $|-4x+3|>1$
-# 
-#     d. $|5x-1|\ge 2$
-# 
-# 
-# 8. Completa la siguiente tabla con los valores correspondientes:
-# 
-#       | Ángulo | $0$ | $\dfrac{\pi}{6}$ | $\dfrac{\pi}{4}$ | $\dfrac{\pi}{3}$ | $\dfrac{\pi}{2}$ | $\pi$ | $\dfrac{3\pi}{2}$ | $2\pi$ |
-#       | -- | -- | -- | -- | -- | -- | -- | -- | -- |
-#       | Seno | | | | | | | | |
-#       | Coseno | | | | | | | | |
-#       | Tangente | | | | | | | | |
-#       | Cotangente | | | | | | | | |
-#       | Secante | | | | | | | | | 
-#       | Cosecante | | | | | | | | |
-# 
-# 9. Determina el ángulo $\alpha\in[0,2\pi)$ tal que
-# 
-#       a. $\sin(\alpha)=-\dfrac{\sqrt{3}}{2}$
-# 
-#       b. $\tan(\alpha)=\sqrt{3}$
-# 
-# 10. **Ecuación de la recta:**
+#     b. $\displaystyle{\lim_{x\rightarrow 0}{\frac{\sqrt{x^2+4}-2}{x^2}}}$,
 #     
-#     a. Calcula la ecuación de la recta que pasa por el punto $(2,-1)$ y tiene pendiente $3$.
+#     c. $\displaystyle{\lim_{x\rightarrow 0}{\left (\frac{1}{x}-\frac{1}{|x|}\right)}}$.
 # 
-#     b. Calcula la ecuación de la recta que pasa por los puntos $(1,-1)$ y $(2,3)$.
+# 2. Calcula, si es posible, los siguientes límites:
+#    
+#     $$
+#     \begin{array}{lllll}
+#     %\text{$(a)$ } \displaystyle{\lim_{x\rightarrow -\infty} e^x}   &\qquad
+#     %\text{$(b)$ } \displaystyle{\lim_{x\rightarrow 0}       e^x}   &\qquad
+#     %\text{$(c)$ } \displaystyle{\lim_{x\rightarrow +\infty} e^x}   &\qquad
+#     \text{$a)$ } \displaystyle{\lim_{x\rightarrow -\infty} \sqrt[3]{x}}   & \qquad
+#     \text{$b)$ } \displaystyle{\lim_{x\rightarrow +\infty} \sqrt{x}}  &\qquad
+#     \text{$c)$ } \displaystyle{\lim_{x\rightarrow 0^+}     \sqrt{x}}   &\qquad
+#     \text{$d)$ } \displaystyle{\lim_{x\rightarrow -\infty} \sqrt{x}}   \\
+#     \\
+#     \text{$e)$ } \displaystyle{\lim_{x\rightarrow +\infty} \dfrac{1}{\sqrt{x}}}  & \qquad
+#     \text{$f)$ } \displaystyle{\lim_{x\rightarrow 0^+}     \dfrac{1}{\sqrt{x}} }  &\qquad
+#     %\text{$j)$ } \displaystyle{\lim_{x\rightarrow +\infty} x^2}   &\qquad
+#     \text{$g)$ } \displaystyle{\lim_{x\rightarrow -\infty} x^2 }  &\qquad
+#     \text{$h)$ } \displaystyle{\lim_{x\rightarrow +\infty} \left( x^3 - 5x^2 + 8 \right)}
+#     \end{array}
+#     $$
 # 
-#     c. Sin calcular la ecuación, responde a la siguiente pregunta: ¿puede una recta pasar por los puntos $(0,2)$, $(2,1)$ y $(4,-1)$?
-# 
-#     d. Escribe la ecuación de **una** recta paralela a la recta $y=x$.
-# 
-#     e. Escribe la ecuación de **la** recta paralela a la recta $y=x$ que pasa por el punto $P=(2, -1)$.
-# 
-#     f. Escribe la ecuación de la recta horizontal que pasa por el punto $(3,\frac{7}{2})$.
-# 
-#     g. Escribe la ecuación de la recta vertical que pasa por el punto $(-1,\frac{5}{3})$.
-# 
-#     h. Calcula la ecuación de la recta que pasa por el punto $(1,4)$ y es perpendicular a la recta de ecuación $2y-5x+7=0$.
-# 
-#     i. Calcula la ecuación de la recta que pasa por $(-1,-1)$ y es paralela a la que pasa por los puntos $(0,1)$ y $(5,0)$.
-# 
-#     j. Si la capacidad pulmonar cae del $100\%$ a los 20 años hasta el $40\%$ a la edad de 80 años, y se supone una relación lineal, obtén esa relación lineal y calcula la edad a la que corresponde un $25\%$ de capacidad pulmonar. 
-# 
-# 11. Calcula la ecuación de las circunferencias:
-# 
-#     a. de centro $(0,0)$ y radio $2$;
-# 
-#     b. de centro $(1,2)$ y radio $3$;
-# 
-#     c. de centro $(-1,2)$ y radio $4$.
-# 
-# 
-# 12. Calcula la ecuación de la parábola que pasa por los puntos $(-2,13)$, $(2,1)$ y $(4,1)$.
-# 
-# 13. Determina el dominio máximo de la siguiente función:
+# 3. El valor, en euros, de un coche $x$ años después de su adquisición (nuevo) viene dado por la función
+#    
+#     $$
+#     v(x)=2000+\frac{60000}{4^{0.25 x}}.
+#     $$
 #     
-#       $$
-#       f(x)=\frac{3x - \tan(2x)}{\sqrt{1-x^2}}.
-#       $$
+#     Se llama *valor residual* del coche a su valor límite cuando el número de años aumenta indefinidamente.
+#     
+#       a. ¿Cuál fue el precio de compra del vehículo nuevo?
 # 
-# 14. El coste $C$ de enviar un paquete por una empresa de transporte depende del peso $p$ en gramos, como sigue:
+#       b. ¿Cuál será su valor residual?
 # 
-#       $$
-#             C(p) = \left\{\begin{array}{cl}
-#             0.8          \, & \quad  \text{si } p \in [0,10), \\  
-#             1  + 0.2\,p    \, & \quad  \text{si } p \in [10,20), \\ 
-#             1 + 0.1\,p     \, & \quad  \text{si } p \in [20,30), \\   
-#             p^2        \, & \quad  \text{si } p \in [30,\infty). \\
-#             \end{array}\right.
-#       $$
+#       c. ¿Al cabo de cuántos años diferirá su valor en menos de 1000 euros del valor residual? 
+#     
+# 4. Dibuja, con `Sympy` la gráfica de la curva $y=\sqrt{x^2+1}-x$. 
+#    
+#     Comprueba, con lápiz y papel y comprobando los resultados en el ordenador, si esta gráfica tiene alguna asíntota y, en caso afirmativo, obtén sus ecuaciones.
 # 
-#       Dibuja la gráfica de la función $C$, indicando su dominio y su rango, y estudia el crecimiento de la función.
+# 5. Calcula las asíntotas de las siguientes funciones:
 # 
-# 15. Analiza si cada una de las funciones siguientes es par, impar o ninguna de las dos cosas:
+#     a. $\displaystyle{v_{1}(x)= \frac{3x^2-2}{4x^2 +1}}$,
 # 
-#       a. $f_1(x)=3x-x^2$ 
+#     b. $\displaystyle{h(t)= \frac{t^2+2}{t -2}}$,
 # 
-#       b. $f_2(x)= 2x^3-x$ 
+#     c. $\displaystyle{v_{2}(x)= \frac{3x^2-2}{4x^2 -1}}$,   
 # 
-#       c. $f_3(x)=\displaystyle\frac12x^4+e^{x^2}+5$ 
+#     d. $\displaystyle{f(x)=x^\frac{|x|}{x} + \frac{1}{x}}$.
 # 
-#       d. $f_4(x)=\displaystyle\frac{\tan(x)+\sin(x)}{\cos(x^{2})}$ 
+# 6. Considera la  función $f$, dada por $f(x) = \ln(x)$.
+#    
+#     a. ¿Cuál es su dominio? ¿Cuál es su imagen?
 # 
-#       e. $f_6(x)=\displaystyle\frac{x^{4}\sin^{3}(x)}{\tan(x)} $ 
+#     b. ¿Cuánto valen $\displaystyle{\lim_{x\rightarrow  +\infty}\ln(x)} \,\,$ y $\displaystyle{\lim_{x\rightarrow 0^+}\ln (x)}$?
 # 
-#       f. $f_7(x)=\left\vert x\right\vert (x+1)^{2}$ 
+#     c. ¿Existe $\displaystyle{\lim_{x\rightarrow -\infty}\ln(x)}$? ¿Por qué?
 # 
-#       g. $f_8(x)=\displaystyle\frac{x^{4}-\cos(x)}{x^{2}-\sin(x)}$
+#     d. ¿Posee $f$ alguna asíntota vertical? En caso afirmativo, ¿cuál es su ecuación?
 # 
+#     e. Dibuja la gráfica de $f$.
 # 
-# 16. ¿Qué propiedad gráfica caracteriza a una función par? ¿Y a una impar?
+#     f. Utilizando la relación entre la gráfica de una función y la de su inversa, esboza la gráfica de $g(x)=e^x$. 
+#     De la observación de esta gráfica deduce la existencia de una asíntota horizontal.
 # 
-# 17. Analiza si cada una de las funciones siguientes es periódica. En caso afirmativo, determina su periodo.
+# 7. Vamos a repasar la función arco-tangente ($\arctan$):
 # 
-#       a.  $f_1(x)=\sin(3x)$   
+#     a. ¿Cuál es el dominio de la función $f(x)=\arctan(x)$? ¿Y su imagen?
 # 
-#       b. $f_2(x)= \cos(x-2)$ 
+#     b. ¿Es cierto que $\dfrac{1}{\tan(x)} = \arctan(x)$? ¿Por qué?
 # 
-#       c. $f_3(x)=\cos(x)-2$  
+#     c. ¿Cuáles son los ángulos cuya tangente vale $1$?
 # 
-#       d. $f_4(x)=\displaystyle\tan(x-\frac{\pi}{2})$ 
+#     d. ¿Es correcto decir que $\arctan (1)=\dfrac{\pi}{4}+k\pi$, $\,k \in \mathbb{Z}$? ¿Por qué?
 # 
-#       e. $f_5(x)=\displaystyle 4\sin(x) + 3\cos(2x) - 5 \sin(\frac{2}{5}x)$
+# 8. Si la longitud de un animal $t$ días después de su nacimiento es 
 # 
+#     $$
+#     \ell(t)= \frac{300}{1+9\left(0.8\right)^t}
+#     $$  
+#     ¿cuánto midió al nacer? Obtén una cota superior de su tamaño máximo. 
 # 
-# 18. Sean $f(x)=\displaystyle\frac{6x}{x^{2}-9}$ y $g(x)=\sqrt{3x}$.
+# 9. Elige la opción correcta: 
+#     
+#     Para aproximar el valor de la solución de la ecuación  $x^3+2=0$ con un error menor que $0.30$ usando el algoritmo de dicotomía en el intervalo $[-2,\,2]$:
 # 
-#       Primero calcula $(f\circ g)(12)$, luego $(f\circ g)(x)$ y, por último,
-#       encuentra el dominio de $f\circ g$.
+#     a. debemos realizar cuatro iteraciones y las tres primeras son $x_1=0$, $x_2=-1$ y $x_3=-3/2$
 # 
-# 19. Elige la opción correcta. Dadas $ f(x)=\displaystyle{\frac{4x^2+1}{x-1}}$ y $ g(x)=\displaystyle{\frac{x-1}{x^2}}$, entonces
+#     b. debemos realizar cuatro iteraciones y las tres primeras son $x_1=0$, $x_2=-1$ y  $x_3=-1/2$
 # 
-#       a. $(f\circ g)(1)=-1\,$ y $\,(g\circ f)(1)=0$
+#     c. debemos realizar tres iteraciones y las dos primeras son $x_1=0$ y $x_2=-1$
 # 
-#       b. $(f\circ g)(2)=-5/3\,$ y $\,(g\circ f)(0)=-2$ 
+#     d. debemos realizar tres iteraciones y las dos primeras son $x_1=0$ y $x_2=1$.
 # 
-#       c. $(f\circ g)(-1)=17/3\,$ y $\,(g\circ f)(-1)=g(5/2)$
+# 10. ¿Dónde es continua la función $f$ dada por $f(x)=\displaystyle{\frac{e^x+\ln(2x)}{x^2-3}}?$
 # 
-#       d. ninguna de las otras respuestas es correcta
+# 11. Elige la opción correcta:
 # 
+#     La función $f : \mathbb{R} \longrightarrow \mathbb{R}$ dada por:
 # 
-# 20. El agua de un charco de forma circular se evapora lentamente por el efecto del sol. Después de $t$ minutos el radio del charco mide $18/(2t+3)\,$cm. 
-#     Expresa el área $A$ del charco en función del tiempo. Relaciona lo que has hecho con el concepto de composición de funciones.
+#     $$
+#     f(x) =
+#     \begin{cases}
+#     \sqrt{{x}^{2}-1} \,\,\,\,  \qquad\,  \text{  si  } x \in (-\infty,-1] \\
+#                 {x}^{2}+2x+1 \qquad    \text{si } x \in (-1,10] \\
+#                 \frac{121}{10}x   \qquad\, \, \, \, \qquad   \text{     si   } x \in (10,+\infty)
+#     \end{cases}
+#     $$
 # 
-# 21. Se sabe que el número $n$ de ordenadores de sobremesa de los laboratorios de una facultad
-#       de Informática se incrementa cada curso académico, en función del número $x$
-#       de alumnos admitidos en la facultad, según la fórmula
+#     a. No es continua en $x=-1$
 # 
-#      $$n(x) = 10+0.05x.$$
-#      
-#      También se sabe que el número $x$ de alumnos admitidos en cada curso académico depende
-#      del número $a$ de alumnos de bachillerato científico-tecnológico que han aprobado las pruebas ABAU,
-#      según la fórmula
+#     b. Es continua en $(-\infty,\infty)$
 # 
-#      $$x(a)=100+\sqrt{\frac{a}{12}}.$$
-#      
-#      a. Expresa el número de ordenadores en función del número de aprobados en las pruebas ABAU.
+#     c. No es continua en $x=10$
 # 
-#      b. Estima el número de ordenadores que tendría que comprar la facultad el próximo curso si
-#            aprobasen las pruebas EBAU 4800 alumnos de bachillerato científico-tecnológico.
+#     d. No es continua en $x=0$
 # 
-#      c. Halla la fórmula que calcula el número de aprobados conociendo el número de admitidos en la facultad.
-#      
+# 12. Estudia la continuidad en $x=0$ de la función $f : \mathbb{R} \longrightarrow \mathbb{R}$ dada por:
 # 
-# 22. ¿Existe la inversa de la función de la figura? ¿Por qué?
+#     $$
+#     f(x) =
+#     \begin{cases}
+#     x e^{-x} \,  \qquad\,\quad  \text{si } x < 0 \\
+#                 1 \qquad \qquad \,\,\,\,\,\,   \text{si } x = 0 \\
+#                 \sqrt{x^2+1}   \qquad   \text{si } x > 0
+#     \end{cases}
+#     $$
 # 
-#       <img src="../../images/cap2_boletin1_figura.png" width="200"/> 
+# 13. Si $a>1$ estudia la continuidad de la función $f : \mathbb{R} \longrightarrow \mathbb{R}$ dada por:
 # 
-# 23. Comprueba que las funciones siguientes son inversas entre sí:
+#     $$
+#     f(x) =
+#     \begin{cases}
+#     {x}^{2} {\cos^2\left(\frac{1}{x}\right)}   \qquad\,\quad  \text{si } x < 0 \\
+#                 0 \qquad \qquad \,\,\,\,\,\,\,\,\quad   \text{     si } x = 0 \\
+#             \dfrac{x {a}^{x}-x} {\sqrt{1+x}-1}  \qquad   \text{si } x > 0
+#     \end{cases}
+#     $$
 # 
-#       $$
-#       f(u)=\frac{u-1}{u+1}\,, \qquad g(u)=\frac{u+1}{1-u}\,.
-#       $$
+# 14. Demuestra que la ecuación $x + \sin (x) = \dfrac{1}{\sqrt{x}+3}$ tiene al menos una raíz en $[0,\pi]$.
+#     
+# 15. Justifica la existencia de una solución de la ecuación $e^x+4x=0$ en el intervalo $[-1, 0]$. 
+#     Determina el número de iteraciones necesarias para aproximar la solución mediante el método de dicotomía con un
+#     error inferior a  una centésima y calcula las tres primeras iteraciones.
+#     
+# 16. Sea la función $f$ dada por:
 # 
-# 24. Elige la opción correcta. La función inversa de $f$ dada por $f(x)=e^{x^3+1}$ es:
+#     $$
+#     f(x) = \begin{cases}
+#     \displaystyle{\frac{x^2}{1+e^{1/x}} - 1}    & \quad  \text{si } x \neq 0 \\
+#     \\
+#     - 1   & \quad  \text{si } x =0. \end{cases}
+#     $$
 # 
-#       a. $f$ no tiene función inversa
+#     a. Estudia la continuidad de $f$ en $\mathbb{R}.$
 # 
-#       b. $\ln{(x^3+1)}$
+#     b. Justifica la existencia de una raíz de $f$ en el intervalo $[0,\, 2].$
+#     
+#     c. Calcula los dos primeros iterantes del algoritmo de dicotomía, aplicado a $f$ en el intervalo $[0,\,2],$ para aproximar la raíz a la que se refiere el apartado anterior.
 # 
-#       c. $\sqrt[3]{\ln(y)-1}$
 # 
-#       d. $\displaystyle{\frac{1}{e^{x^3+1}}}$
+# 17.  Mediciones puntuales han determinado que una función $f$ desconocida pasa por $(-2, -16)$, $(0, 0)$, $(1, -1)$ y $(3, 9)$. Calcula, mediante diferencias divididas, una aproximación polinómica de $f$. Utiliza este polinomio para aproximar $f(2)$.
 # 
+# 18. Calcula el polinomio de interpolación de Lagrange de orden tres relativo a $f(x) = 2^{x+1}-5$ en los puntos $x_0 = 1$, $x_1 = 2$, $x_2 = 3$ y $x_3 = 4$.
+#     Utilizando los cálculos previos, calcula una aproximación del número $r = 4 \sqrt{2}-5$ y una aproximación de la raíz de la ecuación $\log_2 (y+5) = 3.5$.
 # 
-# 25. Calcula, en caso de existir, la inversa de las siguientes funciones:
+# 19. Utiliza la fórmula de Newton para obtener el polinomio de interpolación de la función $f(x)=\sin(x)$ relativo a los puntos $\displaystyle{ 0, \frac{\pi}{2}, \pi}$ y $\displaystyle{\frac{3\pi}{2} }$. Utilízalo para aproximar el seno de $\displaystyle{\frac{\pi}{4}}$.
 # 
-#       a. $f_1(x) = x^3+5$ 
+# 20. Considera la siguiente tabla de valores, correspondiente a mediciones de una función $f$:
 # 
-#       b. $f_2(x) =\sin(2x-7)$ 
+#     | $x_{i}$ | -1 | 0 | 1 | 3 | 4 |
+#     | -- | -- | -- | -- | -- | -- |
+#     | $f(x_{i})$ | 6 | 3| 6 | 38 | 77|
 # 
-#       c. $f_3(x) = \textbf{e}^{2x}$ 
+#     a. Calcula el polinomio $p$ de interpolación de Lagrange de orden $2$ relativo a $f$ en los nodos $\{ 1,3,4 \}$.
 # 
-#       d. $f_4(x)=\displaystyle\frac{1}{5}+e^{x}$ 
+#     b. Calcula el polinomio $q$ de interpolación de Lagrange de orden $2$ relativo a $f$ en los nodos $\{ -1,0,1 \}$.
 # 
-#       e. $f_5(x)=\sqrt{2x-3}$ 
+#     c. Aproxima $f(0.25)$  y $f(2)$.
 # 
-#       f. $f_6(x)=\sqrt[3]{\frac{x+1}{2}}$ 
+# 21. Elige la opción correcta:
+#     
+#     Si usamos el polinomio de Lagrange que interpola a los nodos $(-2,-8)$, $(-1, 0)$ y $(1, 4)$, para aproximar el valor en $x=0$ obtenemos:
 # 
-#       g. $f_7(x)=\displaystyle\frac{1+x^{2}}{x^{2}}$ 
+#     a. -4
 # 
-# 26. ¿Cuál o cuáles de las siguientes funciones son polinomios?
+#     b. 0
 # 
-#       a. $f_1(x) = x^2+6x^{-3}$
+#     c. 4
 # 
-#       b. $f_2(x) = x^{\frac{2}{3}}-6x^3$
+#     d. con el polinomio de Lagrange que interpola esos nodos no se puede aproximar el valor en $x=2$.
 # 
-#       c. $f_3(x) = \dfrac{x^4+6x^3}{x^2+6x-7}$     
+# 22. Elige la opción correcta:
 # 
-#       d. $f_4(x) = x^4+6x^3$
+#     El coeficiente de grado $1$ del polinomio de Lagrange que interpola los datos de la siguiente tabla
 # 
+#     | $x_{i}$ | -2 | -1 | 1 | 0 |
+#     | -- | -- | -- | -- | -- |
+#     | $y_{i}$ | 4 | 4 | 10 | 6 |
 # 
-# 27. Un panadero desea mezclar harina de centeno, a 10 euros el kilo, con harina de trigo, a 24 euros el kilo,
-#       con el fin de obtener 100 kilos de harina de mezcla que venderá a 18 euros el kilo.
-#       ¿Cuántos kilos de harina de centeno y cuántos de harina de trigo debe mezclar?
+#     a. es 0
 # 
-# 28. Se conoce como **ventana normanda** a aquella en forma de rectángulo rematado por un semicírculo. 
-#     Si el perímetro de una ventana normanda es $5.5$ metros, expresa el área de la ventana como función del ancho $x$ de la misma.
+#     b. es 1
 # 
-# 29. Responde a las siguientes cuestiones:
+#     c. es 3
 # 
-#       a. Halla un número racional y otro irracional situados entre $3^{500}$ y $3^{500}+1$.
+#     d. no existe ese polinomio.   
 # 
-#       b. Encuentra un número real $\alpha$ tal que $\alpha^{2}$ sea irracional y $\alpha^{4}$ sea racional.
+# 23. **Razona** la veracidad o falsedad de las siguientes afirmaciones:
+#     
+#     a.  Sea $f:[0,2]\rightarrow \mathbb{R}$ continua y tal que $f(1)=0$. Entonces, por el teorema de Bolzano debe ser $f(0)f(2)<0$.
 # 
-#       c. Encuentra dos números irracionales tales que su suma y su producto sean racionales.
+#     b. Existe un punto $x \in (0,1)$ tal que $\displaystyle{e^{x}=\frac{3}{2}}$.
 # 
-#       d. Dada $f(x)=2^x-3,$ ¿cuál es  el dominio de $f^{-1}$?
-#      
+#     c. La función $g$ dada por $\,g(x)=\dfrac{16}{{a}^2+2abx+{b}^2{x}^2}\,$, donde $a$ y $b$ son dos números reales no nulos, es continua siempre que $x$ difiera de $\,\frac{-a}{b}$.
+# 
+#     d. La función $h$ dada por $\displaystyle{ h(x)=\frac{1}{1+e^{-1/x}} }$ no tiene límite en $0$.
+# 
+#     e. La gráfica de la función $\dfrac{{x}^{3}}{{(x+1)}^2}$ se corta con su asíntota oblícua en un punto de abscisa comprendida entre $-1$ y $0$.
+#     
+#     f. Todo polinomio $p$ verifica $p(x+y)=p(x) + p(y)$.
