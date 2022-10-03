@@ -12,7 +12,7 @@ chapters:
       title: Conjuntos clásicos de números
     - file: capitulos/01/02.NumerosComplejos
       title: Numeros complejos
-      
+
 - file: capitulos/02/README
   title: Funciones reales de variable real
   sections: 
@@ -44,6 +44,10 @@ chapters:
       title: Método numérico de Newton-Raphson
     - file: capitulos/03/03.DerivadasSucesivas
       title: Derivadas sucesivas
+    - file: capitulos/03/04.AplicacionesDerivada
+      title: Aplicaciones de la derivada
+    - file: capitulos/03/05.TeoremaTaylor
+      title: Teorema de Taylor
    
 - file: capitulos/04/README
   title: Integración

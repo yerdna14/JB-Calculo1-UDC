@@ -544,7 +544,8 @@
 # 
 # ````
 # 
-# **Curiosidad histórica:** La hoy conocida como Regla de l'Hôpital debe su nombre al marqués de l´Hôpital, matemático aficionado del siglo XVII, quien dijo haberla descubierto. 
-# Sin embargo, el teorema realmente fue fruto del trabajo de Johann Bernoulli (hermano pequeño del más famoso Jacob Bernoulli, uno de los más grandes matemáticos de la historia), 
-# quien trabajaba para dicho marqués y que vio como éste robaba su idea. Podéis ver más jugosos detalles de este salseo matemático aquí (cortito y en castellano, a ver si animáis): 
+# **Curiosidad histórica:** La hoy conocida como *Regla de l'Hôpital* debe su nombre a Guillaume de l´Hôpital, marqués de Saint Mesme, que fue un matemático aficionado del siglo XVII, 
+# y que publicó el famoso teorema en un libro en 1696. 
+# Sin embargo, el resultado realmente fue fruto del trabajo de Johann Bernoulli (hermano pequeño del más famoso Jacob Bernoulli, uno de los más grandes matemáticos de la historia), 
+# quien trabajaba para dicho marqués y que vio como éste robaba su idea. Podéis ver más jugosos detalles de este salseo matemático aquí (cortito y en castellano, a ver si os animáis): 
 # https://emis.univie.ac.at//journals/DM/v1/art7.pdf.  
