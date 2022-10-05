@@ -58,8 +58,8 @@ x = sp.symbols('x', real=True)
 f_exp = sp.sin(x) + x**2
 display(f_exp)
 display(sp.diff(f_exp,x))
-display(sp.diff(f_exp,x,2))
-display(sp.diff(f_exp,x,3))
+display(sp.diff(f,x,2))
+display(sp.diff(f,x,3))
 # Nota: también se puede usar la siguiente escritura:
 # display(f_exp.diff(x,3))
 
@@ -95,10 +95,10 @@ display(sp.diff(f_exp,x,3))
 # $$
 # La representación gráfica de $f$ en `Sympy` se puede obtener del siguiento modo:
 
-# In[7]:
+# In[17]:
 
 
-f_expr = 0.5*x*sp.Abs(x)
+f_expr = 1/2*x*sp.Abs(x)
 p = sp.plot(f_expr, (x, -4, 4), show=False)
 p[0].line_color='r'
 p.xlabel='x'
@@ -116,7 +116,7 @@ p.show()
 # 
 # $$\fbox{$f\in\mathcal{C}^0(\mathbb R).$}$$
 
-# In[8]:
+# In[20]:
 
 
 f = sp.Lambda(x, f_expr)
@@ -148,7 +148,7 @@ print('f es de clase 0?', sp.limit(f(x),x,0) == f(0))
 # $$\fbox{$f\in\mathcal{C}^1(\mathbb R).$}$$
 # La representación gráfica de $f'$ se obtiene del siguiente modo.
 
-# In[9]:
+# In[30]:
 
 
 p = sp.plot(f_expr.diff(x,1), (x, -4, 4), show=False)
@@ -171,15 +171,19 @@ p.show()
 # $$\fbox{$f\not\in\mathcal{C}^2(\mathbb R).$}$$
 # Con la ayuda de Sympy podríamos analizarlo del siguiente modo:
 
-# In[12]:
+# In[44]:
 
 
-f1_expr = f_expr.diff(x,1)
-f1 = sp.Lambda(x, f1_expr)
+f2_expr = f_expr.diff(x,2)
+p = sp.plot(f2_expr, (x, -4, 4), show=False)
+p[0].line_color='r'
+p.xlabel='x'
+p.ylabel='y'
+p.show()
 
-h = sp.symbols('h', real=True)
-f2_0Minus = sp.limit((f1(h)-f1(0))/h,h,0,dir='-')
-f2_0Plus = sp.limit((f1(h)-f1(0))/h,h,0,dir='+')
+f2 = sp.Lambda(x, f2_expr)
+f2_0Minus = sp.limit(f2(x),x,0,dir='-')
+f2_0Plus = sp.limit(f2(x),x,0,dir='+')
 print('f2_0Minus = ', f2_0Minus, ', f2_0Plus = ', f2_0Plus) 
 print('Existe f\'\'(0)?',f2_0Minus==f2_0Plus)
 
