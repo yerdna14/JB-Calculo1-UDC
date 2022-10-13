@@ -500,7 +500,7 @@ p.show()
 # ````
 # 
 # Por tanto la función $\text{arctan}(x)$ tiene como dominio todo $\mathbb{R}$ y como imagen el
-# intervalo $[-\frac{\pi}{2},\frac{\pi}{2}]$. Es una función impar.
+# intervalo $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$. Es una función impar.
 
 # In[14]:
 

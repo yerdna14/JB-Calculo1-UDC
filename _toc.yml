@@ -46,8 +46,12 @@ chapters:
       title: Derivadas sucesivas
     - file: capitulos/03/04.AplicacionesDerivada
       title: Aplicaciones de la derivada
-    - file: capitulos/03/05.TeoremaTaylor
+    - file: capitulos/03/05.ConcavidadConvexidad
+      title: Convexidad y concavidad
+    - file: capitulos/03/06.TeoremaTaylor
       title: Teorema de Taylor
+    - file: capitulos/03/07.Boletin3
+      title: Boletín 3
    
 - file: capitulos/04/README
   title: Integración

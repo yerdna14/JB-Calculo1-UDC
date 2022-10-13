@@ -75,7 +75,7 @@ display(sp.diff(f_exp,x,3))
 # 4. $f$ es de clase $n$ en $[a,b]$, $f \in \mathcal{C}^n[a,b]$,si existe $(c,d)\supset [a,b]$ tal que $f\in\mathcal{C}^n(c,d)$.
 # ````
 # 
-# Veamos un ejercicio/ejemplo completo para practicas:
+# Veamos un ejercicio/ejemplo completo para practicar:
 # 
 # ````{prf:example} 
 # :label: ex_clase_funcion
