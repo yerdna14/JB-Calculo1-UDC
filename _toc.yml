@@ -67,6 +67,8 @@ chapters:
       title: Introducción a NumPy
     - file: capitulos/05/04.RepresentacionGraficaMatplotlib
       title: Gráficas con Matplotlib
+    - file: capitulos/05/05.Derivacion
+      title: Derivación en Python
 
 # - file: capitulos/06/problemas_modelo
 #   title: Algunos problemas modelo
