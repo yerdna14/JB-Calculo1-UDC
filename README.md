@@ -14,7 +14,7 @@ Este material ha sido creado por (en orden alfabético):
 - Luis Hervella Nieto, 
 - José Germán López Salas, 
 - Manuel Pájaro Diéguez,
-- Andrés Prieto Aneiros e 
+- Andrés Prieto Aneiros, 
 - Hiram Varela Rodríguez.
 
 Esta obra está bajo una
