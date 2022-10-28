@@ -55,6 +55,11 @@ chapters:
    
 - file: capitulos/04/README
   title: Integración
+  sections:
+    - file: capitulos/04/01.IntegracionIndefinida
+      title: Integración indefinida
+    - file: capitulos/04/02.IntegracionRiemann
+      title: Integral de Riemann
 
 - file: capitulos/05/README
   title: Python para cálculo de una variable

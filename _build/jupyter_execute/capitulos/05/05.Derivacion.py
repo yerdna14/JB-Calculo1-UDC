@@ -34,7 +34,7 @@ print('La derivada tercera es: ',d3f)
 
 # ## Uso de **sp.lambdify** 
 # 
-# En el resto de esta práctica, así como en el resto del curo, necesitaremos que una función simbólica de **Sympy** actúe sobre variables que almacenen números en coma flotante o arrays de **Numpy**. En concreto, y aunque las utilidades de este comando son mucho más amplias, lo necesitaremos para representar las funciones obtenidas en **Matplotlib**. 
+# En el resto de esta práctica, así como en el resto del curso, necesitaremos que una función simbólica de **Sympy** actúe sobre variables que almacenen números en coma flotante o arrays de **Numpy**. En concreto, y aunque las utilidades de este comando son mucho más amplias, lo necesitaremos para representar las funciones obtenidas en **Matplotlib**. 
 # 
 # Esto se consigue utilizando la función `sp.lambdify`.
 # 

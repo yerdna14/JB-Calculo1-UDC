@@ -100,12 +100,6 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 # Creamos gráficos de funciones
 x1 = np.linspace(-0.5, 2.5, 200)
 y1 = np.cos(x1)
-x2 = np.linspace(0.0, 4*np.pi, 1000)
-y2 = np.cos(2 * np.pi * x2) * np.exp(-x2)
-x3 = np.linspace(-20.0, 20.0, 20)
-y3 = np.arctan(x3)
-x4 = np.linspace(-20.0, 20.0, 200)
-y4 = np.arctan(x4)
 
 fig, axs = plt.subplots(2, 2, figsize=(15,10))
 
