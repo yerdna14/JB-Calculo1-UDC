@@ -60,6 +60,8 @@ chapters:
       title: Integración indefinida
     - file: capitulos/04/02.IntegracionRiemann
       title: Integral de Riemann
+    - file: capitulos/04/03.TeoremaFundamental
+      title: Teorema Fundamental del Cálculo
 
 - file: capitulos/05/README
   title: Python para cálculo de una variable

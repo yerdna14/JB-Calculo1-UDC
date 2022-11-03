@@ -203,7 +203,7 @@ p.show()
 #   $$
 # ````
 
-# ### Más información
+# ### Algunos enlaces para ir más allá
 # 
 # Si te ha picado la curiosidad y quieres ampliar tus conocimientos sobre la integral de Riemann, aquí tienes algunos enlaces que nos parecen interesantes:
 # 
