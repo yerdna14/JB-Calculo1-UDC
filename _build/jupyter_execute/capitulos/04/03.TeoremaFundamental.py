@@ -115,7 +115,7 @@
 # ````{prf:proof} 
 # Pese a que no es muy habitual en este curso, al ser muy sencilla y creemos que didáctica, vamos a mostrar la demostración de esta propiedad... aunque sólo para el caso más fácil: supondremos que $f$ es una función continua.
 # 
-# Supongamos entonces que podemos calcular una primitiva, $F$, para nuestra función $f$ (con las técnicas aprendidas en (ejem...) el instituto o en la Sección {ref}`sec:integral_indefinida`). 
+# Supongamos entonces que podemos calcular una primitiva, $F$, para nuestra función $f$ (con las técnicas aprendidas (ejem...) en el instituto o en la Sección {ref}`sec:integral_indefinida`). 
 # 
 # Por otra parte, gracias al Teorema Fundamental del Cálculo, conocemos otra primitiva de $f$:
 # 

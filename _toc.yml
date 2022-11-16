@@ -62,6 +62,16 @@ chapters:
       title: Integral de Riemann
     - file: capitulos/04/03.TeoremaFundamental
       title: Teorema Fundamental del Cálculo
+    - file: capitulos/04/04.IntegracionNumerica
+      title: Integración numérica
+    - file: capitulos/04/05.IntegracionImpropia
+      title: Integración impropia
+    - file: capitulos/04/06.AplicacionesIntegral
+      title: Aplicaciones de la integral
+    - file: capitulos/04/07.EcuacionesDiferenciales
+      title: Ecuaciones diferenciales
+    - file: capitulos/04/08.Boletin4
+      title: Boletín 4
 
 - file: capitulos/05/README
   title: Python para cálculo de una variable
@@ -76,6 +86,8 @@ chapters:
       title: Gráficas con Matplotlib
     - file: capitulos/05/05.Derivacion
       title: Derivación en Python
+    - file: capitulos/05/06.Integracion
+      title: Integración en Python
 
 # - file: capitulos/06/problemas_modelo
 #   title: Algunos problemas modelo

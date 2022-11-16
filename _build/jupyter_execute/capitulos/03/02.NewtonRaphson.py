@@ -47,7 +47,7 @@
 # 
 # La implementación de este método en `Numpy` es extremadamente sencilla:
 
-# In[1]:
+# In[2]:
 
 
 import numpy as np
@@ -81,7 +81,7 @@ print('Aproximación de la raíz: ', x_aprox[k])
 
 # Vamos a representar gráficamente los primeros pasos del algoritmo en este caso:
 
-# In[57]:
+# In[3]:
 
 
 import matplotlib as mp

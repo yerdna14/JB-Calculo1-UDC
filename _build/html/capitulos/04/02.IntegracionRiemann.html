@@ -270,6 +270,31 @@ const thebe_selector_output = ".output, .cell_output"
      4.3. Teorema Fundamental del Cálculo
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.IntegracionNumerica.html">
+     4.4. Integración numérica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.IntegracionImpropia.html">
+     4.5. Integración impropia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.AplicacionesIntegral.html">
+     4.6. Aplicaciones de la integral
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.EcuacionesDiferenciales.html">
+     4.7. Ecuaciones diferenciales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.Boletin4.html">
+     4.8. Boletín 4
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -305,6 +330,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../05/05.Derivacion.html">
      5.5. Derivación en Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/06.Integracion.html">
+     5.6. Integración en Python
     </a>
    </li>
   </ul>
@@ -552,9 +582,11 @@ title="Print to PDF"
 a = x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_{n-1} &lt; x_n = b.
 \]</div>
 </section>
-</div><p>Dada una partición <span class="math notranslate nohighlight">\(\mathcal P\)</span>, denotamos
-$<span class="math notranslate nohighlight">\(M_i = \underset{x_{i-1} \leq x \leq x_i}{\sup} f(x),\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(m_i = \underset{x_{i-1} \leq x \leq x_i}{\inf} f(x).\)</span>$</p>
+</div><p>Dada una partición <span class="math notranslate nohighlight">\(\mathcal P\)</span>, denotamos</p>
+<div class="math notranslate nohighlight">
+\[M_i = \underset{x_{i-1} \leq x \leq x_i}{\sup} f(x),\]</div>
+<div class="math notranslate nohighlight">
+\[m_i = \underset{x_{i-1} \leq x \leq x_i}{\inf} f(x).\]</div>
 <section id="sumas-de-riemann">
 <h2><span class="section-number">4.2.1. </span>Sumas de Riemann<a class="headerlink" href="#sumas-de-riemann" title="Permalink to this headline">#</a></h2>
 <div class="proof definition admonition" id="def_sumas_Riemann">

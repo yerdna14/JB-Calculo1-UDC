@@ -27,7 +27,34 @@
 # :label: th_primitivas
 # Si $F$ y $G$ son dos primitivas de una misma función $f$ en un intervalo $I$, entonces,
 # 
-# $$ \exists k \in \mathbb{R} \text{ tal que } F(x)=G(x)+k, \quad \forall x \in I.$$
+# $$ \exists k \in \mathbb{R} \mbox{ tal que } F(x)=G(x)+k, \quad \forall x \in I.$$
+# ````
+# 
+# Como consecuencia del anterior teorema, una vez conocida una primitiva $F$ de $f$, ya se pueden obtener todas al sumar únicamente una constante a la primitiva ya conocida.
+# ## Definición de primitiva
+# 
+# La primitiva de una función es la expresión que se obtiene mediante el proceso opuesto a la derivación. De aquí que la primitiva también se conozca con el nombre de antiderivada. Realmente, una función no tiene una única primitiva, sino que una familia de funciones. Veámoslo con un ejemplo.
+# 
+# Si tenemos la función $f(x)=x^2$ sabemos que su derivada se obtiene en dos pasos, i) se multiplica la función por el exponente y ii) se disminuye el exponente en una unidad, esto es, $f'(x)=2x$. Entonces, para calcular la primitiva de $f$ procedemos en sentido opuesto, i) se aumenta el exponente en una unidad y ii) se divide por el exponente (nuevo al hacer el paso i)). De este modo obtenemos que $F(x) = \dfrac{x^3}{3}$, podemos comprobar que al aplicar la derivada a $F$ obtenemos nuestra función inicial $f$. 
+# 
+# Tal y como hemos mencionado, la primitiva no es única, de este modo le podemos añadir cualquier constante a $F(x)$ y su derivada seguirá siendo la función de inicio $f$ (la derivada de una constante era 0). Entonces, para este caso, la familia de primitivas estaría dada por $F(x) = \dfrac{x^3}{3} +C$, donde $C$ es una constante cualesquiera.
+# 
+# Veamos pues, las definiciones formales de primitiva.
+# 
+# 
+# ````{prf:definition} Primitiva
+# :label: def_primitiva 
+# :nonumber: 
+# Sea $f:I\rightarrow \mathbb{R}$. Se dice que F es una primitiva de $f$ en $I$ si
+# 
+# $$ F'(x) = f(x), \quad \forall x \in I.$$
+# ````
+# 
+# ````{prf:theorem} 
+# :label: th_primitivas
+# Si $F$ y $G$ son dos primitivas de una misma función $f$ en un intervalo $I$, entonces,
+# 
+# $$ \exists k \in \mathbb{R} \mbox{ tal que } F(x)=G(x)+k, \quad \forall x \in I.$$
 # ````
 # 
 # Como consecuencia del anterior teorema, una vez conocida una primitiva $F$ de $f$, ya se pueden obtener todas al sumar únicamente una constante a la primitiva ya conocida.
@@ -41,14 +68,14 @@
 # 
 # Dada una función $f:I\rightarrow \mathbb{R}$, se llama integral indefinida de $f$ al conjunto de todas las primitivas de $f$, y se escribe
 # 
-# $$\int f(x)\, \mathrm{d}x = \{ F \text{ tal que } F'(x)=f(x), \quad \forall x \in I\}.$$
+# $$\int f(x)\, \mathrm{d}x = \{ F : F'(x)=f(x), \quad \forall x \in I\}.$$
 # ````
 # 
-# Utilizando el {prf:ref}`th_primitivas`, es inmediato deducir que si conocemos una primitiva $F$ de $f$ su integral indefinida será
+# Utilizando el {prf:ref}`th_primitivas`, es inmediato deducir que si conocemos una primitiva $F$ de $f$, su integral indefinida será
 # 
 # $$\int f(x) \, \mathrm{d}x = \{ F(x) +k, \quad \forall k \in \mathbb{R}\}.$$
 # 
-# Entre las propiedades de la integral está la linealidad, que pasamos a enunciar.
+# Entre las propiedades de la integral está la linealidad, es decir:
 # 
 # ````{prf:property} Linealidad de la integración indefinida
 # :label: prop_linealidad_int_indef 
@@ -73,6 +100,10 @@
 # * $\displaystyle \int \dfrac{1}{1+x^2} \, \mathrm{d}x = \arctan(x) + C$,
 # * $\displaystyle \int \dfrac{1}{\sqrt{1-x^2}} \, \mathrm{d}x = \arcsin(x) + C$.
 # ````
+# 
+# ¿Te apetece practicar un poco con las llamadas *integrales inmediatas*? Aquí puedes hacerlo: 
+# * https://www.matesfacil.com/ejercicios-resueltos-integrales-inmediatas.htm
+# * https://thales.cica.es/rd/Recursos/rd97/Problemas/54-1-p-INM.HTML
 
 # ## Principales métodos para obtener las integrales indefinidas
 # Los métodos más comunes para obtener la integral indefinida de una función son la integración por partes, la integración por cambio de variable y la integración por descomposición de fracciones racionales.
@@ -94,6 +125,7 @@
 # Es conveniente utilizar este método para los productos de:
 # * polinomio (actúa como $u$) contra exponencial (actúa como $dv$), 
 # * polinomio ($u$) contra seno o coseno ($dv$),
+# * inversa de trigonométrica o logarítmica ($u$) contra polinomio ($dv$),
 # * exponencial ($u$ o $dv$) contra seno o coseno ($dv$ o $u$).
 # 
 # Veamos un ejemplo para aplicar el método de integración por partes.
@@ -149,6 +181,10 @@
 # 
 #     $\int \ln(x) \,\mathrm{d}x = x\ln(x) - \int 1dx = x\ln(x) -x +C = x(\ln(x) -1) +C. $
 # ````
+# 
+# Aquí puedes encontrar ejemplos para practicar: 
+# * https://www.matesfacil.com/resueltos-integracion-por-partes.htm
+# * https://thales.cica.es/rd/Recursos/rd97/Problemas/54-1-p-PART.HTML
 
 # ### Integración por cambio de variable
 # Este método de integración se podría decir que es lo opuesto a la regla de la cadena en derivación. Lo que pretendemos al utilizar este método es convertir la función a integrar en algo más sencillo.
@@ -204,6 +240,10 @@
 # 
 #     donde el valor absoluto se ha eliminado al ser $\sqrt{x}+1>0$.
 # ````
+# 
+# Aquí puedes practicar:
+# * https://www.matesfacil.com/resueltos-integracion-por-sustitucion.htm
+# * https://thales.cica.es/rd/Recursos/rd97/Problemas/54-1-p-SUST.HTML
 
 # ### Integración por descomposición de fracciones racionales
 # Este método se utiliza para integrar funciones racionales $f(x)=\dfrac{p_m(x)}{q_n(x)}$ en las cuales el grado del numerador ($m$) es menor que el grado del denominador ($n$). Esto siempre es posible ya que de no ser el caso, se puede efectuar la división, esto es, si $m\ge n$ entonces $\dfrac{p_m(x)}{q_n(x)} = c_r(x) + \dfrac{r_s(x)}{q_n(x)}$  donde el cociente es un polinomio que se puede integrar directamente y la nueva función a integrar por este método se corresponde con el resto de la división partido del divisor $\dfrac{r_s(x)}{q_n(x)}$ verificándose que $s<n$. 

@@ -19,7 +19,9 @@
 # ````
 
 # Dada una partición $\mathcal P$, denotamos
+# 
 # $$M_i = \underset{x_{i-1} \leq x \leq x_i}{\sup} f(x),$$
+# 
 # $$m_i = \underset{x_{i-1} \leq x \leq x_i}{\inf} f(x).$$ 
 
 # ### Sumas de Riemann

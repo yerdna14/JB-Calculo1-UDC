@@ -8,7 +8,7 @@
 # ## Derivar en **Sympy**
 # Para calcular simbólicamente la derivada primera de una función mediante Sympy se emplea la función *diff*. Por ejemplo 
 
-# In[78]:
+# In[6]:
 
 
 import sympy as sp
@@ -20,7 +20,7 @@ print('La derivada primera es: ',d1f)
 
 # Para calcular la derivada i-ésima
 
-# In[3]:
+# In[7]:
 
 
 import sympy as sp
@@ -40,7 +40,7 @@ print('La derivada tercera es: ',d3f)
 # 
 # Mostramos a continuación, sobre un ejemplo, su uso. En él denotaremos *f* la función en Sympy y *fn* la función numérica generada a partir de ésta con `sp.lambdify`.
 
-# In[ ]:
+# In[8]:
 
 
 import sympy as sp
@@ -64,7 +64,7 @@ print(fn(x))
 # 
 # La función debe devolver el polinomio de Taylor y la función que proporciona el resto de Taylor.
 
-# In[3]:
+# In[9]:
 
 
 # Codigo aqui
@@ -79,7 +79,7 @@ def taylor(f,x0,n):
     p=0
     for i in range(n+1):
         p+=sp.diff(f,x,i).subs(x,x0)/sp.factorial(i)*(x-x0)**i
-    R=(sp.diff(f,x,n+1).subs(x,t)/sp.factorial(n+1)*(x-x0)**n+1)
+    R=sp.diff(f,x,n+1).subs(x,t)/sp.factorial(n+1)*(x-x0)**(n+1)
     return p,R
 
 
@@ -89,7 +89,7 @@ def taylor(f,x0,n):
 # $$f(x)=\sin(x)-\cos(x),$$
 # centrado en $x_0=0$.
 
-# In[4]:
+# In[10]:
 
 
 # Codigo aqui
@@ -106,7 +106,7 @@ print('Polinomio de Taylor: \n',p,'\n\n Resto de Taylor: \n',R)
 
 # Representación de la función, el polinomio de Taylor y el residuo
 
-# In[6]:
+# In[11]:
 
 
 # Codigo aqui
@@ -143,7 +143,7 @@ plt.show()
 # También haremos esta acotación gráficamente: representaremos la gráfica de $g$ (el valor absoluto del resto de Taylor) en función de $t\in[0,\pi]$ y buscaremos su máximo.
 # 
 
-# In[8]:
+# In[12]:
 
 
 from scipy import optimize
@@ -175,7 +175,7 @@ print('El error real es: ',np.abs(fn(np.pi)-pn(np.pi)))
 # 2. Simbólicamente: con **Sympy**.
 # 3. Numéricamente mediante el método de Newton con error menor que $ 10^{-4} $.
 
-# In[117]:
+# In[13]:
 
 
 # 2. Resolvemos el problema utilizando Sympy
@@ -188,7 +188,7 @@ alphamax=sp.solve(d1f)
 print('La sección máxima se alcanza con ángulo: ',float(alphamax[1]))
 
 
-# In[122]:
+# In[14]:
 
 
 # 3. Aproximamos el máximo con el método de Newton
