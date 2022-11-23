@@ -680,7 +680,7 @@ title="Print to PDF"
 </ul>
 <p>Entonces tendremos:</p>
 <ul class="simple">
-<li><p>Punto medio o Simpson compuestos, con <span class="math notranslate nohighlight">\(n\)</span> par: <span class="math notranslate nohighlight">\(\displaystyle \int_a^b f(x)\,dx = \sum_{i=1}^{2/n} \int_{x_{2i-2}}^{x_{2i}} f(x)\,dx\)</span>.</p></li>
+<li><p>Punto medio o Simpson compuestos, con <span class="math notranslate nohighlight">\(n\)</span> par: <span class="math notranslate nohighlight">\(\displaystyle \int_a^b f(x)\,dx = \sum_{i=1}^{n/2} \int_{x_{2i-2}}^{x_{2i}} f(x)\,dx\)</span>.</p></li>
 <li><p>Trapecio compuesto: <span class="math notranslate nohighlight">\(\displaystyle \int_a^b f(x)\,dx = \sum_{i=0}^{n} \int_{x_{i-1}}^{x_{i}} f(x)\,dx\)</span>.</p></li>
 </ul>
 <p>Ahora, dependiendo de la fórmula simple que elijamos tendremos:</p>
@@ -700,7 +700,7 @@ title="Print to PDF"
 \[\begin{eqnarray*}
     \int_a^b f(x)\,dx = \sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x)\, dx &amp;\approx&amp; 
     \sum_{i=1}^{n} \frac{h}{2} \left( f\left(x_{i-1}\right) + f\left(x_{i}\right) \right) \\
-    &amp;=&amp; \frac{h}{2} \left( f(x_{0}) + \sum_{i=1}^{n-1}f(x_{i}) + f(x_{n}) \right)
+    &amp;=&amp; \frac{h}{2} \left( f(x_{0}) + 2 \sum_{i=1}^{n-1}f(x_{i}) + f(x_{n}) \right)
     \end{eqnarray*}\]</div>
 <a class="reference internal image-reference" href="../../_images/cap4_trapecio_compuesto.png"><img alt="../../_images/cap4_trapecio_compuesto.png" src="../../_images/cap4_trapecio_compuesto.png" style="width: 300px;" /></a>
 </li>
@@ -717,7 +717,7 @@ title="Print to PDF"
 </section>
 <section id="programacion-en-numpy">
 <h2><span class="section-number">4.4.4. </span>Programación en <code class="docutils literal notranslate"><span class="pre">Numpy</span></code><a class="headerlink" href="#programacion-en-numpy" title="Permalink to this headline">#</a></h2>
-<p>Podéis ver la programación de estos métodos en la Sección <a class="reference internal" href="../05/06.Integracion.html#sec-pythonintegracion"><span class="std std-ref">Integración en Python</span></a>.
+<p>Podéis ver la programación de estos métodos en la Sección <a class="reference internal" href="../05/06.Integracion.old.html#sec-pythonintegracion"><span class="std std-ref">Integración en Python</span></a>.
 Por favor, no dejéis de mirar con calma la forma en que estas fórmulas compuestas se implementan en una línea, jugando con el comando <code class="docutils literal notranslate"><span class="pre">np.sum</span></code>, lo que nos permite evitar por completo los bucles. Queda un ejercicio fantástico para el manejo de los arrays en <code class="docutils literal notranslate"><span class="pre">Python</span></code>…</p>
 </section>
 <section id="mas-informacion">

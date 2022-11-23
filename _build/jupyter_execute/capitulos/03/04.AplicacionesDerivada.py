@@ -136,7 +136,7 @@
 # \begin{equation*}
 # f^{\prime} (\xi) = 0 \, .
 # \end{equation*}
-# <img src="../../images/cap_deriv_Rolle.png" width="400"/>
+# <img src="../../images/cap_deriv_rolle.png" width="400"/>
 # 
 # ````
 # 
@@ -197,15 +197,15 @@
 # 
 # *Existencia*
 # 
-# $$
+# \begin{align*}
 # \left.\begin{array}{l}
 # f\mbox{ continua en }[0,\pi] \\
 # f(0)=0+\sin 0-\frac{1}{\sqrt{0}+3}=-\frac{1}{3}<0 \\
 # f(\pi)= \pi+\sin \pi-\frac{1}{\sqrt{\pi}+3}=\pi-\frac{1}{\sqrt{\pi}+3}>0
 # \end{array}\right\} 
-# \stackrel{\mbox{(Bolzano)}}{\Longrightarrow}
-# \mbox{Existe raíz de $f$ en }[0,\pi].
-# $$
+# & \stackrel{\mbox{(Bolzano)}}{\Longrightarrow}
+# \exists\mbox{ raíz de $f$ en }[0,\pi].
+# \end{align*}
 # 
 # *Unicidad*
 # 
@@ -223,8 +223,11 @@
 # \left.\begin{array}{ll}
 # 1+\cos x>0&\quad\forall x\in(0,\pi) \\
 # \dfrac{1}{2\sqrt{x}\left(\sqrt{x}+3\right)^2}>0&\quad\forall x\in(0,\pi)
-# \end{array}\right\}
-# \Rightarrow
+# \end{array}\right\},
+# $$
+# entonces
+# 
+# $$
 # f'(x)=1+\cos x+\frac{1}{2\sqrt{x}\left(\sqrt{x}+3\right)^2}>0\quad\forall x\in(0,\pi),
 # $$
 # lo que contradice el que exista un punto en el que $f'$ se anula. Por lo tanto, es
@@ -240,7 +243,7 @@
 # \begin{equation*}
 # f(b) - f(a) = f' (\xi) (b - a) \, .
 # \end{equation*}
-# <img src="../../images/cap_deriv_Lagrange.png" width="400"/>
+# <img src="../../images/cap_deriv_lagrange.png" width="400"/>
 # 
 # ````
 # Basta recordar que $\displaystyle\frac{f(b) - f(a)}{b-a}$ es la pendiente de la recta secante a $f$ por $a$ y $b$ para tener la interpretación geométrica de este teorema, que mostramos en la imagen anterior: 

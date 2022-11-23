@@ -96,7 +96,7 @@
 # 
 # Entonces tendremos:
 # 
-# * Punto medio o Simpson compuestos, con $n$ par: $\displaystyle \int_a^b f(x)\,dx = \sum_{i=1}^{2/n} \int_{x_{2i-2}}^{x_{2i}} f(x)\,dx$.
+# * Punto medio o Simpson compuestos, con $n$ par: $\displaystyle \int_a^b f(x)\,dx = \sum_{i=1}^{n/2} \int_{x_{2i-2}}^{x_{2i}} f(x)\,dx$.
 # * Trapecio compuesto: $\displaystyle \int_a^b f(x)\,dx = \sum_{i=0}^{n} \int_{x_{i-1}}^{x_{i}} f(x)\,dx$.
 # 
 # Ahora, dependiendo de la fórmula simple que elijamos tendremos:
@@ -117,7 +117,7 @@
 #     \begin{eqnarray*}
 #     \int_a^b f(x)\,dx = \sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x)\, dx &\approx& 
 #     \sum_{i=1}^{n} \frac{h}{2} \left( f\left(x_{i-1}\right) + f\left(x_{i}\right) \right) \\
-#     &=& \frac{h}{2} \left( f(x_{0}) + \sum_{i=1}^{n-1}f(x_{i}) + f(x_{n}) \right)
+#     &=& \frac{h}{2} \left( f(x_{0}) + 2 \sum_{i=1}^{n-1}f(x_{i}) + f(x_{n}) \right)
 #     \end{eqnarray*}
 #     <img src="../../images/cap4_trapecio_compuesto.png" width="300"/>
 #     </center>

@@ -68,11 +68,11 @@ x_aprox = np.zeros(N_max)
 x_aprox[0] = 2
 
 for k in range(1,N_max):
-   if f_der(x_aprox[k-1]) == 0: break
+    if f_der(x_aprox[k-1]) == 0: break
 
-   x_aprox[k] = x_aprox[k-1] - f(x_aprox[k-1])/f_der(x_aprox[k-1])
+    x_aprox[k] = x_aprox[k-1] - f(x_aprox[k-1])/f_der(x_aprox[k-1])
 
-   if ( (k > 0) and (np.abs(x_aprox[k]-x_aprox[k-1]) / np.abs(x_aprox[k]) < tol) ): break
+    if ( (k > 0) and (np.abs(x_aprox[k]-x_aprox[k-1]) / np.abs(x_aprox[k]) < tol) ): break
 
 print('Número de iteraciones realizadas: ', k) 
 print('Aproximación de la raíz: ', x_aprox[k])

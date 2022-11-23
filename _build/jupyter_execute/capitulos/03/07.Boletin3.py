@@ -28,7 +28,7 @@
 #     $$
 #     f(x)=
 #     \begin{cases}
-#     \displaystyle{x+x^2 sen\left(\frac 1x\right)} & \text{  si  } x\neq 0 \\
+#     \displaystyle{x+x^2 \sin\left(\frac 1x\right)} & \text{  si  } x\neq 0 \\
 #             0 & \text{  si  } x = 0
 #     \end{cases}
 #     $$
@@ -43,7 +43,7 @@
 #     $$
 #     f(x) =
 #     \begin{cases}
-#     \displaystyle{\frac{1-\textbf{e}^{-x}}{x} }            & \quad \text{si } x \neq 0 \\
+#     \displaystyle{\frac{1-e^{-x}}{x} }            & \quad \text{si } x \neq 0 \\
 #     1 & \quad \text{si } x = 0
 #     \end{cases}
 #     $$
@@ -58,15 +58,15 @@
 #     1. Plantea el algoritmo de Newton-Raphson para este caso.  
 #     2. Calcula las dos primeras iteraciones usando ese algoritmo. Para ello usa como aproximación inicial el valor $x_0=0$.  
 #     
-# 7. Sea $f(x) = \displaystyle \arctan \left( \frac{sen (x)}{1 + \cos (x)} \right )$. Calcula la recta tangente a la gráfica de $f$ en $x = 0$. 
+# 7. Sea $f(x) = \displaystyle \arctan \left( \frac{\sin (x)}{1 + \cos (x)} \right )$. Calcula la recta tangente a la gráfica de $f$ en $x = 0$. 
 #     
-# 8. Sea la función $f$ dada por $f(x) = (4x+1)^{(2+ sen (x^2))}$.  Calcula su derivada en cualquier punto.  
+# 8. Sea la función $f$ dada por $f(x) = (4x+1)^{(2+ \sin (x^2))}$.  Calcula su derivada en cualquier punto.  
 #    
 # 9.  Si consideramos la función $f:\mathbb{R}\rightarrow \mathbb{R}$ dada por
 # 
 #     $$
 #     f(x)=\displaystyle{\left\{ \begin{array}{ccl}
-#                             \displaystyle{\frac{sen^2(3x)}{3x^2}} & si & x\neq 0 \\
+#                             \displaystyle{\frac{\sin^2(3x)}{3x^2}} & si & x\neq 0 \\
 #                                 \\
 #                             \displaystyle{\frac13 }& si & x=0
 #                             \end{array}
@@ -82,7 +82,7 @@
 # 10. Calcula los valores de $a$ y $b$ para que
 # 
 #     $$
-#     \displaystyle{\lim_{x\rightarrow 0}\frac{ax^2+bx+1-\mathbf{e}^{2x}}{sen(x^2)}=1}
+#     \displaystyle{\lim_{x\rightarrow 0}\frac{ax^2+bx+1-e^{2x}}{\sin(x^2)}=1}
 #     $$
 #   
 # 11. Sea la función $f$ dada por $\displaystyle f(x) = \frac{1}{2} x |x|$. ¿Cuál es la clase de $f$?  
@@ -118,7 +118,7 @@
 # 14.  Calcula los extremos relativos, y absolutos si existen, de la función definida en el 
 #     intervalo $\left [ -\frac{1}{2} , \frac{3}{2} \right ]$ por $f(x) = x^2 - 2|x| + 2$.
 #       
-# 15. Considera la función $f:\mathbb{R} \rightarrow \mathbb{R}$ dada por $\displaystyle{f(x)=\frac{|x|}{\mathbf{e}^{x-1}}}$.
+# 15. Considera la función $f:\mathbb{R} \rightarrow \mathbb{R}$ dada por $\displaystyle{f(x)=\frac{|x|}{e^{x-1}}}$.
 #     1.  Estudia la continuidad y derivabilidad de la función.  
 #     2.  Esboza la gráfica de $f$. Para ello calcula sus extremos relativos, puntos de inflexión y asíntotas. Determina también su(s) intervalo(s) de concavidad y/o convexidad.    
 #     3. Determina los extremos absolutos de $f$.    
@@ -126,7 +126,7 @@
 # 16. Demuestra que la ecuación $x^4-4\,x^3-1=0$ tiene una única raíz en el intervalo $[4,5]$.   
 #     Plantea el método de Newton-Raphson para resolver la ecuación del apartado anterior. Partiendo de $x_0=4$, obtén la aproximación $x_1$ a mano y la aproximación $x_7$ utilizando `Python`.  
 #     
-# 17.  ¿En qué intervalo es creciente la función $f$ dada por $f(x)=x^3\mathbf{e}^x$? ¿Es cóncava o convexa en ese intervalo? Esboza su gráfica.  
+# 17.  ¿En qué intervalo es creciente la función $f$ dada por $f(x)=x^3e^x$? ¿Es cóncava o convexa en ese intervalo? Esboza su gráfica.  
 # 
 # 18. Halla la condición que debe cumplir $\lambda$ para que el polinomio $x^4 + x^3 + \lambda x^2$ sea cóncavo en algún intervalo. Determina ese intervalo en función de $\lambda$.  
 # 
@@ -142,19 +142,19 @@
 #     1.  Calcula el polinomio de McLaurin (es decir, el polinomio de Taylor con $x_0=0$) de orden dos relativo a $f$.  
 #     2.  Utiliza este polinomio para aproximar el valor de $\ln(1.1)$, acotando el error cometido.  
 #   
-# 24. Construye el polinomio de Taylor, $p$, de primer orden para la función $g(x) = sen (x)$, centrado en el punto $x_0 = \pi/2$.
+# 24. Construye el polinomio de Taylor, $p$, de primer orden para la función $g(x) = \sin (x)$, centrado en el punto $x_0 = \pi/2$.
 # 
 #     Ahora considera la función $f$ definida como sigue:
 #         
 #     $$
 #     f(x) =
-#     \begin{cases} sen (x) \quad  & \quad \quad \text{si } x \leq \pi/2 \\
+#     \begin{cases} \sin (x) \quad  & \quad \quad \text{si } x \leq \pi/2 \\
 #                         p(x) \quad    & \quad \quad \text{si } x > \pi/2
 #     \end{cases}
 #     $$
 #     siendo $p$ el polinomio construido en el apartado anterior. ¿Cuál es la clase de $f$ en $\mathbb{R}$?  
 # 
-# 25. Determina el polinomio de Taylor de orden dos de la función $f(x)= arcsen(x)$ relativo al punto $x_{0}=0$. <br> Utiliza el polinomio anterior para obtener, de forma aproximada, el ángulo cuyo seno es $\displaystyle{\frac{1}{10}}$.  
+# 25. Determina el polinomio de Taylor de orden dos de la función $f(x)= \arcsin(x)$ relativo al punto $x_{0}=0$. <br> Utiliza el polinomio anterior para obtener, de forma aproximada, el ángulo cuyo seno es $\frac{1}{10}$.  
 #     
 # 
 # 26. Sea la función dada por
@@ -162,7 +162,7 @@
 #     $$
 #     \begin{array}{cccl}
 #     f: & \mathcal{D}om(f) \subset \mathbb{R} & \longrightarrow & \mathbb{R} \\
-#     &        x                    & \rightsquigarrow & f(x) = \dfrac{x^2}{\mathbf{e}^x}
+#     &        x                    & \rightsquigarrow & f(x) = \dfrac{x^2}{e^x}
 #     \end{array}
 #     $$
 # 
@@ -188,7 +188,7 @@
 # 4. Calcula el límite:
 #    
 #     $$
-#     \displaystyle{\lim_{x\rightarrow 0} \dfrac{(1+x)^{\frac{1}{x}} - \mathbf{e}}{x}.}
+#     \displaystyle{\lim_{x\rightarrow 0} \dfrac{(1+x)^{\frac{1}{x}} - e}{x}.}
 #     $$ 
 # 
 # 5.  Se considera la función $f: \mathbb{R} \longrightarrow \mathbb{R}$ dada por:  
@@ -214,7 +214,7 @@
 # 7. Comprueba que la función $F$, dada por $F(x) = \dfrac{1}{4} x^2 - \ln x$, tiene un  mínimo relativo, $x_{\min}$, en el intervalo $(1,3)$.  
 #     Utiliza el algoritmo de dicotomía, partiendo de $a = 1$ y $b = 3$, para aproximar $x_{\min}$ con un error menor que $\frac{1}{7}$.  
 #   
-# 8. Consideramos la ecuación \, $x \mathbf{e}^{-x} = \mathbf{e}^{-3}$.
+# 8. Consideramos la ecuación \, $x e^{-x} = e^{-3}$.
 # 
 #     1. Comprueba que tiene exactamente dos soluciones en $\mathbb{R}$.  
 #     2. Plantea el método de Newton-Raphson a partir de un punto en el intervalo $[2,5]$. Calcula $x_2$ a partir de $x_0 = 2$. 
@@ -238,8 +238,8 @@
 # 
 #     $$
 #     f(x) =
-#     \begin{cases} \dfrac{sen( x)}{x} - 1 \quad  & \quad \quad \text{si } x < 0 \\ & \\
-#                         x^3 \mathbf{e}^{-x^2} \quad           & \quad \quad \text{si } x \geq 0 \, .
+#     \begin{cases} \dfrac{\sin( x)}{x} - 1 \quad  & \quad \quad \text{si } x < 0 \\ & \\
+#                         x^3 e^{-x^2} \quad           & \quad \quad \text{si } x \geq 0 \, .
 #     \end{cases}
 #     $$
 #     1.  Estudia la derivabilidad de $f$ en $\mathbb{R}$.  
@@ -250,7 +250,7 @@
 # 
 #     $$
 #         f(x) =
-#     \begin{cases} \dfrac{sen (x)}{x} \, & \quad \quad \text{si } x < 0 \\
+#     \begin{cases} \dfrac{\sin (x)}{x} \, & \quad \quad \text{si } x < 0 \\
 #                             2 - \cos(x) \,        & \quad \quad \text{si } x \geq 0 \, .
 #     \end{cases}
 #     $$  

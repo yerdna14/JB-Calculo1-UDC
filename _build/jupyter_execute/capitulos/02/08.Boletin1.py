@@ -17,12 +17,12 @@
 # 
 #       $$
 #       \begin{array}{llll}
-#       \text{(a)} \ln (\mathbf{e}) & \text{(b)} \ln (\mathbf{e}^2) & \text{(c)} \ln (0) & \text{(d)} \ln (-1) \\
-#       \text{(e)} \ln(2) & \text{(f)} \mathbf{e}^0 & \text{(g)} \mathbf{e}^{-1} & \text{(h)} \mathbf{e}^{\ln (1)} \\
-#       \text{(i)} \mathbf{e}^{\ln (\mathbf{e})} & \text{(j)} \mathbf{e}^{\ln(\mathbf{e}^3)} & \text{(k)} \ln \sqrt{2^3} &
+#       \text{(a)} \ln (e) & \text{(b)} \ln (e^2) & \text{(c)} \ln (0) & \text{(d)} \ln (-1) \\
+#       \text{(e)} \ln(2) & \text{(f)} e^0 & \text{(g)} e^{-1} & \text{(h)} e^{\ln (1)} \\
+#       \text{(i)} e^{\ln (e)} & \text{(j)} e^{\ln(e^3)} & \text{(k)} \ln \sqrt{2^3} &
 #       \text{(l)} \dfrac{\ln (5x)}{\ln \left( \frac{5}{x} \right)} \\
-#       \text{(m)} \dfrac{\ln (5+x)}{\ln (5-x)} \qquad & \text{(n)} \ln (\mathbf{e}^2) \mathbf{e}^{\ln (5+x) - \ln (5x)} \qquad &
-#       \text{(ñ)} \ln \left( \dfrac{x^2-1}{x^3} \right)^3 \qquad &
+#       \text{(m)} \dfrac{\ln (5+x)}{\ln (5-x)} \quad & \text{(n)} \ln (e^2) e^{\ln (5+x) - \ln (5x)} \quad &
+#       \text{(ñ)} \ln \left( \dfrac{x^2-1}{x^3} \right)^3 \quad &
 #       \end{array}
 #       $$
 # 
@@ -30,9 +30,9 @@
 # 
 #       $$
 #       \begin{array}{ll}
-#       \text{(a)} \sqrt{x-3}+5=x & \text{(b)} \mathbf{e}^{x-3}=30 \\
+#       \text{(a)} \sqrt{x-3}+5=x & \text{(b)} e^{x-3}=30 \\
 #       \text{(c)} 9^{2x+1}=27 &    \text{(d)} 10^{5x}=1000 \\
-#       \text{(e)} \mathbf{e}^{x^2-1}=9 &  \text{(f)} \ln(x-3)=5 \\
+#       \text{(e)} e^{x^2-1}=9 &  \text{(f)} \ln(x-3)=5 \\
 #       \text{(g)} \ln(x+2)+\ln(x-2)=1 \qquad & \text{(h)} \log_3(x^2)-\log_3(2x)=2
 #       \end{array}
 #       $$

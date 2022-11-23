@@ -70,16 +70,16 @@ b = 2.
 x_aprox = np.zeros(N_max)
 
 for k in range(0,N_max):
-  x_aprox[k] = (a+b) / 2
-  
-  if f(x_aprox[k]) == 0: break
-        
-  if f(a) * f(x_aprox[k]) < 0:
-     b = x_aprox[k]
-  else:
-     a = x_aprox[k]
+    x_aprox[k] = (a+b) / 2
 
-  if ( (k > 0) and (np.abs(x_aprox[k]-x_aprox[k-1]) / np.abs(x_aprox[k]) < tol) ): break
+    if f(x_aprox[k]) == 0: break
+      
+    if f(a) * f(x_aprox[k]) < 0:
+        b = x_aprox[k]
+    else:
+       a = x_aprox[k]
+
+if ( (k > 0) and (np.abs(x_aprox[k]-x_aprox[k-1]) / np.abs(x_aprox[k]) < tol) ): break
 
 print('Número de iteraciones realizadas: ', k+1) # Contamos 1 más porque empezamos el bucle en 0
 print('Aproximación de la raíz: ', x_aprox[k])

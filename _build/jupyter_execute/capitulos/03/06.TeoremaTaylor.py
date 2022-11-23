@@ -95,7 +95,12 @@ ax2.legend(prop={'size': 18})
 # $$
 # \ln(1.3)\approx 1.3-1=0.3.
 # $$
-# ¿Es una aproximación correcta? Tal y como hemos calculado anteriormente en python $$\ln(1.3)=0.262364264467491...$$ por lo que, efectivamente, $0.3$ es una aproximación razonable de este valor.
+# ¿Es una aproximación correcta? Tal y como hemos calculado anteriormente en python 
+# 
+# $$
+# \ln(1.3)=0.262364264467491...
+# $$ 
+# por lo que, efectivamente, $0.3$ es una aproximación razonable de este valor.
 # 
 # Y ahora, ¿podemos mejorarla? La respuesta vuelve a ser sí: mediante el teorema de Taylor.
 # 

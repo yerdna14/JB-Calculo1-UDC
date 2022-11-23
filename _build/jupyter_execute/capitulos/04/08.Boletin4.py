@@ -16,7 +16,7 @@
 #     \text{$c)$ }  \displaystyle{\int \cos (x)\,\cos\left(sen(x)\right) \, dx}  \\
 #     \\
 #     \text{$d)$ } \displaystyle{\int x^2\,(4x^3+7)^9 \, dx} & \qquad
-#     \text{$e)$ } \displaystyle{\int \mathbf{e}^x\,sen (2x+5) \, dx} & \qquad
+#     \text{$e)$ } \displaystyle{\int e^x\,sen (2x+5) \, dx} & \qquad
 #     \text{$f)$ } \displaystyle{\int \frac{x}{1+x^4}\, dx }
 #     \end{array}
 #     $$
@@ -86,7 +86,7 @@
 #     Aproxima la carga eléctrica del circuito, $q = \displaystyle{\int_2^6 i(t) \, },$ mediante las fórmulas del punto medio, trapecio, Simpson y la fórmula del trapecio compuesta con paso $h=2.$
 # 
 # 
-# 12.  Halla el área limitada por la gráfica de $f(x) = x\mathbf{e}^{-2x}$ y el eje $OX$ en el intervalo $[0 , \infty)$.
+# 12.  Halla el área limitada por la gráfica de $f(x) = xe^{-2x}$ y el eje $OX$ en el intervalo $[0 , \infty)$.
 # 
 # 13.  Halla el valor de la integral $\displaystyle{\int_0^1 x^2 \ln (x) \, dx}.$
 # 
@@ -113,7 +113,7 @@
 # 18.  Sea la función $f(x) = \sqrt{-x \ln (x)}$ definida en los puntos $x$ para
 # los cuales $-x \ln(x) \geq 0$.  Calcula el volumen del sólido generado al rotar todo su dominio alrededor del eje $OX$.
 # 
-# 19.  Comprueba que $f(x)=\frac23 \mathbf{e}^x+\mathbf{e}^{-2x}$ es una solución de la ecuación diferencial $y'+2y = 2 \mathbf{e}^x.$
+# 19.  Comprueba que $f(x)=\frac23 e^x+e^{-2x}$ es una solución de la ecuación diferencial $y'+2y = 2 e^x.$
 # 
 # 20. Halla la solución general de la ecuación diferencial:  $y^{\prime} x = y \ln (y)$.
 # 
@@ -138,7 +138,7 @@
 #       $$
 #         \left\{
 #           \begin{array}{c}
-#             \displaystyle y^{\prime }\,+ \,2y = \mathbf{e}^{3x}  \\
+#             \displaystyle y^{\prime }\,+ \,2y = e^{3x}  \\
 #                   y(0)= \frac{2}{5}
 #           \end{array}
 #         \right.
@@ -178,12 +178,12 @@
 # 
 # 28. Sea $g(x)=\frac{{x}^{2}-1}{x}$:
 # 
-#     * Halla $\displaystyle{\int_a^\mathbf{e} g(x) \, dx}$, siendo $a$ un número real mayor que cero.
-#     * Calcula $\displaystyle{\int_0^\mathbf{e} g(x) \, dx}$.
+#     * Halla $\displaystyle{\int_a^e g(x) \, dx}$, siendo $a$ un número real mayor que cero.
+#     * Calcula $\displaystyle{\int_0^e g(x) \, dx}$.
 # 
 # 29. Calcula:
 # 
-#     * $\displaystyle\int_0^{\ln(5)}  \frac{\mathbf{e}^{x} \sqrt{\mathbf{e}^{x}-1}}{\mathbf{e}^{x}+3 } \, dx$, 
+#     * $\displaystyle\int_0^{\ln(5)}  \frac{e^{x} \sqrt{e^{x}-1}}{e^{x}+3 } \, dx$, 
 #     * $\displaystyle \int_1^x \frac{\sin( t)}{t}$,
 #     * $\displaystyle\int_0^1 \frac{x}{\sqrt{1+{x}^{2}}} \, dx$,
 #     * $\displaystyle\int_0^{\pi/4} x^2\cos(x) \, dx$,
@@ -239,7 +239,7 @@
 #       $$
 #       F(x) = \int_{\pi/2}^{g(x)} \, f(t) \, dt,
 #       $$
-#       donde $f(t) = (1-sen^3 (t)) \, \mathbf{e}^t$ \, y \, $g(x) = \frac{\pi}{2} + \mathbf{e}^x$.
+#       donde $f(t) = (1-sen^3 (t)) \, e^t$ \, y \, $g(x) = \frac{\pi}{2} + e^x$.
 # 
 #       * Determina los puntos críticos de $F$ en el intervalo $[1\, ,\, \ln(5\pi)]$.   
 #       * Sin calcular $F''$, clasifica los puntos críticos y determina los extremos absolutos de $F$ en $[1,\,\ln(5\pi)]$.
@@ -285,7 +285,7 @@
 #       * Aproxima la integral definida $\displaystyle\int_0^{1} Q(t) \,  dt$ empleando los polinomios anteriores.  
 #       * Aproxima la integral anterior mediante la fórmula del trapecio compuesta con $h=0.5$.
 #  
-# 14.  El valor aproximado de la integral $\displaystyle{\int_{\pi/4}^{3\pi/4}{cotg(x)\,}dx\,\,}$  usando el método de Simpson (simple) es:
+# 14.  El valor aproximado de la integral $\displaystyle{\int_{\pi/4}^{3\pi/4}{\mbox{cotan}(x)\,}dx\,\,}$  usando el método de Simpson (simple) es:
 #       
 #       * $\displaystyle 0$      
 #       * $\displaystyle-\frac{\pi}{12}$   
@@ -330,7 +330,7 @@
 #       $$
 #       \left\{
 #       \begin{array}{c}
-#             \displaystyle{y^{\prime } = \mathbf2{y}^{2} } \\
+#             \displaystyle{y^{\prime } = 2 y^{2} } \\
 #                   y(0)= \displaystyle{\frac{1}{2}}
 #       \end{array}
 #       \right.
