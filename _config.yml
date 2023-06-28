@@ -1,7 +1,7 @@
 #######################################################################################
 # Book settings
 title: Calculo en una variable
-author: I. Arregui, J.J. Cendán, J.A. García, M. González, L. Hervella, J.G. López, M. Pájaro, A. Prieto and H. Varela  
+author: L. Hervella*, I. Arregui, J.J. Cendán, J.A. García, M. González, J.G. López, M. Pájaro, A. Prieto and H. Varela  
 email: ''
 logo                        : "udc_logo.png"  # A path to the book logo
 exclude_patterns            : ["README.md"]  # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
