@@ -132,18 +132,20 @@ print('El area de la sup comprendida entre las dos graficas es: ',A)
 # V=\int_a^b A(x) dx.
 # $$
 # 
-# Puedes verlo con más detalle aquí: https://es.wikipedia.org/wiki/Principio_de_Cavalieri
+# * Puedes verlo con más detalle aquí: https://es.wikipedia.org/wiki/Principio_de_Cavalieri
+# * En esta aplicación de Geogebra, realizada por Marco Rainaldi, puedes visualizar cortes tridimensionales en muchos ejemplos interesantes: https://www.geogebra.org/m/nbknkjtp.
 
 # ### Cuerpos de revolución: método de los discos
 
-# Dada una función integrable $f:[a,b]\to R$  el volumen del sólido de revolución generado al rotar alrededor del eje $OX$ la superficie 
-#     comprendida entre la gráfica de $f$, el eje $OX$, entre $x=a,x=b$ viene dada por
+# El método de los discos es un caso particular del método de Cavalieri... para figuras de revolución. En este caso, los cortes serán círculos de radio $|f(x)|$ y, por tanto, con área, $A(x) = \pi f(x)^2$. 
+# 
+# Entonces, dada una función integrable $f:[a,b]\to R$  el volumen del sólido de revolución generado al rotar alrededor del eje $OX$ la superficie comprendida entre la gráfica de $f$, el eje $OX$, entre $x=a,x=b$ viene dada por
 # 
 # $$
-# V=\pi \int_a^b |f(x)|^2 dx
+# V=\pi \int_a^b |f(x)|^2 dx.
 # $$
 # 
-# Esta fórmula es una aplicación directa del principio de Cavalieri, ya que en este caso las secciones de un sólido de revolución son círculos de radio $|f(x)|$.
+# Puedes ilustrar el proceso en la siguiente aplicación de Geogebra, realizada por José Luis Vergara Ibarra: https://www.geogebra.org/m/jxkmyeax 
 
 # <b>Ejemplo:</b> 
 # 
@@ -226,41 +228,14 @@ V=sp.pi*sp.integrate(f**2,(y,0,4))
 print('El volumen del solido de revolucion es: ',V)
 
 
-# <b>Ejemplo:</b> 
+# <b>Ejercicio:</b> 
 # 
 # Calcular el volumen del sólido generado al rotar alrededor del eje $OY$ la región comprendida entre la parábola $y^2=8x$ y la recta $x=2$
 
-# ### Método de capas
-
-# Dadas una función integrable $f:[a,b]\to R$, con $f(x)\geq 0$ para todo $x\in [a,b]$  el volumen del sólido de revolución generado al rotar alrededor del eje OY la superficie 
-#     comprendida entre la gráfica de $f$ y la gráfica de $g$, entre $x=a,x=b$ viene dada por
+# ## Para seguir practicando
 # 
-# $$
-# V=2\pi \int_a^b xf(x) dx
-# $$
-
-# <b>Ejemplo:</b> 
+# Puedes encontrar más ejercicios aquí:
 # 
-# Calcular el mismo volumen del ejemplo anterior, sólido generado al rotar alrededor del eje $OY$ la región comprendida entre la parábola $y=x^2$ entre $y=0$ y $y=4$, empleando ahora el método de capas
+# * Página (en el portal de Geogebra) de Daniel Partal García, profesor en el Colegio Marista de La Inmaculada (Granada), con un montón de ejercicios planteados y resueltos: https://www.geogebra.org/m/x8zyquyk#material/sqjs77gg
+# * El blog de siempre: https://existelimite.blogspot.com/search/label/Aplicaciones%20de%20la%20integral
 # 
-# $$
-# V=2\pi \int_0^2 x x^2 dy=2\pi\left( \dfrac{x^4}{4} \right]_{0}^{2}=8\pi
-# $$
-# 
-
-# In[39]:
-
-
-import sympy as sp
-y=sp.symbols('x')
-f=x**2
-V=2*sp.pi*sp.integrate(x*f,(x,0,2))
-print('El volumen del solido de revolucion es: ',V)
-
-
-# También es posible emplear el método de capas para calular el volumen de un sólido de revolución generado al rotar una superficie alrededor del eje $OX$. Dadas un función integrable $f:[c,d]\to R$, con $f(y)\geq 0$ para todo $y\in [c,d]$  el volumen del sólido de revolución generado al rotar alrededor del eje OX la superficie 
-#     comprendida entre la gráfica de $f$ y la gráfica de $g$, entre $y=c,y=d$ viene dada por
-# 
-# $$
-# V=2\pi \int_c^d yf(y) dy
-# $$

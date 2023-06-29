@@ -143,7 +143,7 @@ import matplotlib.pyplot as plt
 # Recuerda que, en este caso sencillo, podemos conocer el valor exacto de la integral:
 # 
 # $$
-# I=\int_{0}^{3}\left(x^4+1\right)\,dx = \left[\frac{x^5}{5}+x\right]_{x=0}^{3} = \frac{3^5}{5}+3 = 53.6\, .
+# I=\int_{0}^{3}\left(x^4+1\right)\,dx = \left[\frac{x^5}{5}+x\right]_{x=0}^{3} = \frac{3^5}{5}+3 = 51.6\, .
 # $$
 
 # In[80]:
