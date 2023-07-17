@@ -452,6 +452,10 @@
 
 # ## Regla de l'Hôpital
 # 
+# <img src="../../images/cap3_lHopital_meme.jpg" width="400"/>
+# 
+# (Imagen tomada de la cuenta de Twitter @MathMatize, concretamente de  https://twitter.com/MathMatize/status/1678166772359348225)
+# 
 # Nos queda todavía un punto que debemos resolver: 
 # Cuando aplicamos las propiedades aritméticas de los límites nos podemos encontrar una *desagradable* sorpresa si alguna de las partes involucradas tiene como límite $+\infty$ o $-\infty$.
 # Por ejemplo, si recordamos que $\displaystyle\lim_{x\to x_{0}} \left(f(x)+g(x)\right) = \lim_{x\to x_{0}} f(x) + \lim_{x\to x_{0}} g(x)$, si ahora suponemos que $\displaystyle\lim_{x\to x_{0}} f(x) = 4$, y $\displaystyle\lim_{x\to x_{0}} g(x) = + \infty$, ¿cómo sumamos $4$ y $+\infty$?
