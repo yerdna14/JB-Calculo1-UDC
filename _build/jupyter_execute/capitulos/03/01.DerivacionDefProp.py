@@ -460,7 +460,7 @@
 # Cuando aplicamos las propiedades aritméticas de los límites nos podemos encontrar una *desagradable* sorpresa si alguna de las partes involucradas tiene como límite $+\infty$ o $-\infty$.
 # Por ejemplo, si recordamos que $\displaystyle\lim_{x\to x_{0}} \left(f(x)+g(x)\right) = \lim_{x\to x_{0}} f(x) + \lim_{x\to x_{0}} g(x)$, si ahora suponemos que $\displaystyle\lim_{x\to x_{0}} f(x) = 4$, y $\displaystyle\lim_{x\to x_{0}} g(x) = + \infty$, ¿cómo sumamos $4$ y $+\infty$?
 # 
-# Hay algunas reglas que nos ayudan a hacer estas operaciones con límites que involucran + o -$\infty$ o, también, al $0$ (en ocasiones, a esto se llama **aritmética del infinito**). Puedes mirar aquí la tabla: http://asignaturas.topografia.upm.es/matematicas/primero/Apuntes/Funciones/Operaciones%20con%20limites%20infinitos.pdf, nosotros la resumimos a continuación:
+# Hay algunas reglas que nos ayudan a hacer estas operaciones con límites donde aparece + o -$\infty$ o, también, al $0$ (en ocasiones, a esto se llama **aritmética del infinito**). Puedes mirar aquí la tabla: http://asignaturas.topografia.upm.es/matematicas/primero/Apuntes/Funciones/Operaciones%20con%20limites%20infinitos.pdf, nosotros la resumimos a continuación:
 # 
 # ````{prf:property} Operaciones con límites infinitos
 # :label: prop_aritmetica_infinito
