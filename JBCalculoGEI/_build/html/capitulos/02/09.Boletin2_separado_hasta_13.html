@@ -1,0 +1,668 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Boletín 2: Límites, continuidad, Lagrange y dicotomía &#8212; Calculo en una variable</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-148221575-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/udc_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Calculo en una variable</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01/README.html">
+   1. Conjuntos de números
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/01.ConjuntosClasicos.html">
+     1.1. Conjuntos clásicos de números
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/02.NumerosComplejos.html">
+     1.2. Numeros complejos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="README.html">
+   2. Funciones reales de variable real
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01.Boletin0.html">
+     2.1. Boletín 0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.IntroduccionFuncionReal.html">
+     2.2. Definiciones básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.FuncionesElementales.html">
+     2.3. Funciones elementales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.Limites.html">
+     2.4. Límites
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.Continuidad.html">
+     2.5. Continuidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.Dicotomia.html">
+     2.6. Método de dicotomía
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.Lagrange.html">
+     2.7. Polinomio de interpolación de Lagrange
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.Boletin1.html">
+     2.8. Boletín 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.Boletin2.html">
+     2.9. Boletín 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03/README.html">
+   3. Derivación
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
+     3.1. Definición de derivada y propiedades básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/02.NewtonRaphson.html">
+     3.2. Método numérico de Newton-Raphson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
+     3.3. Derivadas sucesivas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/04.AplicacionesDerivada.html">
+     3.4. Aplicaciones de la derivada
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/05.ConcavidadConvexidad.html">
+     3.5. Convexidad y concavidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/06.TeoremaTaylor.html">
+     3.6. Teorema de Taylor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/07.Boletin3.html">
+     3.7. Boletín 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04/README.html">
+   4. Integración
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/01.IntegracionIndefinida.html">
+     4.1. Integración indefinida
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/02.IntegracionRiemann.html">
+     4.2. Integral de Riemann
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/README.html">
+   5. Python para cálculo de una variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/01.IntroduccionSympy.html">
+     5.1. Introducción a SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">
+     5.2. Límites y continuidad en SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/03.IntroduccionNumpy.html">
+     5.3. Introducción a NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">
+     5.4. Gráficas con Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/05.Derivacion.html">
+     5.5. Derivación en Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/LuisHervella/JB_Calculo1_UDC/main?urlpath=lab/tree/capitulos/02/09.Boletin2_separado_hasta_13.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/capitulos/02/09.Boletin2_separado_hasta_13.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Boletín 2: Límites, continuidad, Lagrange y dicotomía</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="boletin-2-limites-continuidad-lagrange-y-dicotomia">
+<h1>Boletín 2: Límites, continuidad, Lagrange y dicotomía<a class="headerlink" href="#boletin-2-limites-continuidad-lagrange-y-dicotomia" title="Permalink to this headline">#</a></h1>
+<ol>
+<li><p>Calcula, si es posible,</p>
+<p>a. <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow 0}{\frac{|2x-1|-|2x+1|}{x}}}\)</span>,</p>
+<p>b. <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow 0}{\frac{\sqrt{x^2+4}-2}{x^2}}}\)</span>,</p>
+<p>c. <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow 0}{\left (\frac{1}{x}-\frac{1}{|x|}\right)}}\)</span>.</p>
+</li>
+</ol>
+<ol class="simple">
+<li><p>Calcula, si es posible, los siguientes límites:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lllll}
+%\text{$(a)$ } \displaystyle{\lim_{x\rightarrow -\infty} \mathbf{e}^x}   &amp;\qquad
+%\text{$(b)$ } \displaystyle{\lim_{x\rightarrow 0}       \mathbf{e}^x}   &amp;\qquad
+%\text{$(c)$ } \displaystyle{\lim_{x\rightarrow +\infty} \mathbf{e}^x}   &amp;\qquad
+\text{$a)$ } \displaystyle{\lim_{x\rightarrow -\infty} \sqrt[3]{x}}   &amp; \qquad
+ \text{$b)$ } \displaystyle{\lim_{x\rightarrow +\infty} \sqrt{x}}  &amp;\qquad
+\text{$c)$ } \displaystyle{\lim_{x\rightarrow 0^+}     \sqrt{x}}   &amp;\qquad
+\text{$d)$ } \displaystyle{\lim_{x\rightarrow -\infty} \sqrt{x}}   \\
+\\
+\text{$e)$ } \displaystyle{\lim_{x\rightarrow +\infty} \dfrac{1}{\sqrt{x}}}  &amp; \qquad
+\text{$f)$ } \displaystyle{\lim_{x\rightarrow 0^+}     \dfrac{1}{\sqrt{x}} }  &amp;\qquad
+%\text{$j)$ } \displaystyle{\lim_{x\rightarrow +\infty} x^2}   &amp;\qquad
+\text{$g)$ } \displaystyle{\lim_{x\rightarrow -\infty} x^2 }  &amp;\qquad
+\text{$h)$ } \displaystyle{\lim_{x\rightarrow +\infty} \left( x^3 - 5x^2 + 8 \right)}
+\end{array}
+\end{split}\]</div>
+<ol>
+<li><p>El valor, en euros, de un coche <span class="math notranslate nohighlight">\(x\)</span> años después de su adquisición (nuevo) viene dado por la función</p>
+<div class="math notranslate nohighlight">
+\[
+    v(x)=2000+\frac{60000}{4^{0.25 x}}.
+    \]</div>
+<p>Se llama <em>valor residual</em> del coche a su valor límite cuando el número de años aumenta indefinidamente.</p>
+<p>a. ¿Cuál fue el precio de compra del vehículo nuevo?</p>
+<p>b. ¿Cuál será su valor residual?</p>
+<p>c. ¿Al cabo de cuántos años diferirá su valor en menos de 1000 euros del valor residual?</p>
+</li>
+</ol>
+<ol>
+<li><p>Dibuja, con <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> la gráfica de la curva <span class="math notranslate nohighlight">\(y=\sqrt{x^2+1}-x\)</span>.</p>
+<p>Comprueba, con lápiz y papel y comprobando los resultados en el ordenador, si esta gráfica tiene alguna asíntota y, en caso afirmativo, obtén sus ecuaciones.</p>
+</li>
+</ol>
+<ol>
+<li><p>Calcula las asíntotas de las siguientes funciones:</p>
+<p>a. <span class="math notranslate nohighlight">\(\displaystyle{v_{1}(x)= \frac{3x^2-2}{4x^2 +1}}\)</span>,</p>
+<p>b. <span class="math notranslate nohighlight">\(\displaystyle{h(t)= \frac{t^2+2}{t -2}}\)</span>,</p>
+<p>c. <span class="math notranslate nohighlight">\(\displaystyle{v_{2}(x)= \frac{3x^2-2}{4x^2 -1}}\)</span>,</p>
+<p>d. <span class="math notranslate nohighlight">\(\displaystyle{f(x)=x^\frac{|x|}{x} + \frac{1}{x}}\)</span>.</p>
+</li>
+</ol>
+<ol>
+<li><p>Considera la  función <span class="math notranslate nohighlight">\(f\)</span>, dada por <span class="math notranslate nohighlight">\(f(x) = \ln(x)\)</span>.</p>
+<p>a. ¿Cuál es su dominio? ¿Cuál es su imagen?</p>
+<p>b. ¿Cuánto valen <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow  +\infty}\ln(x)} \,\,\)</span> y <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow 0^+}\ln (x)}\)</span>?</p>
+<p>c. ¿Existe <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow -\infty}\ln(x)}\)</span>? ¿Por qué?</p>
+<p>d. ¿Posee <span class="math notranslate nohighlight">\(f\)</span> alguna asíntota vertical? En caso afirmativo, ¿cuál es su ecuación?</p>
+<p>e. Dibuja la gráfica de <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>f. Utilizando la relación entre la gráfica de una función y la de su inversa, esboza la gráfica de <span class="math notranslate nohighlight">\(g(x)=\mathbf{e}^x\)</span>.
+De la observación de esta gráfica deduce la existencia de una asíntota horizontal.</p>
+</li>
+</ol>
+<ol>
+<li><p>Vamos a repasar la función arco-tangente:</p>
+<p>a. ¿Cuál es el dominio de la función <span class="math notranslate nohighlight">\(f(x)=\arctan(x)\)</span>? ¿Y su imagen?</p>
+<p>b. ¿Es cierto que <span class="math notranslate nohighlight">\(\dfrac{1}{\tan(x)} = \arctan(x)\)</span>? ¿Por qué?</p>
+<p>c. ¿Cuáles son los ángulos cuya tangente vale <span class="math notranslate nohighlight">\(1\)</span>?</p>
+<p>d. ¿Es correcto decir que <span class="math notranslate nohighlight">\(\arctan (1)=\dfrac{\pi}{4}+k\pi\)</span>, <span class="math notranslate nohighlight">\(\,k \in \mathbb{Z}\)</span>? ¿Por qué?</p>
+</li>
+</ol>
+<ol>
+<li><p>Si la longitud de un animal <span class="math notranslate nohighlight">\(t\)</span> días después de su nacimiento es</p>
+<div class="math notranslate nohighlight">
+\[
+    \ell(t)= \frac{300}{1+9\left(0.8\right)^t}
+    \]</div>
+<p>¿cuánto midió al nacer? Obtén una cota superior de su tamaño máximo.</p>
+</li>
+</ol>
+<ol>
+<li><p>Elige la opción correcta:</p>
+<p>Para aproximar el valor de la solución de la ecuación  <span class="math notranslate nohighlight">\(x^3+2=0\)</span> con un error menor que <span class="math notranslate nohighlight">\(0.30\)</span> usando el algoritmo de dicotomía en el intervalo <span class="math notranslate nohighlight">\([-2,\,2]\)</span>:</p>
+<p>a. debemos realizar cinco iteraciones y las cuatro primeras son <span class="math notranslate nohighlight">\(x_1=0\)</span>, <span class="math notranslate nohighlight">\(x_2=-1\)</span>, <span class="math notranslate nohighlight">\(x_3=-3/2\)</span> y <span class="math notranslate nohighlight">\(x_4=-5/4\)</span></p>
+<p>b. debemos realizar cinco iteraciones y las cuatro primeras son <span class="math notranslate nohighlight">\(x_1=0\)</span>, <span class="math notranslate nohighlight">\(x_2=-1\)</span>,  <span class="math notranslate nohighlight">\(x_3=-3/2\)</span> y <span class="math notranslate nohighlight">\( x_4=-7/4\)</span></p>
+<p>c. debemos realizar cuatro iteraciones y las tres primeras son <span class="math notranslate nohighlight">\(x_1=0\)</span>, <span class="math notranslate nohighlight">\(x_2=-1\)</span> y <span class="math notranslate nohighlight">\(x_3=-3/2\)</span></p>
+<p>d. debemos realizar cuatro iteraciones y las tres primeras son <span class="math notranslate nohighlight">\(x_1=0\)</span>, <span class="math notranslate nohighlight">\(x_2=-1\)</span> y <span class="math notranslate nohighlight">\(x_3=-5/4\)</span></p>
+</li>
+</ol>
+<ol class="simple">
+<li><p>¿Dónde es continua la función <span class="math notranslate nohighlight">\(f\)</span> dada por <span class="math notranslate nohighlight">\(f(x)=\displaystyle{\frac{e^x+\ln(2x)}{x^2-3}}?\)</span></p></li>
+</ol>
+<ol>
+<li><p>Elige la opción correcta:</p>
+<p>La función <span class="math notranslate nohighlight">\(f : \mathbb{R} \longrightarrow \mathbb{R}\)</span> dada por:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    f(x) =
+    \begin{cases}
+    \sqrt{{x}^{2}-1} \,\,\,\,  \qquad\,  \text{  si  } x \in (-\infty,-1] \\
+                {x}^{2}+2x+1 \qquad    \text{si } x \in (-1,10] \\
+                \frac{121}{10}x   \qquad\, \, \, \, \qquad   \text{     si   } x \in (10,+\infty)
+    \end{cases}
+    \end{split}\]</div>
+<p>a. No es continua en <span class="math notranslate nohighlight">\(x=-1\)</span></p>
+<p>b. Es continua en <span class="math notranslate nohighlight">\((-\infty,\infty)\)</span></p>
+<p>c. No es continua en <span class="math notranslate nohighlight">\(x=10\)</span></p>
+<p>d. No es continua en <span class="math notranslate nohighlight">\(x=0\)</span></p>
+</li>
+</ol>
+<ol>
+<li><p>Estudia la continuidad en <span class="math notranslate nohighlight">\(x=0\)</span> de la función <span class="math notranslate nohighlight">\(f : \mathbb{R} \longrightarrow \mathbb{R}\)</span> dada por:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    f(x) =
+    \begin{cases}
+    x\mathbf{e}^{-x} \,  \qquad\,\quad  \text{si } x &lt; 0 \\
+                1 \qquad \qquad \,\,\,\,\,\,   \text{si } x = 0 \\
+                \sqrt{x^2+1}   \qquad   \text{si } x &gt; 0
+    \end{cases}
+    \end{split}\]</div>
+</li>
+</ol>
+<ol>
+<li><p>Si <span class="math notranslate nohighlight">\(a&gt;1\)</span> estudia la continuidad de la función <span class="math notranslate nohighlight">\(f : \mathbb{R} \longrightarrow \mathbb{R}\)</span> dada por:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    f(x) =
+    \begin{cases}
+    {x}^{2} {\cos^2(\frac{1}{x})}   \qquad\,\quad  \text{si } x &lt; 0 \\
+                0 \qquad \qquad \,\,\,\,\,\,\,\,\quad   \text{     si } x = 0 \\
+            \dfrac{x {a}^{x}-x} {\sqrt{1+x}-1}  \qquad   \text{si } x &gt; 0
+    \end{cases}
+    \end{split}\]</div>
+</li>
+</ol>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos/02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By I. Arregui, J.J. Cendán, J.A. García, M. González, L. Hervella, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <div>
+Esta obra está bajo una <a href="https://creativecommons.org/licenses/by/4.0/deed.es"> Licencia Creative Commons Atribución 4.0 Internacional </a>
+<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es_ES"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
+</div>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

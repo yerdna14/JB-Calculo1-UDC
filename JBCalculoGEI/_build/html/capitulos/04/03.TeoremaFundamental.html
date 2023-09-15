@@ -1,0 +1,828 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>4.3. Teorema Fundamental del Cálculo &#8212; Calculo en una variable</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.4. Integración numérica" href="04.IntegracionNumerica.html" />
+    <link rel="prev" title="4.2. Integración de Riemann" href="02.IntegracionRiemann.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-148221575-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/udc_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Calculo en una variable</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01/README.html">
+   1. Conjuntos de números
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/01.ConjuntosClasicos.html">
+     1.1. Conjuntos clásicos de números
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/02.NumerosComplejos.html">
+     1.2. Numeros complejos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02/README.html">
+   2. Funciones reales de variable real
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/01.Boletin0.html">
+     2.1. Boletín 0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/02.IntroduccionFuncionReal.html">
+     2.2. Definiciones básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/03.FuncionesElementales.html">
+     2.3. Funciones elementales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/04.Limites.html">
+     2.4. Límites
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/05.Continuidad.html">
+     2.5. Continuidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/06.Dicotomia.html">
+     2.6. Método de dicotomía
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/07.Lagrange.html">
+     2.7. Polinomio de interpolación de Lagrange
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/08.Boletin1.html">
+     2.8. Boletín 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/09.Boletin2.html">
+     2.9. Boletín 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03/README.html">
+   3. Derivación
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
+     3.1. Definición de derivada y propiedades básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/02.NewtonRaphson.html">
+     3.2. Método numérico de Newton-Raphson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
+     3.3. Derivadas sucesivas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/04.AplicacionesDerivada.html">
+     3.4. Aplicaciones de la derivada
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/05.ConcavidadConvexidad.html">
+     3.5. Convexidad y concavidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/06.TeoremaTaylor.html">
+     3.6. Teorema de Taylor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/07.Boletin3.html">
+     3.7. Boletín 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   4. Integración
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01.IntegracionIndefinida.html">
+     4.1. Integración indefinida
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.IntegracionRiemann.html">
+     4.2. Integral de Riemann
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.3. Teorema Fundamental del Cálculo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.IntegracionNumerica.html">
+     4.4. Integración numérica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.IntegracionImpropia.html">
+     4.5. Integración impropia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.AplicacionesIntegral.html">
+     4.6. Aplicaciones de la integral
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.EcuacionesDiferenciales.html">
+     4.7. Ecuaciones diferenciales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.Boletin4.html">
+     4.8. Boletín 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/README.html">
+   5. Python para cálculo de una variable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/01.IntroduccionSympy.html">
+     5.1. Introducción a SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/02.LimitesContinuidadSympy.html">
+     5.2. Límites y continuidad en SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/03.IntroduccionNumpy.html">
+     5.3. Introducción a NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/04.RepresentacionGraficaMatplotlib.html">
+     5.4. Gráficas con Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/05.Derivacion.html">
+     5.5. Derivación en Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/06.Integracion.html">
+     5.6. Integración en Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/README.html">
+   6. Ejercicios y exámenes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/enero_22.html">
+     6.1. Examen Enero 2022
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/julio_22.html">
+     6.2. Examen Julio 2022
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/enero_23.html">
+     6.3. Examen Enero 2023
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/julio_23.html">
+     6.4. Examen Julio 2023
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/GEI-CAL/JB-Calculo1-UDC/main?urlpath=lab/tree/capitulos/04/03.TeoremaFundamental.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/capitulos/04/03.TeoremaFundamental.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enunciado-del-teorema">
+   4.3.1. Enunciado del teorema
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#primera-consecuencia-derivacion-de-una-funcion-integral">
+   4.3.2. Primera consecuencia: derivación de una función integral
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#segunda-consecuencia-regla-de-barrow">
+   4.3.3. Segunda consecuencia: Regla de Barrow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integracion-por-partes-en-la-integral-de-riemann">
+   4.3.4. Integración por partes en la integral de Riemann
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Teorema Fundamental del Cálculo</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enunciado-del-teorema">
+   4.3.1. Enunciado del teorema
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#primera-consecuencia-derivacion-de-una-funcion-integral">
+   4.3.2. Primera consecuencia: derivación de una función integral
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#segunda-consecuencia-regla-de-barrow">
+   4.3.3. Segunda consecuencia: Regla de Barrow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integracion-por-partes-en-la-integral-de-riemann">
+   4.3.4. Integración por partes en la integral de Riemann
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="teorema-fundamental-del-calculo">
+<h1><span class="section-number">4.3. </span>Teorema Fundamental del Cálculo<a class="headerlink" href="#teorema-fundamental-del-calculo" title="Permalink to this headline">#</a></h1>
+<section id="enunciado-del-teorema">
+<h2><span class="section-number">4.3.1. </span>Enunciado del teorema<a class="headerlink" href="#enunciado-del-teorema" title="Permalink to this headline">#</a></h2>
+<p>Calcular el valor de una integral definida empleando geometría o límites de las sumas de Riemann para particiones infinitamente refinadas, es, en general, una tarea complicada. En esta sección presentamos el teorema fundamental del cálculo, que nos da un medio para calcular muchas integrales. De hecho, reducirá el problema de integración al cálculo de primitivas, es decir, al problema inverso de la derivación.</p>
+<div class="proof theorem admonition" id="th_fundamental">
+<p class="admonition-title"><span>Theorem </span> (Teorema fundamental del Cálculo)</p>
+<section class="theorem-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(f \in {\cal R}[a,b]\)</span>.  Para <span class="math notranslate nohighlight">\(a \leq x \leq b\)</span>, sea:</p>
+<div class="math notranslate nohighlight">
+\[F(x) = \int_a ^x f(t) \,dt .\]</div>
+<p>Entonces, <span class="math notranslate nohighlight">\(F \in {\cal C}[a,b]\)</span>.  Además, si <span class="math notranslate nohighlight">\(f\)</span> es continua en <span class="math notranslate nohighlight">\([a,b]\)</span>, entonces <span class="math notranslate nohighlight">\(F\)</span> es derivable en <span class="math notranslate nohighlight">\([a,b]\)</span>
+y <span class="math notranslate nohighlight">\(F^{\,\prime} (x) = f(x)\)</span>, <span class="math notranslate nohighlight">\(\forall x \in [a,b]\)</span>.</p>
+<p>También puede enunciarse de la siguiente manera:</p>
+<p>Si <span class="math notranslate nohighlight">\(f : I \longrightarrow \mathbb R\)</span> es continua en <span class="math notranslate nohighlight">\(I\)</span>, entonces tiene primitivas en <span class="math notranslate nohighlight">\(I\)</span>;
+una de ellas es la integral definida <span class="math notranslate nohighlight">\(F\)</span> dada por:</p>
+<div class="math notranslate nohighlight">
+\[F(x) = \int_a ^x f(t) \,dt,\]</div>
+<p>donde <span class="math notranslate nohighlight">\(a \in I\)</span> <em>es cualquiera</em>.</p>
+</section>
+</div><p>Sería bueno que practicaras un poco en el cálculo de <span class="math notranslate nohighlight">\(F\)</span> para casos sencillos. Aquí tienes un par de ejemplos detallados:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://existelimite.blogspot.com/2012/11/un-ejercicio-sobre-el-teorema.html">https://existelimite.blogspot.com/2012/11/un-ejercicio-sobre-el-teorema.html</a></p></li>
+<li><p><a class="reference external" href="https://existelimite.blogspot.com/2012/12/un-ejercicio-en-flashback-sobre-el.html">https://existelimite.blogspot.com/2012/12/un-ejercicio-en-flashback-sobre-el.html</a></p></li>
+</ul>
+</section>
+<section id="primera-consecuencia-derivacion-de-una-funcion-integral">
+<h2><span class="section-number">4.3.2. </span>Primera consecuencia: derivación de una función integral<a class="headerlink" href="#primera-consecuencia-derivacion-de-una-funcion-integral" title="Permalink to this headline">#</a></h2>
+<p>Vamos a <em>jugar</em> un poco con este teorema. Empezamos con un ejercicio en 4 partes:</p>
+<p><strong>EJERCICIO:</strong></p>
+<ol>
+<li><p>Sea <span class="math notranslate nohighlight">\(F(x)= \displaystyle \int_{1}^{x} t^2\sin(t)\, dt\)</span>. Calcula <span class="math notranslate nohighlight">\(F'(x)\)</span>.</p>
+<p>Según el teorema fundamental, como la función que está dentro de la integral, <span class="math notranslate nohighlight">\(f(t)=t^2\sin(t)\)</span>, es continua, la derivada de <span class="math notranslate nohighlight">\(F\)</span> en <span class="math notranslate nohighlight">\(x\)</span> coincide con el valor del integrando en ese punto:</p>
+<div class="math notranslate nohighlight">
+\[
+     F'(x) = f(x) = x^2\sin(x).
+    \]</div>
+</li>
+<li><p>Sea <span class="math notranslate nohighlight">\(F(x)= \displaystyle \int_{1}^{x^3} t^2\sin(t)\, dt\)</span>. Calcula <span class="math notranslate nohighlight">\(F'(x)\)</span>.</p>
+<p>En este caso, tenemos que combinar el teorema fundamental con la regla de la cadena para obtener:</p>
+<div class="math notranslate nohighlight">
+\[
+     F'(x) = F'(x^3)3x^2 = f(x^3)3x^2 = \left(x^{3}\right)^{2}\sin(x^{3}) 3x^2 = 3x^{8}\sin(x^{3}).
+    \]</div>
+</li>
+<li><p>Sea <span class="math notranslate nohighlight">\(F(x)= \displaystyle \int_{\ln(x)}^{1} t^2\sin(t)\, dt\)</span>. Calcula <span class="math notranslate nohighlight">\(F'(x)\)</span>.</p>
+<p>Ahora, en primer lugar le damos la vuelta a la integral (cambiando su signo) para que la parte variable quede en la parte superior,</p>
+<div class="math notranslate nohighlight">
+\[
+    F(x) = \int_{\ln(x)}^{1} t^2\sin(t)\, dt = - \int_{1}^{\ln(x)} t^2\sin(t)\, dt = \int_{1}^{\ln(x)} - t^2\sin(t)\, dt,
+    \]</div>
+<p>y ahora actuamos como en el apartado anterior:</p>
+<div class="math notranslate nohighlight">
+\[
+     F'(x) = F'(\ln(x))\frac{1}{x} = -(\ln(x))^2\sin(\ln(x))\frac{1}{x} = -\frac{(\ln(x))^2}{x}\sin(\ln(x)). 
+    \]</div>
+</li>
+<li><p>Sea <span class="math notranslate nohighlight">\(F(x)= \displaystyle \int_{\ln(x)}^{x^3} t^2\sin(t)\, dt\)</span>. Calcula <span class="math notranslate nohighlight">\(F'(x)\)</span>.</p>
+<p>Primero utilizamos la aditividad en intervalos:</p>
+<div class="math notranslate nohighlight">
+\[
+    F(x)= \displaystyle \int_{\ln(x)}^{x^3} t^2\sin(t)\, dt = \int_{\ln(x)}^{1} t^2\sin(t)\, dt + \int_{1}^{x^3} t^2\sin(t)\, dt,
+    \]</div>
+<p>y, a continuación, juntando los resultados de los anteriores apartados:</p>
+<div class="math notranslate nohighlight">
+\[
+    F'(x) = 3x^{8}\sin(x^{3}) - \frac{(\ln(x))^2}{x}\sin(\ln(x)).
+    \]</div>
+</li>
+</ol>
+<p>Estas cuentas, hechas para un caso particular, se pueden generalizar fácilmente:</p>
+<div class="proof property admonition" id="prop_fundamental">
+<p class="admonition-title"><span>Property </span></p>
+<section class="property-content" id="proof-content">
+<p>Sea la función <span class="math notranslate nohighlight">\(F\)</span> dada por la integral definida:</p>
+<div class="math notranslate nohighlight">
+\[
+F(x) = \int_{a(x)}^{b(x)} f(t) \, dt.
+\]</div>
+<p>Entonces, la derivada de <span class="math notranslate nohighlight">\(F\)</span> con respecto a <span class="math notranslate nohighlight">\(x\)</span> viene dada por:</p>
+<div class="math notranslate nohighlight">
+\[
+F^{\,\prime}(x) = f(b(x)) \, b^{\prime}(x) - f(a(x)) \, a^{\prime}(x). 
+\]</div>
+</section>
+</div><p>Esto abre un mundo de posibilidades. Por ejemplo, si conocemos la derivada podemos buscar los puntos críticos, estudiar la concavidad/convexidad o, incluso, ¡calcular el polinomio de Taylor para funciones definidas a partir de una integral!</p>
+<p>Puede ser buena idea practicar un poco:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://existelimite.blogspot.com/2012/12/calculo-de-la-derivada-de-f-mediante-el.html">https://existelimite.blogspot.com/2012/12/calculo-de-la-derivada-de-f-mediante-el.html</a></p></li>
+<li><p><a class="reference external" href="https://existelimite.blogspot.com/2017/01/examen-de-enero-de-2017-aplicacion-del.html">https://existelimite.blogspot.com/2017/01/examen-de-enero-de-2017-aplicacion-del.html</a></p></li>
+<li><p><a class="reference external" href="https://existelimite.blogspot.com/2014/02/calculo-de-extremos-de-f-mediante-el.html">https://existelimite.blogspot.com/2014/02/calculo-de-extremos-de-f-mediante-el.html</a></p></li>
+</ul>
+</section>
+<section id="segunda-consecuencia-regla-de-barrow">
+<h2><span class="section-number">4.3.3. </span>Segunda consecuencia: Regla de Barrow<a class="headerlink" href="#segunda-consecuencia-regla-de-barrow" title="Permalink to this headline">#</a></h2>
+<div class="proof property admonition" id="prop_Barrow">
+<p class="admonition-title"><span>Property </span> (Regla de Barrow)</p>
+<section class="property-content" id="proof-content">
+<p>Si <span class="math notranslate nohighlight">\(f \in {\cal R}[a,b]\)</span> y existe una primitiva <span class="math notranslate nohighlight">\(F\)</span> de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\([a,b]\)</span>, entonces:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int_a ^b f(x) \,dx = \left. \begin{array}{c} \, \\ \, \end{array} F(x) \right|_a^b = F(b) - F(a).
+\end{split}\]</div>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Pese a que no es muy habitual en este curso, al ser muy sencilla y creemos que didáctica, vamos a mostrar la demostración de esta propiedad… aunque sólo para el caso más fácil: supondremos que <span class="math notranslate nohighlight">\(f\)</span> es una función continua.</p>
+<p>Supongamos entonces que podemos calcular una primitiva, <span class="math notranslate nohighlight">\(F\)</span>, para nuestra función <span class="math notranslate nohighlight">\(f\)</span> (con las técnicas aprendidas (ejem…) en el instituto o en la Sección <a class="reference internal" href="01.IntegracionIndefinida.html#sec-integral-indefinida"><span class="std std-ref">La integral indefinida</span></a>).</p>
+<p>Por otra parte, gracias al Teorema Fundamental del Cálculo, conocemos otra primitiva de <span class="math notranslate nohighlight">\(f\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+G(x) = \int_a ^x f(t) \,dt.
+\]</div>
+<p>Como también sabemos que dos primitivas distintas de una misma función se diferencian en una constante, resulta que: <span class="math notranslate nohighlight">\(F(x) = G(x) + C\)</span>. Entonces:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+F(b) - F(a) &amp;=&amp; \left(G(b)+C\right) - \left(G(a)+C\right) = G(b) - G(a) = \int_{a}^{b} f(t)\, dt - \int_{a}^{a} f(t)\, dt \\
+&amp;=&amp; \int_{a}^{b} f(t)\, dt - 0 = \int_{a}^{b} f(t)\, dt.
+\end{eqnarray*}\]</div>
+</div>
+<p>La Regla de Barrow (insistimos: una consecuencia directa del Teorema Fundamental del Cálculo) une la integración de Riemann (algo puramente geométrico) con el cálculo de primitivas (una operación aritmética):
+para calcular el área por debajo de una función positiva basta calcular una primitiva de ésta, evaluarla en los dos extremos y restar. Veamos un</p>
+<div class="proof example admonition" id="ex_Barrow">
+<p class="admonition-title"><span>Example </span></p>
+<section class="example-content" id="proof-content">
+<p>Calcula el área bajo la curva <span class="math notranslate nohighlight">\(y=\cos x\)</span> en <span class="math notranslate nohighlight">\(\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]\)</span>.</p>
+<p><strong>Solución:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+A = \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos x \, dx = \sin x \lvert_{-\frac{\pi}{2}}^{\frac{\pi}{2}} = \sin\left(\frac{\pi}{2}\right) - \sin\left(-\frac{\pi}{2}\right) = 1 - (-1) = 2.
+\]</div>
+<p>Así, el área de la región son dos unidades cuadradas.</p>
+</section>
+</div></section>
+<section id="integracion-por-partes-en-la-integral-de-riemann">
+<h2><span class="section-number">4.3.4. </span>Integración por partes en la integral de Riemann<a class="headerlink" href="#integracion-por-partes-en-la-integral-de-riemann" title="Permalink to this headline">#</a></h2>
+<div class="proof property admonition" id="prop_fundamental">
+<p class="admonition-title"><span>Property </span></p>
+<section class="property-content" id="proof-content">
+<p>Si <span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span> son dos funciones derivables en <span class="math notranslate nohighlight">\([a,b]\)</span>, y se tiene:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} F^{\,\prime} = f \\ G^{\,\prime} = g \end{cases} \hspace{20mm} \text{en } [a,b],
+\end{split}\]</div>
+<p>siendo <span class="math notranslate nohighlight">\(f\)</span> y <span class="math notranslate nohighlight">\(g\)</span> integrables en <span class="math notranslate nohighlight">\([a,b]\)</span>, entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a ^b F(x) \,g(x) \,dx = F(b) \,G(b) - F(a) \,G(a) - \int_a ^b f(x) \,G(x) \,dx.
+\]</div>
+</section>
+</div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos/04"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="02.IntegracionRiemann.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4.2. </span>Integración de Riemann</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="04.IntegracionNumerica.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.4. </span>Integración numérica</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By L. Hervella*, I. Arregui, J.J. Cendán, J.A. García, M. González, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <div>
+Esta obra está bajo una <a href="https://creativecommons.org/licenses/by/4.0/deed.es"> Licencia Creative Commons Atribución 4.0 Internacional </a>
+<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es_ES"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
+</div>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
