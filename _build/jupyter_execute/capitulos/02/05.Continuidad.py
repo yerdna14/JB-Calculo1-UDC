@@ -143,7 +143,7 @@
 # Sea $f:[a,b]\rightarrow\mathbb{R}$ una función continua en $[a,b]$ tal que $f(a)f(b)<0$.
 # Entonces existe $x_0\in(a,b)$ tal que $f(x_0)=0$.
 # 
-# <img src="../../images/cap3_Bolzano_1_2.png" width="500"/>
+# <img src="../../images/cap3_Bolzano1y2.png" width="500"/>
 # ````
 # 
 # El teorema de Bolzano habla de la existencia de raíces para funciones continuas. Debemos
@@ -152,7 +152,7 @@
 # 1. Pueden existir varias raíces, como se muestra en el gráfico de la derecha en la figura anterior.
 # 2.  Si se suprime alguna de las hipótesis, el teorema, en general, no es válido, como se muestra en la siguiente figura.
 # 
-# <img src="../../images/cap3_Bolzano_3.png" width="500"/>
+# <img src="../../images/cap3_Bolzano3.png" width="500"/>
 # 
 # ````{prf:theorem} Teorema de Weierstrass
 # :label: th_Weierstrass
