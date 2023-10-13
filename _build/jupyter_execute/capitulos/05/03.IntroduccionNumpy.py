@@ -23,7 +23,7 @@
 # 
 # Antes de nada, para tener disponible **NumPy** en el código, debemos primero importarlo. Para hacer esto, es habitual importar **NumPy** utilizando el alias `np`: 
 
-# In[1]:
+# In[18]:
 
 
 import numpy as np
@@ -33,7 +33,7 @@ import numpy as np
 # 
 # Como todos los módulos de Python, la librería **NumPy** está implementada siguiendo una estrategia de programación orientada a objetos. Por lo tanto, cualquier estructura de datos en Python, incluso la más simple, se debe entender como un objeto que pertenece a una clase, y sobre ella podemos realizar todas las operaciones implementadas sobre esta clase de objetos. Incluso un número es un objeto de una clase: 
 
-# In[2]:
+# In[19]:
 
 
 a = 3.3
@@ -44,7 +44,7 @@ isinstance(a,float)
 
 # Para comprobar los atributos y los métodos que podemos aplicar sobre un objeto en particular, podemos emplear la función `dir()`, que nos devuelve una lista con sus nombres. Como se puede ver en la lista, podemos distinguir dos tipos de atributos y métodos: aquéllos que van con prefijo y sufijo `__*__` y aquéllos que no. Los del primer tipo se denominan **privados** y habitualmente hacen referencia a los cálculos más básicos que se pueden realizar dentro de la clase a la que pertenece el objeto. 
 
-# In[4]:
+# In[20]:
 
 
 dir(a)
@@ -52,7 +52,7 @@ dir(a)
 
 # Por ejemplo, podemos comprobar si un número real es mayor que otro de dos maneras diferentes: utilizando el operador lógico `>` o bien usando su método privado `__ge__`: 
 
-# In[5]:
+# In[21]:
 
 
 a=6.4; b=5.3
@@ -62,13 +62,13 @@ print(a > b)
 
 # En cualquier caso, en Python tanto los métodos privados como los públicos se utilizan de la misma manera. Por ejemplo:
 
-# In[5]:
+# In[22]:
 
 
 a=3.4
 print(a.is_integer())
 print(a.__int__())
-print(np.int(a))
+print(int(a))
 
 
 # > **NOTA**: En este curso no vamos a trabajar ni será necesaria la implementación de código utilizando una programación orientada a objetos. Pero lo que sí será necesario es tomar conciencia de cuándo se utilizan objetos de diferentes clases y qué atributos y métodos tiene definido cada caso. 
@@ -83,7 +83,7 @@ print(np.int(a))
 # 
 # **Creación de vectores e indexado**: Para crear un vector **Numpy** de longitud 10 e inicializado con ceros, se utilizaría la función `np.zeros()`:
 
-# In[3]:
+# In[23]:
 
 
 u = np.zeros(10)
@@ -93,11 +93,11 @@ print(type(u))
 
 # El tipo por defecto de los números que contienen los vectores en **NumPy** es `float64` (que es el tipo guardado en `np.float`). Si queremos usar otros tipos, tendríamos que utilizar el argumento opcional `dtype`. El tipo de los números que contiene un vector puede comprobarse accediendo al atributo `dtype` de los vectores **NumPy**:
 
-# In[4]:
+# In[24]:
 
 
 print(u.dtype)
-w = np.zeros(5, dtype=np.int)
+w = np.zeros(5, dtype=int)
 print(w)
 print(type(w))
 print(w.dtype)
@@ -105,18 +105,18 @@ print(w.dtype)
 
 # Lo que no es posible, por ejemplo, es añadir un valor del tipo cadena de texto (es decir, de tipo `string`) a un objeto `numpy.ndarray`, ya que todos los elementos del vector deben ser del mismo tipo (o, al menos, de un tipo que admita una conversión) y deben tener también el mismo tamaño. Para comprobar el tamaño de un vector, se puede usar la función `len`:
 
-# In[5]:
+# In[25]:
 
 
 print(len(u))
-v = np.zeros(10, dtype=np.int)
+v = np.zeros(10, dtype=int)
 print(u + v) # Implicitamente se hace una conversión de tipo de int64 a float64
 print(u + w) # ERROR: ¡Los vectores no tienen el mismo tamaño!
 
 
 # Una forma más específica de comprobar la dimensión de un vector es usar `u.shape`, que nos devuelve una tupla con las dimensiones del vector:
 
-# In[9]:
+# In[ ]:
 
 
 print(u.shape)
@@ -124,17 +124,17 @@ print(u.shape)
 
 # `shape` nos informa sobre el tamaño del vector en *cada* dirección. En el caso de los vectores, solamente hay una única dirección, mentres que en conjuntos de datos con múltiples índices (matrices, o tensores $n$-dimensionales), `shape` nos informaría del tamaño de estas estructuras de datos en cada dirección. Por ejemplo, para crear una matriz de ceros de tipo entero de tamaño $2\times 3$:
 
-# In[10]:
+# In[ ]:
 
 
-A =  np.zeros((2,3), dtype=np.int)
+A =  np.zeros((2,3), dtype=int)
 print(A)
 print(A.shape)
 
 
 # Podemos cambiar las entradas de un vector utilizando la indexación,
 
-# In[11]:
+# In[ ]:
 
 
 print(u)
@@ -148,7 +148,7 @@ print(u)
 # 
 # Evidentemente, existen otras maneras de crear vectores, como, por ejemplo, el uso de la función `ones` para crear un vector que contenga solamente *unos*:
 
-# In[12]:
+# In[ ]:
 
 
 w = np.ones(5)
@@ -158,7 +158,7 @@ print(w.dtype)
 
 # o un vector de valores aleatorios:
 
-# In[13]:
+# In[ ]:
 
 
 w = np.random.rand(6)
@@ -167,7 +167,7 @@ print(w)
 
 # o también un vector de números de tipo `numpy.array` a partir de una lista Python de números:
 
-# In[14]:
+# In[ ]:
 
 
 u = [4.0, 8.0, 9.0, 11.0, -2.0]
@@ -181,7 +181,7 @@ print(v)
 # 
 # La función `arange` crea un vector con valores enteros consecutivos (de forma semejante a la función de Python `range`). Por ejemplo, para crear el vector fila $\vec{u}=(0, 1, 2, 3, 4, 5)$ usando `arange`,
 
-# In[15]:
+# In[ ]:
 
 
 u = np.arange(6)
@@ -192,7 +192,7 @@ print(u.dtype)
 
 # Podemos comprobar que el número $6$ no está incluido ya que el rango de valores comienza en $0$ y el vector solamente posee seis elementos. Para cambiar el valor numérico en el que comienza el vector:
 
-# In[16]:
+# In[ ]:
 
 
 u = np.arange(2, 6)
@@ -201,7 +201,7 @@ print(u)
 
 # La función `linspace` crea un vector de números equiespaciados con un valor inicial y final (ambos incluidos) y con un tamaño determinado:
 
-# In[17]:
+# In[ ]:
 
 
 w = np.linspace(0., 100., 6)
@@ -215,7 +215,7 @@ print(w.dtype)
 # 
 # Los vectores en **NumPy** soportan las operaciones aritméticas básicas (producto, sumas, restas, *etc.*):
 
-# In[18]:
+# In[ ]:
 
 
 a = np.array([1.0, 0.2, 1.2])
@@ -230,7 +230,7 @@ print(c)
 
 # y el producto de todos sus elementos por un valor escalar,
 
-# In[19]:
+# In[ ]:
 
 
 c = 10.0*a
@@ -239,7 +239,7 @@ print(c)
 
 # y elevar todas sus componentes a una potencia:
 
-# In[20]:
+# In[ ]:
 
 
 a = np.array([2, 3, 4])
@@ -248,7 +248,7 @@ print(a**2)
 
 # También se pueden aplicar las funciones de cálculo usual a cada una de sus componentes:
 
-# In[6]:
+# In[ ]:
 
 
 # Crear un vector [0, π/2, π, 3π/2]
@@ -264,7 +264,7 @@ print(b)
 # 
 # Evidentemente, también podríamos calcular el seno de cada coeficiente del vector, accediendo a cada uno de los elementos mediante su índice y haciendo los cálculos en el interior de un bucle `for`:
 
-# In[24]:
+# In[ ]:
 
 
 b = np.zeros(len(a))
@@ -282,7 +282,7 @@ print(b)
 # 
 # Vamos a explorar esto mediante varios ejemplos, trabajando con un vector de valores aleatorios:
 
-# In[6]:
+# In[ ]:
 
 
 a = np.random.rand(5)
@@ -309,7 +309,7 @@ print("Troceado usando '[2:-2]': {}".format(b))
 
 # Si lo que se quiere es trocear un vector desde el principio o desde el final del mismo hay que utilizar la sintaxis de índices con '`:`'
 
-# In[8]:
+# In[ ]:
 
 
 # Usar ':3' implica usar índices desde el principio hasta 3 (sin incluir el índice 3)
@@ -327,7 +327,7 @@ print("Troceado usando '[:]': {}".format(b))
 
 # El troceado también se puede aplicar a matrices:
 
-# In[9]:
+# In[ ]:
 
 
 B = np.array([[1.3, 0], [0, 2.0]])
@@ -356,7 +356,7 @@ print(col)
 # 
 # Para evaluar el rendimiento computacional de esta implementación, vamos a coger un vector moderadamente grande (10 millones) y vamos a calcular el tiempo de cáculo:
 
-# In[8]:
+# In[ ]:
 
 
 # Crear un vector NumPy con 10 millones de valores aleatorios
@@ -364,7 +364,7 @@ x = np.random.rand(10000000)
 print(type(x))
 
 
-# In[9]:
+# In[ ]:
 
 
 def compute_norm(x):
@@ -384,7 +384,7 @@ print(norm)
 # **Ejercicio 1:** 
 # Usando la misma implementación basada en un bucle, accede a cada elemento del vector por su índice, comenzando desde el primero hasta el último. Haz lo mismo con un bucle que acceda en orde inverso, desde el último hasta el primero.
 
-# In[31]:
+# In[ ]:
 
 
 # ESCRIBE AQUÍ TU CÓDIGO
@@ -393,7 +393,7 @@ print(norm)
 # **Ejercicio 2:** 
 # Trata de emplear funciones **NumPy** para definir una función que evite el bucle sobre los coeficientes del vector y que no acceda elemento a elemento al mismo (es decir, haz una versión vectorizada del cálculo de la norma euclídea).
 
-# In[32]:
+# In[ ]:
 
 
 # ESCRIBE AQUÍ TU CÓDIGO
@@ -402,7 +402,7 @@ print(norm)
 # **Ejercicio 3:** 
 # Compara los tiempos de cálculo de las cuatro implementaciones para diferentes dimensiones del vector $\vec{x}$, de tamaños $10$, $10^3$, $10^5$, $10^7$. A partir de estos tiempos de cálculo: ¿qué se puede deducir como conclusión?
 
-# In[33]:
+# In[ ]:
 
 
 # ESCRIBE AQUÍ TU CÓDIGO
