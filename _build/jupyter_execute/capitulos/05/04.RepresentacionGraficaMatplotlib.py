@@ -11,7 +11,7 @@
 # 
 # Para usar **Matplotlib**, necesitamos importar su módulo. Puesto que lo usaremos a partir de la interfaz `pyplot`, también será necesario importar ésta:
 
-# In[1]:
+# In[17]:
 
 
 import matplotlib as mp
@@ -21,7 +21,7 @@ mp.__version__
 
 # Evidetemente, para realizar cálculos numéricos de forma eficiente, también será necesario importar el módulo **Numpy**:
 
-# In[2]:
+# In[18]:
 
 
 import numpy as np
@@ -30,7 +30,7 @@ import numpy as np
 # **Matplotlib** es una librería de Python que puede utilizarse fuera de los *Notebooks* Jupyter para representar gráficamente tanto funciones como entidades geométricas (ya sea por pantalla o para guardarlas en un fichero). Para que las representaciones gráficas aparezcan incrustadas en este documento usaremos el comando *mágico* `%matplotlib inline`. 
 # Por el contrario, si es necesario interactuar con las gráficas, deberíamos usar la opción `%matplotlib notebook`
 
-# In[4]:
+# In[19]:
 
 
 get_ipython().run_line_magic('matplotlib', 'inline')
@@ -45,7 +45,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 # $$
 # el primer paso será crear un vector de valores en los que se evalúe la función. Para eso, se utiliza la función `np.linspace` como sigue:
 
-# In[5]:
+# In[20]:
 
 
 # Creación de los puntos donde se evalúa la función
@@ -74,7 +74,7 @@ plt.show()
 # 
 # Por ejemplo:
 
-# In[6]:
+# In[21]:
 
 
 # Creación de los puntos en los que se evalúa la función
@@ -106,7 +106,7 @@ plt.show()
 
 # Si queremos un gráfico con varios subgráficos:
 
-# In[42]:
+# In[22]:
 
 
 # Creamos gráficos de funciones
@@ -145,4 +145,38 @@ ax4.text(6, -1, 'Sí, sí, sí...', c='b', fontsize=20)
 plt.show()
 
 
-# Os dejamos que juguéis un rato con **Matplotlib**...
+# ## Uso de **sp.lambdify** 
+# 
+# En el resto de esta práctica, así como en el resto del curso, necesitaremos que una función simbólica de **Sympy** actúe sobre variables que almacenen números en coma flotante o arrays de **Numpy**. En concreto, y aunque las utilidades de este comando son mucho más amplias, lo necesitaremos para representar las funciones obtenidas en **Matplotlib**. 
+# 
+# Esto se consigue utilizando la función `sp.lambdify`.
+# 
+# Mostramos a continuación, sobre un ejemplo, su uso. En él denotaremos *f* la función en Sympy y *fn* la función numérica generada a partir de ésta con `sp.lambdify`.
+
+# In[24]:
+
+
+import sympy as sp
+import numpy as np
+x=sp.symbols('x')
+# La funcion f es simbolica: no podemos evaluarla
+# en variables numericas que almacenen valores en coma flotante, 
+# o en arrays de numpy
+f_exp = sp.sin(x)*sp.exp(x)
+# La funcion fn es numerica, y podemos evaluarla en numeros en coma flotante o en arrays de Numpy
+fn = sp.lambdify(x,f)
+
+# Ahora, para representarla con matplotlib, la evaluamos en un array de puntos
+x=np.linspace(-np.pi,np.pi,150)
+# print(fn(x))
+
+plt.plot(x, fn(x), label='sen(x)*exp(x)', lw='5', c='black')
+plt.legend(loc='upper left',fontsize=15)
+# Definimos los límites de los ejes x e y
+plt.xlim(x[0], x[-1])
+plt.ylim([-1.,8.])
+plt.show()
+
+
+# Os dejamos que juguéis un poquito con `Matplolib`...
+# 

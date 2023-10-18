@@ -126,6 +126,49 @@
 # Suelen disfrazarse con un texto más o menos imaginativo (*Cortamos una hoja cuadrada de cartón de forma que [...]*). Aquí tenéis 10 ejemplos (de diferentes tipos), para que vayáis practicando:
 # https://existelimite.blogspot.com/search/label/M%C3%A1ximos%20y%20m%C3%ADnimos.
 
+# ## Extremos: Ejercicio completo con `Sympy`
+# 
+# Veamos a continuación un ejercicio típico de cálculo de máximo y mínimo 
+# Dado un canal de sección trapezoidal de lado 2, calcular el ángulo $\alpha$ (ver dibujo) que maximiza el área de la sección del canal.
+# 
+# <img src="../../images/cap3-canal.svg" width="300"/>
+# 
+# 1. A mano. Obtener la función que proporciona el área del canal en función del ángulo $ \alpha $
+# 2. Simbólicamente: con **Sympy**.
+# 3. Numéricamente mediante el método de Newton con error menor que $ 10^{-4} $.
+
+# In[11]:
+
+
+import sympy as sp
+# 2. Resolvemos el problema utilizando Sympy
+x,xn=sp.symbols('x,xn')
+# Funcion que describe el area de la seccion en funcion del angulo
+f=4*sp.sin(x)*(1+sp.cos(x))
+d1f=sp.diff(f,x)
+d1fn=sp.lambdify(x,d1f)
+alphamax=sp.solve(d1f)
+print('La sección máxima se alcanza con ángulo: ',float(alphamax[1]))
+
+
+# In[12]:
+
+
+# 3. Aproximamos el máximo con el método de Newton
+maxit=100
+eps=1e-4
+d2f=sp.diff(d1f,x)
+d2fn=sp.lambdify(x,d2f)
+xn=np.pi/2
+for i in range(0,maxit):
+    res=d1fn(xn)/d2fn(xn)
+    xn=xn-res
+    if (np.abs(res)<eps):
+        break
+print('Numero de iteraciones realizadas: ',i)
+print('Aproximación del ángulo para la sección máxima con NR: ',xn)
+
+
 # ## Teoremas de Rolle y Lagrange
 # 
 # ````{prf:theorem} Teorema de Rolle

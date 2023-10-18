@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# (sec_NewtonRaphson)=
 # # Método de Newton-Raphson
 # 
 # ## Algoritmo

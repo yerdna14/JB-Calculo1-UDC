@@ -3,6 +3,8 @@
 
 # # Derivadas sucesivas
 # 
+# ## Definición
+# 
 # Vamos a suponer que tenemos una función $f:(a,b) \longrightarrow \mathbb R$, derivable en $(a,b)$. Podemos considerar, entonces, su función derivada en $(a,b)$:
 # 
 #    \begin{equation*}
@@ -47,23 +49,28 @@
 # * $f'''(x) = - \cos(x)$,
 # * etc.
 # 
-# La orden en `Sympy` para calcular la derivada n-ésima de una expresión es la siguiente: 
 
-# In[5]:
+# ## Derivadas sucesivas en `Sympy`
+# 
+# Para calcular derivadas sucesivas en `Sympy` tenemos que añadir un parámetro en `sp.diff` que indique el número de veces que queremos derivar:
+
+# In[2]:
 
 
 import sympy as sp
 
 x = sp.symbols('x', real=True)
 f_exp = sp.sin(x) + x**2
-display(f_exp)
-display(sp.diff(f_exp,x))
-display(sp.diff(f_exp,x,2))
-display(sp.diff(f_exp,x,3))
+print('Expresión que queremos derivar: ',f_exp)
+print('Primera derivada: ',sp.diff(f_exp,x))
+print('Segunda derivada: ',sp.diff(f_exp,x,2))
+print('Tercera derivada: ',sp.diff(f_exp,x,3))
 # Nota: también se puede usar la siguiente escritura:
-# display(f_exp.diff(x,3))
+# print(f_exp.diff(x,3))
 
 
+# ## Clase de una función. Ejemplo
+# 
 # ````{prf:definition} Clase de una función
 # :label: def_clase_funcion 
 # :nonumber: 

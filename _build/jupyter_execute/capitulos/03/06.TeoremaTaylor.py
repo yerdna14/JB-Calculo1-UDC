@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# (sec_taylor)=
 # # Teorema de Taylor
 # 
 # El teorema de Taylor lo usaremos para aproximar en un punto una función compleja (en el sentido de que es difícil calcular su valor exacto en ese punto) mediante un polinomio de grado $n$ (fácilmente evaluable), para lo que necesitaremos que la función de partida sea derivable $n+1$ veces.
@@ -15,7 +16,7 @@
 # $$
 # ¿Podemos mejorar esta aproximación? La respuesta es sí. Basta con calcular la recta tangente a la función logaritmo por el punto $x=1$ (elegimos ese punto porque en él es fácil conocer la recta tangente y, además, está cerca de $1.3$) y *paseamos por la recta tangente* hasta el punto deseado (en este caso 1.3). Veámoslo en la siguiente gráfica:
 
-# In[7]:
+# In[16]:
 
 
 import numpy as np
@@ -188,51 +189,80 @@ ax2.legend(prop={'size': 18})
 # 
 # Para evitar confusiones debidas a la notación, podemos denotar $g(s):=f^{(n+1)}(s)$ y así el tan temido problema de acotar el error de Taylor queda reducido a un problema estándar de calcular máximo y mínimo absoluto de una función $g$ en un intervalo $[x,x_{0}]$.
 
+# ## Cálculo del Polinomio de Taylor en `Sympy`
+# 
+# Vamos a mostrar a continuación una función `Python` que calcule de forma simbólica el polinomio de Taylor de una función dada. Como argumentos de entrada recibirá la función, $f$, el centro de Taylor, $x_{0}$, y el orden del polinomio, $n$. 
+# 
+# La función devolverá el polinomio de Taylor y la función que proporciona el resto de Taylor.
+
+# In[17]:
+
+
+import sympy as sp
+
+x,t=sp.symbols('x,t')
+
+# p: polinomio de Taylor
+# R: resto en valor absoluto
+def taylor(f,x0,n):
+    p=0
+    for i in range(n+1):
+        p+=sp.diff(f,x,i).subs(x,x0)/sp.factorial(i)*(x-x0)**i
+    R=sp.diff(f,x,n+1).subs(x,t)/sp.factorial(n+1)*(x-x0)**(n+1)
+    return p,R
+
+
 # ## Completamos el ejemplo práctico
 # 
-# Vamos a mejorar la aproximación de $\ln(1.3)$ que conseguimos con la recta tangente en al inicio de esta sección utilizando el polinomio de Taylor de orden 2. También acotaremos el error cometido. A continuación usamos la función `series` de `Sympy` para obtener el polinomio de Taylor de orden $n$ centrado en $x_0$ para una función dada.
+# Vamos a utilizar la función anterior, `taylor`, para mejorar la aproximación de $\ln(1.3)$ que conseguimos con la recta tangente en al inicio de esta sección utilizando el polinomio de Taylor de orden 2. También acotaremos el error cometido. 
 
-# In[14]:
+# In[18]:
 
+
+# Codigo aqui
+import sympy as sp
+import numpy as np
 
 # punto en el que centramos el polinomio de Taylor
 x0 = 1
 
 # función que queremos aproximar
-fx = sp.log(x)
+f_exp = sp.log(x)
 
-# calculamos el Polinomio de Taylor de grado n centrado en x0
+# calculamos el Polinomio de Taylor de orden 1 centrado en x0
 n = 1 # grado del polinomio
-P1 = sp.series(fx,x,x0,n+1)
-display(P1) 
-# la O() representa los términos de orden superior que aparecerían en un polinomio de orden superior, por lo que la eliminamos
-P1=P1.removeO()
-# que coincide con la recta tangente calculada anteriormente (rt)
-display(P1==rt)
+P1,R1=taylor(f_exp,1.,1)
+print('Polinomio de Taylor de orden 1: \n',P1,'\n Resto de Taylor de orden 1: \n',R1,'\n')
 
 # calculamos el polinomio de Taylor de orden 2
-P2 = sp.series(fx,x,x0,3)
-P2=P2.removeO()
-print('El polinomio de Taylor de orden 2 es:')
-display(P2)
+n = 2 
+P2,R2=taylor(f_exp,1.,2)
+print('Polinomio de Taylor de orden 2: \n',P2,'\n Resto de Taylor de orden 2: \n',R2,'\n')
 
+
+# Dibujamos el resultado:
+
+# In[20]:
+
+
+# Convertimos P1 y P2 en funciones `lambdify` para poder dibujarlas
+P1_lamb = sp.lambdify(x,P1)
+P2_lamb = sp.lambdify(x,P2)
 
 # Creamos gráficos de funciones
 x1 = np.linspace(0.4, 2.5, 200)
 y1 = np.log(x1)
-y2 = f1(1)*(x1-1) + f(1)
+
 # evaluamos P2 en los puntos de x1
-p2x = np.zeros(len(x1))
-for k in range(len(x1)):
-    p2x[k] = P2.subs({x:x1[k]})
-    
+P1x = P1_lamb(x1)
+P2x = P2_lamb(x1)
 
 fig, axs = plt.subplots(1, 2, figsize=(20,10))
 
 ax1 = axs[0]
-ax1.plot(x1, y1, c='b', lw='2',  label='$f(x)=\ln(x)$')
-ax1.plot(x1, y2, c='k', ls='--', lw='2', label='$P_1(x)=x-1$')
-ax1.plot(x1, p2x, c='r', ls='--', lw='2', label='$P_2(x)=x-1 - \dfrac{(x-1)^2}{2}$')
+ax1.plot(x1, y1, c='b', lw='3',  label='$f(x)=\ln(x)$')
+ax1.plot(x1, P1x, c='k', ls='--', lw='3', label='$P_1(x)=x-1$')
+ax1.plot(x1, P2x, c='r', ls='--', lw='3', label='$P_2(x)=x-1 - \dfrac{(x-1)^2}{2}$')
 ax1.set_ylabel('Y', fontsize=10)
 ax1.set_xlabel('X', fontsize=10)
 ax1.grid()
@@ -240,9 +270,9 @@ ax1.legend(prop={'size': 18})
 
 
 ax2 = axs[1]
-ax2.plot(x1, y1, c='b', lw='2', label='$f(x)=\ln(x)$')
-ax2.plot(x1, y2, c='k', ls='--', lw='2', label='$P_1(x)=x-1$')
-ax2.plot(x1, p2x, c='r', ls='--', lw='2', label='$P_2(x)=x-1 - \dfrac{(x-1)^2}{2}$')
+ax2.plot(x1, y1, c='b', lw='3', label='$f(x)=\ln(x)$')
+ax2.plot(x1, P1x, c='k', ls='--', lw='3', label='$P_1(x)=x-1$')
+ax2.plot(x1, P2x, c='r', ls='--', lw='3', label='$P_2(x)=x-1 - \dfrac{(x-1)^2}{2}$')
 ax2.set_ylabel('Y', fontsize=10)
 ax2.set_xlabel('X', fontsize=10)
 plt.xlim(0.8,1.4)

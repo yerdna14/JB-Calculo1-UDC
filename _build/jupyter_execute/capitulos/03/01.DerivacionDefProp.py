@@ -322,6 +322,21 @@
 # 
 # 
 
+# ## Derivación en **Sympy**
+# 
+# Para calcular simbólicamente la derivada primera de una función mediante Sympy se emplea la función *diff*. Por ejemplo 
+
+# In[1]:
+
+
+import sympy as sp
+x=sp.symbols('x')
+f_exp=sp.exp(x)*sp.cos(x)
+d1f_exp=sp.diff(f_exp,x)
+print('Para la función: ',f_exp)
+print('La derivada primera es: ',d1f_exp)
+
+
 # ## Derivación de algunos casos especiales.
 # 
 # ### Derivación de la función inversa.
