@@ -52,13 +52,13 @@
 # 
 # De momento, lo escribiremos de forma directa, tal como lo hemos hecho en el algoritmo. Más adelante veremos cómo aislar parte o todo el algoritmo en una `function`, lo que nos permitirá realizar una programación estructurada.
 
-# In[1]:
+# In[4]:
 
 
 import numpy as np
 import sympy as sp
 
-x = sp.symbols('x', real=True) # define la variable simbólica x
+x = sp.symbols('x', real=True) 
 f_expr = sp.cos(x)
 f = sp.Lambda(x,f_expr)
 
@@ -79,9 +79,11 @@ for k in range(0,N_max):
     else:
        a = x_aprox[k]
 
-if ( (k > 0) and (np.abs(x_aprox[k]-x_aprox[k-1]) / np.abs(x_aprox[k]) < tol) ): break
+    err_relativo = np.abs( x_aprox[k]-x_aprox[k-1] ) / np.abs( x_aprox[k] )
+    if ( (k > 0) and ( err_relativo < tol ) ): break
 
-print('Número de iteraciones realizadas: ', k+1) # Contamos 1 más porque empezamos el bucle en 0
+print('Número de iteraciones realizadas: ', k+1) 
+      # NOTA: Contamos 1 más, k+1, porque empezamos el bucle en 0
 print('Aproximación de la raíz: ', x_aprox[k])
     
 

@@ -5,7 +5,7 @@
 # 
 # ## Soporte teórico
 # 
-# En general, cuando queremos resolver un problema, tendremos una serie de datos puntuales (por ejemplo, el número de infectados por COVID día a día). Para trabajar matemáticamente con esos datos necesitamos definir una función a partir de ellos y, después, trabajar con esa función (por ejemplo, derivarla, para conocer la tendencia de la curva, o integrarla, para conocer el número de personas afectadas, *etc.*). Por lo tanto, conseguir crear una función que aproxime un conjunto de datos es una parte fundamental del trabajo práctico de un matemático. Hay varias formas de hacer esto. Ahora vamos a ver la más sencilla de todas: **el polinomio de interpolación de Lagrage**.
+# En general, cuando queremos resolver un problema, tendremos una serie de datos puntuales (por ejemplo, el número de infectados por COVID día a día). Para trabajar matemáticamente con esos datos necesitamos definir una función a partir de ellos y, después, trabajar con esa función (por ejemplo, derivarla, para conocer la tendencia de la curva, o integrarla, para conocer el número de personas afectadas, *etc.*). Por lo tanto, conseguir crear una función que aproxime un conjunto de datos es una parte fundamental del trabajo práctico de un matemático. Hay varias formas de hacer esto. Ahora vamos a ver la más sencilla de todas: **el polinomio de interpolación de Lagrange**.
 # 
 # En este caso, si tenemos $n+1$ puntos construiremos un polinomio de orden $n$ que pase por esos puntos. Pensemos que es algo que ya hemos hecho en el instituto... pero restringido a un caso concreto: si nos dan 2 puntos sabemos (ejem...) construir una recta (es decir, un polinomio de orden 1) que pase por esos 2 puntos. Ahora vamos a aprender a hacer esto para más puntos.
 # 
@@ -27,7 +27,7 @@
 # En particular, si $y_i=f(x_i)$, decimos que **$p_n$ es el polinomio de interpolación de Lagrange de la 
 # función $f$ en los puntos $x_i$**.
 
-# In[72]:
+# In[66]:
 
 
 import numpy as np
@@ -46,7 +46,7 @@ ax1.set_title('Polinomio de interpolación de Lagrange para puntos', fontsize=20
 ax1.scatter(x_coef, y_coef, s=200, c='r')
 ax1.plot(x, P_expr, c='b', ls='-', lw='3', label = 'P')
 ax1.grid()
-ax1.legend(fontsize=20, loc='upper left')
+ax1.legend(fontsize=20, loc='lower right')
 
 # Figura derecha
 ax2 = axs[1]
@@ -61,14 +61,14 @@ ax2.scatter(x_coef, y_coef, s=200, c='r')
 ax2.plot(x, f, c='g', ls='--', lw='3', label = '$cos(x)$')
 ax2.plot(x, P_expr, c='b', ls='-', lw='3', label = 'P')
 ax2.grid()
-ax2.legend(fontsize=20, loc='upper right')
+ax2.legend(fontsize=20, loc='lower right')
 
 
 # Una vez que ya sabemos que ese polinomio existe viene la segunda parte: ¿cómo lo calculamos?
 # 
 # Hay 2 maneras de hacer esto:
 
-# ## Construcción por polinomios fundamentales
+# ## Construcción por polinomios fundamentales (Lagrange)
 # 
 # **Definición:**
 # Para cada $i=0,1,\ldots,n\,$,
@@ -98,50 +98,78 @@ ax2.legend(fontsize=20, loc='upper right')
 # y_0\,\ell_0(x)+y_1\,\ell_1(x)+\ldots+y_n\,\ell_n(x).
 # $$
 
-# In[73]:
+# In[67]:
 
 
 import numpy as np
+import sympy as sp
 import matplotlib.pyplot as plt
 fig, axs = plt.subplots(1, 2, figsize=(20,10))
 
-x_coef = [-1, 0, 1, 3]
-y_ceros = [0, 0, 0, 0]
-y_unos = [1, 1, 1, 1]
+x = sp.Symbol("x", real = True)
+
+x_coef = [0, 2, 3, 5]
 y_coef = [-2, 1, -4, 10]
 
-x= np.linspace(-1.5, 3.1, 200)
+# Definimos las expresiones de los polinomios fundamentales
+P0_expr = ( ((x-x_coef[1])*(x-x_coef[2])*(x-x_coef[3])) 
+          / ((x_coef[0]-x_coef[1])*(x_coef[0]-x_coef[2])*(x_coef[0]-x_coef[3])) )
+P1_expr = ( ((x-x_coef[0])*(x-x_coef[2])*(x-x_coef[3])) 
+          / ((x_coef[1]-x_coef[0])*(x_coef[1]-x_coef[2])*(x_coef[1]-x_coef[3])) )
+P2_expr = ( ((x-x_coef[0])*(x-x_coef[1])*(x-x_coef[3])) 
+          / ((x_coef[2]-x_coef[0])*(x_coef[2]-x_coef[1])*(x_coef[2]-x_coef[3])) )
+P3_expr = ( ((x-x_coef[0])*(x-x_coef[1])*(x-x_coef[2])) 
+          / ((x_coef[3]-x_coef[0])*(x_coef[3]-x_coef[1])*(x_coef[3]-x_coef[2])) )
 
-P0_expr = ( (x-x_coef[1])*(x-x_coef[2])*(x-x_coef[3]) ) / ( (x_coef[0]-x_coef[1])*(x_coef[0]-x_coef[2])*(x_coef[0]-x_coef[3]) )
-P1_expr = ( (x-x_coef[0])*(x-x_coef[2])*(x-x_coef[3]) ) / ( (x_coef[1]-x_coef[0])*(x_coef[1]-x_coef[2])*(x_coef[1]-x_coef[3]) )
-P2_expr = ( (x-x_coef[0])*(x-x_coef[1])*(x-x_coef[3]) ) / ( (x_coef[2]-x_coef[0])*(x_coef[2]-x_coef[1])*(x_coef[2]-x_coef[3]) )
-P3_expr = ( (x-x_coef[0])*(x-x_coef[1])*(x-x_coef[2]) ) / ( (x_coef[3]-x_coef[0])*(x_coef[3]-x_coef[1])*(x_coef[3]-x_coef[2]) )
+# Definimos la expresión del polinomio de Lagrange
+P_expr = ( y_coef[0]*P0_expr + y_coef[1]*P1_expr 
+          + y_coef[2]*P2_expr + y_coef[3]*P3_expr )
 
-P_expr = y_coef[0]*P0_expr + y_coef[1]*P1_expr + y_coef[2]*P2_expr + y_coef[3]*P3_expr
+# Creamos funciones `lambdify` para dibujarlas
+P0 = sp.lambdify(x,P0_expr)
+P1 = sp.lambdify(x,P1_expr)
+P2 = sp.lambdify(x,P2_expr)
+P3 = sp.lambdify(x,P3_expr)
+
+P = sp.lambdify(x,P_expr)
+
+# xx: array que usaremos para dar valores a las funciones lambdify
+xx= np.linspace(-0.5, 5.5, 200)
+
+P0_vec = P0(xx)
+P1_vec = P1(xx)
+P2_vec = P2(xx)
+P3_vec = P3(xx)
+
+P_vec = P(xx)
 
 # Figura izquierda
 ax1 = axs[0]
 ax1.set_title('Polinomios fundamentales de Lagrange', fontsize=20)
+
+y_ceros = [0, 0, 0, 0] # Para dibujar (xi,0)
 ax1.scatter(x_coef, y_ceros, s=150, c='b')
+y_unos = [1, 1, 1, 1] # Para dibujar (xi,1)
 ax1.scatter(x_coef, y_unos, s=200, c='g')
-ax1.plot(x, P0_expr, c='black', ls='--', lw='3', label = 'P0')
-ax1.plot(x, P1_expr, c='y', ls='--', lw='3', label = 'P1')
-ax1.plot(x, P2_expr, c='c', ls='--', lw='3', label = 'P2')
-ax1.plot(x, P3_expr, c='m', ls='--', lw='3', label = 'P3')
+
+ax1.plot(xx, P0_vec, c='black', ls='--', lw='3', label = 'P0')
+ax1.plot(xx, P1_vec, c='y', ls='--', lw='3', label = 'P1')
+ax1.plot(xx, P2_vec, c='c', ls='--', lw='3', label = 'P2')
+ax1.plot(xx, P3_vec, c='m', ls='--', lw='3', label = 'P3')
 ax1.grid()
-ax1.legend(fontsize=20, loc='upper right')
+ax1.legend(fontsize=20, loc='lower right')
 
 # Figura derecha
 ax2 = axs[1]
 ax2.set_title("Polinomio de Lagrange", fontsize=20)
 ax2.scatter(x_coef, y_coef, s=200, c='r')
-ax2.plot(x, P_expr, c='b', ls='--', lw='3', label = 'P')
+ax2.plot(xx, P_vec, c='b', ls='--', lw='3', label = 'P')
 ax2.grid()
-ax2.legend(fontsize=20, loc='upper left')
+ax2.legend(fontsize=20, loc='lower right')
 
 
 # 
-# ## Construcción mediante diferencias divididas
+# ## Construcción mediante diferencias divididas (Newton)
 # 
 # La construcción del Polinomio de Lagrange mediante los polinomios fundamentales, que acabamos de explicar, es sencilla de entender pero difícil de implementar en la práctica. Además, si aparece un nuevo dato debemos recomenzar la construcción desde 0. 
 # 
@@ -196,47 +224,48 @@ ax2.legend(fontsize=20, loc='upper left')
 # 
 # Ésta será la primera vez que usemos una `function`. En este caso es (casi) inevitable, ya que, en principio desconocemos el número de puntos que tomaremos como dato. Entonces, si queremos que nuestro programa valga siempre, necesitamos un bucle acumulativo para el sumatorio de la fórmula de Newton. 
 
-# In[74]:
+# In[2]:
 
 
 import numpy as np
+import sympy as sp
 import matplotlib.pyplot as plt
 
-def newton_poly(coef, x_data, x):
-    # evaluamos el polinomio de Lagrange, construido con la 
-    # tabla de diferencias divididas, en el punto x
-    # in: 
-    #    coef ---> primera fila de la tabla de diferencias divididas
-    #    x_data -> valores de x_i
-    #    x ------> punto en el que queremos evaluar el polinomio 
-    n = len(x_data) - 1 
-    p = coef[n]
-    for k in range(1,n+1):
-        p = coef[n-k] + (x -x_data[n-k])*p
-    return p
+x = sp.Symbol("x", real = True)
 
-x_coef = [-1, 0, 1, 3]
-y_coef = [-2, 1, -4, 10]
-
-x= np.linspace(-1.5, 3.1, 200)
+x_coef = [-2, 0, 1, 3]
+y_coef = [-16, 0, -1, 9]
 
 n = len(x_coef)
-coef = np.zeros([n, n])
-# La primera columna serán los datos en y
-coef[:,0] = y_coef
 
-# Necesitamos un doble bucle para crear la matriz (perdón, tabla) de diferencias divididas
+# Almacenaremos en "tabla" la matriz de diferencias divididas
+tabla = np.zeros([n, n])
+
+# La primera columna serán los datos en y
+tabla[:,0] = y_coef
+
+# Necesitamos un doble bucle para crear el resto de "tabla"
 for j in range(1,n):
     for i in range(n-j):
-        coef[i,j] = (coef[i+1,j-1] - coef[i,j-1]) / (x_coef[i+j]-x_coef[i])
+        tabla[i,j] = (tabla[i+1,j-1] - tabla[i,j-1]) / (x_coef[i+j]-x_coef[i])
 
-# evaluamos el polinomio según la function definida al principio
-P_expr = newton_poly(coef[0,:],x_coef,x)
+# Definimos la expresión para el Polinomio de Lagrange (versión Newton)
+P_expr = tabla[0,0]
+multiplica = 1
+for k in range(1,n):
+    multiplica = multiplica * (x - x_coef[k-1])
+    P_expr = P_expr + tabla[0,k] * multiplica
+
+# Creamos la función lambdify para dibujarla
+P = sp.lambdify(x,P_expr)
+
+xx = np.linspace(-2.1, 3.1, 200)
+P_vec = P(xx)
 
 # dibujamos el resultado
 fig = plt.figure(figsize = (10,8))
 plt.scatter(x_coef, y_coef, s=200, c='r')
-plt.plot(x, P_expr, 'b', lw='3')
+plt.plot(xx, P_vec, 'b', lw='3')
 plt.title('Polinomio de Lagrange (fórmula de Newton)', fontsize=20)
 plt.grid()
 plt.xlabel('x')
@@ -244,13 +273,12 @@ plt.ylabel('y')
 plt.show()
 
 
-
 # **Nota:**
 # 
 # Hay una librería en Python, **SciPy**, en la que ya están pre-programados bastantes métodos numéricos (bueno, más bien muchos), entre ellos, por supuesto, el polinomio de Lagrange. 
 # Aunque en este curso no usaremos SciPy (**lo que quiere decir que NO lo admitiremos como correcto en vuestras prácticas**), os dejamos a continuación su uso con esta librería, por si os pudiera ser útil en el futuro:
 
-# In[75]:
+# In[69]:
 
 
 from scipy.interpolate import lagrange
@@ -274,9 +302,10 @@ plt.show()
 # ## Links para ampliar
 # 
 # Aquí os dejamos algunos links, por si queréis echarles un vistazo:
-# * https://pythonnumericalmethods.berkeley.edu/notebooks/chapter17.05-Newtons-Polynomial-Interpolation.html
-# * https://es.wikipedia.org/wiki/Interpolaci%C3%B3n_polin%C3%B3mica_de_Lagrange#:~:text=En%20an%C3%A1lisis%20num%C3%A9rico%2C%20el%20polinomio,por%20Leonhard%20Euler%20en%201783.
-# * https://es.wikipedia.org/wiki/Interpolaci%C3%B3n_polin%C3%B3mica_de_Newton
+# * [Página sobre la construcción de Lagrange en *Python Numerical Methods*, Berkeley.](https://pythonnumericalmethods.berkeley.edu/notebooks/chapter17.04-Lagrange-Polynomial-Interpolation.html)
+# * [Página sobre la construcción de Newton en *Python Numerical Methods*, Berkeley.](https://pythonnumericalmethods.berkeley.edu/notebooks/chapter17.05-Newtons-Polynomial-Interpolation.html)
+# * [Entrada en la Wikipedia, construcción de Lagrange.](https://es.wikipedia.org/wiki/Interpolaci%C3%B3n_polin%C3%B3mica_de_Lagrange#:~:text=En%20an%C3%A1lisis%20num%C3%A9rico%2C%20el%20polinomio,por%20Leonhard%20Euler%20en%201783.)
+# * [Entrada en la Wikipedia, construcción de Newton.](https://es.wikipedia.org/wiki/Interpolaci%C3%B3n_polin%C3%B3mica_de_Newton)
 
 # ## Ejercicios para que hagáis
 # 
@@ -284,7 +313,7 @@ plt.show()
 # 
 # Prepara un programa para evaluar y dibujar el polinomio de Lagrange, construido mediante los monomios fundamentales, utilizando una function.  
 
-# In[76]:
+# In[70]:
 
 
 # ESCRIBE AQUÍ TU CÓDIGO
@@ -294,7 +323,7 @@ plt.show()
 # 
 # Construye un polinomio de Lagrange, mediante la tabla de diferencias divididas, para interpolar la función $\sin(x)$ en los puntos $\frac{\pi}{2}, \; 0, \; \frac{\pi}{3}, \; \frac{\pi}{2}$.
 
-# In[77]:
+# In[71]:
 
 
 # ESCRIBE AQUÍ TU CÓDIGO
