@@ -13,7 +13,7 @@
 # Sea $f \in {\cal R}[a,b]$.  Para $a \leq x \leq b$, sea: 
 # 
 # $$F(x) = \int_a ^x f(t) \,dt .$$
-# Entonces, $F \in {\cal C}[a,b]$.  Además, si $f$ es continua en $[a,b]$, entonces $F$ es derivable en $[a,b]$
+# Entonces, $F \in {\cal C}^{0}[a,b]$.  Además, si $f$ es continua en $[a,b]$, entonces $F$ es derivable en $[a,b]$
 # y $F^{\,\prime} (x) = f(x)$, $\forall x \in [a,b]$.
 # 
 # También puede enunciarse de la siguiente manera:

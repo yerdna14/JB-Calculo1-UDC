@@ -44,7 +44,7 @@
 #   
 #     * $f(4)\,\,$ si $\displaystyle{\,\int_0^x f(t) \,  = x \, \cos (\pi x)},$
 # 
-#     * $g(1)\,\,$ si $\displaystyle{\,\int_{x^2}^{x^3} g(t) \,  = x \, \cos (\pi x)}.$
+#     * $g(1)\,\,$ si $\displaystyle{\,\int_{x^2}^{x^3} g(t) \,  = x \, \sin (\pi x)}.$
 # 
 # 6.  Halla los extremos relativos de la función $F(x) = \displaystyle{\int_1^x \frac{sen( t)}{t} \, }$, con $x > 1$.
 # 
