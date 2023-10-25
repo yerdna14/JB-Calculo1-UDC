@@ -5,10 +5,10 @@
 # 
 # ## Definiciones
 # 
-# Matemáticamente, la idea de una función convexa es sencilla: es aquella función en la que la recta secante está por encima de la gráfica de la función. 
+# Matemáticamente, la idea de una función convexa es sencilla: es aquella función en la que las rectas secantes están por encima de la gráfica de la función. 
 # Dicho de forma coloquial: es un vaso en el que no se derramaría el agua. 
 # 
-# <img src="../../images/cap_deriv_convexidad.png" width="400"/>
+# <img src="../../images/cap3-convexidad.png" width="400"/>
 # 
 # Si recordamos que la recta secante a $f$ por $a$ y $b$ tiene ecuación $r(x) =\frac{f(b)-f(a)}{b-a}(x-a) + f(a)$, obtenemos la siguiente definición formal:
 # 
@@ -19,7 +19,7 @@
 # Se dice que $f$ es convexa en $[a,b]$ si
 #             
 # $$
-# f(x) \leq \frac{f(b)-f(a)}{b-a}(x-a) + f(a) \, , \qquad \forall x \in [a,b].
+# f(z) \leq f(x) + \frac{f(y)-f(x)}{y-x}(z-x) \, , \qquad \forall x < z < y, \quad x,y,z \in [a,b].
 # $$
 # 
 # ````

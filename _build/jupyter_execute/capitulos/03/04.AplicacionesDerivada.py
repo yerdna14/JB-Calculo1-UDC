@@ -67,7 +67,7 @@
 # Por ejemplo, la función $f(x) = x^3$ verifica $f'(0) = 0$, pero no se trata de un máximo ni de un mínimo.
 # 
 # Intentamos ilustrar esta extraña relación en la siguiente figura:
-# <img src="../../images/cap_deriv_ext_criticos.jpg" width="600"/>
+# <img src="../../images/cap3-extremos.jpg" width="600"/>
 # 
 # 
 # Entonces, resumiendo lo que acabamos de ver, cuando nos interesa localizar los extremos relativos de una función en un determinado intervalo (abierto), lo primero que haremos será buscar sus puntos críticos (es decir, buscar los $x$ tales que $f'(x)=0$) y, a continuación, aplicar alguno de los criterios para la identificación de extremos relativos. Ya hemos visto el de la primera derivada, vamos a ver ahora el más utilizado:
@@ -120,7 +120,7 @@
 # 
 # En la siguiente figura, mostramos un ejemplo de una función continua en un intervalo cerrado y acotado, para la que el mínimo absoluto se encuentra en los dos puntos en los que la función es no derivable (mismo valor en ambos puntos), mientras que el máximo absoluto está en el extremos de la derecha del intervalo (aunque podría haber estado en el punto crítico que vemos para $x=\frac{\pi}{2}$).
 # 
-# <img src="../../images/cap_deriv_extremos_absolutos.png" width="400"/>
+# <img src="../../images/cap3-extremos-absolutos.png" width="400"/>
 # 
 # Ya conocéis, de bachillerato, los problemas en los que hay que buscar el máximo y el mínimo absoluto de una función (continua) en determinado intervalo cerrado y acotado. 
 # Suelen disfrazarse con un texto más o menos imaginativo (*Cortamos una hoja cuadrada de cartón de forma que [...]*). Aquí tenéis 10 ejemplos (de diferentes tipos), para que vayáis practicando:
@@ -179,7 +179,7 @@ print('Aproximación del ángulo para la sección máxima con NR: ',xn)
 # \begin{equation*}
 # f^{\prime} (\xi) = 0 \, .
 # \end{equation*}
-# <img src="../../images/cap_deriv_rolle.png" width="400"/>
+# <img src="../../images/cap3-rolle.png" width="400"/>
 # 
 # ````
 # 
@@ -199,7 +199,7 @@ print('Aproximación del ángulo para la sección máxima con NR: ',xn)
 #     dos raíces de $f$ (es decir, dos puntos donde $f$ vale $0$) tiene que haber, por lo
 #     menos, una raíz de $f'$.
 # 
-#     <img src="../../images/cap_deriv_remark_Rolle.jpg" width="400"/>
+#     <img src="../../images/cap3-Rolle-remark.jpg" width="400"/>
 # 
 # 3. Recíprocamente, si $f'$ tiene $n$ raíces reales, $f$ tendrá, a lo sumo, $n+1$
 # raíces reales.
@@ -307,9 +307,3 @@ print('Aproximación del ángulo para la sección máxima con NR: ',xn)
 # ````
 # 
 # La deducción de este resultado es sencilla. Pensemos, por ejemplo, en el primer punto de la propiedad. Si $f' (x) \geq 0$, $\forall x \in (a,b)$, aplicando el resultado del Teorema de Lagrange, resulta que $f(b)-f(a)>0$, o, lo que es lo mismo, $f(b)>f(a)$. Es decir, $f$ sería creciente respecto a los puntos $a$ y $b$. Aplicando el teorema en subintervalos, llegamos fácilmente al resultado. 
-
-# In[ ]:
-
-
-
-
