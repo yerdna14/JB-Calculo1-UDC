@@ -524,7 +524,6 @@ print('La derivada primera es: ',d1f_exp)
 # * $\displaystyle \frac{\pm\infty}{\pm\infty} = $ INDETERMINADO,
 # * $\displaystyle 0\left(\pm\infty\right) = $ INDETERMINADO,
 # * $+\infty - \infty  = $ INDETERMINADO,
-# * $-\infty + \infty  = $ INDETERMINADO,
 # *  $\displaystyle 1^{\pm\infty} = $ INDETERMINADO,
 # * $\displaystyle 0^{0}  = $ INDETERMINADO,
 # * $\displaystyle \left(\pm\infty\right)^{0}  = $ INDETERMINADO.
