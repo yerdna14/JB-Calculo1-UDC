@@ -286,7 +286,7 @@ print('Aproximación del ángulo para la sección máxima con NR: ',xn)
 # \begin{equation*}
 # f(b) - f(a) = f' (\xi) (b - a) \, .
 # \end{equation*}
-# <img src="../../images/cap_deriv_lagrange.png" width="400"/>
+# <img src="../../images/cap3-thlagrange.png" width="400"/>
 # 
 # ````
 # Basta recordar que $\displaystyle\frac{f(b) - f(a)}{b-a}$ es la pendiente de la recta secante a $f$ por $a$ y $b$ para tener la interpretación geométrica de este teorema, que mostramos en la imagen anterior: 
