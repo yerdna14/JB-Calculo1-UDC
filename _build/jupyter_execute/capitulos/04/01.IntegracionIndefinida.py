@@ -31,33 +31,6 @@
 # ````
 # 
 # Como consecuencia del anterior teorema, una vez conocida una primitiva $F$ de $f$, ya se pueden obtener todas al sumar únicamente una constante a la primitiva ya conocida.
-# ## Definición de primitiva
-# 
-# La primitiva de una función es la expresión que se obtiene mediante el proceso opuesto a la derivación. De aquí que la primitiva también se conozca con el nombre de antiderivada. Realmente, una función no tiene una única primitiva, sino que una familia de funciones. Veámoslo con un ejemplo.
-# 
-# Si tenemos la función $f(x)=x^2$ sabemos que su derivada se obtiene en dos pasos, i) se multiplica la función por el exponente y ii) se disminuye el exponente en una unidad, esto es, $f'(x)=2x$. Entonces, para calcular la primitiva de $f$ procedemos en sentido opuesto, i) se aumenta el exponente en una unidad y ii) se divide por el exponente (nuevo al hacer el paso i)). De este modo obtenemos que $F(x) = \dfrac{x^3}{3}$, podemos comprobar que al aplicar la derivada a $F$ obtenemos nuestra función inicial $f$. 
-# 
-# Tal y como hemos mencionado, la primitiva no es única, de este modo le podemos añadir cualquier constante a $F(x)$ y su derivada seguirá siendo la función de inicio $f$ (la derivada de una constante era 0). Entonces, para este caso, la familia de primitivas estaría dada por $F(x) = \dfrac{x^3}{3} +C$, donde $C$ es una constante cualesquiera.
-# 
-# Veamos pues, las definiciones formales de primitiva.
-# 
-# 
-# ````{prf:definition} Primitiva
-# :label: def_primitiva 
-# :nonumber: 
-# Sea $f:I\rightarrow \mathbb{R}$. Se dice que F es una primitiva de $f$ en $I$ si
-# 
-# $$ F'(x) = f(x), \quad \forall x \in I.$$
-# ````
-# 
-# ````{prf:theorem} 
-# :label: th_primitivas
-# Si $F$ y $G$ son dos primitivas de una misma función $f$ en un intervalo $I$, entonces,
-# 
-# $$ \exists k \in \mathbb{R} \mbox{ tal que } F(x)=G(x)+k, \quad \forall x \in I.$$
-# ````
-# 
-# Como consecuencia del anterior teorema, una vez conocida una primitiva $F$ de $f$, ya se pueden obtener todas al sumar únicamente una constante a la primitiva ya conocida.
 
 # ## Definición de la integral indefinida
 # La integración indefinida es el proceso por el cual se obtienen las primitivas de una función. La notación más habitual para denotar a la integral indefinida de la función $f$ es $\int f(x) \mathrm{d}x$, que es la que utilizamos para su definición.
@@ -104,6 +77,31 @@
 # ¿Te apetece practicar un poco con las llamadas *integrales inmediatas*? Aquí puedes hacerlo: 
 # * https://www.matesfacil.com/ejercicios-resueltos-integrales-inmediatas.htm
 # * https://thales.cica.es/rd/Recursos/rd97/Problemas/54-1-p-INM.HTML
+
+# ## Cálculo de primitivas con `SymPy`
+# Para calcular una primitiva de una función con `SymPy`, se emplea la función *integrate*. 
+# Por ejemplo, para calcular una primitiva de $\sin(x)$, escribiremos 
+
+# In[3]:
+
+
+import sympy as sp
+
+x = sp.symbols('x')
+f_exp = sp.sin(x)
+I = sp.integrate(f_exp,x)
+
+print('Una primitiva de ',f_exp, ' es = ',I)
+
+
+# `SymPy` no siempre es capaz de calcular una primitiva. En caso de no poder hacerlo, devuelve como salida la integral de partida:
+
+# In[2]:
+
+
+I = sp.integrate(sp.sin(x*sp.cos(x)),x)
+print(I)
+
 
 # ## Principales métodos para obtener las integrales indefinidas
 # Los métodos más comunes para obtener la integral indefinida de una función son la integración por partes, la integración por cambio de variable y la integración por descomposición de fracciones racionales.
@@ -315,9 +313,3 @@
 # 
 #     $$\int \dfrac{x^2+3x+2}{x^3-3x^2+4} \,\mathrm{d}x  = \ln|x-2| -\dfrac{4}{x-2}+ C.$$
 # ````
-
-# In[ ]:
-
-
-
-

@@ -552,6 +552,16 @@ title="Print to PDF"
    4.3.4. Integración por partes en la integral de Riemann
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculo-de-integrales-definidas-con-sympy">
+   4.3.5. Cálculo de integrales definidas con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -589,6 +599,16 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#integracion-por-partes-en-la-integral-de-riemann">
    4.3.4. Integración por partes en la integral de Riemann
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculo-de-integrales-definidas-con-sympy">
+   4.3.5. Cálculo de integrales definidas con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -750,6 +770,29 @@ A = \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos x \, dx = \sin x \lvert_{-\frac{\
 \]</div>
 </section>
 </div></section>
+<section id="calculo-de-integrales-definidas-con-sympy">
+<h2><span class="section-number">4.3.5. </span>Cálculo de integrales definidas con <code class="docutils literal notranslate"><span class="pre">Sympy</span></code><a class="headerlink" href="#calculo-de-integrales-definidas-con-sympy" title="Permalink to this headline">#</a></h2>
+<p>Para calcular una integral definida, simplemente tendremos que añadir los límites de integración al comando <code class="docutils literal notranslate"><span class="pre">sp.integrate</span></code>.</p>
+<p>Por ejemplo, para integrar <span class="math notranslate nohighlight">\(\displaystyle\int_0^\pi\sin(x)\,dx\)</span>, escribiremos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f_exp</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">Idef</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> <span class="c1"># Integral de f_exp con x entre 0 y pi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La integral de &#39;</span><span class="p">,</span><span class="n">f_exp</span><span class="p">,</span> <span class="s1">&#39; entre 0 y pi es = &#39;</span><span class="p">,</span><span class="n">Idef</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La integral de  sin(x)  entre 0 y pi es =  2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

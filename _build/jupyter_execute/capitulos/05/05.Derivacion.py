@@ -32,7 +32,7 @@ print('La derivada primera es: ',d1f_exp)
 # 
 # Mostramos a continuación una implementación directa, mediante un bucle, de este método:
 
-# In[2]:
+# In[1]:
 
 
 import numpy as np
@@ -53,7 +53,7 @@ x_aprox = np.zeros(N_max)
 x_aprox[0] = 2
 
 for k in range(1,N_max):
-    if f_der(x_aprox[k-1]) == 0: break
+    if ( np.abs( f_der(x_aprox[k-1]) ) < 1.e-14 ): break
 
     x_aprox[k] = x_aprox[k-1] - f(x_aprox[k-1])/f_der(x_aprox[k-1])
 

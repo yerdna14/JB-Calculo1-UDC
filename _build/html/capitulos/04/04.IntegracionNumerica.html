@@ -548,14 +548,26 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#programacion-en-numpy">
-   4.4.4. Programación en
+  <a class="reference internal nav-link" href="#integracion-numerica-con-numpy">
+   4.4.4. Integración numérica con
    <code class="docutils literal notranslate">
     <span class="pre">
      Numpy
     </span>
    </code>
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     4.4.4.1. Fórmulas simples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     4.4.4.2. Fórmulas compuestas
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mas-informacion">
@@ -597,14 +609,26 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#programacion-en-numpy">
-   4.4.4. Programación en
+  <a class="reference internal nav-link" href="#integracion-numerica-con-numpy">
+   4.4.4. Integración numérica con
    <code class="docutils literal notranslate">
     <span class="pre">
      Numpy
     </span>
    </code>
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     4.4.4.1. Fórmulas simples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     4.4.4.2. Fórmulas compuestas
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mas-informacion">
@@ -747,10 +771,110 @@ title="Print to PDF"
 </li>
 </ul>
 </section>
-<section id="programacion-en-numpy">
-<h2><span class="section-number">4.4.4. </span>Programación en <code class="docutils literal notranslate"><span class="pre">Numpy</span></code><a class="headerlink" href="#programacion-en-numpy" title="Permalink to this headline">#</a></h2>
-<p>Podéis ver la programación de estos métodos en la Sección <a class="reference internal" href="../05/06.Integracion.old.html#sec-pythonintegracion"><span class="std std-ref">Integración en Python</span></a>.
-Por favor, no dejéis de mirar con calma la forma en que estas fórmulas compuestas se implementan en una línea, jugando con el comando <code class="docutils literal notranslate"><span class="pre">np.sum</span></code>, lo que nos permite evitar por completo los bucles. Queda un ejercicio fantástico para el manejo de los arrays en <code class="docutils literal notranslate"><span class="pre">Python</span></code>…</p>
+<section id="integracion-numerica-con-numpy">
+<h2><span class="section-number">4.4.4. </span>Integración numérica con <code class="docutils literal notranslate"><span class="pre">Numpy</span></code><a class="headerlink" href="#integracion-numerica-con-numpy" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3><span class="section-number">4.4.4.1. </span>Fórmulas simples<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>A continuación mostramos las <em>functions</em> que nos permiten la programación de las fórmulas simples que acabamos de ver en <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> y un ejemplo de su aplicación.</p>
+<p>Probaremos sobre</p>
+<div class="math notranslate nohighlight">
+\[
+I=\int_{0}^{3}\left(x^4+1\right)\,dx\,,
+\]</div>
+<p>ya que, en este caso sencillo, podemos conocer el valor exacto de la integral:</p>
+<div class="math notranslate nohighlight">
+\[
+I=\int_{0}^{3}\left(x^4+1\right)\,dx = \left[\frac{x^5}{5}+x\right]_{x=0}^{3} = \frac{3^5}{5}+3 = 51.6\, .
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">pto_medio</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">fpm</span><span class="p">):</span>
+    <span class="n">aprox_pm</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">fpm</span>
+    <span class="k">return</span> <span class="n">aprox_pm</span>
+
+<span class="k">def</span> <span class="nf">trapecio</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">fa</span><span class="p">,</span> <span class="n">fb</span><span class="p">):</span>
+    <span class="n">aprox_tr</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">fa</span> <span class="o">+</span> <span class="n">fb</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">aprox_tr</span>
+
+<span class="k">def</span> <span class="nf">simpson</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">fa</span><span class="p">,</span> <span class="n">fpm</span><span class="p">,</span> <span class="n">fb</span><span class="p">):</span>
+    <span class="n">aprox_simp</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">fa</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">fpm</span> <span class="o">+</span> <span class="n">fb</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span>
+    <span class="k">return</span> <span class="n">aprox_simp</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="n">f_exp</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f_exp</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">pm</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="n">fa</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">fpm</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">pm</span><span class="p">)</span>
+<span class="n">fb</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Valor aproximado de I mediante la fórmula del punto medio = &#39;</span><span class="p">,</span> <span class="n">pto_medio</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">fpm</span><span class="p">)</span> <span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Valor aproximado de I mediante la fórmula del trapecio = &#39;</span><span class="p">,</span> <span class="n">trapecio</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">fa</span><span class="p">,</span><span class="n">fb</span><span class="p">)</span> <span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Valor aproximado de I mediante la fórmula de Simpson = &#39;</span><span class="p">,</span> <span class="n">simpson</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">fa</span><span class="p">,</span><span class="n">fpm</span><span class="p">,</span><span class="n">fb</span><span class="p">)</span> <span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valor aproximado de I mediante la fórmula del punto medio =  18.1875
+Valor aproximado de I mediante la fórmula del trapecio =  124.5
+Valor aproximado de I mediante la fórmula de Simpson =  53.625
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h3><span class="section-number">4.4.4.2. </span>Fórmulas compuestas<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>Como puedes ver en el apartado anterior, las fórmulas simples pueden dar resultdos bastante… pésimos.</p>
+<p>Vamos a implementar ahora de manera eficiente las fórmulas compuestas utilizando la función de <code class="docutils literal notranslate"><span class="pre">np.sum</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">f_exp</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f_exp</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># aquí guardamos los x_{i}. </span>
+                          <span class="c1"># Recuerda que, en Python, se guarda x1[0], x1[1], ..., x1[(n+1)-1] = x1[n]</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">n</span> <span class="c1"># el tamaño de cada subintervalo</span>
+
+<span class="n">aprox_trap</span> <span class="o">=</span> <span class="n">h</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">y1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y1</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">])</span><span class="o">+</span><span class="n">y1</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+<span class="n">aprox_medio</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">h</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y1</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">aprox_simpson</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">6</span> <span class="o">*</span> <span class="p">(</span><span class="n">y1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y1</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y1</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span><span class="o">+</span><span class="n">y1</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;aprox_trap: &#39;</span><span class="p">,</span><span class="n">aprox_trap</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;aprox_medio: &#39;</span><span class="p">,</span><span class="n">aprox_medio</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;aprox_simpson: &#39;</span><span class="p">,</span><span class="n">aprox_simpson</span><span class="p">)</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Exacta: &#39;</span><span class="p">,</span><span class="n">b</span><span class="o">**</span><span class="mi">5</span><span class="o">/</span><span class="mi">5</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aprox_trap:  51.608099919
+aprox_medio:  51.583801133999984
+aprox_simpson:  51.60000032399999
+Exacta:  51.6
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="mas-informacion">
 <h2><span class="section-number">4.4.5. </span>Más información<a class="headerlink" href="#mas-informacion" title="Permalink to this headline">#</a></h2>

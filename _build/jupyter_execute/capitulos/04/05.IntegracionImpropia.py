@@ -160,6 +160,70 @@
 # 
 # Recordamos que basta con que uno de los trozos sea divergente para que toda la integral sea considerada del mismo modo.
 
+# ## Cálculo de integrales impropias con `Sympy`
+# 
+# Es posible calcular con `Sympy` integrales impropias de primera especie, es decir, integrales con límites de integración $-\infty$ y/o $+\infty$.
+# 
+# Esto se puede hacer bien directamente, bien aplicando la definición de integral impropia (es decir, combinando una integral de Riemann con un límite). Veámoslo:
+
+# In[1]:
+
+
+import sympy as sp
+x = sp.symbols('x', real = True)
+M = sp.Symbol('M', real = True)
+
+f_exp = sp.exp(x)
+
+# Cálculo directo
+I_directo = sp.integrate(f_exp,(x,-sp.oo,0))
+print('Integral de ',f_exp,' entre -oo y 0 es = ',I_directo)
+
+# Cálculo con límites
+I_limites = sp.limit( sp.integrate(f_exp,(x,-M,0)), M, +sp.oo )
+print('Integral de ',f_exp,' entre -oo y 0 es = ',I_limites)
+
+
+# Del mismo modo podemos calcular una integral impropia de segunda especie. Por ejemplo, 
+# 
+# $$
+# \int_{0}^2\dfrac{1}{\sqrt{x}}\,dx\, .
+# $$
+
+# In[2]:
+
+
+import sympy as sp
+x = sp.symbols('x', real = True)
+c = sp.Symbol('c', real = True)
+
+f_exp = 1/sp.sqrt(x)
+
+# Cálculo directo
+I_directo = sp.integrate(f_exp,(x,0,2))
+print('La integral vale = ', I_directo)
+
+# Cálculo con límites
+I_limites = sp.limit( sp.integrate(f_exp,(x,c,2)), c, 0, dir='+')
+print('La integral vale = ', I_limites)
+
+
+# Por supuesto, en ocasiones nos encontraremos con integrales no convergentes:
+
+# In[3]:
+
+
+import sympy as sp
+x = sp.symbols('x', real = True)
+c = sp.Symbol('c', real = True)
+
+f_exp = 1/x
+
+# Cálculo con límites
+I_limites = sp.limit( sp.integrate(f_exp,(x,c,2)), c, 0, dir='+')
+print('La integral vale = ', I_limites)
+
+
 # ## Más información
 # 
 # Puedes encontrar más información, y algunos ejemplos/ejercicios en

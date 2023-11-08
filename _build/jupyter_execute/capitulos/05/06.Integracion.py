@@ -2,223 +2,125 @@
 # coding: utf-8
 
 # (sec_PythonIntegracion)=
-# # Integración en **Python**
+# # Integración en `Python`
 # 
-# En esta sección aprenderemos a integrar con `SymPy` y a aproximar integrales definidas usando `NumPy`.
+# Esta sección pretende ser un compendio (esperemos que claro y ordenado) de todo el `Python` que hemos ido usando en el Capítulo 4.
 # 
-# ## Integración con **SymPy**
-# Para calcular exactamente la integral de una función mediante SymPy, se emplea la función *integrate*. 
+# Objetivos:
+# 
+# * Cálculo de primitivas con `Sympy`.
+# * Cálculo de integrales definidas con `Sympy`.
+# * Implementación en `Numpy` de los métodos de integración numérica.
+# * Cálculo en `Sympy` de integrales impropias.
+# * Uso de `Sympy` para resolver EDOs.
+
+# ## Cálculo de primitivas con `SymPy`
+# Para calcular la integral de una función con `SymPy`, se emplea la función *integrate*. 
 # Por ejemplo, para calcular una primitiva de $\sin(x)$, escribiremos 
 
-# In[73]:
+# In[86]:
 
 
 import sympy as sp
 
 x = sp.symbols('x')
-f = sp.sin(x)
-I = sp.integrate(f,x)
+f_exp = sp.sin(x)
+I = sp.integrate(f_exp,x)
 
-print('Una primitiva de ',f, ' es = ',I)
-
-
-# Para calcular la integral definida $\displaystyle\int_0^\pi\sin(x)\,dx$, escribiremos
-
-# In[74]:
-
-
-import sympy as sp
-
-x = sp.symbols('x')
-f = sp.sin(x)
-Idef = sp.integrate(f,(x,0,sp.pi))
-
-print('La integral de ',f, ' entre 0 y pi es = ',Idef)
+print('Una primitiva de ',f_exp, ' es = ',I)
 
 
 # `SymPy` no siempre es capaz de calcular una primitiva. En caso de no poder hacerlo, devuelve como salida la integral de partida:
 
-# In[75]:
+# In[87]:
 
 
 I = sp.integrate(sp.sin(x*sp.cos(x)),x)
 print(I)
 
 
-# Es posible calcular algunas integrales impropias, cuando los límites de integración son $-\infty$ y/o $+\infty$, es decir, integrales de la forma:
+# ## Cálculo de integrales definidas con `Sympy`
 # 
-# $$
-# \int_{-\infty}^bf(x)\,dx\,,\quad
-# \int_{a}^{+\infty}f(x)\,dx\,,\quad
-# \int_{-\infty}^{+\infty}f(x)\,dx\,.
-# $$
-
-# In[76]:
-
-
-x = sp.symbols('x')
-f = sp.exp(x)
-I1 = sp.integrate(f,(x,-sp.oo,0))
-
-print('Integral de ',f,' entre -oo y 0 es = ',I1)
-
-g = 1/(x**2)
-I2 = sp.integrate(g,(x,1,sp.oo))
-
-print('Integral de ',g,' entre 1 y +oo es = ',I2)
-
-
-# Si necesitamos calcular una integral impropia de segunda especie, como por ejemplo, 
+# Para calcular una integral definida, simplemente tendremos que añadir los límites de integración al comando `sp.integrate`.
 # 
-# $$
-# \int_{-1}^2\dfrac{1}{x}\,dx\,,
-# $$
-# y hacemos:
+# Por ejemplo, para integrar $\displaystyle\int_0^\pi\sin(x)\,dx$, escribiremos
 
-# In[77]:
-
-
-h = 1/x
-I2e = sp.integrate(h,(x,-1,2))
-print('La integral vale = ', I2e)
-
-
-# En este caso, para entender qué está ocurriendo, es mejor usar la definición: 
-# 
-# $$
-# \int_{-1}^2\dfrac{1}{x}\,dx =\int_{-1}^0\dfrac{1}{x}\,dx +\int_{0}^2\dfrac{1}{x}\,dx\,,  
-# $$
-# donde 
-# 
-# $$
-# \int_{-1}^0\dfrac{1}{x}\,dx =\lim_{b\rightarrow 0^-}\int_{-1}^b\dfrac{1}{x}\,dx\,,
-# $$
-# y
-# 
-# $$
-# \int_{0}^2\dfrac{1}{x}\,dx =\lim_{a\rightarrow 0^+}\int_{a}^2\dfrac{1}{x}\,dx\,.
-# $$
-
-# In[78]:
-
-
-h = 1/x
-a,b = sp.symbols('a:b', real=True)
-L1 = sp.limit(sp.integrate(h,(x,-1,b)),b,0,'-')
-L2 = sp.limit(sp.integrate(h,(x,a,2)),a,0,'+')
-print('Valor del primer límite = ', L1)
-print('Valor del segundo límite = ', L2)
-print('La integral impropia es = ',L1+L2)
-
-
-# ## Integración numérica. Fórmulas simples
-# 
-# Como hemos visto, no siempre es posible calcular exactamente la integral de una función mediante SymPy.
-# También puede ocurrir que la expresión de la primitiva sea demasiado costosa de evaluar o que solo conozcamos los valores de la función en un conjunto finito de puntos. En estos casos, se emplean técnicas de integración numérica.
-# 
-# Importamos a continuación los módulos necesarios.
-
-# In[79]:
+# In[88]:
 
 
 import sympy as sp
-import numpy as np
-import matplotlib.pyplot as plt
+
+x = sp.symbols('x')
+f_exp = sp.sin(x)
+Idef = sp.integrate(f_exp,(x,0,sp.pi))  # Integral de f_exp con x entre 0 y pi
+
+print('La integral de ',f_exp, ' entre 0 y pi es = ',Idef)
 
 
-# En la Sección {ref}`sec_IntegracionNumerica` hemos visto varias fórmulas de integración numérica para aproximar una integral de la forma 
+# ## Integración numérica con `Numpy`
 # 
-# $$
-# \int_a^bf(x)\,dx
-# $$
-# donde $a$ y $b$ son números reales. Concretamente, hemos visto las fórmulas del punto medio, del trapecio y de Simpson. 
+# ### Fórmulas simples
 # 
-# Vamos a aproximar la integral de
+# A continuación mostramos las *functions* que nos permiten la programación de las fórmulas simples que acabamos de ver en `Numpy` y un ejemplo de su aplicación. 
+# 
+# Probaremos sobre 
 # 
 # $$
 # I=\int_{0}^{3}\left(x^4+1\right)\,dx\,,
 # $$
-# mediante diferentes fórmulas de cuadratura.
-# 
-# Recuerda que, en este caso sencillo, podemos conocer el valor exacto de la integral:
+# ya que, en este caso sencillo, podemos conocer el valor exacto de la integral:
 # 
 # $$
 # I=\int_{0}^{3}\left(x^4+1\right)\,dx = \left[\frac{x^5}{5}+x\right]_{x=0}^{3} = \frac{3^5}{5}+3 = 51.6\, .
 # $$
 
-# In[80]:
+# In[89]:
 
+
+import sympy as sp
+import numpy as np
+
+def pto_medio(a, b, fpm):
+    aprox_pm = (b-a) * fpm
+    return aprox_pm
+
+def trapecio(a, b, fa, fb):
+    aprox_tr = (b-a) * (fa + fb)/2
+    return aprox_tr
+
+def simpson(a, b, fa, fpm, fb):
+    aprox_simp = (b-a) * (fa + 4*fpm + fb)/6
+    return aprox_simp
 
 x = sp.Symbol('x', real = True)
 
-#Aproximación por punto medio
+f_exp = x**4 + 1
+f = sp.lambdify(x,f_exp)
+
 a = 0
 b = 3
 pm = (a+b)/2
 
-f_exp = x**4+1
-f = sp.lambdify(x,f_exp)
-
-fpm = f(pm)
-I_aprox = (b-a) * fpm
-print('Valor aproximado de I mediante la fórmula del punto medio = ', I_aprox)
-
-
-# Implementamos a continuación una función para la fórmula del trapecio simple: 
-# 
-# $$
-# \int_a^bf(x)\,dx\simeq \dfrac{b-a}{2}(f(a)+f(b))\,.
-# $$
-
-# In[81]:
-
-
-def trapecio(a,b,fa,fb):
-    aprox_tr = (b-a) * (fa + fb)/2
-    return aprox_tr
-
-
-# La empleamos para aproximar $I$:
-
-# In[82]:
-
-
-x = sp.Symbol('x', real = True)
-
-a = 0
-b = 3
-
-f_exp = x**4+1
-f = sp.lambdify(x,f_exp)
-
 fa = f(a)
+fpm = f(pm)
 fb = f(b)
-aproximacion_trapecio = trapecio(a,b,fa,fb)
-print('Valor aproximado de la integral por trapecio simple = ', aproximacion_trapecio)
+
+print('Valor aproximado de I mediante la fórmula del punto medio = ', pto_medio(a,b,fpm) ) 
+print('Valor aproximado de I mediante la fórmula del trapecio = ', trapecio(a,b,fa,fb) ) 
+print('Valor aproximado de I mediante la fórmula de Simpson = ', simpson(a,b,fa,fpm,fb) ) 
 
 
-# ## Ejercicio 1
-# Implementa una función que permita aproximar la integral definida de una función dada $f$ en un intervalo $[a,b]$ mediante la fórmula de Simpson: 
+# ### Fórmulas compuestas
 # 
-# $$
-# \int_a^bf(x)\,dx\simeq\dfrac{b-a}{6}(f(a)+4f(\dfrac{a+b}{2})+f(b))\,.
-# $$
-# Empléala para aproximar el valor de $I$.
-
-# In[83]:
-
-
-# Escribe aquí tu código
-
-
-# ## Integración numérica. Fórmulas compuestas
+# Como puedes ver en el apartado anterior, las fórmulas simples pueden dar resultdos bastante... pésimos.
 # 
-# Como habrás podido ver en los apartados anteriores, las fórmulas simples pueden dar resultdos bastante... espantosos.
-# 
-# Para obtener una aproximación mejor se suelen usar fórmulas compuestas, como ya contamos en la Sección {ref}`sec_IntegracionNumerica`. Vamos a implementar ahora de manera eficiente estas fórmulas utilizando la función de 'np.sum`. 
+# Vamos a implementar ahora de manera eficiente las fórmulas compuestas utilizando la función de `np.sum`. 
 
-# In[84]:
+# In[90]:
 
+
+import sympy as sp
+import numpy as np
 
 x = sp.Symbol('x', real = True)
 f_exp = x**4+1
@@ -244,51 +146,111 @@ print('aprox_simpson: ',aprox_simpson)
 print('Exacta: ',b**5/5+b)
 
 
-# ## Ejercicio 2
+# ## Cálculo de integrales impropias con `Sympy`
 # 
-# Escribe **dos funciones** para la programación de **trapecio compuesto**:
-# * Una primera función haga el cálculo con `np.sum`, como tienes ahí arriba.
-# * Una segunda función que haga lo mismo, pero con un sumatorio acumulado (será menos eficiente). 
-
-# In[85]:
-
-
-# Aquí tu código
-
-
-# ## Ejercicio 3
-# Para obtener el volumen de un cono circular recto de altura $h$ y radio de la base $R$, se puede hacer girar la recta que pasa por el origen y el punto $(h,R)$ alrededor del eje $OX$ entre $x=0$ y $x=h$.
+# Es posible calcular con `Sympy` integrales impropias de primera especie, es decir, integrales con límites de integración $-\infty$ y/o $+\infty$.
 # 
-# Representamos a continuación un cono circular recto de altura $h=10$ y radio de la base $R=2$: 
+# Esto se puede hacer bien directamente, bien aplicando la definición de integral impropia (es decir, combinando una integral de Riemann con un límite). Veámoslo:
 
-# In[86]:
-
-
-import matplotlib.pyplot as plt
-import mpl_toolkits.mplot3d.axes3d as axes3d
-
-fig = plt.figure()
-ax = fig.add_subplot(1, 1, 1, projection='3d')
-
-RR = 2.0 
-hh = 10.0 
-u = np.linspace(0, 6.5, 60)
-v = np.linspace(0, 6.5, 60)
-U, V = np.meshgrid(u, v)
-
-X = U
-Y1 = RR/hh*U*np.cos(V)
-Z1 = RR/hh*U*np.sin(V)
-
-ax.plot_surface(X, Y1, Z1, alpha=0.3, color='red', rstride=6, cstride=12)
-plt.show()
+# In[91]:
 
 
-# 1. Prepara un código que, utilizando la función `sp.integrate`, calcule el volumen de un cono de altura $h$ y radio de la base $R$.
-# 2. Para el cono del dibujo anterior ($h=10$, $R=2$), aproxima este volumen utilizando una punto medio, trapecio y Simpson compuestas con $n=1000$.
+import sympy as sp
+x = sp.symbols('x', real = True)
+M = sp.Symbol('M', real = True)
 
-# In[87]:
+f_exp = sp.exp(x)
+
+# Cálculo directo
+I_directo = sp.integrate(f_exp,(x,-sp.oo,0))
+print('Integral de ',f_exp,' entre -oo y 0 es = ',I_directo)
+
+# Cálculo con límites
+I_limites = sp.limit( sp.integrate(f_exp,(x,-M,0)), M, +sp.oo )
+print('Integral de ',f_exp,' entre -oo y 0 es = ',I_limites)
 
 
-# Tu código aquí
+# Del mismo modo podemos calcular una integral impropia de segunda especie. Por ejemplo, 
+# 
+# $$
+# \int_{0}^2\dfrac{1}{\sqrt{x}}\,dx\, .
+# $$
+
+# In[92]:
+
+
+import sympy as sp
+x = sp.symbols('x', real = True)
+c = sp.Symbol('c', real = True)
+
+f_exp = 1/sp.sqrt(x)
+
+# Cálculo directo
+I_directo = sp.integrate(f_exp,(x,0,2))
+print('La integral vale = ', I_directo)
+
+# Cálculo con límites
+I_limites = sp.limit( sp.integrate(f_exp,(x,c,2)), c, 0, dir='+')
+print('La integral vale = ', I_limites)
+
+
+# Por supuesto, en ocasiones nos encontraremos con integrales no convergentes:
+
+# In[93]:
+
+
+import sympy as sp
+x = sp.symbols('x', real = True)
+c = sp.Symbol('c', real = True)
+
+f_exp = 1/x
+
+# Cálculo con límites
+I_limites = sp.limit( sp.integrate(f_exp,(x,c,2)), c, 0, dir='+')
+print('La integral vale = ', I_limites)
+
+
+# ## Uso de `Sympy` para resolver EDOs
+# 
+# A continuación mostramos cómo se puede utilizar `Sympy` en la resolución de EDOs. 
+# 
+# Realmente, es muy sencillo. 
+# 
+# 1. Las variables independientes se definen como símbolos (`sp.Symbol`), mientras que las variables dependientes se definen como funciones (`sp.Function`).  
+# 2. Definimos la EDO con el comando `sp.Eq`, destacando la dependencia de la variable dependiente de la independiente. En el siguiente ejemplo, puedes ver cómo en la línea 7 escribimos `v(x)' cada vez que aparece la variable dependiente $v$.
+# 3. Las derivadas se escriben, dentro de la definición `sp.Eq` indicando la variable dependiente y la variable dependiente respecto a la que se derivan. En el ejemplo que aparece a continuación, escribimos $v'$ como `v(x).diff(x)`.
+# 4. Una vez definida la EDO, la resolvemos con el comando `sp.dsolve`.
+# 5. Podemos usar `sp.dsolve` sin más atributos para encontrar la solución general, o podemos incluir una condición inicial, que debemos definir como `ics`, como se puede ver en la penúltima línea del siguiente código.
+# 
+# Como ejemplo, vamos a calcular la velocidad de un cuerpo con masa $72$ kilogramos, si suponemos que su velocidad inicial es nula y su coeficiente de resistencia al aire es $k=0.2$. 
+# 
+# Es decir, en función de lo que vimos en la sección anterior, vamos a resolver el problema de valor inicial
+# 
+# $$
+#     \left\{\begin{array}{rcl}
+#     72 v'&=& 72*9.81 - 0.2 v\,,\\
+#     v(0) &=& 0\,,
+#     \end{array}\right.
+# $$
+
+# In[94]:
+
+
+import sympy as sp
+
+# Variable independiente
+x = sp.Symbol ('x')
+# Variable dependiente (definida como Function)
+v = sp.Function ('v')
+
+# Escribimos la EDO 
+eq = sp.Eq (72*v(x).diff(x), 72*9.81 - 0.2*v(x))
+
+# Calculamos su solución general (este paso no sería necesario, pero queda como ejemplo)
+s_general = sp.dsolve (eq)   
+display (s_general)
+
+# Calculamos la solución particular que nos preguntan
+s_particular = sp.dsolve (eq, ics={v(0): 0.0}) 
+display (s_particular)
 

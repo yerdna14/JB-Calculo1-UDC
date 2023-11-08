@@ -48,7 +48,7 @@
 # 
 # La implementación de este método en `Numpy` es extremadamente sencilla:
 
-# In[3]:
+# In[2]:
 
 
 import numpy as np
@@ -70,7 +70,7 @@ x_aprox = np.zeros(N_max)
 x_aprox[0] = x0
 
 for k in range(1,N_max):
-    if f_der(x_aprox[k-1]) < 1.e-14: break
+    if ( np.abs( f_der(x_aprox[k-1]) ) < 1.e-14 ): break
 
     x_aprox[k] = x_aprox[k-1] - f(x_aprox[k-1])/f_der(x_aprox[k-1])
 

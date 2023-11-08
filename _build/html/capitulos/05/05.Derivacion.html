@@ -723,7 +723,7 @@ La derivada primera es:  -exp(x)*sin(x) + exp(x)*cos(x)
 <span class="n">x_aprox</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N_max</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">f_der</span><span class="p">(</span><span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">break</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span> <span class="n">f_der</span><span class="p">(</span><span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1.e-14</span> <span class="p">):</span> <span class="k">break</span>
 
     <span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">f_der</span><span class="p">(</span><span class="n">x_aprox</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
@@ -903,7 +903,7 @@ Aproximación del ángulo para la sección máxima con NR:  1.0471975511965559
     <a class='right-next' id="next-link" href="06.Integracion.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.6. </span>Integración en <strong>Python</strong></p>
+        <p class="prev-next-title"><span class="section-number">5.6. </span>Integración en <code class="docutils literal notranslate"><span class="pre">Python</span></code></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

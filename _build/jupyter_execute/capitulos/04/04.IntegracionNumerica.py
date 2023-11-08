@@ -131,11 +131,95 @@
 #     \end{eqnarray*}
 #     <img src="../../images/cap4_simpson_compuesto.png" width="300"/>
 #     </center>
+
+# ## Integración numérica con `Numpy`
 # 
-# ## Programación en `Numpy`
+# ### Fórmulas simples
 # 
-# Podéis ver la programación de estos métodos en la Sección {ref}`sec_PythonIntegracion`. 
-# Por favor, no dejéis de mirar con calma la forma en que estas fórmulas compuestas se implementan en una línea, jugando con el comando `np.sum`, lo que nos permite evitar por completo los bucles. Queda un ejercicio fantástico para el manejo de los arrays en `Python`... 
+# A continuación mostramos las *functions* que nos permiten la programación de las fórmulas simples que acabamos de ver en `Numpy` y un ejemplo de su aplicación. 
+# 
+# Probaremos sobre 
+# 
+# $$
+# I=\int_{0}^{3}\left(x^4+1\right)\,dx\,,
+# $$
+# ya que, en este caso sencillo, podemos conocer el valor exacto de la integral:
+# 
+# $$
+# I=\int_{0}^{3}\left(x^4+1\right)\,dx = \left[\frac{x^5}{5}+x\right]_{x=0}^{3} = \frac{3^5}{5}+3 = 51.6\, .
+# $$
+
+# In[1]:
+
+
+import sympy as sp
+import numpy as np
+
+def pto_medio(a, b, fpm):
+    aprox_pm = (b-a) * fpm
+    return aprox_pm
+
+def trapecio(a, b, fa, fb):
+    aprox_tr = (b-a) * (fa + fb)/2
+    return aprox_tr
+
+def simpson(a, b, fa, fpm, fb):
+    aprox_simp = (b-a) * (fa + 4*fpm + fb)/6
+    return aprox_simp
+
+x = sp.Symbol('x', real = True)
+
+f_exp = x**4 + 1
+f = sp.lambdify(x,f_exp)
+
+a = 0
+b = 3
+pm = (a+b)/2
+
+fa = f(a)
+fpm = f(pm)
+fb = f(b)
+
+print('Valor aproximado de I mediante la fórmula del punto medio = ', pto_medio(a,b,fpm) ) 
+print('Valor aproximado de I mediante la fórmula del trapecio = ', trapecio(a,b,fa,fb) ) 
+print('Valor aproximado de I mediante la fórmula de Simpson = ', simpson(a,b,fa,fpm,fb) ) 
+
+
+# ### Fórmulas compuestas
+# 
+# Como puedes ver en el apartado anterior, las fórmulas simples pueden dar resultdos bastante... pésimos.
+# 
+# Vamos a implementar ahora de manera eficiente las fórmulas compuestas utilizando la función de `np.sum`. 
+
+# In[2]:
+
+
+import sympy as sp
+import numpy as np
+
+x = sp.Symbol('x', real = True)
+f_exp = x**4+1
+f = sp.lambdify(x,f_exp)
+
+a = 0; b = 3
+n = 100
+
+x1 = np.linspace(a,b,n+1) # aquí guardamos los x_{i}. 
+                          # Recuerda que, en Python, se guarda x1[0], x1[1], ..., x1[(n+1)-1] = x1[n]
+y1 = f(x1)
+
+h = (b-a)/n # el tamaño de cada subintervalo
+
+aprox_trap = h/2 * (y1[0]+2*np.sum(y1[1:n])+y1[n])
+aprox_medio = 2*h * np.sum(y1[1:n:2])
+aprox_simpson = 2*h/6 * (y1[0] + 4*np.sum(y1[1:n:2])+2*np.sum(y1[2:n-1:2])+y1[n])
+
+print('aprox_trap: ',aprox_trap) 
+print('aprox_medio: ',aprox_medio) 
+print('aprox_simpson: ',aprox_simpson) 
+
+print('Exacta: ',b**5/5+b)
+
 
 # ## Más información
 # 

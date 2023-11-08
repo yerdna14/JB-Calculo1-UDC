@@ -163,3 +163,21 @@
 # \int_a ^b F(x) \,g(x) \,dx = F(b) \,G(b) - F(a) \,G(a) - \int_a ^b f(x) \,G(x) \,dx.
 # $$
 # ````
+
+# ## Cálculo de integrales definidas con `Sympy`
+# 
+# Para calcular una integral definida, simplemente tendremos que añadir los límites de integración al comando `sp.integrate`.
+# 
+# Por ejemplo, para integrar $\displaystyle\int_0^\pi\sin(x)\,dx$, escribiremos
+
+# In[1]:
+
+
+import sympy as sp
+
+x = sp.symbols('x')
+f_exp = sp.sin(x)
+Idef = sp.integrate(f_exp,(x,0,sp.pi)) # Integral de f_exp con x entre 0 y pi
+
+print('La integral de ',f_exp, ' entre 0 y pi es = ',Idef)
+

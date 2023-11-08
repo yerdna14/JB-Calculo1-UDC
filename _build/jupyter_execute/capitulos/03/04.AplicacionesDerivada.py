@@ -282,7 +282,7 @@ print('Aproximación del ángulo para la sección máxima con NR: ',xn)
 # :label: th_Lagrange
 # :nonumber: 
 # 
-# Sea una aplicaci\'{o}n $f : [a,b] \longrightarrow \mathbb{R}$ continua en $[a,b]$ y derivable en $(a,b)$.  Entonces, existe un punto $\xi \in (a,b)$ tal que:
+# Sea una aplicación $f : [a,b] \longrightarrow \mathbb{R}$ continua en $[a,b]$ y derivable en $(a,b)$.  Entonces, existe un punto $\xi \in (a,b)$ tal que:
 # \begin{equation*}
 # f(b) - f(a) = f' (\xi) (b - a) \, .
 # \end{equation*}

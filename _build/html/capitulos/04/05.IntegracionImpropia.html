@@ -548,13 +548,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculo-de-integrales-impropias-con-sympy">
+   4.5.4. Cálculo de integrales impropias con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mas-informacion">
-   4.5.4. Más información
+   4.5.5. Más información
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#otros-ejercicios">
-   4.5.5. Otros ejercicios
+   4.5.6. Otros ejercicios
   </a>
  </li>
 </ul>
@@ -592,13 +602,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculo-de-integrales-impropias-con-sympy">
+   4.5.4. Cálculo de integrales impropias con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mas-informacion">
-   4.5.4. Más información
+   4.5.5. Más información
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#otros-ejercicios">
-   4.5.5. Otros ejercicios
+   4.5.6. Otros ejercicios
   </a>
  </li>
 </ul>
@@ -771,8 +791,89 @@ I = \int_0^{+\infty} e^{-2x} \, dx &amp;= \underset{b \rightarrow +\infty}{\lim}
 <p>Por lo tanto, en este ejemplo, estamos ante una integral divergente.</p>
 <p>Recordamos que basta con que uno de los trozos sea divergente para que toda la integral sea considerada del mismo modo.</p>
 </section>
+<section id="calculo-de-integrales-impropias-con-sympy">
+<h2><span class="section-number">4.5.4. </span>Cálculo de integrales impropias con <code class="docutils literal notranslate"><span class="pre">Sympy</span></code><a class="headerlink" href="#calculo-de-integrales-impropias-con-sympy" title="Permalink to this headline">#</a></h2>
+<p>Es posible calcular con <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> integrales impropias de primera especie, es decir, integrales con límites de integración <span class="math notranslate nohighlight">\(-\infty\)</span> y/o <span class="math notranslate nohighlight">\(+\infty\)</span>.</p>
+<p>Esto se puede hacer bien directamente, bien aplicando la definición de integral impropia (es decir, combinando una integral de Riemann con un límite). Veámoslo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="n">f_exp</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Cálculo directo</span>
+<span class="n">I_directo</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integral de &#39;</span><span class="p">,</span><span class="n">f_exp</span><span class="p">,</span><span class="s1">&#39; entre -oo y 0 es = &#39;</span><span class="p">,</span><span class="n">I_directo</span><span class="p">)</span>
+
+<span class="c1"># Cálculo con límites</span>
+<span class="n">I_limites</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">M</span><span class="p">,</span><span class="mi">0</span><span class="p">)),</span> <span class="n">M</span><span class="p">,</span> <span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integral de &#39;</span><span class="p">,</span><span class="n">f_exp</span><span class="p">,</span><span class="s1">&#39; entre -oo y 0 es = &#39;</span><span class="p">,</span><span class="n">I_limites</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Integral de  exp(x)  entre -oo y 0 es =  1
+Integral de  exp(x)  entre -oo y 0 es =  1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Del mismo modo podemos calcular una integral impropia de segunda especie. Por ejemplo,</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{0}^2\dfrac{1}{\sqrt{x}}\,dx\, .
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="n">f_exp</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Cálculo directo</span>
+<span class="n">I_directo</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La integral vale = &#39;</span><span class="p">,</span> <span class="n">I_directo</span><span class="p">)</span>
+
+<span class="c1"># Cálculo con límites</span>
+<span class="n">I_limites</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="mi">2</span><span class="p">)),</span> <span class="n">c</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">dir</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La integral vale = &#39;</span><span class="p">,</span> <span class="n">I_limites</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La integral vale =  2*sqrt(2)
+La integral vale =  2*sqrt(2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Por supuesto, en ocasiones nos encontraremos con integrales no convergentes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="n">f_exp</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span>
+
+<span class="c1"># Cálculo con límites</span>
+<span class="n">I_limites</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="mi">2</span><span class="p">)),</span> <span class="n">c</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">dir</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La integral vale = &#39;</span><span class="p">,</span> <span class="n">I_limites</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La integral vale =  oo
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="mas-informacion">
-<h2><span class="section-number">4.5.4. </span>Más información<a class="headerlink" href="#mas-informacion" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.5.5. </span>Más información<a class="headerlink" href="#mas-informacion" title="Permalink to this headline">#</a></h2>
 <p>Puedes encontrar más información, y algunos ejemplos/ejercicios en</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://es.wikipedia.org/wiki/Integral_impropia">https://es.wikipedia.org/wiki/Integral_impropia</a></p></li>
@@ -780,7 +881,7 @@ I = \int_0^{+\infty} e^{-2x} \, dx &amp;= \underset{b \rightarrow +\infty}{\lim}
 </ul>
 </section>
 <section id="otros-ejercicios">
-<h2><span class="section-number">4.5.5. </span>Otros ejercicios<a class="headerlink" href="#otros-ejercicios" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.5.6. </span>Otros ejercicios<a class="headerlink" href="#otros-ejercicios" title="Permalink to this headline">#</a></h2>
 <p>Además de los ejercicios que puedes encontrar en los boletines, te recomendamos que eches un vistazo a</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.ehu.eus/~mtpalezp/mundo/ana1/EJERCICIOSINTEGRALIMPROPIA.pdf">https://www.ehu.eus/~mtpalezp/mundo/ana1/EJERCICIOSINTEGRALIMPROPIA.pdf</a></p></li>
