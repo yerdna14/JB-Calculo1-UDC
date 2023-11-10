@@ -16,7 +16,7 @@
 # $$
 # ¿Podemos mejorar esta aproximación? La respuesta es sí. Basta con calcular la recta tangente a la función logaritmo por el punto $x=1$ (elegimos ese punto porque en él es fácil conocer la recta tangente y, además, está cerca de $1.3$) y *paseamos por la recta tangente* hasta el punto deseado (en este caso 1.3). Veámoslo en la siguiente gráfica:
 
-# In[16]:
+# In[22]:
 
 
 import numpy as np
@@ -152,7 +152,7 @@ ax2.legend(prop={'size': 18})
 # ````  
 # 
 
-# ### Acotación del error
+# ## Acotación del error
 # 
 # Una consecuencia directa del Teorema de Taylor es que
 # 
@@ -189,73 +189,142 @@ ax2.legend(prop={'size': 18})
 # 
 # Para evitar confusiones debidas a la notación, podemos denotar $g(s):=f^{(n+1)}(s)$ y así el tan temido problema de acotar el error de Taylor queda reducido a un problema estándar de calcular máximo y mínimo absoluto de una función $g$ en un intervalo $[x,x_{0}]$.
 
+# ## Resolución del ejemplo
+# 
+# Vamos a completar el ejemplo con el que empezábamos esta sección, aproximando el valor de $\ln(1.3)$ con un polinomio de Taylor de orden $2$ y acotando el error cometido.
+# 
+# Tenemos
+# 
+# $$
+# \begin{array}{rl}
+#  f(x)=\ln(x) &\Rightarrow& f(x_0)=f(1)=\ln(1)=0, \\
+#  f'(x)=\frac{1}{x} &\Rightarrow& f'(x_0)=f'(1)=\frac{1}{1}=1, \\
+#  f''(x)=-\frac{1}{x^2} &\Rightarrow& f''(x_0)=f''(1)=-\frac{1}{1}=-1, \\
+#  f'''(x)=\frac{2}{x^3}. \\
+# \end{array}
+# $$
+# 
+# Entonces,
+# 
+# $$
+# P_{2,f,1}(x)=f(1)+\frac{f'(1)}{1!}(x-1)+\frac{f''(1)}{2!}(x-1)^2=(x-1)-\frac{(x-1)^2}{2}.
+# $$
+# Así que
+# 
+# $$
+# \ln(1.3)=f(1.3)\approx
+# P_{2,f,1}(1.3)=1.3-1-\frac{(1.3-1)^2}{2}=0.3-\frac{0.09}{2} = \frac{51}{200}=0.255.
+# $$
+# 
+# Recordemos que $\ln(1.3)=0.262364264467491...$ y la aproximación obtenida mediante la recta tangente es $P_{1,f,1}(1.3)=0.3$. Vemos que $P_{2,f,1}(1.3)=0.255$ es una buena aproximación del valor de $\ln(1.3)$ y, como cabía esperar, mejor que la que corresponde al polinomio de Taylor de orden 1.
+# 
+# Vamos a **acotar el error**, utilizando lo que acabamos de explicar:
+# 
+# $$
+# \left|f(1.3)-P_{n=2,f,x_0=1}(1.3)\right|=\frac{\left|f'''(\xi)\right|}{3!}\left|1.3-1\right|^{3} \leq  \frac{\sup_{s\in[1,1.3]} \left|f'''(s)\right|}{3!}0.3^{3}.
+# $$
+# Entonces... ¡sólo nos falta calcular ese supremo!
+# 
+# $$
+# \sup_{s\in[1,1.3]} \left|f'''(s)\right| = \sup_{s\in[1,1.3]}
+# \left|\frac{2}{s^3}\right| \stackrel{(*)}{=} \frac{2}{1^3} = 2. 
+# $$
+# $(*)$ por ser la función $\frac{2}{s^3}$ positiva y decreciente,
+# alcanza su máximo en valor absoluto en el extremo de la izquierda (es decir, en $s=1$).  
+# 
+# Entonces, finalmente, la cota nos queda:
+# 
+# $$
+# \left|f(1.3)-P_{n=2,f,x_0=1}(1.3)\right|= \leq  \frac{\sup_{s\in[1,1.3]} \left|f'''(s)\right|}{3!}0.3^{3} = \frac{2}{6} 0.3^{3} = 0.009.
+# $$
+
 # ## Cálculo del Polinomio de Taylor en `Sympy`
 # 
 # Vamos a mostrar a continuación una función `Python` que calcule de forma simbólica el polinomio de Taylor de una función dada. Como argumentos de entrada recibirá la función, $f$, el centro de Taylor, $x_{0}$, y el orden del polinomio, $n$. 
 # 
-# La función devolverá el polinomio de Taylor y la función que proporciona el resto de Taylor.
+# La función devolverá la expresión para el polinomio (`p_exp`) y para el resto (`R_exp`) de Taylor. 
+# Debemos fijarnos en que el resto dependerá de dos variables: `t` (la $\xi$ del teorema) y `x`. 
 
-# In[17]:
+# In[23]:
 
 
 import sympy as sp
 
 x,t=sp.symbols('x,t')
 
-# p: polinomio de Taylor
-# R: resto en valor absoluto
-def taylor(f,x0,n):
-    p=0
+# p_exp: expresión para el polinomio de Taylor
+# R_exp: expresión para el resto de Taylor
+def taylor(f_exp,x0,n):
+    p_exp = 0
     for i in range(n+1):
-        p+=sp.diff(f,x,i).subs(x,x0)/sp.factorial(i)*(x-x0)**i
-    R=sp.diff(f,x,n+1).subs(x,t)/sp.factorial(n+1)*(x-x0)**(n+1)
-    return p,R
+        p_exp += sp.diff(f_exp,x,i).subs(x,x0)/sp.factorial(i)*(x-x0)**i
+        
+    R_exp = sp.diff(f_exp,x,n+1).subs(x,t)/sp.factorial(n+1)*(x-x0)**(n+1)
+    return p_exp,R_exp
 
 
-# ## Completamos el ejemplo práctico
+# ## Resolución del ejemplo con `Python`
 # 
-# Vamos a utilizar la función anterior, `taylor`, para mejorar la aproximación de $\ln(1.3)$ que conseguimos con la recta tangente en al inicio de esta sección utilizando el polinomio de Taylor de orden 2. También acotaremos el error cometido. 
+# Vamos a utilizar la función anterior, `taylor`, para mejorar la aproximación de $\ln(1.3)$ que conseguimos con la recta tangente en al inicio de esta sección utilizando el polinomio de Taylor de orden 2. La dibujaremos y acotaremos el error cometido. 
 
-# In[18]:
+# In[24]:
 
 
-# Codigo aqui
 import sympy as sp
 import numpy as np
 
-# punto en el que centramos el polinomio de Taylor
-x0 = 1
+x, t = sp.symbols('x, t', real =True)
+
+# Importamos la function que calcula el polinomio y el resto de Taylor
+def taylor(f_exp,x0,n):
+    p_exp = 0
+    for i in range(n+1):
+        p_exp += sp.diff(f_exp,x,i).subs(x,x0)/sp.factorial(i)*(x-x0)**i
+        
+    R_exp = sp.diff(f_exp,x,n+1).subs(x,t)/sp.factorial(n+1)*(x-x0)**(n+1)
+    return p_exp,R_exp
+
+x0 = 1  # punto en el que centramos el polinomio de Taylor
 
 # función que queremos aproximar
 f_exp = sp.log(x)
 
 # calculamos el Polinomio de Taylor de orden 1 centrado en x0
-n = 1 # grado del polinomio
-P1,R1=taylor(f_exp,1.,1)
-print('Polinomio de Taylor de orden 1: \n',P1,'\n Resto de Taylor de orden 1: \n',R1,'\n')
+n = 1 
 
-# calculamos el polinomio de Taylor de orden 2
+P1_exp, R1_exp = taylor(f_exp,x0,n)
+print('Polinomio de Taylor de orden 1: \n',P1_exp,'\n Resto de Taylor de orden 1: \n',R1_exp,'\n')
+
+# Creamos una función sp.lambdify del polinomio 
+P1 = sp.lambdify (x,P1_exp)
+print('Aproximación de ln(1.3) con el polinomio de Taylor de orden 1: ', P1(1.3))
+
+# calculamos el Polinomio de Taylor de orden 2 centrado en x0
 n = 2 
-P2,R2=taylor(f_exp,1.,2)
-print('Polinomio de Taylor de orden 2: \n',P2,'\n Resto de Taylor de orden 2: \n',R2,'\n')
+
+P2_exp, R2_exp = taylor(f_exp,x0,n)
+print('Polinomio de Taylor de orden 2: \n',P2_exp,'\n Resto de Taylor de orden 1: \n',R2_exp,'\n')
+
+# Creamos una función sp.lambdify del polinomio 
+P2 = sp.lambdify (x,P2_exp)
+print('Aproximación de ln(1.3) con el polinomio de Taylor de orden 2: ', P2(1.3))
 
 
 # Dibujamos el resultado:
 
-# In[20]:
+# In[25]:
 
 
-# Convertimos P1 y P2 en funciones `lambdify` para poder dibujarlas
-P1_lamb = sp.lambdify(x,P1)
-P2_lamb = sp.lambdify(x,P2)
+import matplotlib as mp
+import matplotlib.pyplot as plt
 
 # Creamos gráficos de funciones
 x1 = np.linspace(0.4, 2.5, 200)
 y1 = np.log(x1)
 
 # evaluamos P2 en los puntos de x1
-P1x = P1_lamb(x1)
-P2x = P2_lamb(x1)
+P1x = P1(x1)
+P2x = P2(x1)
 
 fig, axs = plt.subplots(1, 2, figsize=(20,10))
 
@@ -283,44 +352,38 @@ ax2.grid()
 ax2.legend(prop={'size': 18})
 
 
-# Tenemos
+# Finalmente, acotaremos el error calculando el máximo del valor absoluto del resto de Taylor de orden 2. 
 # 
-# $$
-# \begin{array}{rl}
-#  f(x)=\ln(x) &\Rightarrow& f(x_0)=f(1)=\ln(1)=0, \\
-#  f'(x)=\frac{1}{x} &\Rightarrow& f'(x_0)=f'(1)=\frac{1}{1}=1, \\
-#  f''(x)=-\frac{1}{x^2} &\Rightarrow& f''(x_0)=f''(1)=-\frac{1}{1}=-1, \\
-#  f'''(x)=\frac{2}{x^3}. \\
-# \end{array}
-# $$
-# 
-# Entonces,
-# 
-# $$
-# P_{2,f,1}(x)=f(1)+\frac{f'(1)}{1!}(x-1)+\frac{f''(1)}{2!}(x-1)^2=(x-1)-\frac{(x-1)^2}{2}.
-# $$
-# Así que
-# 
-# $$
-# \ln(1.3)=f(1.3)\approx
-# P_{2,f,1}(1.3)=1.3-1-\frac{(1.3-1)^2}{2}=0.3-\frac{0.09}{2} = \frac{51}{200}=0.255.
-# $$
-# 
-# Recordemos que $\ln(1.3)=0.262364264467491...$ y la aproximación obtenida mediante la recta tangente es $P_{1,f,1}(1.3)=0.3$. Vemos que $P_{2,f,1}(1.3)=0.255$ es una buena aproximación del valor de $\ln(1.3)$ y, como cabía esperar, mejor que la que corresponde al polinomio de Taylor de orden 1.
-# 
-# Vamos a acotar el error utilizando lo que acabamos de explicar:
-# 
-# $$
-# \left|f(1.3)-P_{n=2,f,x_0=1}(1.3)\right|=\frac{\left|f'''(\xi)\right|}{3!}\left|1.3-1\right|^{3} \leq  \frac{\sup_{s\in[1,1.3]} \left|f'''(s)\right|}{3!}0.3^{3}.
-# $$
-# Entonces... sólo nos falta calcular ese supremo!
-# 
-# $$
-# \sup_{s\in[1,1.3]} \left|f'''(s)\right| = \sup_{s\in[1,1.3]}
-# \left|\frac{2}{s^3}\right| \stackrel{(*)}{=} \frac{2}{1^3} = 2. 
-# $$
-# $(*)$ por ser la función $\frac{2}{s^3}$ positiva y decreciente,
-# alcanza su máximo en valor absoluto en el extremo de la izquierda (es decir, en $s=1$).  
+# Para ello, en la expresión `R2_exp`, que hemos obtenido aplicando la *function* Taylor, sustituimos `x` por su valor ($1.3$). 
+# Definimos entonces una función `Lamda` que dependerá sólo de `t` y buscamos el máximo, en valor absoluto, de esta función comparando su valor en los extremos y en los puntos en los que se anule su derivada.
+
+# In[51]:
+
+
+R2_exp_xfijo = R2_exp.subs({x:1.3})
+print('Resto de Taylor: ',R2_exp_xfijo)
+R2 = sp.Lambda (t, R2_exp_xfijo)
+
+# Comprobamos que R2 no tiene puntos críticos
+ptos_criticos_R2 = sp.solve (sp.diff(R2,x))
+print('ptos_criticos_R2: ',ptos_criticos_R2)
+
+# Elegimos el máximo de R2, en valor absoluto, comparando sus valores en los extremos del intervalo
+cota_error = sp.Max( sp.Abs(R2(1.)), sp.Abs(R2(1.3)) )
+
+print('Cota del error: ',cota_error)
+
+# Dibujamos R2 en [1,1.3]
+R2_vec = sp.lambdify(t,R2_exp_xfijo)
+s1 = np.linspace(1, 1.3, 100)
+R2_s1 = R2_vec(s1)
+plt.plot(s1, R2_s1, c='b', lw='3',  label='$R2(x)=0.3^{3}/{6}\; f^{3)}(s)$')
+plt.ylabel('Y', fontsize=10)
+plt.xlabel('X', fontsize=10)
+plt.grid()
+plt.legend(prop={'size': 14})
+plt.show()
+
 
 # ## Ejercicio propuesto
 # 

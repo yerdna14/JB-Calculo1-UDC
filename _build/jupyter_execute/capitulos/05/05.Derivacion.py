@@ -17,7 +17,7 @@
 # 
 # La realizaremos con el comando `sp.diff`, como mostramos en el siguiente ejemplo:
 
-# In[1]:
+# In[19]:
 
 
 import sympy as sp
@@ -32,7 +32,7 @@ print('La derivada primera es: ',d1f_exp)
 # 
 # Mostramos a continuación una implementación directa, mediante un bucle, de este método:
 
-# In[1]:
+# In[20]:
 
 
 import numpy as np
@@ -69,7 +69,7 @@ print('Aproximación de la raíz: ', x_aprox[k])
 # 
 # Para calcular derivadas sucesivas en `Sympy` tenemos que añadir un parámetro en `sp.diff` que indique el número de veces que queremos derivar:
 
-# In[3]:
+# In[21]:
 
 
 import sympy as sp
@@ -94,7 +94,7 @@ print('Tercera derivada: ',sp.diff(f_exp,x,3))
 # 2. Simbólicamente: con **Sympy**.
 # 3. Numéricamente mediante el método de Newton con error menor que $ 10^{-4} $.
 
-# In[4]:
+# In[22]:
 
 
 import sympy as sp
@@ -108,7 +108,7 @@ alphamax=sp.solve(d1f)
 print('La sección máxima se alcanza con ángulo: ',float(alphamax[1]))
 
 
-# In[5]:
+# In[23]:
 
 
 # 3. Aproximamos el máximo con el método de Newton
@@ -138,7 +138,7 @@ print('Aproximación del ángulo para la sección máxima con NR: ',xn)
 #     * expresión del polinomio de Taylor, p,
 #     * epresión del resto de Taylor, r.
 
-# In[6]:
+# In[24]:
 
 
 import sympy as sp
@@ -155,4 +155,123 @@ def taylor(f,x0,n):
     return p,R
 
 
-# En la Sección {ref}`sec_Taylor` puedes ver cómo se aplica esta función a un problema concreto.
+# ## Ejemplo completo de Taylor con `Python`
+
+# Queremos aproximar $\ln(1.3)$, utilizando polinomios de Taylor de orden $n=1$ y $n=2$, centrados en $x_{0}=1$, para la función $f(x) = \ln(x)$.
+
+# In[25]:
+
+
+import sympy as sp
+import numpy as np
+
+x, t = sp.symbols('x, t', real =True)
+
+# Importamos la function que calcula el polinomio y el resto de Taylor
+def taylor(f_exp,x0,n):
+    p_exp = 0
+    for i in range(n+1):
+        p_exp += sp.diff(f_exp,x,i).subs(x,x0)/sp.factorial(i)*(x-x0)**i
+        
+    R_exp = sp.diff(f_exp,x,n+1).subs(x,t)/sp.factorial(n+1)*(x-x0)**(n+1)
+    return p_exp,R_exp
+
+x0 = 1  # punto en el que centramos el polinomio de Taylor
+
+# función que queremos aproximar
+f_exp = sp.log(x)
+
+# calculamos el Polinomio de Taylor de orden 1 centrado en x0
+n = 1 
+
+P1_exp, R1_exp = taylor(f_exp,x0,n)
+print('Polinomio de Taylor de orden 1: \n',P1_exp,'\n Resto de Taylor de orden 1: \n',R1_exp,'\n')
+
+# Creamos una función sp.lambdify del polinomio 
+P1 = sp.lambdify (x,P1_exp)
+print('Aproximación de ln(1.3) con el polinomio de Taylor de orden 1: ', P1(1.3))
+
+# calculamos el Polinomio de Taylor de orden 2 centrado en x0
+n = 2 
+
+P2_exp, R2_exp = taylor(f_exp,x0,n)
+print('Polinomio de Taylor de orden 2: \n',P2_exp,'\n Resto de Taylor de orden 1: \n',R2_exp,'\n')
+
+# Creamos una función sp.lambdify del polinomio 
+P2 = sp.lambdify (x,P2_exp)
+print('Aproximación de ln(1.3) con el polinomio de Taylor de orden 2: ', P2(1.3))
+
+
+# Dibujamos el resultado con `Matplotlib`:
+
+# In[26]:
+
+
+import matplotlib as mp
+import matplotlib.pyplot as plt
+
+# Creamos gráficos de funciones
+x1 = np.linspace(0.4, 2.5, 200)
+y1 = np.log(x1)
+
+# evaluamos P2 en los puntos de x1
+P1x = P1(x1)
+P2x = P2(x1)
+
+fig, axs = plt.subplots(1, 2, figsize=(20,10))
+
+ax1 = axs[0]
+ax1.plot(x1, y1, c='b', lw='3',  label='$f(x)=\ln(x)$')
+ax1.plot(x1, P1x, c='k', ls='--', lw='3', label='$P_1(x)=x-1$')
+ax1.plot(x1, P2x, c='r', ls='--', lw='3', label='$P_2(x)=x-1 - \dfrac{(x-1)^2}{2}$')
+ax1.set_ylabel('Y', fontsize=10)
+ax1.set_xlabel('X', fontsize=10)
+ax1.grid()
+ax1.legend(prop={'size': 18})
+
+
+ax2 = axs[1]
+ax2.plot(x1, y1, c='b', lw='3', label='$f(x)=\ln(x)$')
+ax2.plot(x1, P1x, c='k', ls='--', lw='3', label='$P_1(x)=x-1$')
+ax2.plot(x1, P2x, c='r', ls='--', lw='3', label='$P_2(x)=x-1 - \dfrac{(x-1)^2}{2}$')
+ax2.set_ylabel('Y', fontsize=10)
+ax2.set_xlabel('X', fontsize=10)
+plt.xlim(0.8,1.4)
+plt.ylim(-0.3,0.5)
+ax2.set_xticks(np.arange(0.8,1.5,0.1))
+ax2.set_yticks(np.arange(-0.3,0.6,0.1))
+ax2.grid()
+ax2.legend(prop={'size': 18})
+
+
+# Finalmente, acotaremos el error calculando el máximo del valor absoluto del resto de Taylor de orden 2. 
+# 
+# Para ello, en la expresión `R2_exp`, que hemos obtenido aplicando la *function* Taylor, sustituimos `x` por su valor ($1.3$). 
+# Definimos entonces una función `Lamda` que dependerá sólo de `t` y buscamos el máximo, en valor absoluto, de esta función comparando su valor en los extremos y en los puntos en los que se anule su derivada.
+
+# In[27]:
+
+
+R2_exp_xfijo = R2_exp.subs({x:1.3})
+R2 = sp.Lambda (t, R2_exp_xfijo)
+
+# Comprobamos que R2 no tiene puntos críticos
+ptos_criticos_R2 = sp.solve (sp.diff(R2,x))
+print('ptos_criticos_R2: ',ptos_criticos_R2)
+
+# Elegimos el máximo de R2, en valor absoluto, comparando sus valores en los extremos del intervalo
+cota_error = sp.Max( sp.Abs(R2(1.)), sp.Abs(R2(1.3)) )
+
+print('Cota del error: ',cota_error)
+
+# Dibujamos R2 en [1,1.3]
+R2_vec = sp.lambdify(t,R2_exp_xfijo)
+s1 = np.linspace(1, 1.3, 100)
+R2_s1 = R2_vec(s1)
+plt.plot(s1, R2_s1, c='b', lw='3',  label='$R2(x)=0.3^{3}/{6}\; f^{3)}(s)$')
+plt.ylabel('Y', fontsize=10)
+plt.xlabel('X', fontsize=10)
+plt.grid()
+plt.legend(prop={'size': 14})
+plt.show()
+
