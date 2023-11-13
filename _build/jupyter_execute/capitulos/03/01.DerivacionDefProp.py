@@ -462,7 +462,7 @@ print('La derivada primera es: ',d1f_exp)
 # \end{eqnarray*}
 # 
 # Aquí tienes más información y otros ejemplos:
-#  * https://lasmatematicas.eu/derivacion-logaritmica/
+#  * https://www.matesfacil.com/ERCDerivadas.htm (Ejercicios 16 - 20)
 #  * https://es.snapxam.com/calculators/calculadora-diferenciacion-logaritmica
 
 # ## Regla de l'Hôpital
