@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.9. Boletín 2: Límites, continuidad, Lagrange y dicotomía &#8212; Calculo en una variable</title>
+    <title>2.10. Ejercicios que han caído otros años en el segundo control de prácticas &#8212; Calculo en una variable</title>
   
   
   
@@ -73,11 +73,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'capitulos/02/09.Boletin2';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'capitulos/02/10.Boletin2Bis';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.10. Ejercicios que han caído otros años en el segundo control de prácticas" href="10.Boletin2Bis.html" />
-    <link rel="prev" title="2.8. Boletín 1: Funciones reales de una variable real" href="08.Boletin1.html" />
+    <link rel="next" title="3. Derivación de una función de variable real" href="../03/README.html" />
+    <link rel="prev" title="2.9. Boletín 2: Límites, continuidad, Lagrange y dicotomía" href="09.Boletin2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -202,8 +202,8 @@
 <li class="toctree-l2"><a class="reference internal" href="06.Dicotomia.html">2.6. Método de dicotomía</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07.Lagrange.html">2.7. Polinomio de interpolación de Lagrange</a></li>
 <li class="toctree-l2"><a class="reference internal" href="08.Boletin1.html">2.8. Boletín 1</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.9. Boletín 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10.Boletin2Bis.html">2.10. Boletín 2 Bis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09.Boletin2.html">2.9. Boletín 2</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.10. Boletín 2 Bis</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../03/README.html">3. Derivación</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -297,7 +297,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/GEI-CAL/JB-Calculo1-UDC/main?urlpath=lab/tree/capitulos/02/09.Boletin2.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/GEI-CAL/JB-Calculo1-UDC/main?urlpath=lab/tree/capitulos/02/10.Boletin2Bis.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -328,7 +328,7 @@
       
       
       
-      <li><a href="../../_sources/capitulos/02/09.Boletin2.ipynb" target="_blank"
+      <li><a href="../../_sources/capitulos/02/10.Boletin2Bis.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -410,7 +410,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Boletín 2: Límites, continuidad, Lagrange y dicotomía</h1>
+    <h1>Ejercicios que han caído otros años en el segundo control de prácticas</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -424,213 +424,129 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="boletin-2-limites-continuidad-lagrange-y-dicotomia">
-<h1><span class="section-number">2.9. </span>Boletín 2: Límites, continuidad, Lagrange y dicotomía<a class="headerlink" href="#boletin-2-limites-continuidad-lagrange-y-dicotomia" title="Link to this heading">#</a></h1>
-<p><strong><FONT SIZE=4>[1]</font></strong> Calcula, si es posible,</p>
+  <section id="ejercicios-que-han-caido-otros-anos-en-el-segundo-control-de-practicas">
+<h1><span class="section-number">2.10. </span>Ejercicios que han caído otros años en el segundo control de prácticas<a class="headerlink" href="#ejercicios-que-han-caido-otros-anos-en-el-segundo-control-de-practicas" title="Link to this heading">#</a></h1>
+<p><strong><FONT SIZE=4>[1]</font></strong>   Consideramos la función</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \frac{\ln(\tan(x)) +x}{x^2 - 2} - 1
+\]</div>
+<ul class="simple">
+<li><p>Comprueba que esa función tiene una raíz en el intervalo <span class="math notranslate nohighlight">\([0,1]\)</span>.</p></li>
+<li><p>Utiliza el método de dicotomía para aproximar esa raíz con un error <strong>absoluto</strong> menor que</p>
+<ul>
+<li><p>1.e-1</p></li>
+<li><p>1.e-5</p></li>
+<li><p>1.e-12</p></li>
+</ul>
+</li>
+<li><p>Intenta aplicar el método de dicotomía para aproximar esa raíz en el intervalo <span class="math notranslate nohighlight">\([-1.6,1]\)</span>. Interpreta el resultado.</p></li>
+<li><p>Relaciona lo que acabas de hacer con la búsqueda de una solución en el intervalo <span class="math notranslate nohighlight">\([0,0.5]\)</span> de la ecuación
+$<span class="math notranslate nohighlight">\(
+  \ln(\tan(x)) + x = \frac{1}{2} \left(x^2 - 2\right). 
+  \)</span>$</p></li>
+<li><p>Representa, utilizando <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>, <span class="math notranslate nohighlight">\(f\)</span> en el intervalo <span class="math notranslate nohighlight">\([x_1,1]\)</span>, siendo <span class="math notranslate nohighlight">\(x_1\)</span> la primera aproximación que hayas obtenido en el primer apartado.</p></li>
+</ul>
+<p><strong><FONT SIZE=4>[2]</font></strong>  Aproxima, utilizando <code class="docutils literal notranslate"><span class="pre">Python</span></code> y el método de dicotomía, todas las raíces de la función <span class="math notranslate nohighlight">\(g(x)=\sin\sqrt{x}\)</span> en el intervalo <span class="math notranslate nohighlight">\([0,60]\)</span>.</p>
+<p><strong><FONT SIZE=4>[3]</font></strong>  Para aproximar una raíz de la ecuación <span class="math notranslate nohighlight">\(\sqrt{x^2 +1} -2x = 0\)</span> en <span class="math notranslate nohighlight">\([0,1]\)</span> se pide:</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow 0}{\frac{|2x-1|-|2x+1|}{x}}}\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow 0}{\frac{\sqrt{x^2+4}-2}{x^2}}}\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow 0}{\left (\frac{1}{x}-\frac{1}{|x|}\right)}}\)</span>.</p></li>
+<li><p>Verifica que cumple las hipótesis del teorema de Bolzano.</p></li>
+<li><p>Aproxima una raíz <span class="math notranslate nohighlight">\(\alpha\)</span> con una tolerancia en error relativo de <span class="math notranslate nohighlight">\(10^{-8}\)</span>. Presenta al menos 6 cifras decimales.</p></li>
+<li><p>Calcula la imagen <span class="math notranslate nohighlight">\(\alpha\)</span> mediante la función asociada a la ecuación.</p></li>
 </ol>
-<p><strong><FONT SIZE=4>[2]</font></strong> Calcula, si es posible, los siguientes límites:</p>
+<p><strong><FONT SIZE=4>[4]</font></strong> Para aproximar una raíz de la ecuación <span class="math notranslate nohighlight">\(\dfrac {e^x}{e^x + 1} = 0.6\)</span> en <span class="math notranslate nohighlight">\([-2,0.5]\)</span> se pide:</p>
+<ol class="arabic simple">
+<li><p>Verifica que cumple las hipótesis del teorema de Bolzano.</p></li>
+<li><p>Aproxima una raíz <span class="math notranslate nohighlight">\(\alpha\)</span> con una tolerancia en error relativo de <span class="math notranslate nohighlight">\(10^{-7}\)</span>. Presenta 6 cifras decimales.</p></li>
+<li><p>Calcula la imagen <span class="math notranslate nohighlight">\(\alpha\)</span> mediante la función asociada a la ecuación.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[5]</font></strong>  Consider the same function <span class="math notranslate nohighlight">\(f: [-2,2] \to R\)</span>, given by <span class="math notranslate nohighlight">\(f(x)=x^3+x+1\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Plot the function <span class="math notranslate nohighlight">\(f\)</span> in the given interval using Numpy and Matplotlib.</p></li>
+<li><p>Solve the equation <span class="math notranslate nohighlight">\(f(x)=0\)</span> using the Bisection method. Take the initial starting point by looking at the graph.
+Compute the solution with tolerance <span class="math notranslate nohighlight">\(|f(x_i)|&lt;10^{-12}\)</span> with Python, and print the number of required steps.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[6]</font></strong>  Consideramos la función</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = tan(x-1)+5
+\]</div>
+<p>y los puntos <span class="math notranslate nohighlight">\(x_0= -0.50\)</span>, <span class="math notranslate nohighlight">\(x_1 = -0.45\)</span>, <span class="math notranslate nohighlight">\(x_2 = -0.30\)</span>, <span class="math notranslate nohighlight">\(x_3 = 0.30\)</span>, <span class="math notranslate nohighlight">\(x_4 = 0.70\)</span>, <span class="math notranslate nohighlight">\(x_5 = 1\)</span>, <span class="math notranslate nohighlight">\(x_6 = 1.2\)</span>,
+<span class="math notranslate nohighlight">\(x_7 = 1.40\)</span>, <span class="math notranslate nohighlight">\(x_8=1.80\)</span>, <span class="math notranslate nohighlight">\(x_9=2.10\)</span> y <span class="math notranslate nohighlight">\(x_{10} = 2.40\)</span>.</p>
+<ul class="simple">
+<li><p>Construye, con la ayuda de <code class="docutils literal notranslate"><span class="pre">Numpy</span></code>, un polinomio que valga <span class="math notranslate nohighlight">\(5\)</span> en <span class="math notranslate nohighlight">\(x_{3}\)</span> y <span class="math notranslate nohighlight">\(0\)</span> en el resto de nodos. Llamaremos <span class="math notranslate nohighlight">\(L_{3}\)</span> a ese polinomio.</p></li>
+<li><p>Construye, con ayuda de <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> y utilizando diferencias divididas, el polinomio de interpolación de Lagrange que pase por los once puntos elegidos, <span class="math notranslate nohighlight">\(p_{10}\)</span>.</p></li>
+<li><p>Aproxima, utilizando el polinomio <span class="math notranslate nohighlight">\(p_{10}\)</span>, el valor <span class="math notranslate nohighlight">\(B = \tan(2) + 6\)</span>.</p></li>
+<li><p>Representa, con <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>, <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(L_{3}\)</span> y <span class="math notranslate nohighlight">\(p_{10}\)</span> en el intervalo <span class="math notranslate nohighlight">\(\left[ x_{0}, x_{10}\right]\)</span>.</p></li>
+</ul>
+<p><strong><FONT SIZE=4>[7]</font></strong>  Queremos aproximar, con un polinomio de Lagrange, la función</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \frac{\cos(x)+\sin(x)}{\cos(x)+2},
+\]</div>
+<p>en el intervalo <span class="math notranslate nohighlight">\([-6,6]\)</span>. Para ello, dividimos el intervalo tomando <span class="math notranslate nohighlight">\(n\)</span> puntos a la misma distancia, evaluamos la función en esos puntos, y calculamos el polinomio de Lagrange correspondiente (ejemplo: si n=13, los puntos que usaremos serán <span class="math notranslate nohighlight">\(x_0=-6\)</span>, <span class="math notranslate nohighlight">\(x_1=-5\)</span>,…, <span class="math notranslate nohighlight">\(x_{12} = 6\)</span>).</p>
+<ol class="arabic">
+<li><p>Con <span class="math notranslate nohighlight">\(n=13\)</span> construye, con ayuda de <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> y utilizando diferencias divididas, el polinomio de interpolación de Lagrange correspondiente. Aproxima con él el valor <span class="math notranslate nohighlight">\(f(0.30)\)</span> y calcula el error relativo, en tanto por ciento, que estamos cometiendo,</p>
+<div class="math notranslate nohighlight">
+\[
+    \frac{|p_{12}(0.30) - f(0.30)|}{|f(0.30)|}100.
+    \]</div>
+<p>¿Y este mismo error en <span class="math notranslate nohighlight">\(-5.5\)</span>?</p>
+</li>
+<li><p>Repite el experimento con <span class="math notranslate nohighlight">\(n=25\)</span> y <span class="math notranslate nohighlight">\(n=40\)</span> (en los dos puntos, <span class="math notranslate nohighlight">\(0.30\)</span> y <span class="math notranslate nohighlight">\(-5.5\)</span>). Interpreta los resultados.</p></li>
+<li><p>Representa, con <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>, <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(p_{12}\)</span>, <span class="math notranslate nohighlight">\(p_{24}\)</span> y <span class="math notranslate nohighlight">\(p_{39}\)</span> en el intervalo <span class="math notranslate nohighlight">\(\left[ -6, 6\right]\)</span>.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[8]</font></strong>  Sea la función <span class="math notranslate nohighlight">\(s\)</span> dada por <span class="math notranslate nohighlight">\(s(x) = \dfrac {e^x}{e^x + 1} - 0.6 \)</span>.</p>
+<ol class="arabic simple">
+<li><p>Construye un vector x de 9 puntos igualmente separados incluyendo los extremos en [-2,2].</p></li>
+<li><p>Sea p, polinomio de Lagrange, que interpola la tabla formada por los puntos del vector anterior y sus imágenes mediante <span class="math notranslate nohighlight">\(s\)</span>. Mediante diferencias divididas comprueba p(1).</p></li>
+<li><p>Estima mediante p el valor en <span class="math notranslate nohighlight">\(1.25\)</span> y calcula el error absoluto respecto a <span class="math notranslate nohighlight">\(s(1.25)\)</span>.
+Presenta al menos 6 cifras decimales en los apartados b y c.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[9]</font></strong> El gran derby ha registrado en la tabla los tiempos de paso en determinados puntos del circuito de 2 km. de longitud del jinete ganador</p>
+<ul class="simple">
+<li><p>puntos kilométricos (km): <span class="math notranslate nohighlight">\([0,\; 0.5,\; 1,\; 1.5,\; 2.0]\)</span>,</p></li>
+<li><p>y los tiempos de paso (seg): <span class="math notranslate nohighlight">\([0,\; 50,\; 90,\; 130,\; 195]\)</span>.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Construye la tabla de diferencias divididas correspondiente a los datos. Muestra solamente los valores de diferencias divididas que se emplean en la construcción del polinomio de interpolación.</p></li>
+<li><p>Comprueba en todos los datos del enunciado que se interpola la tabla. Estima el tiempo de paso en el punto 1.25 km mediante el polinomio de Lagrange basado en las diferencias divididas.</p></li>
+<li><p>Realiza el proceso anterior invirtiendo el orden de datos en el sentido de expresar los puntos kilométricos para cada valor de los tiempos de paso. Si estimas el punto km. para el valor obtenido en el apartado b) ¿obtienes 1.25 km? Justifica la respuesta.</p></li>
+</ol>
+<p><strong><FONT SIZE=4>[10]</font></strong>  Calcula el polinomio de interpolación de Lagrange de orden dos relativo a <span class="math notranslate nohighlight">\(f(x)=\sin{x}\)</span> en los puntos <span class="math notranslate nohighlight">\(x_0=0\)</span>, <span class="math notranslate nohighlight">\(x_1=\frac{\pi}{2}\)</span>, <span class="math notranslate nohighlight">\(x_2=\pi\)</span> y <span class="math notranslate nohighlight">\(x_3=\frac{3\pi}{2}\)</span>. Utiliza dicho polinomio para calcular una aproximación del número <span class="math notranslate nohighlight">\(r=\frac{\sqrt{2}}{2}\)</span>. Dibuja la función <span class="math notranslate nohighlight">\(f\)</span> y el polinomio de interpolación en el intervalo <span class="math notranslate nohighlight">\([-1,2\pi]\)</span>.</p>
+<p><strong>Nota:</strong> Debes calcular el polinomio a mano. Además, debes comprobar con Python que has calculado bien el polinomio. La aproximación de <span class="math notranslate nohighlight">\(r\)</span> y la gráfica es suficiente hacerla con Python.</p>
+<p><strong><FONT SIZE=4>[11]</font></strong>   Given the following table of points:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{array}{lllll}
-%\text{$(a)$ } \displaystyle{\lim_{x\rightarrow -\infty} e^x}   &amp;\qquad
-%\text{$(b)$ } \displaystyle{\lim_{x\rightarrow 0}       e^x}   &amp;\qquad
-%\text{$(c)$ } \displaystyle{\lim_{x\rightarrow +\infty} e^x}   &amp;\qquad
-\text{$1.$ } \displaystyle{\lim_{x\rightarrow -\infty} \sqrt[3]{x}}   &amp; \qquad
-\text{$2.$ } \displaystyle{\lim_{x\rightarrow +\infty} \sqrt{x}}  &amp;\qquad
-\text{$3.$ } \displaystyle{\lim_{x\rightarrow 0^+}     \sqrt{x}}   &amp;\qquad
-\text{$4.$ } \displaystyle{\lim_{x\rightarrow -\infty} \sqrt{x}}   \\
-\\
-\text{$5.$ } \displaystyle{\lim_{x\rightarrow +\infty} \dfrac{1}{\sqrt{x}}}  &amp; \qquad
-\text{$6.$ } \displaystyle{\lim_{x\rightarrow 0^+}     \dfrac{1}{\sqrt{x}} }  &amp;\qquad
-%\text{$7.$ } \displaystyle{\lim_{x\rightarrow +\infty} x^2}   &amp;\qquad
-\text{$8.$ } \displaystyle{\lim_{x\rightarrow -\infty} x^2 }  &amp;\qquad
-\text{$9.$ } \displaystyle{\lim_{x\rightarrow +\infty} \left( x^3 - 5x^2 + 8 \right)}
+\begin{array}{c|cccc}
+x_i &amp;  0  &amp;1 &amp; 2 &amp;4 \\
+\hline
+f(x_i) &amp;1 &amp;1 &amp;2&amp; 5
 \end{array}
 \end{split}\]</div>
-<p><strong><FONT SIZE=4>[3]</font></strong> El valor, en euros, de un coche <span class="math notranslate nohighlight">\(x\)</span> años después de su adquisición (nuevo) viene dado por la función</p>
-<div class="math notranslate nohighlight">
-\[
-v(x)=2000+\frac{60000}{4^{0.25 x}}.
-\]</div>
-<p>Se llama <em>valor residual</em> del coche a su valor límite cuando el número de años aumenta indefinidamente.</p>
 <ol class="arabic simple">
-<li><p>¿Cuál fue el precio de compra del vehículo nuevo?</p></li>
-<li><p>¿Cuál será su valor residual?</p></li>
-<li><p>¿Al cabo de cuántos años diferirá su valor en menos de 1000 euros del valor residual?</p></li>
+<li><p>Write the code using Numpy for finding the Lagrange interpolating polynomial, using the Lagrange basis technique.</p></li>
+<li><p>Write the code using Numpy for finding the Lagrange interpolating polynomial, using Newton’s divided differences technique.</p></li>
+<li><p>Plot, in the same graph, the interpolating points and the obtained Lagrange polynomial, in blue and red, respectively. Find an approximation of f at <span class="math notranslate nohighlight">\(x=2.1\)</span>.</p></li>
 </ol>
-<p><strong><FONT SIZE=4>[4]</font></strong> Dibuja, con <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> la gráfica de la curva <span class="math notranslate nohighlight">\(y=\sqrt{x^2+1}-x\)</span>.</p>
-<p>Comprueba, con lápiz y papel y comprobando los resultados en el ordenador, si esta gráfica tiene alguna asíntota y, en caso afirmativo, obtén sus ecuaciones.</p>
-<p><strong><FONT SIZE=4>[5]</font></strong> Calcula las asíntotas de las siguientes funciones:</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\displaystyle{v_{1}(x)= \frac{3x^2-2}{4x^2 +1}}\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle{h(t)= \frac{t^2+2}{t -2}}\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle{v_{2}(x)= \frac{3x^2-2}{4x^2 -1}}\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle{f(x)=x^\frac{|x|}{x} + \frac{1}{x}}\)</span>.</p></li>
+<p><strong><FONT SIZE=4>[12]</font></strong></p>
+<ol class="arabic">
+<li><p>Calcula el polinomio de interpolación de Lagrange de orden dos relativo a <span class="math notranslate nohighlight">\(f(x)=\sqrt{x}\)</span> en los puntos <span class="math notranslate nohighlight">\(x_0=0\)</span>, <span class="math notranslate nohighlight">\(x_1=16\)</span> y <span class="math notranslate nohighlight">\(x_2=25\)</span>. Utiliza dicho polinomio para calcular una aproximación del número <span class="math notranslate nohighlight">\(r=\sqrt{7.5}\)</span>.</p>
+<p><strong>Nota:</strong> Debes calcular el polinomio a mano y simplificarlo con la ayuda de Python. Además, debes comprobar con Python que has calculado bien el polinomio. La aproximación de <span class="math notranslate nohighlight">\(r\)</span> es suficiente hacerla con Python.</p>
+</li>
+<li><p>Con el objetivo de mejorar la aproximación de <span class="math notranslate nohighlight">\(r\)</span>, construye, utilizando <code class="docutils literal notranslate"><span class="pre">Python</span></code>, el polinomio de interpolación de Lagrange relativo a <span class="math notranslate nohighlight">\(f\)</span> en los puntos <span class="math notranslate nohighlight">\(x_i=i\)</span>, <span class="math notranslate nohighlight">\(i=0.1,2,\ldots,25\)</span>. Dibuja dicho polinomio en el intervalo <span class="math notranslate nohighlight">\([0,25]\)</span> y calcula la nueva aproximación de <span class="math notranslate nohighlight">\(r\)</span>. ¿Cuál es el error absoluto que comete esta nueva aproximación?</p></li>
 </ol>
-<p><strong><FONT SIZE=4>[6]</font></strong> Considera la  función <span class="math notranslate nohighlight">\(f\)</span>, dada por <span class="math notranslate nohighlight">\(f(x) = \ln(x)\)</span>.</p>
-<ol class="arabic simple">
-<li><p>¿Cuál es su dominio? ¿Cuál es su imagen?</p></li>
-<li><p>¿Cuánto valen <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow  +\infty}\ln(x)} \,\,\)</span> y <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow 0^+}\ln (x)}\)</span>?</p></li>
-<li><p>¿Existe <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\rightarrow -\infty}\ln(x)}\)</span>? ¿Por qué?</p></li>
-<li><p>¿Posee <span class="math notranslate nohighlight">\(f\)</span> alguna asíntota vertical? En caso afirmativo, ¿cuál es su ecuación?</p></li>
-<li><p>Dibuja la gráfica de <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
-<li><p>Utilizando la relación entre la gráfica de una función y la de su inversa, esboza la gráfica de <span class="math notranslate nohighlight">\(g(x)=e^x\)</span>.
-De la observación de esta gráfica deduce la existencia de una asíntota horizontal.</p></li>
+<p><strong><FONT SIZE=4>[13]</font></strong></p>
+<ol class="arabic">
+<li><p>Calcula el polinomio de interpolación de Lagrange de orden tres relativo a <span class="math notranslate nohighlight">\(f(x)=\left(\frac{1}{3}\right)^x\)</span> en los puntos <span class="math notranslate nohighlight">\(x_0=-1\)</span>, <span class="math notranslate nohighlight">\(x_1=0\)</span>, <span class="math notranslate nohighlight">\(x_2=1\)</span> y <span class="math notranslate nohighlight">\(x_3=2\)</span>. Utiliza dicho polinomio para calcular una aproximación del número <span class="math notranslate nohighlight">\(r=\frac{\sqrt{3}}{9}\)</span>. Dibuja la función <span class="math notranslate nohighlight">\(f\)</span> y el polinomio de interpolación en el intervalo <span class="math notranslate nohighlight">\([-2,4]\)</span>.</p>
+<p><strong>Nota:</strong> Debes calcular el polinomio a mano. Además, debes comprobar con <code class="docutils literal notranslate"><span class="pre">Python</span></code> que has calculado bien el polinomio. La aproximación de <span class="math notranslate nohighlight">\(r\)</span> y la gráfica es suficiente hacerla con Python.</p>
+</li>
+<li><p>Aproxima, con <code class="docutils literal notranslate"><span class="pre">Python</span></code> y el método de dicotomía, la raíz del polinomio de interpolación que has contruido en el apartado anterior. ¿Cómo de pequeña es la imagen de la función en la aproximación numérica de la raíz?</p></li>
 </ol>
-<p><strong><FONT SIZE=4>[7]</font></strong> Vamos a repasar la función arco-tangente (<span class="math notranslate nohighlight">\(\arctan\)</span>):</p>
+<p><strong><FONT SIZE=4>[14]</font></strong></p>
 <ol class="arabic simple">
-<li><p>¿Cuál es el dominio de la función <span class="math notranslate nohighlight">\(f(x)=\arctan(x)\)</span>? ¿Y su imagen?</p></li>
-<li><p>¿Es cierto que <span class="math notranslate nohighlight">\(\dfrac{1}{\tan(x)} = \arctan(x)\)</span>? ¿Por qué?</p></li>
-<li><p>¿Cuáles son los ángulos cuya tangente vale <span class="math notranslate nohighlight">\(1\)</span>?</p></li>
-<li><p>¿Es correcto decir que <span class="math notranslate nohighlight">\(\arctan (1)=\dfrac{\pi}{4}+k\pi\)</span>, <span class="math notranslate nohighlight">\(\,k \in \mathbb{Z}\)</span>? ¿Por qué?</p></li>
-</ol>
-<p><strong><FONT SIZE=4>[8]</font></strong> Si la longitud de un animal <span class="math notranslate nohighlight">\(t\)</span> días después de su nacimiento es</p>
-<div class="math notranslate nohighlight">
-\[
-\ell(t)= \frac{300}{1+9\left(0.8\right)^t}
-\]</div>
-<p>¿cuánto midió al nacer? Obtén una cota superior de su tamaño máximo.</p>
-<p><strong><FONT SIZE=4>[9]</font></strong> Elige la opción correcta:</p>
-<p>Para aproximar el valor de la solución de la ecuación  <span class="math notranslate nohighlight">\(x^3+2=0\)</span> con un error menor que <span class="math notranslate nohighlight">\(0.30\)</span> usando el algoritmo de dicotomía en el intervalo <span class="math notranslate nohighlight">\([-2,\,2]\)</span>:</p>
-<ol class="arabic simple">
-<li><p>debemos realizar cuatro iteraciones y las tres primeras son <span class="math notranslate nohighlight">\(x_1=0\)</span>, <span class="math notranslate nohighlight">\(x_2=-1\)</span> y <span class="math notranslate nohighlight">\(x_3=-3/2\)</span></p></li>
-<li><p>debemos realizar cuatro iteraciones y las tres primeras son <span class="math notranslate nohighlight">\(x_1=0\)</span>, <span class="math notranslate nohighlight">\(x_2=-1\)</span> y  <span class="math notranslate nohighlight">\(x_3=-1/2\)</span></p></li>
-<li><p>debemos realizar tres iteraciones y las dos primeras son <span class="math notranslate nohighlight">\(x_1=0\)</span> y <span class="math notranslate nohighlight">\(x_2=-1\)</span></p></li>
-<li><p>debemos realizar tres iteraciones y las dos primeras son <span class="math notranslate nohighlight">\(x_1=0\)</span> y <span class="math notranslate nohighlight">\(x_2=1\)</span>.</p></li>
-</ol>
-<p><strong><FONT SIZE=4>[10]</font></strong> ¿Dónde es continua la función <span class="math notranslate nohighlight">\(f\)</span> dada por <span class="math notranslate nohighlight">\(f(x)=\displaystyle{\frac{e^x+\ln(2x)}{x^2-3}}?\)</span></p>
-<p><strong><FONT SIZE=4>[11]</font></strong> Elige la opción correcta:</p>
-<p>La función <span class="math notranslate nohighlight">\(f : \mathbb{R} \longrightarrow \mathbb{R}\)</span> dada por:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-f(x) =
-\begin{cases}
-\sqrt{{x}^{2}-1} \,\,\,\,  \qquad\,  \text{  si  } x \in (-\infty,-1] \\
-            {x}^{2}+2x+1 \qquad    \text{si } x \in (-1,10] \\
-            \frac{121}{10}x   \qquad\, \, \, \, \qquad   \text{     si   } x \in (10,+\infty)
-\end{cases}
-\end{split}\]</div>
-<ol class="arabic simple">
-<li><p>No es continua en <span class="math notranslate nohighlight">\(x=-1\)</span></p></li>
-<li><p>Es continua en <span class="math notranslate nohighlight">\((-\infty,\infty)\)</span></p></li>
-<li><p>No es continua en <span class="math notranslate nohighlight">\(x=10\)</span></p></li>
-<li><p>No es continua en <span class="math notranslate nohighlight">\(x=0\)</span></p></li>
-</ol>
-<p><strong><FONT SIZE=4>[12]</font></strong> Estudia la continuidad en <span class="math notranslate nohighlight">\(x=0\)</span> de la función <span class="math notranslate nohighlight">\(f : \mathbb{R} \longrightarrow \mathbb{R}\)</span> dada por:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-f(x) =
-\begin{cases}
-x e^{-x} \,  \qquad\,\quad  \text{si } x &lt; 0 \\
-            1 \qquad \qquad \,\,\,\,\,\,   \text{si } x = 0 \\
-            \sqrt{x^2+1}   \qquad   \text{si } x &gt; 0
-\end{cases}
-\end{split}\]</div>
-<p><strong><FONT SIZE=4>[13]</font></strong> Si <span class="math notranslate nohighlight">\(a&gt;1\)</span> estudia la continuidad de la función <span class="math notranslate nohighlight">\(f : \mathbb{R} \longrightarrow \mathbb{R}\)</span> dada por:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-f(x) =
-\begin{cases}
-{x}^{2} {\cos^2\left(\frac{1}{x}\right)}   \qquad\,\quad  \text{si } x &lt; 0 \\
-            0 \qquad \qquad \,\,\,\,\,\,\,\,\quad   \text{     si } x = 0 \\
-        \dfrac{x {a}^{x}-x} {\sqrt{1+x}-1}  \qquad   \text{si } x &gt; 0
-\end{cases}
-\end{split}\]</div>
-<p><strong><FONT SIZE=4>[14]</font></strong> Demuestra que la ecuación <span class="math notranslate nohighlight">\(x + \sin (x) = \dfrac{1}{\sqrt{x}+3}\)</span> tiene al menos una raíz en <span class="math notranslate nohighlight">\([0,\pi]\)</span>.</p>
-<p><strong><FONT SIZE=4>[15]</font></strong> Justifica la existencia de una solución de la ecuación <span class="math notranslate nohighlight">\(e^x+4x=0\)</span> en el intervalo <span class="math notranslate nohighlight">\([-1, 0]\)</span>.
-Determina el número de iteraciones necesarias para aproximar la solución mediante el método de dicotomía con un
-error inferior a  una centésima y calcula las tres primeras iteraciones.</p>
-<p><strong><FONT SIZE=4>[16]</font></strong> Sea la función <span class="math notranslate nohighlight">\(f\)</span> dada por:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-f(x) = \begin{cases}
-\displaystyle{\frac{x^2}{1+e^{1/x}} - 1}    &amp; \quad  \text{si } x \neq 0 \\
-\\
-- 1   &amp; \quad  \text{si } x =0. \end{cases}
-\end{split}\]</div>
-<ol class="arabic simple">
-<li><p>Estudia la continuidad de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(\mathbb{R}.\)</span></p></li>
-<li><p>Justifica la existencia de una raíz de <span class="math notranslate nohighlight">\(f\)</span> en el intervalo <span class="math notranslate nohighlight">\([0,\, 2].\)</span></p></li>
-<li><p>Calcula los dos primeros iterantes del algoritmo de dicotomía, aplicado a <span class="math notranslate nohighlight">\(f\)</span> en el intervalo <span class="math notranslate nohighlight">\([0,\,2],\)</span> para aproximar la raíz a la que se refiere el apartado anterior.</p></li>
-</ol>
-<p><strong><FONT SIZE=4>[17]</font></strong> Mediciones puntuales han determinado que una función <span class="math notranslate nohighlight">\(f\)</span> desconocida pasa por <span class="math notranslate nohighlight">\((-2, -16)\)</span>, <span class="math notranslate nohighlight">\((0, 0)\)</span>, <span class="math notranslate nohighlight">\((1, -1)\)</span> y <span class="math notranslate nohighlight">\((3, 9)\)</span>. Calcula, mediante diferencias divididas, una aproximación polinómica de <span class="math notranslate nohighlight">\(f\)</span>. Utiliza este polinomio para aproximar <span class="math notranslate nohighlight">\(f(2)\)</span>.</p>
-<p><strong><FONT SIZE=4>[18]</font></strong> Calcula el polinomio de interpolación de Lagrange de orden tres relativo a <span class="math notranslate nohighlight">\(f(x) = 2^{x+1}-5\)</span> en los puntos <span class="math notranslate nohighlight">\(x_0 = 1\)</span>, <span class="math notranslate nohighlight">\(x_1 = 2\)</span>, <span class="math notranslate nohighlight">\(x_2 = 3\)</span> y <span class="math notranslate nohighlight">\(x_3 = 4\)</span>.
-Utilizando los cálculos previos, calcula una aproximación del número <span class="math notranslate nohighlight">\(r = 4 \sqrt{2}-5\)</span> y una aproximación de la raíz de la ecuación <span class="math notranslate nohighlight">\(\log_2 (y+5) = 3.5\)</span>.</p>
-<p><strong><FONT SIZE=4>[19]</font></strong> Utiliza la fórmula de Newton para obtener el polinomio de interpolación de la función <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span> relativo a los puntos <span class="math notranslate nohighlight">\(\displaystyle{ 0, \frac{\pi}{2}, \pi}\)</span> y <span class="math notranslate nohighlight">\(\displaystyle{\frac{3\pi}{2} }\)</span>. Utilízalo para aproximar el seno de <span class="math notranslate nohighlight">\(\displaystyle{\frac{\pi}{4}}\)</span>.</p>
-<p><strong><FONT SIZE=4>[20]</font></strong> Considera la siguiente tabla de valores, correspondiente a mediciones de una función <span class="math notranslate nohighlight">\(f\)</span>:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x_{i}\)</span></p></th>
-<th class="head"><p>-1</p></th>
-<th class="head"><p>0</p></th>
-<th class="head"><p>1</p></th>
-<th class="head"><p>3</p></th>
-<th class="head"><p>4</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(f(x_{i})\)</span></p></td>
-<td><p>6</p></td>
-<td><p>3</p></td>
-<td><p>6</p></td>
-<td><p>38</p></td>
-<td><p>77</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<ol class="arabic simple">
-<li><p>Calcula el polinomio <span class="math notranslate nohighlight">\(p\)</span> de interpolación de Lagrange de orden <span class="math notranslate nohighlight">\(2\)</span> relativo a <span class="math notranslate nohighlight">\(f\)</span> en los nodos <span class="math notranslate nohighlight">\(\{ 1,3,4 \}\)</span>.</p></li>
-<li><p>Calcula el polinomio <span class="math notranslate nohighlight">\(q\)</span> de interpolación de Lagrange de orden <span class="math notranslate nohighlight">\(2\)</span> relativo a <span class="math notranslate nohighlight">\(f\)</span> en los nodos <span class="math notranslate nohighlight">\(\{ -1,0,1 \}\)</span>.</p></li>
-<li><p>Aproxima <span class="math notranslate nohighlight">\(f(0.25)\)</span>  y <span class="math notranslate nohighlight">\(f(2)\)</span>.</p></li>
-</ol>
-<p><strong><FONT SIZE=4>[21]</font></strong> Elige la opción correcta:</p>
-<p>Si usamos el polinomio de Lagrange que interpola a los nodos <span class="math notranslate nohighlight">\((-2,-8)\)</span>, <span class="math notranslate nohighlight">\((-1, 0)\)</span> y <span class="math notranslate nohighlight">\((1, 4)\)</span>, para aproximar el valor en <span class="math notranslate nohighlight">\(x=0\)</span> obtenemos:</p>
-<ol class="arabic simple">
-<li><p>-4</p></li>
-<li><p>0</p></li>
-<li><p>4</p></li>
-<li><p>con el polinomio de Lagrange que interpola esos nodos no se puede aproximar el valor en <span class="math notranslate nohighlight">\(x=2\)</span>.</p></li>
-</ol>
-<p><strong><FONT SIZE=4>[22]</font></strong> Elige la opción correcta:</p>
-<p>El coeficiente de grado <span class="math notranslate nohighlight">\(1\)</span> del polinomio de Lagrange que interpola los datos de la siguiente tabla</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x_{i}\)</span></p></th>
-<th class="head"><p>-2</p></th>
-<th class="head"><p>-1</p></th>
-<th class="head"><p>1</p></th>
-<th class="head"><p>0</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></td>
-<td><p>4</p></td>
-<td><p>4</p></td>
-<td><p>10</p></td>
-<td><p>6</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<ol class="arabic simple">
-<li><p>es 0</p></li>
-<li><p>es 1</p></li>
-<li><p>es 3</p></li>
-<li><p>no existe ese polinomio.</p></li>
-</ol>
-<p><strong><FONT SIZE=4>[23]</font></strong> <strong>Razona</strong> la veracidad o falsedad de las siguientes afirmaciones:</p>
-<ol class="arabic simple">
-<li><p>Sea <span class="math notranslate nohighlight">\(f:[0,2]\rightarrow \mathbb{R}\)</span> continua y tal que <span class="math notranslate nohighlight">\(f(1)=0\)</span>. Entonces, por el teorema de Bolzano debe ser <span class="math notranslate nohighlight">\(f(0)f(2)&lt;0\)</span>.</p></li>
-<li><p>Existe un punto <span class="math notranslate nohighlight">\(x \in (0,1)\)</span> tal que <span class="math notranslate nohighlight">\(\displaystyle{e^{x}=\frac{3}{2}}\)</span>.</p></li>
-<li><p>La función <span class="math notranslate nohighlight">\(g\)</span> dada por <span class="math notranslate nohighlight">\(\,g(x)=\dfrac{16}{{a}^2+2abx+{b}^2{x}^2}\,\)</span>, donde <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> son dos números reales no nulos, es continua siempre que <span class="math notranslate nohighlight">\(x\)</span> difiera de <span class="math notranslate nohighlight">\(\,\frac{-a}{b}\)</span>.</p></li>
-<li><p>La función <span class="math notranslate nohighlight">\(h\)</span> dada por <span class="math notranslate nohighlight">\(\displaystyle{ h(x)=\frac{1}{1+e^{-1/x}} }\)</span> no tiene límite en <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
-<li><p>La gráfica de la función <span class="math notranslate nohighlight">\(\dfrac{{x}^{3}}{{(x+1)}^2}\)</span> se corta con su asíntota oblícua en un punto de abscisa comprendida entre <span class="math notranslate nohighlight">\(-1\)</span> y <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
-<li><p>Todo polinomio <span class="math notranslate nohighlight">\(p\)</span> verifica <span class="math notranslate nohighlight">\(p(x+y)=p(x) + p(y)\)</span>.</p></li>
+<li><p>Calcula, mediante o método de diferenzas divididas, o polinomio interpolador de Lagrange asociado aos puntos <span class="math notranslate nohighlight">\((-2,6)\)</span>, <span class="math notranslate nohighlight">\((-1,3)\)</span>, <span class="math notranslate nohighlight">\((0,2)\)</span>, <span class="math notranslate nohighlight">\((1,3)\)</span>, <span class="math notranslate nohighlight">\((2,6)\)</span>, <span class="math notranslate nohighlight">\((3,11)\)</span>.</p></li>
+<li><p>Se engadimos un novo punto <span class="math notranslate nohighlight">\((a,b)\)</span> ao conxunto de puntos anterior: cales son os valores de <span class="math notranslate nohighlight">\(a\)</span> e <span class="math notranslate nohighlight">\(b\)</span> para que o polinomio interpolador manteña a mesma expresión?</p></li>
 </ol>
 </section>
 
@@ -665,20 +581,20 @@ Utilizando los cálculos previos, calcula una aproximación del número <span cl
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="08.Boletin1.html"
+       href="09.Boletin2.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.8. </span>Boletín 1: Funciones reales de una variable real</p>
+        <p class="prev-next-title"><span class="section-number">2.9. </span>Boletín 2: Límites, continuidad, Lagrange y dicotomía</p>
       </div>
     </a>
     <a class="right-next"
-       href="10.Boletin2Bis.html"
+       href="../03/README.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.10. </span>Ejercicios que han caído otros años en el segundo control de prácticas</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Derivación de una función de variable real</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

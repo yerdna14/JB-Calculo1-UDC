@@ -34,6 +34,8 @@ chapters:
      title: Boletín 1
    - file: capitulos/02/09.Boletin2
      title: Boletín 2
+   - file: capitulos/02/10.Boletin2Bis
+     title: Boletín 2 Bis
 
 - file: capitulos/03/README
   title: Derivación
