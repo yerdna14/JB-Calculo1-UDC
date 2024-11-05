@@ -54,6 +54,8 @@ chapters:
       title: Teorema de Taylor
     - file: capitulos/03/07.Boletin3
       title: Boletín 3
+    - file: capitulos/03/08.Boletin3Bis
+      title: Boletín 3 Bis
    
 - file: capitulos/04/README
   title: Integración
